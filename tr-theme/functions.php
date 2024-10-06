@@ -1,15 +1,13 @@
 <?php
-// Funktion för att ladda in React-bundle från Vite
 function load_react_app() {
 
     if (defined('WP_DEBUG') && WP_DEBUG) {
    
         echo '<script type="module" src="http://localhost:5173/src/main.tsx"></script>';
     } else {
-        // Ladda den byggda React-appens JavaScript-fil i produktion
         wp_enqueue_script(
             'react-app',
-            get_template_directory_uri() . '/headlessfront/dist/assets/index.js', // Sökväg till din Vite-byggda bundle
+            get_template_directory_uri() . '/headlessfront/dist/assets/index.js', 
             array(), 
             null, 
             true 
