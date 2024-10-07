@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
+import '../styles/home.css';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div>
       <main>
-      <h1>WordPress Posts!!</h1>
+      <h1>WordPress Posts</h1>
       <ul>
         {posts.map(post => (
           <li key={post.id}>{post.title.rendered}</li>
