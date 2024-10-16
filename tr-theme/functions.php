@@ -2,12 +2,12 @@
 function load_react_app() {
 
     if (defined('WP_DEBUG') && WP_DEBUG) {
-   
+
         echo '<script type="module" src="http://localhost:5173/src/main.tsx"></script>';
     } else {
         wp_enqueue_script(
             'react-app',
-            get_template_directory_uri() . '/headlessfront/dist/assets/index.js', 
+            get_template_directory_uri() . '/frontend/dist/assets/index.js', 
             array(), 
             null, 
             true 
