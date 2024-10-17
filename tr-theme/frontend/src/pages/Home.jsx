@@ -14,6 +14,7 @@ const Home = () => {
   }, []);
 
   return (
+    
     <div className="home-container">
       <h1 className="home-title">Hitta din nästa inspirationskälla!</h1>
 
@@ -55,6 +56,8 @@ const Home = () => {
         <div className="category-btn">Föreningar</div>
       </div>
     </div>
+
+
   );
 };
 

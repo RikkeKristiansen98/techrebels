@@ -8,13 +8,14 @@
   /* Titel stil */
 .home-title {
     text-align: center;
-    font-size: 50px;
-    margin-bottom: 40px;
+    font-size: 35px;
+    margin-bottom: 60px;
+    margin-top: 100px;
   }
   /* Hero Section */
   .hero {
     position: relative;
-    min-height: 600px;
+    min-height: 250px;
     margin-bottom: 40px;
   }
  
@@ -72,17 +73,19 @@
   
   /* Tips Section */
   .tips-carousel {
-    margin-top: 50px;
+    margin-top: 100px;
   }
   
   .tips-carousel h2 {
     font-size: 28px;
     margin-bottom: 20px;
+    color: black;
+    text-align: center;
   }
   
   .tip-boxes {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     
   }
   
