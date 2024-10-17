@@ -4,7 +4,44 @@
     margin: 0 auto;
     padding: 20px;
 }
-
+.blob-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .blob-container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  .blob-container h2 {
+    position: relative;
+    z-index: 10; /* Make sure text is on top */
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Add responsiveness if necessary */
+  @media (max-width: 768px) {
+    .blob-container {
+      width: 200px;
+      height: 150px;
+    }
+  
+    .blob-container h2 {
+      font-size: 18px;
+    }
+  }
+  
 /* Titel stil för stora skärmar */
 .faq-title {
     text-align: left;
