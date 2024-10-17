@@ -4,52 +4,58 @@
     margin: 0 auto;
     padding: 20px;
 }
-.blob-container {
+
+.faq-hero {
     position: relative;
-    width: 300px;
-    height: 200px;
+    min-height: 600px;
+    margin-bottom: 40px;
+    right: 25%;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .blob-container svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-  }
-  
-  .blob-container h2 {
+}
+
+.main-title { 
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 90px;
+}
+
+.faq-shape-wrapper {
     position: relative;
-    z-index: 10; /* Make sure text is on top */
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-  }
-  
-  /* Add responsiveness if necessary */
-  @media (max-width: 768px) {
-    .blob-container {
-      width: 200px;
-      height: 150px;
-    }
-  
-    .blob-container h2 {
-      font-size: 18px;
-    }
-  }
-  
-/* Titel stil för stora skärmar */
+    height: 300px;
+}
+
+.faq-shape1, .faq-shape2 {
+    width: 100%; /* Set clouds to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0.9;
+    position: absolute;
+}
+
+.faq-shape1 {
+    position: absolute;
+    top: 50px;
+    right: inherit; 
+    z-index: 1;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.faq-shape2 {
+    position: absolute;
+    top: 43px;
+    left: 43%;  /* Justera så formerna överlappar */
+    opacity: 0.9;
+    z-index: 1;
+}
+
+/* FAQ Title for large screens */
 .faq-title {
     text-align: left;
-    font-size: 50px;
+    font-size: 60px;
     margin-bottom: 20px;
 }
 
-/* Justerar listan med frågor */
+/* FAQ List */
 .faq-list {
     border-bottom: 1px solid #0000;
 }
@@ -60,13 +66,15 @@
     cursor: pointer;
 }
 
-/* FAQ-frågor */
+/* FAQ Questions */
 .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 40px; /* Stor text för stora skärmar */
+    font-size: 2.2rem;
     font-weight: bold;
+    padding-right: 10px; /* Add padding to the right to space out the icon */
+    flex-grow: 1; /* Ensure the text takes up the available space */
 }
 
 .faq-answer {
@@ -77,51 +85,92 @@
 
 .faq-icon {
     font-size: 1.5rem;
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+    margin-top: 15px;
 }
 
-/* Responsiv design för små skärmar (t.ex. mobiltelefoner) */
+/* Responsive Design for smaller screens */
+/* Responsive Design for smaller screens */
+@media (min-width: 100px) and (max-width: 900px) {
+    .faq-icon {
+        font-size: 1.25rem;
+        margin-right: 30px; /* Reduce margin for smaller screens */
+    }
+}
+
 @media (max-width: 768px) {
     .faq-container {
         padding: 15px;
     }
     
     .faq-title {
-        font-size: 35px; /* Minska titelstorlek för mobil */
-        text-align: center;
+        font-size: 35px;
+        text-align: left;
+        margin-top: 100px; /* Reduced margin on top */
     }
-    
+
+    .faq-hero {
+        min-height: 250px; /* Reduced height for the clouds */
+        margin-bottom: 20px; /* Less margin below clouds */
+    }
+
+    .faq-shape1, .faq-shape2 {
+        width: 90%;
+        top: 10px;
+        margin-left: 50px;
+        margin-bottom: 20px;
+    }
+
     .faq-question {
-        font-size: 25px; /* Minska frågestorlek för mindre skärmar */
+        font-size: 25px;
+        padding-right: 8px; /* Reduce padding on smaller screens */
     }
-    
+
     .faq-icon {
-        font-size: 1.25rem; /* Minska ikonstorlek för mobil */
+        font-size: 1.25rem;
+        margin-right: 30px; /* Reduce margin for smaller screens */
     }
-    
+
     .faq-answer {
-        font-size: 0.9rem; /* Justera svarstextens storlek */
+        font-size: 0.9rem;
     }
 }
 
-/* Extra liten skärm (t.ex. mindre mobiltelefoner) */
+/* Extra small screens */
 @media (max-width: 480px) {
     .faq-container {
         padding: 10px;
     }
 
     .faq-title {
-        font-size: 28px; /* Ännu mindre titelstorlek för mycket små skärmar */
+        font-size: 28px;
+        margin-top: 30px; /* Reduced margin on top */
     }
-    
+
+    .faq-hero {
+        min-height: 200px; /* Reduced cloud height further */
+        margin-bottom: 10px; /* Less margin below clouds */
+        margin-top: 30px;
+    }
+
     .faq-question {
-        font-size: 20px; /* Justera frågestorlek */
+        font-size: 20px;
+        padding-right: 5px; /* Make it tighter for very small screens */
     }
-    
+
     .faq-icon {
-        font-size: 1rem; /* Ännu mindre ikon för små skärmar */
+        font-size: 1rem;
+        margin-right: 30px; /* Tighten spacing further */
     }
-    
+
     .faq-answer {
-        font-size: 0.85rem; /* Justera svarstextens storlek ytterligare */
+        font-size: 0.85rem;
+    }
+
+    .faq-shape1, .faq-shape2 {
+        width: 80%;
+        top: 10px;
+        margin-left: 30px;
+        margin-bottom: 20px;
     }
 }
