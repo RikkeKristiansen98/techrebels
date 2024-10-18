@@ -58,4 +58,25 @@ function custom_api_callback() {
 
 add_action('rest_api_init', 'custom_api_route');
 
+/* 
+function create_tips_post_type() {
+    register_post_type('tips',
+        array(
+            'labels' => array(
+                'name' => __('Tips'),
+                'singular_name' => __('Tips')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'show_in_rest' => true, // Detta gör att du kan hämta tips via REST API
+        )
+    );
+}
+add_action('init', 'create_tips_post_type');
+
+*/
+
 ?>
+
+
