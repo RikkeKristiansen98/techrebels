@@ -1,0 +1,63 @@
+h1 {
+    color: black;
+    margin-top: 80px;
+}
+
+.rolemodels-container {
+    text-align: center; 
+}
+
+/* filteringen */
+.category-rolemodels-grid {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 5px; 
+    padding-right: 80px;
+    padding-left: 80px;
+}
+
+.c-btn {
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    border: 1px solid black; 
+    padding: 15px;
+    margin: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    font-size: 16px; 
+    flex: 1 1 150px; 
+}
+
+.c-btn:hover {
+    background-color: #ca8787;
+}
+
+/* grid-systemet för förebilderna */
+.grid-container {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumner */
+    grid-template-rows: repeat(3, auto); /* 3 rader */
+    gap: 30px; /* Avstånd mellan boxar */
+    padding: 100px;
+    justify-content: center; /* Centrera innehållet horisontellt */
+}
+
+.grid-item {
+    background-color: #f0f0f0; 
+    border: 1px solid black; 
+    padding: 70px; 
+    width: 200px; 
+}
+
+
+.grid-item a {
+    color: black; 
+    text-decoration: none; 
+    display: block; 
+    margin-top: px;
+}
+
+.grid-item a:hover {
+    text-decoration: underline; 
+}
