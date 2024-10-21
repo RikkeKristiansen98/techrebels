@@ -56,7 +56,7 @@
 }
 
 /* Stilar för sökfält */
-input[type="text"] {
+.search-area input[type="text"] {
   padding: 3px;
   width: 170px;
   font-size: 10px;

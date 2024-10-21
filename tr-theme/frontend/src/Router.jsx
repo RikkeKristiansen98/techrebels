@@ -4,7 +4,9 @@ import { Faq } from './pages/Faq';
 import Layout from './pages/Layout';
 import Home from './Pages/Home';
 import NotFound from './Pages/NotFound';
-
+import { Register } from './pages/Register'
+import { Login } from './pages/Login'
+import { Policy } from './pages/Policy'
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -23,6 +25,18 @@ export const router = createBrowserRouter([
         path: 'rolemodels',
         element: <Rolemodels />
       },
+      {
+        path: 'register',
+        element: <Register />
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+      path: 'policy',
+      element: <Policy />
+      }
     ],
   },
 ]);

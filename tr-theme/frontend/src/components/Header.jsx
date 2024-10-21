@@ -24,6 +24,8 @@ export const Header = () => {
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/faq">FAQ</NavLink></li>
+                    <li><NavLink to="/register">Register</NavLink></li>
+                    <li><NavLink to="/login">Login</NavLink></li>
 
                     {/* Dynamiska länkar för WordPress-inlägg */}
                     {posts.map(post => (
