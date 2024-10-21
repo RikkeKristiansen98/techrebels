@@ -12,7 +12,6 @@ h1 {
     display: flex; 
     flex-wrap: wrap;
     justify-content: center; 
-    gap: 5px; 
     padding-right: 80px;
     padding-left: 80px;
 }
