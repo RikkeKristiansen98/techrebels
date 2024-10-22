@@ -197,6 +197,16 @@
     text-align: center;
     font-size: 20px;
   }
+
+  .category-btn .link-text {
+    text-decoration: none;
+    color: inherit; /* Gör att länken får samma färg som omgivande text */
+  }
+  
+  .category-btn:hover .link-text {
+    color: inherit; /* Behåller samma stil vid hover */
+  }
+  
   /* Responsiv design för mindre skärmar */
 @media (max-width: 768px) {
     .home-title {
