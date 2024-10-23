@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Rolemodels from './pages/Rolemodels';
+import Rolemodel from './pages/Rolemodel';
 import { Faq } from './pages/Faq';
 import Layout from './pages/Layout';
 import Home from './Pages/Home';
@@ -28,7 +29,14 @@ export const router = createBrowserRouter([
         path: 'rolemodels',
         element: <Rolemodels />
       },
+
       
+
+      {
+        path: 'rolemodel',
+        element: <Rolemodel />
+      },
+
     ],
   },
 ]);

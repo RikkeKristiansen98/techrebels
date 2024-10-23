@@ -1,0 +1,46 @@
+.container-first-section {
+  display: flex; 
+  align-items: center; 
+}
+
+.hero-rolemodel {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px; 
+  color: black;
+  margin-left: 25%;
+  margin-bottom: 100px;
+}
+
+.img-rolemodel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border: 2px solid black;
+}
+
+.img-rolemodel img {
+  width: 100px; 
+  height: auto;
+}
+
+.container-second-section {
+  color: black;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column;
+  text-align: center;
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 400px;
+}
+
+.p-container {
+  max-width: 40%; 
+  box-sizing: border-box; 
+  padding: 40px;
+}
