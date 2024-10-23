@@ -1,0 +1,92 @@
+.toys-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Titel stil */
+.toys-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 50px;
+    margin-top: 150px;
+    color: black;
+  }
+
+  /* Hero Section */
+  .toys {
+    position: relative;
+    min-height: 250px;
+    margin-bottom: 40px;
+  }
+ 
+  
+  .toys-wrapper {
+    position: relative;
+    height: 300px;
+  }
+  
+  .shape3 {
+    position: absolute;
+    top: 50px;
+    left: 30%;  /* Justera positionen */
+    width: 350px;  /* Större storlek */
+    opacity: 0.9;
+    z-index: 2;
+  }
+  
+  .shape4 {
+    position: absolute;
+    top: 43px;
+    left: 43%;  /* Justera så formerna överlappar */
+    width: 350px;
+    opacity: 0.9;
+    z-index: 1;
+  }
+
+  /* Category Buttons */
+.toys-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  .toys-buttons button {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .toys-buttons button:hover {
+    background-color: #e7dbdb;
+  }
+  
+  /* Image Grid */
+  .toys-image-grid {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+  }
+  
+  .toys-image-item {
+    text-align: center;
+  }
+  
+  .toys-image-item img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .toys-image-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }

@@ -5,6 +5,7 @@ import { Faq } from './pages/Faq';
 import Layout from './pages/Layout';
 import Home from './Pages/Home';
 import NotFound from './Pages/NotFound';
+import Toys from './pages/Toys';
 
 export const router = createBrowserRouter([
   {
@@ -21,13 +22,21 @@ export const router = createBrowserRouter([
         element: <Faq />
       },
       {
+        path: 'toys',
+        element: <Toys />
+      },
+      {
         path: 'rolemodels',
         element: <Rolemodels />
       },
+
+      
+
       {
         path: 'rolemodel',
         element: <Rolemodel />
       },
+
     ],
   },
 ]);

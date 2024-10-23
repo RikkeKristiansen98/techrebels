@@ -1,3 +1,5 @@
+import '../styles/rolemodel.css';
+import textbackground from '../img/textbackground.png'; // Importera bakgrundsbilden i React
 import React from "react";
 import '../styles/rolemodels.css';
 import form1 from '../img/1.png'; 
