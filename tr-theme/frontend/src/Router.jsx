@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Rolemodels from './pages/Rolemodels';
+import Rolemodel from './pages/Rolemodel';
 import { Faq } from './pages/Faq';
 import Layout from './pages/Layout';
 import Home from './Pages/Home';
@@ -8,6 +9,8 @@ import { Register } from './pages/Register'
 import { Login } from './pages/Login'
 import { Policy } from './pages/Policy'
 import { Books } from './pages/Books'
+import Toys from './pages/Toys';
+
 export const router = createBrowserRouter([
   {
     path: '/',
