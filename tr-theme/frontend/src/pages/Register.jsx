@@ -93,30 +93,38 @@ export const Register = () => {
 
     return (
         <div className="register_container">
-            <h1 className="register-title">Register</h1>
+            <h1 className="register-title">Registrera</h1>
             <div className="form-box">
                 <form className="register-form" onSubmit={handleSubmit}>
-                    <label htmlFor="firstName" className="register-label">Namn:</label>
-                    <input
-                        type="text"
-                        id="firstName"
-                        className="register-form-input"
-                        placeholder="namn"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        required
-                    />
-                    <label htmlFor="lastName" className="register-label">Efternamn:</label>
-                    <input
-                        type="text"
-                        id="lastName"
-                        className="register-form-input"
-                        placeholder="efternamn"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        required
-                    />
-                    <label htmlFor="email" className="register-label">email:</label>
+                <div className="name-container">
+    <div className="name-field">
+        <label htmlFor="firstName" className="name-label">Namn:</label>
+        <input
+            type="text"
+            id="firstName"
+            className="register-form-input"
+            placeholder="namn"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+        />
+    </div>
+
+    <div className="last-name-field">
+        <label htmlFor="lastName" className="name-label">Efternamn:</label>
+        <input
+            type="text"
+            id="lastName"
+            className="register-form-input"
+            placeholder="efternamn"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+        />
+    </div>
+</div>
+
+                    <label htmlFor="email" className="register-label">Email:</label>
                     <input
                         type="email"
                         id="email"
@@ -136,9 +144,7 @@ export const Register = () => {
                         onChange={handleChange}
                         required
                     />
-                    <label htmlFor="policy" className="register-policy-label">
-                        Jag godkänner <Link to="/policy">integritetspolicyn</Link>
-                    </label>
+                    <div className="policy-content">
                     <input
                         type="checkbox"
                         id="policy"
@@ -147,6 +153,11 @@ export const Register = () => {
                         onChange={(e) => setFormData({ ...formData, policy: e.target.checked })}
                         required
                     />
+                    <label htmlFor="policy" className="register-policy-label">
+                        Jag godkänner <Link to="/policy"><span>integritetspolicyn</span></Link>
+                    </label>
+                   
+                    </div>
                     <button type="submit" className="register_btn">Registrera</button>
                 </form>
                 {statusMessage && <p className="status-message">{statusMessage}</p>}

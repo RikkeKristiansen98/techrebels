@@ -7,6 +7,7 @@ import NotFound from './Pages/NotFound';
 import { Register } from './pages/Register'
 import { Login } from './pages/Login'
 import { Policy } from './pages/Policy'
+import { Books } from './pages/Books'
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -36,7 +37,22 @@ export const router = createBrowserRouter([
       {
       path: 'policy',
       element: <Policy />
+      },
+      {
+        path: 'books',
+        element: <Books />
+      },
+      {
+        path: 'rolemodels',
+        element: <Rolemodels />
+      },
+  
+
+      {
+        path: 'rolemodel',
+        element: <Rolemodel />
       }
+      
     ],
   },
 ]);
