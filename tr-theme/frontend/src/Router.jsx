@@ -54,6 +54,11 @@ export const router = createBrowserRouter([
       {
         path: 'rolemodel',
         element: <Rolemodel />
+      },
+
+      {
+        path: 'toys',
+        element: <Toys />
       }
       
     ],
