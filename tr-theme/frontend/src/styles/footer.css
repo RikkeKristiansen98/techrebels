@@ -1,4 +1,105 @@
-.footer-title {
-    color: black; /* for visibility */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 50px;
+  padding-top: 200px;
+  gap: 40px;
+  z-index: 2;
+}
+
+.newsletter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  margin: 0 auto; 
+}
+
+.faq {
+  flex: 1;
+  margin-left: auto;
+  text-align: right; 
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: white;
+  z-index: 1;
+}
+
+.input-email {
+  width: 100%;
+  max-width: 250px; 
+  padding: 11px;
+  padding-right: 100px; 
+  background-color: white;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.send-nl-btn {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  background-color: #ca8787;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 13px;
+  z-index: 1;
+}
+
+.newsletter-container {
+  display: flex;
+  justify-content: center; 
+  position: relative;
+}
+
+/* finns ingen logga än */
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.link {
+  color: #ca8787;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .footer-content {
+    flex-direction: column;
+    font-size: 16px;
   }
-  
+}
+.footer {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.newsletter, .faq {
+  margin-left: 0;
+  text-align: center;
+}
+
+.newsletter form {
+  flex-direction: column;
+  gap: 10px;
+}
