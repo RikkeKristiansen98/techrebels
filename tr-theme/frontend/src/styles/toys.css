@@ -2,13 +2,14 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: block; 
   }
 
   /* Titel stil */
 .toys-title {
     text-align: center;
     font-size: 35px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     margin-top: 150px;
     color: black;
   }
@@ -18,6 +19,7 @@
     position: relative;
     min-height: 250px;
     margin-bottom: 40px;
+    text-align: center;
   }
  
   
@@ -43,50 +45,129 @@
     opacity: 0.9;
     z-index: 1;
   }
-
-  /* Category Buttons */
-.toys-buttons {
+  .toysfilter-grid-section {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-  }
-  
-  .toys-buttons button {
-    background-color: white;
-    border: 1px solid black;
-    padding: 10px 20px;
-    font-size: 14px;
+    justify-content: space-between;
+    align-items: flex-start; /* Säkerställer att filtret börjar från toppen */
+    margin-top: 40px; /* Avstånd från hero-sektionen */
+}
+
+  /* Filter Section */
+.toys-filter {
+    width: 300px; /* Begränsar bredden på filtersektionen */
+    margin-right: 20px; /* Lägger mer utrymme mellan filtret och rutnätet */
+    padding: 20px;
+}
+
+.toys-filter h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.toys-filter h4 {
     cursor: pointer;
+    font-size: 18px;
+    font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
     color: black;
-  }
-  
-  .toys-buttons button:hover {
-    background-color: #e7dbdb;
-  }
-  
-  /* Image Grid */
-  .toys-image-grid {
-    margin-top: 200px;
+    border-bottom: 1px solid #ddd;
+}
+
+.toys-filter .list {
+    display: none;
+    
+    color: black;
+}
+
+.toys-filter .open .list {
+    display: block;
+}
+
+.toys-filter .list input {
+    margin-right: 10px;
+    transform: scale(1);
+    
+}
+
+.toys-filter .list label {
+    display: flex;
+    flex-direction: row-reverse;  /* Placera checkboxen efter texten */
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #555;
+    width: 100%;
+}
+/* Anpassa checkboxar för att ge dem en snyggare stil */
+.toys-filter .list input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px; 
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.age-filter, .type-filter, .price-filter, .material-filter, .theme-filter {
+    margin-bottom: 15px; /* Ökat utrymme mellan filterkategorier */
+    padding-bottom: 10px;
+}
+
+/* Image Grid */
+.toys-image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0px;
-  }
-  
-  .toys-image-item {
+    gap: 20px;
+    flex-grow: 1;  /* Gör att rutnätet tar upp resten av utrymmet */ 
+    margin: 40px 60px;
+}
+
+.toys-image-item {
     text-align: center;
-  }
-  
-  .toys-image-item img {
-    width: 100%;
-    max-width: 200px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+.toys-image-item img {
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
-  }
-  
-  .toys-image-item p {
+    border-radius: 5px;
+}
+
+.toys-image-item p {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
-  }
+}
+  
+
+
+  
+  @media (max-width: 768px) {
+    .toys-container {
+        flex-direction: column; /* För mindre skärmar blir filtret och rutnätet vertikalt */
+    }
+
+    .toys-image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .toys-image-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .shape3, .shape4 {
+        width: 100px;
+    }
+}
