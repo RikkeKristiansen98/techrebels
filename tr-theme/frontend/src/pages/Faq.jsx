@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveIcon from '@mui/icons-material/Remove';
 import '../styles/faq.css';
+// import Image1 from '../img/1.png'
+// import Image2 from '../img/2.png'
 
 // Komponent för FAQ-sektion
 export function Faq() {
@@ -17,8 +19,8 @@ export function Faq() {
   };
 
   // Definierar bilder som används i FAQ-sektionen, denn ska hämta bilderna från build filen som vi ska ladda up till wordpress 
-  const Image1 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/1-DgN4-qfm.png`;
-  const Image2 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/2-BPtoIZwi.png`;
+   const Image1 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/1-DgN4-qfm.png`;
+   const Image2 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/2-BPtoIZwi.png`;
 
   // Data för frågor och svar
   const faqData = [
