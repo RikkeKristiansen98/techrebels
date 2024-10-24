@@ -6,7 +6,7 @@ import image1 from '../img/image1.jpg';
 import image2 from '../img/image2.jpg';
 import image3 from '../img/image3.jpg';
 import image4 from '../img/image4.jpg';
-
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -120,7 +120,7 @@ const Home = () => {
       <div className="categories">
         <div className="category-btn">Böcker</div>
         <div className="category-btn">Media</div>
-        <div className="category-btn">Leksaker</div>
+        <div className="category-btn"><Link to="/toys" className="link-text">Leksaker</Link></div>
         <div className="category-btn">Föreningar</div>
       </div>
       </div>
