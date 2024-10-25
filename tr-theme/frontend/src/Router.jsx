@@ -10,6 +10,7 @@ import { Login } from './pages/Login'
 import { Policy } from './pages/Policy'
 import { Books } from './pages/Books'
 import Toys from './pages/Toys';
+import TipsaOss from './pages/Tipsaoss';
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: 'faq', 
         element: <Faq />
+      },
+      {
+        path: 'tipsaoss', 
+        element: <TipsaOss />
       },
       {
         path: 'rolemodels',

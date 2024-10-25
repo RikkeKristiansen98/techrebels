@@ -118,7 +118,7 @@ const Home = () => {
           <p>Läs om historiens förebilder!</p>
         </div>
       <div className="categories">
-        <div className="category-btn">Böcker</div>
+        <div className="category-btn"><Link to="/books" className="link-text">Böcker</Link></div>
         <div className="category-btn">Media</div>
         <div className="category-btn"><Link to="/toys" className="link-text">Leksaker</Link></div>
         <div className="category-btn">Föreningar</div>

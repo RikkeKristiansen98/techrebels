@@ -11,8 +11,9 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 export const Toys = () => {
      // State för varje filterkategori
      const [ageOpen, setAgeOpen] = useState(false);
-     const [typeOpen, setTypeOpen] = useState(false);
-     const [themeOpen, setThemeOpen] = useState(false);
+     const [subjectOpen, setSubjectOpen] = useState(false);
+     //const [typeOpen, setTypeOpen] = useState(false);
+     //const [themeOpen, setThemeOpen] = useState(false);
 
     return (
 
@@ -39,37 +40,34 @@ export const Toys = () => {
                         {ageOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                     </h4>
                     <div className="list">
-                        <input type="checkbox" /> 6-9 år
-                        <input type="checkbox" /> 9-10 år
-                        <input type="checkbox" /> 10-15 år
-                        <input type="checkbox" /> 15-25 år
-                    </div>
+                            <label>
+                                <input type="checkbox" /> 6-9 år
+                            </label>
+                            <label>
+                                <input type="checkbox" /> 9-10 år
+                            </label>
+                            <label>
+                                <input type="checkbox" /> 10-15 år
+                            </label>
+                            <label>
+                                <input type="checkbox" /> 15-25 år
+                            </label>
+                        </div>
                 </div>
 
-                {/* Typ av leksak Filter */}
-                <div className={`type-filter ${typeOpen ? 'open' : ''}`}>
-                    <h4 onClick={() => setTypeOpen(!typeOpen)}>
-                        Programmering
-                        {typeOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                    </h4>
-                    <div className="list">
-                        <input type="checkbox" /> ...
-                        <input type="checkbox" /> ...
-                        <input type="checkbox" /> ...
-                        <input type="checkbox" /> ...
-                    </div>
-                </div>
-                 {/* Tema Filter */}
-                 <div className={`theme-filter ${themeOpen ? 'open' : ''}`}>
-                        <h4 onClick={() => setThemeOpen(!themeOpen)}>
-                            Teknik
-                            {themeOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                {/* Ämne Filter */}
+                <div className={`subject-filter ${subjectOpen ? 'open' : ''}`}>
+                        <h4 onClick={() => setSubjectOpen(!subjectOpen)}>
+                            Ämne
+                            {subjectOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                         </h4>
                         <div className="list">
-                            <input type="checkbox" /> ...
-                            <input type="checkbox" /> ...
-                            <input type="checkbox" /> ...
-                            <input type="checkbox" /> ...
+                            <label>
+                                <input type="checkbox" /> Programmering
+                            </label>
+                            <label>
+                                <input type="checkbox" /> Teknik
+                            </label>
                         </div>
                     </div>
                
