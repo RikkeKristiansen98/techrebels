@@ -11,6 +11,7 @@ import { Policy } from './pages/Policy'
 import { Books } from './pages/Books'
 import Toys from './pages/Toys';
 import TipsaOss from './pages/Tipsaoss';
+import Media from './pages/Media';
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: 'toys',
         element: <Toys />
+      },
+      {
+        path: 'media',
+        element: <Media />
       }
       
     ],
