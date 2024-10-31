@@ -48,7 +48,7 @@
     align-items: center;
     position: absolute;
     top: 220px; /* Adjust this value to ensure it stays on top of the shapes */
-    left: 50%;
+    left: 45%;
     transform: translateX(-50%); /* Center horizontally */
     width: 50%; /* Reduced width for smaller size */
     height: 35px; /* Reduced height for smaller size */
@@ -87,6 +87,7 @@
 
 /* Responsive Design for smaller screens */
 @media (min-width: 100px) and (max-width: 900px) {
+    
     .book-shape1 {
         left: -25%;
     }
@@ -102,7 +103,7 @@
 
     .main-title {
         font-size: 35px;
-        text-align: left;
+        text-align: center;
         margin-top: 100px;
     }
 
@@ -122,6 +123,7 @@
         width: 75%; /* Adjusted for smaller screens */
         height: 30px;
         top: 130px; /* Adjusted for smaller screens */
+        left: 45%;
     }
 
     .search-input {
@@ -141,6 +143,7 @@
     }
 
     .main-title {
+        text-align: center;
         font-size: 28px;
         margin-top: 30px;
     }
@@ -157,9 +160,10 @@
     }
 
     .search-bar {
-        width: 100%;
+        width: 30%;
         height: 28px; /* Further reduced height */
         top: 90px; /* Adjust top value for very small screens */
+        
     }
 
     .search-input {
@@ -169,7 +173,9 @@
     .search-button {
         font-size: 13px;
         width: 40px; /* Reduced button size for small screens */
+        padding: 10px;
     }
+    
 }
 
 @media (max-width: 280px) {
@@ -185,10 +191,11 @@
 .books-content {
     display: flex;
     align-items: flex-start; /* Align filter and grid items at the top */
+    justify-content: center; /* Align contents to the left */
     gap: 20px; /* Space between filter and grid */
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: 16rem 0px 10rem 0px;
     flex-wrap: nowrap; /* Prevent wrapping */
 }
 
@@ -196,7 +203,9 @@
 .books-filter {
     width: 200px; /* Fixed width for the filter */
     flex-shrink: 0; /* Prevent filter from shrinking */
+    margin-left: 20%; /* Reduce right margin to push it left */
 }
+
 
 .books-filter h2 {
     font-size: 24px;
@@ -236,11 +245,12 @@
 }
 
 /* Grid container for books */
-.grid-container {
+.books-grid-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
     gap: 20px;
     flex-grow: 1; /* Allow the grid to take up the remaining space */
+    margin: 10px 30% 10px 10%;
 }
 
 .book-item {
@@ -253,8 +263,9 @@
 }
 
 .book-item img {
-    width: 100%;
-    max-width: 200px;
+    width: 250px;
+    height: 250px;
+   
     border-radius: 10px;
 }
 
@@ -266,30 +277,38 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .grid-container {
+    .books-grid-container {
         grid-template-columns: repeat(2, 1fr); /* 2 columns layout for smaller screens */
     }
 }
 
 @media (max-width: 768px) {
     .books-content {
+        
         flex-direction: column;
+        align-items: center;
     }
 
     .books-filter {
-        width: 100%;
+        width: 300px;
         padding-bottom: 20px;
-        border-bottom: 1px solid #ccc;
+        margin-right: 40%;
+      
     }
 
-    .grid-container {
+    .books-grid-container {
         grid-template-columns: 1fr; /* Single column layout for mobile */
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .grid-container {
+    .books-grid-container {
         grid-template-columns: 1fr; /* Single column layout for smaller screens */
     }
+    .books-filter{
+        width: 300px;
+        margin-right: 30%;
+    }
+    
 }

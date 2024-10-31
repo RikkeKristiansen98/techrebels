@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import '../styles/books.css';
-// import Image1 from '../img/1.png';
-// import Image2 from '../img/2.png';
+
 import SearchIcon from '@mui/icons-material/Search';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
@@ -12,8 +11,8 @@ export const Books = () => {
     const [languageOpen, setLanguageOpen] = useState(false);
     const [subjectOpen, setSubjectOpen] = useState(false);
 
-    const Image1 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/1-DgN4-qfm.png`;
-   const Image2 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/2-BPtoIZwi.png`;
+     const Image1 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/1-DgN4-qfm.png`;
+    const Image2 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/2-BPtoIZwi.png`;
     return (
         <div className='books-container'>
             <h1 className='main-title'>Böcker</h1>
@@ -35,19 +34,6 @@ export const Books = () => {
             <div className="books-content">
                 <aside className="books-filter">
                     <h2>Filter</h2>
-
-                    {/* Category Filter */}
-                    <div className={`category ${categoryOpen ? 'open' : ''}`}>
-                        <h4 onClick={() => setCategoryOpen(!categoryOpen)}>
-                            Kategori
-                            {categoryOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                        </h4>
-                        <div className="list">
-                            <input type="checkbox" /> Option 1
-                            <input type="checkbox" /> Option 2
-                            <input type="checkbox" /> Option 3
-                        </div>
-                    </div>
 
                     {/* Age Filter */}
                     <div className={`age ${ageOpen ? 'open' : ''}`}>
@@ -89,8 +75,32 @@ export const Books = () => {
                     </div>
                 </aside>
 
-                <section className='grid-container'>
+                <section className='books-grid-container'>
                     {/* Placeholder book items */}
+                    <div className="book-item">
+                        <img src="https://via.placeholder.com/150" alt="test photo" />
+                        <h3>Title</h3>
+                    </div>
+                    <div className="book-item">
+                        <img src="https://via.placeholder.com/150" alt="test photo" />
+                        <h3>Title</h3>
+                    </div> 
+                    <div className="book-item">
+                        <img src="https://via.placeholder.com/150" alt="test photo" />
+                        <h3>Title</h3>
+                    </div>
+                    <div className="book-item">
+                        <img src="https://via.placeholder.com/150" alt="test photo" />
+                        <h3>Title</h3>
+                    </div>
+                    <div className="book-item">
+                        <img src="https://via.placeholder.com/150" alt="test photo" />
+                        <h3>Title</h3>
+                    </div> 
+                    <div className="book-item">
+                        <img src="https://via.placeholder.com/150" alt="test photo" />
+                        <h3>Title</h3>
+                    </div>
                     <div className="book-item">
                         <img src="https://via.placeholder.com/150" alt="test photo" />
                         <h3>Title</h3>
