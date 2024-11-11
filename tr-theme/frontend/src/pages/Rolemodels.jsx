@@ -1,11 +1,26 @@
-import '../styles/rolemodel.css';
-import textbackground from '../img/textbackground.png'; // Importera bakgrundsbilden i React
-import React from "react";
+import { Link } from 'react-router-dom';
 import '../styles/rolemodels.css';
-import form1 from '../img/1.png'; 
-import form2 from '../img/2.png'; 
+import form1 from '../img/1.png';
+import form2 from '../img/2.png';
+import React, { useEffect, useState } from 'react';
 
 export const Rolemodels = () => {
+  const [rolemodels, setRolemodels] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Hämtar Förebilder från WordPress APIet
+  useEffect(() => {
+    fetch('https://techforalla.se/wp-json/wp/v2/forebilder?_embed')
+      .then(response => response.json())
+      .then(data => {
+        setRolemodels(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="rolemodels-container">
@@ -16,9 +31,8 @@ export const Rolemodels = () => {
           <img src={form1} alt="Form 1" className="shape1" />
           <img src={form2} alt="Form 2" className="shape2" />
         </div>
-
-        {/* Kategoriknappar, kommer bli filtrering för sidan sen med usestate tänkar jag? */}
-        <div className="category-rolemodels-section">
+ {/* Kategoriknappar */}
+ <div className="category-rolemodels-section">
           <div className="category-rolemodels-grid">
             <button className="c-btn">Kategori 1</button>
             <button className="c-btn">Kategori 2</button>
@@ -28,50 +42,30 @@ export const Rolemodels = () => {
             <button className="c-btn">Kategori 6</button>
           </div>
         </div>
+        {loading && <p>Laddar förebilder...</p>}
 
-      {/* Grid-sektion för bilder av förebilderna */}
-      <div className="grid-container">
-        {/* ersättas med riktiga bilder sen */}
-        <div className="grid-item">
-          <img src="path_to_image_1.png" alt="Person 1" />
-          <a href="/person1">Person 1</a>
-        </div>
-        <div className="grid-item">
-          <img src="path_to_image_2.png" alt="Person 2" />
-          <a href="/person2">Person 2</a>
-        </div>
-        <div className="grid-item">
-          <img src="path_to_image_3.png" alt="Person 3" />
-          <a href="/person3">Person 3</a>
-        </div>
-        <div className="grid-item">
-          <img src="path_to_image_4.png" alt="Person 4" />
-          <a href="/person4">Person 4</a>
-        </div>
-        <div className="grid-item">
-          <img src="path_to_image_5.png" alt="Person 5" />
-          <a href="/person5">Person 5</a>
-        </div>
-        <div className="grid-item">
-          <img src="path_to_image_6.png" alt="Person 6" />
-          <a href="/person6">Person 6</a>
-        </div>
-        <div className="grid-item">
-          <img src="path_to_image_7.png" alt="Person 7" />
-          <a href="/person7">Person 7</a>
-        </div>
-        <div className="grid-item">
-          <img src="path_to_image_8.png" alt="Person 8" />
-          <a href="/person8">Person 8</a>
-        </div>
-        <div className="grid-item">
-          <img src="path_to_image_9.png" alt="Person 9" />
-          <a href="/person9">Person 9</a>
+        {/* Grid-sektion för bilder av förebilderna */}
+        <div className="grid-container">
+          {rolemodels.length > 0 ? (
+            rolemodels.map((rolemodel) => (
+              <div className="grid-item" key={rolemodel.id}>
+                {rolemodel.featured_media && (
+                  <img
+                    src={rolemodel._embedded['wp:featuredmedia'][0].source_url}
+                    alt={rolemodel.title.rendered}
+                  />
+                )}
+                <Link to={`/rolemodel/${rolemodel.slug}`}>
+                  {rolemodel.title.rendered}
+                </Link>
+              </div>
+            ))
+          ) : (
+            !loading && <p>Inga förebilder hittades.</p>
+          )}
         </div>
       </div>
     </div>
-    </div>
-
   );
 };
 
