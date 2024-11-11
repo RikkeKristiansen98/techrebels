@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Rolemodels from './pages/Rolemodels';
+import Rolemodels from './Pages/Rolemodels';
 import Rolemodel from './pages/Rolemodel';
 import { Faq } from './pages/Faq';
 import Layout from './pages/Layout';
@@ -55,13 +55,15 @@ export const router = createBrowserRouter([
         path: 'rolemodels',
         element: <Rolemodels />
       },
-  
-
       {
         path: 'rolemodel',
-        element: <Rolemodel />
+        element: <Rolemodels />,
       },
-
+      {
+        path: 'rolemodel/:slug',
+        element: <Rolemodel />,
+      },
+      
       {
         path: 'toys',
         element: <Toys />
