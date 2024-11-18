@@ -2,21 +2,21 @@
 .home-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
   }
 
   /* Titel stil */
 .home-title {
     text-align: center;
     font-size: 35px;
-    margin-bottom: 50px;
-    margin-top: 150px;
+    margin-bottom: 40px;
+    margin-top: 80px;
     color: black;
   }
 
   .intro-text {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 15px;
     line-height: 1.5; /* Gör att texten inte är för tät */
     color: black;
