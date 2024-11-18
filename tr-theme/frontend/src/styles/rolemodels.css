@@ -14,7 +14,9 @@ h1 {
     justify-content: center; 
     padding-right: 80px;
     padding-left: 80px;
+    margin-bottom: 50px;
 }
+
 
 .c-btn {
     background-color: #ffffff; 
@@ -33,21 +35,34 @@ h1 {
 }
 
 /* grid-systemet för förebilderna */
+/* Adjusts grid container for better alignment */
 .grid-container {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); /* 3 kolumner */
-    grid-template-rows: repeat(3, auto); /* 3 rader */
-    gap: 30px; /* Avstånd mellan boxar */
-    padding: 100px;
-    justify-content: center; /* Centrera innehållet horisontellt */
-}
-
-.grid-item {
-    background-color: #f0f0f0; 
-    border: 1px solid black; 
-    padding: 70px; 
-    width: 200px; 
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Styles each grid item for consistency */
+  .grid-item {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background-color: #f9f9f9; /* Adjust background color as needed */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Adds a hover effect */
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    max-height: auto; 
+    object-fit: cover; 
+    border-radius: 4px;
+  }
+  
 
 
 .grid-item a {

@@ -1,46 +1,82 @@
-.container-first-section {
-  display: flex; 
-  align-items: center; 
-}
-
-.hero-rolemodel {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px; 
-  color: black;
-  margin-left: 25%;
-  margin-bottom: 100px;
-}
-
-.img-rolemodel {
+/* Main container layout */
+.rolemodel-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
-  border: 2px solid black;
+  font-family: Arial, sans-serif;
+  max-width: 80%;
+  margin: auto;
 }
 
-.img-rolemodel img {
-  width: 100px; 
-  height: auto;
-}
-
-.container-second-section {
-  color: black;
+/* Header section with text and image side-by-side */
+.rolemodel-header {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  flex-direction: column;
-  text-align: center;
-  background-size: contain; 
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.rolemodel-text {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+}
+
+.rolemodel-text h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.rolemodel-text p {
+  font-size: 1.2em;
+  color: #777;
+  margin-top: 10px;
+}
+
+.rolemodel-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;       /* Fixed width for the container, adjust as needed */
+  max-width: 100%;    /* Prevents it from growing beyond the container */
+  background-color: #F5F5DC; /* Optional background color */
+  border-radius: 10px; /* Optional rounded corners for styling */
+}
+
+/* Ensure image itself remains small and centered */
+.rolemodel-image {
+  max-width: 100%;    /* Image will not exceed the container’s width */
+  height: auto;       /* Maintain aspect ratio */
+  border-radius: 5px; /* Optional styling */
+}
+
+
+/* Main text section */
+.rolemodel-main-text {
+  width: 100%;
+  margin-top: 30px;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Bubble background section for small text at bottom */
+.rolemodel-bubble-text {
+  width: 100%;
+  padding: 130px;
+  margin-top: 50px;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  min-height: 400px;
+  text-align: center;
 }
 
-.p-container {
-  max-width: 40%; 
-  box-sizing: border-box; 
-  padding: 40px;
+.rolemodel-bubble-text p {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
 }
+
