@@ -68,7 +68,7 @@ const Home = () => {
     };
  
   useEffect(() => {
-    fetch('http://localhost:8082/wp-json/wp/v2/posts') 
+    fetch('https://techforalla.se/wp-json/wp/v2/posts')
       .then(response => response.json())
       .then(data => setPosts(data))
       .catch(error => console.error('Error fetching posts:', error));
