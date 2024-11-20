@@ -1,11 +1,13 @@
 import React from "react";
 import '../styles/footer.css';
 import { NavLink } from 'react-router-dom';
-import footerbild from '../img/footer.png'; 
+// import footerbild from '../../../frontend/dist/assets/footer.png';
+
+const footerImagePath = `${import.meta.env.BASE_URL}assets/footer.png`;
 
 const Footer = () => {
   return (
-    <footer className="footer" style={{ backgroundImage: `url(${footerbild})` }}>
+    <footer className="footer" style={{ backgroundImage: `url(${footerImagePath})` }}>
       <div className="footer-content">
         <div className="logo">
           {/* Här kommer loggan att placeras */}
