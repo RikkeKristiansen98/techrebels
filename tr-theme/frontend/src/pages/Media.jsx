@@ -1,6 +1,6 @@
 import '../styles/media.css';
-import form1 from '../img/1.png'; 
-import form2 from '../img/2.png'; 
+import form1 from '../images/1.png'; 
+import form2 from '../images/2.png'; 
 import React, { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';

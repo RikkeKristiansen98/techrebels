@@ -1,9 +1,7 @@
 import React from "react";
 import '../styles/footer.css';
 import { NavLink } from 'react-router-dom';
-// import footerbild from '../../../frontend/dist/assets/footer.png';
-
-const footerImagePath = `${import.meta.env.BASE_URL}assets/footer.png`;
+const footerImagePath = 'https://techforalla.se/images/footer.png';
 
 const Footer = () => {
   return (

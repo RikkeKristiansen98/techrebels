@@ -3,8 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  
-  // Konfiguration för lokal utvecklingsserver
   server: {
     proxy: {
       '/wp-json': {
@@ -15,7 +13,6 @@ export default defineConfig({
     }
   },
 
-  // Byggkonfiguration för produktion
   build: {
     rollupOptions: {
       output: {
@@ -25,8 +22,5 @@ export default defineConfig({
         chunkFileNames: 'assets/[name].js',
       }
     }
-  },
-
-  // Bas-URL för WordPress
-  base: '/wp-content/themes/tr-theme/frontend/', // Ändra till din WordPress-temasökväg
+  }
 });

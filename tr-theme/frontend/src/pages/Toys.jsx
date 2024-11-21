@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/toys.css';
-import form3 from '../img/1.png'; // Första bakgrundsformen
-import form4 from '../img/2.png'; // Andra bakgrundsformen
-import toys1 from '../img/toys.jpg';
-import toys2 from '../img/toyss.jpg';
-import toys3 from '../img/toysss.jpg';
+import form3 from '../images/1.png'; // Första bakgrundsformen
+import form4 from '../images/2.png'; // Andra bakgrundsformen
+import toys1 from '../images/toys.jpg';
+import toys2 from '../images/toyss.jpg';
+import toys3 from '../images/toysss.jpg';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 

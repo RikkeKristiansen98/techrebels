@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import '../styles/rolemodel.css';
-import textbackground from '../img/textbackground.png';
+
+
+const textImagePath = 'https://techforalla.se/images/textbackground.png';
 
 export const Rolemodel = () => {
   const { slug } = useParams(); // Get slug from URL
@@ -54,7 +56,7 @@ export const Rolemodel = () => {
         <div dangerouslySetInnerHTML={{ __html: rolemodel.acf?.main_text || rolemodel.content.rendered }} />
       </div>
 
-      <div className="rolemodel-bubble-text" style={{ backgroundImage: `url(${textbackground})` }}>
+      <div className="rolemodel-bubble-text" style={{ backgroundImage: `url(${textImagePath})` }}>
         <p>{rolemodel.acf?.bubble_text || 'Här är en liten text som visas längst ner.'}</p>
       </div>
     </div>
