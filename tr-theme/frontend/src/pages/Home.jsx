@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/home.css";
+import logoHero from "../images/big-logo-4.png";
+import elementImage from "../images/element-image.png";
 import { Link } from "react-router-dom";
 
 const blobOnePath = "https://techforalla.se/images/1.png";
@@ -82,7 +84,20 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1 className="home-title">Hitta din nästa inspirationskälla!</h1>
+      <h1 className="home-title header-1">
+        <img
+          src={logoHero}
+          alt="Tech för alla logo"
+          className="logo-hero-image"
+        />
+        <br></br>Hitta din nästa inspirationskälla!
+      </h1>
+      <img
+        src={elementImage}
+        alt="Dekorativ element"
+        className="element-image"
+      />
+      
       <p className="intro-text">
         Välkommen till Tech För Alla! Här hittar du tips om allt från böcker
         till inspirerande förebilder. Registrera dig, spara dina favorit-tips
@@ -103,7 +118,7 @@ const Home = () => {
 
       {/* Tips Section */}
       <div className="carousel">
-        <h2>Tech Rebels tipsar</h2>
+        <h2 className="header">Tech Rebels tipsar</h2>
         <div className="carousel-wrapper">
           <button className="arrow left" onClick={prevSlide}>
             ←

@@ -5,13 +5,12 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #FFFF;
+  background-color: #ffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 a {
@@ -36,6 +35,19 @@ h1 {
   line-height: 1.1;
 }
 
+.header-1 {
+  color: #213547;
+  font-family: "Titan One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.header-2 {
+  font-family: "Changa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

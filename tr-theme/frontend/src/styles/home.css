@@ -8,10 +8,8 @@
   /* Titel stil */
 .home-title {
     text-align: center;
-    font-size: 35px;
     margin-bottom: 40px;
     margin-top: 80px;
-    color: black;
   }
 
   .intro-text {
@@ -24,6 +22,23 @@
     margin-left: auto; /* Centrera horisontellt */
     margin-right: auto;
   }
+
+  /*logo */
+
+  .logo-hero-image {
+    width: 40%;
+    position: relative; /* Gör logotypen positionerbar */
+    z-index: 2; /* Se till att logotypen ligger ovanpå */
+  }
+  
+  .element-image {
+    position: absolute; /* Placera side-element absolut */
+    top: 15%; /* Justera efter behov */
+    left: 32%; /* Justera efter behov */
+    width: 40%; /* Anpassa bredden */
+    z-index: 1; /* Lägre än logotypen så att den hamnar bakom */
+  }
+  
   
   /* Hero Section */
   .hero {
