@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/home.css";
-import logoHero from "../images/big-logo-4.png";
-import elementImage from "../images/element-image.png";
+import logoHero from "../images/big-logo-5.png";
+import elementImage from "../images/element-3.png";
 import { Link } from "react-router-dom";
 
 const blobOnePath = "https://techforalla.se/images/1.png";

@@ -1,5 +1,5 @@
 header {
-  background-color: #d2dbc6; 
+  background-color: var(--dark-green); 
   padding: 10px; 
   width: 100vw;
   height: 60px; 

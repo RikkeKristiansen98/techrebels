@@ -7,6 +7,16 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #ffff;
 
+  /*color scheme */
+
+  --light-green: #dee5d4;
+  --dark-green: #475841;
+  --pink-theme: #ca8787;
+  --beige-theme: #fff8e9;
+  --light: #FFFFFF;
+  --dark: #111214;
+
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +46,7 @@ h1 {
 }
 
 .header-1 {
-  color: #213547;
+  color: var(--dark);
   font-family: "Titan One", sans-serif;
   font-weight: 200;
   font-style: normal;
