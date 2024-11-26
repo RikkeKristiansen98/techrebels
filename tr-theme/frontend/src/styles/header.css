@@ -1,11 +1,13 @@
 header {
   background-color: var(--dark-green); 
-  padding: 10px; 
+  padding: 2.5%; 
   width: 100vw;
-  height: 60px; 
+  height: 120px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 
@@ -28,6 +30,6 @@ nav ul li a {
 
 nav ul li a:hover {
   text-decoration: underline;
-  color: rgb(189, 226, 133);
+  color: var(--light-green);
 }
  
