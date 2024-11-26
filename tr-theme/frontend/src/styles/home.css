@@ -4,10 +4,12 @@ main {
 }
 
 .home-container {
-  
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   /* Titel stil */

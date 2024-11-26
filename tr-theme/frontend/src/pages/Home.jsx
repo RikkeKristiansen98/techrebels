@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../styles/home.css";
-import logoHero from "../images/big-logo-5.png";
-import elementImage from "../images/element-3.png";
 import { Link } from "react-router-dom";
 
 const blobOnePath = "https://techforalla.se/images/1.png";
@@ -84,10 +82,10 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1 className="home-title header-1">Hitta din nästa inspirationskälla!
+      <h1 className="home-title header-1">
+        Hitta din nästa inspirationskälla!
       </h1>
-     
-      
+
       <p className="intro-text">
         Välkommen till Tech För Alla! Här hittar du tips om allt från böcker
         till inspirerande förebilder. Registrera dig, spara dina favorit-tips
@@ -108,7 +106,7 @@ const Home = () => {
 
       {/* Tips Section */}
       <div className="carousel">
-        <h2 className="header">Tech Rebels tipsar</h2>
+        <h2 className="header-2">Tech Rebels tipsar</h2>
         <div className="carousel-wrapper">
           <button className="arrow left" onClick={prevSlide}>
             ←

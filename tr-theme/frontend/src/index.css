@@ -47,14 +47,14 @@ h1 {
 
 .header-1 {
   color: var(--dark);
-  font-family: "Lexend", sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
 .header-2 {
-  font-family: "Lexend", sans-serif;
-  font-weight: 500;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
   font-style: normal;
 }
 
