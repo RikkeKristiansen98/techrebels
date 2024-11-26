@@ -1,3 +1,36 @@
+.footer {
+  position: relative;
+  background-color: var(--light-green); 
+  color: white;
+  overflow: hidden;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2; 
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.footer-svg {
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.link {
+  color: #ca8787;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -5,7 +38,8 @@
   padding: 50px;
   padding-top: 200px;
   gap: 40px;
-  z-index: 2;
+  z-index: 2; 
+  position: relative; 
 }
 
 .newsletter {
@@ -42,28 +76,25 @@
   font-size: 16px;
   border: none;
   outline: none;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 
 .send-nl-btn {
-  position: absolute;
-  top: 50%;
-  right: 0px;
-  transform: translateY(-50%);
   background-color: #ca8787;
   color: white;
   border: none;
   cursor: pointer;
   padding: 13px;
-  z-index: 1;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 
 .newsletter-container {
   display: flex;
   justify-content: center; 
-  position: relative;
 }
 
-/* finns ingen logga än */
 .logo {
   flex: 1;
   display: flex;
@@ -86,5 +117,4 @@
     flex-direction: column;
     font-size: 16px;
   }
-
 }

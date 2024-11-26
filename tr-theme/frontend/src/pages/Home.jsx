@@ -84,19 +84,9 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1 className="home-title header-1">
-        <img
-          src={logoHero}
-          alt="Tech för alla logo"
-          className="logo-hero-image"
-        />
-        <br></br>Hitta din nästa inspirationskälla!
+      <h1 className="home-title header-1">Hitta din nästa inspirationskälla!
       </h1>
-      <img
-        src={elementImage}
-        alt="Dekorativ element"
-        className="element-image"
-      />
+     
       
       <p className="intro-text">
         Välkommen till Tech För Alla! Här hittar du tips om allt från böcker
