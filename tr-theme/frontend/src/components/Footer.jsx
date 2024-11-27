@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/footer.css";
+import "../styles/components-styles/footer.scss";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
@@ -25,7 +25,7 @@ const Footer = () => {
           <h3>Har du frågor?</h3>
           <p>
             I vår{" "}
-            <NavLink to="/faq" className="link">
+            <NavLink to="/faq" className="faq-link">
               FAQ
             </NavLink>{" "}
             hittar du svaren på de vanligaste frågorna.

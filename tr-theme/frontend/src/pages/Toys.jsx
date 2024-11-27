@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/toys.css';
+import '../styles/pages-styles/toys.css';
 import form3 from '../images/1.png'; // Första bakgrundsformen
 import form4 from '../images/2.png'; // Andra bakgrundsformen
 import toys1 from '../images/toys.jpg';

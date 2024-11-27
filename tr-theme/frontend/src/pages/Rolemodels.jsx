@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/rolemodels.css";
+import "../styles/pages-styles/rolemodels.css";
 import React, { useEffect, useState } from "react";
 
 const blobOnePath = "https://techforalla.se/images/1.png";

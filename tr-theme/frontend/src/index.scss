@@ -26,13 +26,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
-  background-color: var(--light-green);
-  width: 100vw;
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
 }
 
-html,
-body {
+html,body {
   margin: 0;
   display: flex;
   place-items: center;
@@ -40,6 +43,7 @@ body {
   flex-direction: column;
   overflow-x: hidden;
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -55,7 +59,7 @@ h1 {
 
 .header-2 {
   font-family: "League Spartan", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
 }
 
