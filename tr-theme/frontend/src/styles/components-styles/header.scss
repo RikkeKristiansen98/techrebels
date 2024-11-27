@@ -33,7 +33,11 @@ header {
     color: var(--light);
   }
 
-  
+  .logo-image {
+    max-width: 25%;
+    min-width: 20%;
+    padding-bottom: 40px;
+  }
 
   nav {
     ul {
