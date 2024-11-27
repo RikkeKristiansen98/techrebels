@@ -5,16 +5,16 @@
     padding: 40px;
     text-align: center;
 }
-.tipsaoss-svg {
+/* .tipsaoss-svg {
     position: absolute;
     top: 0;
     left: 0;
     opacity: 1;
     margin: 100px;
     margin-left: 400px;
-    width: 60%; /* Gör att SVG:n täcker hela bredden */
-    height: 50%; /* Gör att SVG:n täcker hela höjden */
-    z-index: 1; /* Lägg SVG:n under formuläret */
+    width: 60%; 
+    height: 50%; 
+    z-index: 1; 
 }
 .tipsaoss-svg2 {
     position: absolute;
@@ -23,10 +23,10 @@
     opacity: 1;
     margin: 100px;
     margin-left: 350px;
-    width: 60%; /* Gör att SVG:n täcker hela bredden */
-    height: 50%; /* Gör att SVG:n täcker hela höjden */
-    z-index: 1; /* Lägg SVG:n under formuläret */
-}
+    width: 60%; 
+    height: 50%; 
+    z-index: 1; 
+} */
 .tipsaoss-title {
     font-size: 50px; 
     font-weight: bold;
@@ -105,19 +105,6 @@
 .form-group textarea:focus {
     border: 2px solid #7ca982;
 }
-
-
-/* .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-
-input:invalid, textarea:invalid {
-    border: 2px solid red;
-    box-shadow: 0 0 5px red;
-} */
 
 
 input::placeholder, textarea::placeholder {
