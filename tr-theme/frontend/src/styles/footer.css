@@ -2,25 +2,25 @@
   position: relative;
   background-color: var(--light-green);
   color: white;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .footer-content {
+  height: 280px;
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 50px 20px;
 }
 
 .footer-svg {
   position: absolute;
-  min-height: 100%;
-  max-height: 133%;
+  overflow: hidden;
   bottom: 0;
   left: 0;
-  width: 100%;
   z-index: 1;
+  
 }
+
 
 .link {
   color: #ca8787;
@@ -37,7 +37,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px;
-  padding-top: 200px;
   gap: 40px;
   z-index: 2;
   position: relative;
@@ -114,6 +113,7 @@
 }
 
 /* Responsiv design */
+
 @media (max-width: 760px) {
   .footer-content {
     flex-direction: column; /* Stacka innehållet vertikalt på små skärmar */
@@ -131,3 +131,21 @@
     align-items: center; /* Håller innehållet centrerat även på små skärmar */
   }
 }
+
+@media (max-width: 1400px) {
+  .footer-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1400px; /* Sätt en fast bredd */
+    height: 400px; /* Sätt en fast höjd */
+    transform: translateX(-50%); /* Centrerar SVG:n */
+    left: 50%; /* Flyttar SVG:n till mitten */
+  }
+
+  .footer-content {
+    padding: 20px; /* Dra in texten */
+    text-align: center; /* Håll texten centrerad */
+  }
+}
+
