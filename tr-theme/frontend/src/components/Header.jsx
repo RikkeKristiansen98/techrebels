@@ -19,8 +19,6 @@ export const Header = () => {
         <NavLink to="/">
           {" "}
           <img
-            width="22%"
-            style={{ marginBottom: "20px" }}
             src={logo}
             alt="Tech för alla logo"
             className="logo-image"
@@ -28,7 +26,7 @@ export const Header = () => {
         </NavLink>
       </div>
       <nav>
-        <ul>
+        <ul className="header-2">
           <li>
             <NavLink to="#">Tipsbanken</NavLink>
           </li>
