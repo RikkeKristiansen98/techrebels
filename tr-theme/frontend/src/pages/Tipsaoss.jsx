@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/tipsaoss.css"; // Importera CSS-filen
+import "../styles/pages-styles/tipsaoss.css"; // Importera CSS-filen
 
 const TipsaOss = () => {
   const [email, setEmail] = useState("");

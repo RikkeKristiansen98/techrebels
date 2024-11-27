@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/home.css";
+import "../styles/pages-styles/home.css";
 import { Link } from "react-router-dom";
 
 const blobOnePath = "https://techforalla.se/images/1.png";
