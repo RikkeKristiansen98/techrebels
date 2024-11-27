@@ -1,15 +1,36 @@
 header {
   background-color: var(--dark-green); 
-  padding: 2.5%; 
-  height: 120px; 
+  padding: 2.2%; 
+  width: 100vw;
+  height: 110px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
 }
+.dropdown-container {
+  position: relative;
+}
 
-
+.dropdown-menu {
+  position: absolute;
+  top: 50px; /* Placera den under ikonen */
+  right: 0;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  background-color: var(--dark-green); 
+  border-radius: 7px;
+  width: 250px; /* Använd den storlek du vill ha */
+  padding: 15px;
+  margin: 10px;
+}
+.person-icon {
+  cursor: pointer;
+  color: var(--light);
+}
 nav ul {
   list-style: none;
   display: flex;

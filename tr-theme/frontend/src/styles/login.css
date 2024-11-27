@@ -1,4 +1,4 @@
-* {
+ *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,7 +7,28 @@
 body {
     overflow-x: hidden;
 }
-
+.login-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 100px;
+    opacity: 1;
+    margin-left: 400px;
+    width: 60%; 
+    height: 50%; 
+    z-index: 1; 
+}
+.login-svg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 100px;
+    opacity: 1;
+    margin-left: 400px;
+    width: 60%; 
+    height: 50%; 
+    z-index: 1; 
+}
 .login_container {
     background-color: #EFF2EA;
     color: black;
@@ -21,26 +42,31 @@ body {
 }
 
 .login-title {
-    margin-bottom: 10px; /* Reduced margin for a tighter layout */
-    font-size: 36px;
-    margin: 20px auto;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding: 80px;
+    position: absolute; /* Placera den absolut över SVG */
+    top: 20px; /* Placera den nära toppen */
+    left: 50%; /* Centrera den horisontellt */
+    transform: translateX(-50%); /* Flytta tillbaka med 50% av elementets bredd för perfekt centrering */
+    z-index: 3; 
 }
+
 
 .form-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    width: 450px;
     max-width: 800px; /* Increased the max width of the form box */
-    background-color: #ca8787;
     padding: 30px; /* Reduced padding inside the box */
-    border-radius: 50px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto; /* Center the form horizontally */
 }
 
 .login-form {
+    z-index: 2; /* Formuläret måste ha ett högre z-index än SVG:n */
+    position: relative; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,13 +74,10 @@ body {
 }
 
 .form-label {
-    font-weight: bold;
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 10px;
-    margin-left: 135px;
+    margin-bottom: 5px;
+    color: white; 
+    font-size: 20px;
     text-align: left;
-    width: 100%;
 }
 
 .form-input {
@@ -70,18 +93,16 @@ body {
 }
 
 .login_btn {
-    background-color: #3F5438;
-    color: white;
-    padding: 15px 30px;
+    background-color: white;
+    color: #3b5a40;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
+    padding: 10px 20px;
+    font-size: 20px;
     cursor: pointer;
-    width: 100%;
-    max-width: 600px;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    margin-top: 50px;
 }
 
 .login_btn:hover {
-    background-color: #2c3e2a;
+    background-color: var(--light-green);
 }
