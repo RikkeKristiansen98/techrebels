@@ -9,9 +9,38 @@
     padding-top: 20px;
 }
 
+.login-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 100px;
+    opacity: 1;
+    margin-left: 400px;
+    width: 60%; 
+    height: 50%; 
+    z-index: 1; 
+}
+
+.login-svg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 100px;
+    opacity: 1;
+    margin-left: 400px;
+    width: 60%; 
+    height: 50%; 
+    z-index: 1; 
+}
 .register-title {
-    text-align: center;
-    margin: 30px auto;
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding: 80px;
+    position: absolute; /* Placera den absolut över SVG */
+    top: 20px; /* Placera den nära toppen */
+    left: 50%; /* Centrera den horisontellt */
+    transform: translateX(-50%); /* Flytta tillbaka med 50% av elementets bredd för perfekt centrering */
+    z-index: 3; 
 }
 
 .register-form {
@@ -20,6 +49,8 @@
     align-items: center;
     width: 100%;
     padding: 20px;
+    z-index: 2; /* Formuläret måste ha ett högre z-index än SVG:n */
+    position: relative; 
 }
 
 .name-container {
@@ -38,7 +69,6 @@
 .name-field label, .last-name-field label {
     text-align: left;
     display: block;
-    font-weight: bold;
     color: #fff;
     font-size: 18px;
     margin-bottom: 10px;

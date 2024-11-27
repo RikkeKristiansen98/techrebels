@@ -5,23 +5,42 @@
     padding: 40px;
     text-align: center;
 }
-
+.tipsaoss-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    margin: 100px;
+    margin-left: 400px;
+    width: 60%; /* Gör att SVG:n täcker hela bredden */
+    height: 50%; /* Gör att SVG:n täcker hela höjden */
+    z-index: 1; /* Lägg SVG:n under formuläret */
+}
+.tipsaoss-svg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    margin: 100px;
+    margin-left: 350px;
+    width: 60%; /* Gör att SVG:n täcker hela bredden */
+    height: 50%; /* Gör att SVG:n täcker hela höjden */
+    z-index: 1; /* Lägg SVG:n under formuläret */
+}
 .tipsaoss-title {
     font-size: 50px; 
     font-weight: bold;
-    margin-bottom: 50px;
-    color: black;
+    color: var(--dark);
 }
 
 .tipsaoss-form {
-    background-color: #3f5438;
     padding: 80px;
-    border-radius: 50px; 
-    width: 600px; 
-    margin: 0 auto; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    width: 600px;
+    margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 150px;
+    z-index: 2; /* Formuläret måste ha ett högre z-index än SVG:n */
+    position: relative; 
 }
 
 
@@ -43,7 +62,7 @@
 .form-group label {
     margin-bottom: 5px;
     color: white; 
-    font-size: 16px;
+    font-size: 18px;
     text-align: left; 
 }
 
@@ -54,6 +73,7 @@
     font-size: 16px; 
     background-color: white;
     border: none;
+    border-radius: 7px;
     outline: none;
     color: black;
     width: 100%;
@@ -70,14 +90,15 @@
     background-color: white;
     color: #3b5a40;
     border: none;
+    border-radius: 7px;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     margin-top: 50px;
 }
 
 .submit-button:hover {
-    background-color: #e7e7e7;
+    background-color: var(--light-green);
 }
 
 .form-group input:focus,
@@ -86,7 +107,7 @@
 }
 
 
-.error-message {
+/* .error-message {
     color: red;
     font-size: 14px;
     margin-top: 5px;
@@ -96,7 +117,7 @@
 input:invalid, textarea:invalid {
     border: 2px solid red;
     box-shadow: 0 0 5px red;
-}
+} */
 
 
 input::placeholder, textarea::placeholder {
