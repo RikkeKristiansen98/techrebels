@@ -1,4 +1,4 @@
-import '../styles/media.css';
+import '../styles/pages-styles/media.css';
 import form1 from '../images/1.png'; 
 import form2 from '../images/2.png'; 
 import React, { useState } from 'react';

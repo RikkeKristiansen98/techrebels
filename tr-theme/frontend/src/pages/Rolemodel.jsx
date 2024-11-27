@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import '../styles/rolemodel.css';
+import '../styles/pages-styles/rolemodel.css';
 
 
 const textImagePath = 'https://techforalla.se/images/textbackground.png';

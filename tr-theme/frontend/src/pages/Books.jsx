@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../styles/books.css';
+import '../styles/pages-styles/books.css';
 
 import SearchIcon from '@mui/icons-material/Search';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

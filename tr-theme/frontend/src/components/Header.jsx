@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../styles/header.css";
+import "../styles/components-styles/header.scss";
 import logo from "../images/logo-1.png";
 import PersonIcon from "@mui/icons-material/Person";
 import { Login } from "../pages/Login";

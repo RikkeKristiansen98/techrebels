@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveIcon from '@mui/icons-material/Remove';
-import '../styles/faq.css';
+import '../styles/pages-styles/faq.css';
 // import Image1 from '../img/1.png'
 // import Image2 from '../img/2.png'
 
