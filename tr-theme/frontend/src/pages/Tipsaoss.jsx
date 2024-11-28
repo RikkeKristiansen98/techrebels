@@ -48,7 +48,7 @@ const TipsaOss = () => {
   {/* SVG Blobbar */}
   <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden md:flex">
     {/* SVG Blob 1 */}
-    <div className="absolute sm:mr-[85%] md:ml-[88%] md:w-[123%] md:h-[180%] lg:mr-[130%] lg:w-[110%] lg:h-[113%] xl:ml-[134%] xl:w-[100%] xl:h-[110%] sm:hidden md:flex z-0">
+    <div className="absolute sm:mr-[85%] md:ml-[88%] md:w-[123%] md:h-[180%] lg:mr-[130%] lg:w-[110%] lg:h-[113%] xl:ml-[174%] xl:w-[100%] xl:h-[110%] sm:hidden md:flex z-0">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <path
           fill="#475841"
@@ -59,7 +59,7 @@ const TipsaOss = () => {
     </div>
 
     {/* SVG Blob 2 */}
-    <div className="absolute sm:mr-[72%] md:ml-[78%] md:w-[125%] md:h-[135%] lg:mr-[130%] lg:w-[100%] lg:h-[110%] xl:ml-[134%] xl:w-[100%] xl:h-[100%] sm:hidden md:flex z-0">
+    <div className="absolute sm:mr-[72%] md:ml-[78%] md:w-[125%] md:h-[135%] lg:mr-[130%] lg:w-[100%] lg:h-[110%] xl:ml-[176%] xl:w-[100%] xl:h-[100%] sm:hidden md:flex z-0">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <path
           fill="#CA8787"
@@ -74,11 +74,11 @@ const TipsaOss = () => {
   <h1 className="absolute top-8 text-4xl font-bold text-center z-10">
     Vill du skicka in tips till oss?
   </h1>
-  <div className="relative z-10 w-full max-w-lg mt-[-7%]">
-    <form onSubmit={handleSubmit} className="space-y-4">
+  <div className="relative z-10 mt-[-10%]">
+    <form onSubmit={handleSubmit} className="space-y-2 gap-x-12 grid grid-cols-2">
       <div>
-        <label htmlFor="email" className="block text-xl font-medium text-white">
-          Din epost
+        <label htmlFor="email" className="block text-xl text-white">
+          E-post:
         </label>
         <input
           type="email"
@@ -86,74 +86,75 @@ const TipsaOss = () => {
           value={email}
           onChange={(e) => handleInputChange(setEmail, "email", e.target.value)}
           placeholder="example@example.com"
-          className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          className="mt-1 p-2 rounded-md shadow-sm"
         />
         {errors.email && <span className="text-red-500 text-xl">{errors.email}</span>}
       </div>
 
       <div>
-        <label htmlFor="kategori" className="block text-xl font-medium text-white">
-          Kategori
+        <label htmlFor="kategori" className="block text-xl text-white">
+          Kategori:
         </label>
         <input
           type="text"
           id="kategori"
           value={kategori}
           onChange={(e) => handleInputChange(setKategori, "kategori", e.target.value)}
-          className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          className="mt-1 p-2 rounded-md w-80 shadow-sm"
         />
         {errors.kategori && <span className="text-red-500 text-xl">{errors.kategori}</span>}
       </div>
 
       <div>
-        <label htmlFor="titel" className="block text-xl font-medium text-white">
-          Titel
+        <label htmlFor="titel" className="block text-xl text-white">
+          Titel:
         </label>
         <input
           type="text"
           id="titel"
           value={titel}
           onChange={(e) => handleInputChange(setTitel, "titel", e.target.value)}
-          className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          className="mt-1 p-2 border rounded-md shadow-sm"
         />
         {errors.titel && <span className="text-red-500 text-xl">{errors.titel}</span>}
       </div>
 
       <div>
-        <label htmlFor="alder" className="block text-xl font-medium text-white">
-          Ålder
+        <label htmlFor="alder" className="block text-xl text-white">
+          Ålder:
         </label>
         <input
           type="number"
           id="alder"
           value={alder}
           onChange={(e) => handleInputChange(setAlder, "alder", e.target.value)}
-          className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          className="mt-1 p-2 rounded-md shadow-sm"
         />
         {errors.alder && <span className="text-red-500 text-xl">{errors.alder}</span>}
       </div>
 
-      <div>
-        <label htmlFor="beskrivning" className="block text-xl font-medium text-white">
-          Beskriv tipset
+      <div className="">
+        <label htmlFor="beskrivning" className="block text-xl text-white">
+          Beskriv tipset:
         </label>
         <textarea
           id="beskrivning"
           value={beskrivning}
           onChange={(e) => handleInputChange(setBeskrivning, "beskrivning", e.target.value)}
           placeholder="Din beskrivning..."
-          className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+          className="mt-1 p-2 rounded-md"
         />
         {errors.beskrivning && <span className="text-red-500 text-xl">{errors.beskrivning}</span>}
       </div>
-
+    </form>
+    <div className="ml-[28%]">
       <button
         type="submit"
-        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+        className="btn w-64 p-1 mt-[10%]"
       >
-        Skicka
+        Skicka tips
       </button>
-    </form>
+      </div>
   </div>
 </div>
   );

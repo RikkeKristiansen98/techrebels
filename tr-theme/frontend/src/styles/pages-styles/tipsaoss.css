@@ -111,3 +111,15 @@ input::placeholder, textarea::placeholder {
     color: #aaa;
 }
     */
+
+    .btn{
+        background-color: var(--light-green);
+        color: var(--dark);
+        border-radius: 7px;
+        font-size: 20px;
+    }
+    #beskrivning{
+        width: 200%;
+        display: flex;
+        
+    }
