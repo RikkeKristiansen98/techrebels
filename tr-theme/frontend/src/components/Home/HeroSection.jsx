@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import arrowRight from "../../images/right-arrow.png";
+import arrowRight from "../../images/right-arrow-white.png";
 
 const HeroSection = ({ shapes, title, introText }) => {
   return (
