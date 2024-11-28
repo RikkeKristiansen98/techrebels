@@ -45,39 +45,31 @@ const TipsaOss = () => {
   return (
     
 <div className="relative flex flex-col justify-center items-center min-h-screen">
-  {/* SVG Blobbar */}
-  <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden md:flex">
+        {/* SVG Blobbar */}
+         {/* SVG Blob 2 */}
+ <div className="absolute sm:mr-[72%] md:ml-[78%] md:w-[125%] md:h-[135%] lg:mr-[130%] lg:w-[100%] lg:h-[110%] xl:ml-[176%] xl:w-[70%] xl:h-[90%] sm:hidden md:flex z-0">
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path fill="#475841" d="M45,-57.8C57,-43.6,64.5,-28.1,69.1,-10.9C73.7,6.3,75.3,25.4,67.9,40.1C60.5,54.8,44,65.2,25.8,72.5C7.6,79.9,-12.4,84.3,-24.6,76.2C-36.9,68,-41.6,47.4,-48.5,30.4C-55.3,13.5,-64.3,0.3,-66.7,-16.3C-69.2,-32.8,-65.1,-52.8,-52.9,-66.9C-40.7,-81.1,-20.3,-89.5,-1.9,-87.2C16.5,-85,33,-72,45,-57.8Z" transform="translate(100 100)" />
+</svg>
+    </div>
+        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden md:flex">
     {/* SVG Blob 1 */}
-    <div className="absolute sm:mr-[85%] md:ml-[88%] md:w-[123%] md:h-[180%] lg:mr-[130%] lg:w-[110%] lg:h-[113%] xl:ml-[174%] xl:w-[100%] xl:h-[110%] sm:hidden md:flex z-0">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill="#475841"
-          d="M43.1,-59.3C52.2,-52.7,53.4,-35.2,59.9,-18.6C66.4,-2.1,78.1,13.6,76.6,26.9C75,40.3,60.2,51.3,45.2,56.8C30.2,62.3,15.1,62.3,1,61C-13.2,59.7,-26.4,57.1,-35,49.5C-43.6,41.9,-47.6,29.3,-56.6,15.2C-65.7,1,-79.7,-14.7,-80.1,-29.9C-80.5,-45.1,-67.3,-59.8,-51.7,-64.3C-36.1,-68.8,-18,-63.2,-0.5,-62.4C17,-61.7,34,-65.9,43.1,-59.3Z"
-          transform="translate(100 100)"
-        />
-      </svg>
+    <div className="absolute opacity-[95%]  sm:mr-[85%] md:ml-[88%] md:w-[123%] md:h-[180%] lg:mr-[130%] lg:w-[110%] lg:h-[113%] xl:mb-[6%] xl:ml-[164%] xl:w-[100%] xl:h-[130%] sm:hidden md:flex z-0">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path fill="#FFF8E9" d="M28.4,-39.1C40.1,-36.6,55.3,-34.4,60.2,-26.6C65.2,-18.8,59.9,-5.5,55,5.8C50.1,17.1,45.7,26.4,41.2,40.9C36.8,55.4,32.3,75,23,77.2C13.8,79.3,-0.2,63.8,-14.4,56.4C-28.7,48.9,-43.2,49.4,-53,43.1C-62.9,36.8,-68.2,23.7,-69.8,10.2C-71.4,-3.2,-69.3,-17,-64.1,-29.6C-58.9,-42.3,-50.5,-53.9,-39.3,-56.6C-28,-59.3,-14,-53.1,-2.9,-48.7C8.3,-44.3,16.6,-41.5,28.4,-39.1Z" transform="translate(100 100)" />
+</svg>
     </div>
 
-    {/* SVG Blob 2 */}
-    <div className="absolute sm:mr-[72%] md:ml-[78%] md:w-[125%] md:h-[135%] lg:mr-[130%] lg:w-[100%] lg:h-[110%] xl:ml-[176%] xl:w-[100%] xl:h-[100%] sm:hidden md:flex z-0">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill="#CA8787"
-          d="M25.3,-30.7C34.5,-22.5,44.7,-16.1,49.7,-6.1C54.6,3.9,54.2,17.5,48.4,28.4C42.7,39.4,31.5,47.7,19.6,50.7C7.7,53.6,-5,51.2,-20.5,48.8C-35.9,46.4,-54.1,44.1,-55.7,35.1C-57.4,26.2,-42.4,10.7,-37.8,-5.1C-33.1,-20.8,-38.7,-36.8,-34.1,-45.8C-29.5,-54.9,-14.8,-57,-3.3,-53C8.1,-49,16.1,-38.9,25.3,-30.7Z"
-          transform="translate(100 100)"
-        />
-      </svg>
-    </div>
   </div>
 
   {/* Formulär ovanpå blobbarna */}
-  <h1 className="absolute top-8 text-4xl font-bold text-center z-10">
+  <h1 className="relative mb-[3%] top-0 text-4xl font-bold text-center z-10">
     Vill du skicka in tips till oss?
   </h1>
-  <div className="relative z-10 mt-[-10%]">
+  <div className="relative mb-[7%] z-10">
     <form onSubmit={handleSubmit} className="space-y-2 gap-x-12 grid grid-cols-2">
       <div>
-        <label htmlFor="email" className="block text-xl text-white">
+        <label htmlFor="email" className="block text-xl text-dark">
           E-post:
         </label>
         <input
@@ -92,7 +84,7 @@ const TipsaOss = () => {
       </div>
 
       <div>
-        <label htmlFor="kategori" className="block text-xl text-white">
+        <label htmlFor="kategori" className="block text-xl text-dark">
           Kategori:
         </label>
         <input
@@ -106,7 +98,7 @@ const TipsaOss = () => {
       </div>
 
       <div>
-        <label htmlFor="titel" className="block text-xl text-white">
+        <label htmlFor="titel" className="block text-xl text-dark">
           Titel:
         </label>
         <input
@@ -120,7 +112,7 @@ const TipsaOss = () => {
       </div>
 
       <div>
-        <label htmlFor="alder" className="block text-xl text-white">
+        <label htmlFor="alder" className="block text-xl text-dark">
           Ålder:
         </label>
         <input
@@ -134,7 +126,7 @@ const TipsaOss = () => {
       </div>
 
       <div className="">
-        <label htmlFor="beskrivning" className="block text-xl text-white">
+        <label htmlFor="beskrivning" className="block text-xl text-dark">
           Beskriv tipset:
         </label>
         <textarea
