@@ -3,7 +3,7 @@ import { useState } from "react";
 import HeroSection from "../components/Home/HeroSection";
 import Carousel from "../components/Home/Carousel";
 import ExploreCategories from "../components/Home/ExploreCategories";
-import "../components/Home/Home.scss";
+import "../components/Home/Home.css";
 
 const Home = () => {
   // Sökvägar för tipsbilder

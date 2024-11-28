@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
-import "../styles/components-styles/header.scss";
-import logo from "../images/logo-1.png";
-import PersonIcon from "@mui/icons-material/Person";
-import { Login } from "../pages/Login";
-import { Register } from "../pages/Register";
+import "../styles/components-styles/header.css";
 import { useState } from "react";
+import logo from "../images/logo-1.png";
+
+//om inloggningsfunktionalitet ska implementeras
+// import PersonIcon from "@mui/icons-material/Person";
+// import { Login } from "../pages/Login";
+// import { Register } from "../pages/Register";
 
 export const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false); // state för att hantera dropdownmenu
