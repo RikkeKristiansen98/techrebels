@@ -36,7 +36,7 @@ const Footer = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 400"
-        class="footer-svg"
+        className="footer-svg"
       >
         <path
           fill="#475841"
