@@ -3,7 +3,7 @@ import Rolemodels from './Pages/Rolemodels';
 import Rolemodel from './pages/Rolemodel';
 import { Faq } from './pages/Faq';
 import Layout from './pages/Layout';
-import Home from './Pages/Home';
+import Home from './pages/Home';
 import NotFound from './Pages/NotFound';
 import { Register } from './pages/Register'
 import { Login } from './pages/Login'

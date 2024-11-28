@@ -4,7 +4,7 @@ import logo from "../images/logo-1.png";
 import PersonIcon from "@mui/icons-material/Person";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
-import { useState } from 'react';
+import { useState } from "react";
 
 export const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false); // state för att hantera dropdownmenu
@@ -18,11 +18,7 @@ export const Header = () => {
       <div className="logo">
         <NavLink to="/">
           {" "}
-          <img
-            src={logo}
-            alt="Tech för alla logo"
-            className="logo-image"
-          />
+          <img src={logo} alt="Tech för alla logo" className="logo-image" />
         </NavLink>
       </div>
       <nav>
@@ -30,23 +26,22 @@ export const Header = () => {
           <li>
             <NavLink to="#">Tipsbanken</NavLink>
           </li>
-          <li>
-            <NavLink to="/rolemodels">Förebilder</NavLink>
-          </li>
+          
           <li>
             <NavLink to="/tipsaoss">Skicka in tips</NavLink>
           </li>
+          {/* 
+          Om inloggningsfunktionalitet ska implementeras
+          
           <li className="dropdown-container">
-            {/* PersonIcon används för att öppna dropdown */}
             <PersonIcon onClick={toggleDropdown} className="person-icon" />
-            {/* Dropdown visas bara om showDropdown är true */}
             {showDropdown && (
               <div className="dropdown-menu">
                 <NavLink to="/login">Logga in</NavLink>
                 <NavLink to="/register">Registrera nytt konto</NavLink>
               </div>
             )}
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
