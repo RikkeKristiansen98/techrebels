@@ -1,11 +1,11 @@
 /* Container för hela formuläret */
-.tipsaoss-container {
+/* .tipsaoss-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
     text-align: center;
 }
-/* .tipsaoss-svg {
+.tipsaoss-svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,7 +26,7 @@
     width: 60%; 
     height: 50%; 
     z-index: 1; 
-} */
+}
 .tipsaoss-title {
     font-size: 50px; 
     font-weight: bold;
@@ -39,7 +39,7 @@
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 150px;
-    z-index: 2; /* Formuläret måste ha ett högre z-index än SVG:n */
+    z-index: 2;
     position: relative; 
 }
 
@@ -104,9 +104,22 @@
 .form-group input:focus,
 .form-group textarea:focus {
     border: 2px solid #7ca982;
-}
+} 
 
 
 input::placeholder, textarea::placeholder {
     color: #aaa;
 }
+    */
+
+    .btn{
+        background-color: var(--light-green);
+        color: var(--dark);
+        border-radius: 7px;
+        font-size: 20px;
+    }
+    #beskrivning{
+        width: 200%;
+        display: flex;
+        
+    }
