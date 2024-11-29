@@ -58,7 +58,7 @@ const TipsaOss = () => {
 
       <div className="relative z-10 max-w-lg w-full ml-[1%] mt-[2%]">
         <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-10">
-          <div>
+          <div className="w-[116%]">
             <label
               htmlFor="email"
               className="block text-lg font-medium text-gray-700"
