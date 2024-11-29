@@ -103,45 +103,47 @@
 }
 
 .carousel-section .carousel-section-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  position: relative;
-}
-
-.carousel-section .carousel-section-tips {
-  display: flex;
-  gap: 20px;
+  justify-content: center;
   overflow: hidden;
-  width: 100%; /* Anpassa efter dina behov */
-  transform: translateX(calc(-25% * var(--currentIndex))); /* Dynamisk rörelse */
-  transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
-.carousel-section .carousel-section-tips .tip-slide {
-  flex: 0 0 25%; /* För att visa exakt 4 tips */
+.carousel-section-tips {
+  display: flex; /* För horisontell layout */
+  transition: transform 0.5s ease-in-out;
+  gap: 20px; /* Mellanrum mellan kort */
+}
+
+/* Carousel Card */
+
+.carousel-card {
+  flex: 0 0 calc(20% - 20px); /* Korten tar 20% av bredden minus gap */
   text-align: center;
-  background-color: white;
+  padding: 10px;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
-
-.carousel-section .carousel-section-tips .tip-slide:hover {
+.carousel-card:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
-.carousel-section .carousel-section-tips .tip-slide img {
-  max-width: 150px;
+.carousel-card-image {
+  max-width: 100%;
   height: auto;
-  margin-bottom: 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
-.carousel-section .carousel-section-tips .tip-slide p {
+.carousel-card-title {
   font-size: 18px;
-  color: #555;
+  color: #333;
   margin: 10px 0 0;
 }
 
@@ -172,14 +174,13 @@
 
 .carousel-section .carousel-section-arrow-left {
   position: absolute;
-  left: -50px;
+  left: -10px;
 }
 
 .carousel-section .carousel-section-arrow-right {
   position: absolute;
-  right: -50px;
+  right: -10px;
 }
-
 
 /* Explore Categories */
 .explore-categories {
@@ -226,16 +227,25 @@
   font-size: 20px;
 }
 
-.explore-categories .explore-categories-buttons .explore-category-button .explore-category-link {
+.explore-categories
+  .explore-categories-buttons
+  .explore-category-button
+  .explore-category-link {
   text-decoration: none;
   color: inherit;
 }
 
-.explore-categories .explore-categories-buttons .explore-category-button .explore-category-link:hover {
+.explore-categories
+  .explore-categories-buttons
+  .explore-category-button
+  .explore-category-link:hover {
   color: inherit;
 }
 
-.explore-categories .explore-categories-buttons .explore-category-button .explore-category-name {
+.explore-categories
+  .explore-categories-buttons
+  .explore-category-button
+  .explore-category-name {
   font-weight: bold;
 }
 
@@ -292,5 +302,3 @@
 .categories-container .categories .category-btn .link-text:hover {
   color: inherit;
 }
-
-
