@@ -113,7 +113,7 @@ input::placeholder, textarea::placeholder {
     */
 
     .btn{
-        background-color: var(--dark-green);
+        background-color: var(--pink-theme);
         color: var(--dark);
         border-radius: 7px;
         font-size: 20px;
