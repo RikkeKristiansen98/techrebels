@@ -113,10 +113,14 @@ input::placeholder, textarea::placeholder {
     */
 
     .btn{
-        background-color: var(--light-green);
+        background-color: var(--dark-green);
         color: var(--dark);
         border-radius: 7px;
         font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+    .btn:hover{
+        transform: scale(1.1);
     }
     #beskrivning{
         width: 200%;
