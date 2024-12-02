@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import arrowRight from "../../images/right-arrow-white.png";
+
 
 const HeroSection = ({ shapes, title, introText }) => {
+
+  const arrowRight = [
+    "https://techforalla.se/images/right-arrow-white.png"
+  ]
   return (
     <div className="hero-section">
       <div className="hero-section-text">

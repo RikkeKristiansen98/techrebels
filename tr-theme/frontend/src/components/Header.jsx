@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../styles/components-styles/header.css";
 import { useState } from "react";
-import logo from "../images/logo-1.png";
 
 //om inloggningsfunktionalitet ska implementeras
 // import PersonIcon from "@mui/icons-material/Person";
@@ -14,6 +13,10 @@ export const Header = () => {
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown); // Växla värdet för att visa/gömma dropdown-menyn
   };
+
+  const logo = [
+    "https://techforalla.se/images/logo-1.png"
+  ];
 
   return (
     <header>

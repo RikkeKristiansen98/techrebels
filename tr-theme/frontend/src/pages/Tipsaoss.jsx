@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import formImage from "../images/form-background2.png.png";
 import "../styles/pages-styles/tipsaoss.css"; // Importera CSS-filen om det finns specifik styling
 
 const TipsaOss = () => {
@@ -19,6 +18,9 @@ const TipsaOss = () => {
       [fieldName]: "", // Rensar felmeddelanden för det aktuella fältet
     }));
   };
+  const formImage = [
+    "https://techforalla.se/images/form-background2.png.png"
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
