@@ -83,8 +83,8 @@
   transform: translateX(10px);
 }
 
-/* Carousel Section */
-.carousel-section {
+
+/* .carousel-section {
   text-align: center;
   margin: 80px 0;
   padding: 20px;
@@ -110,15 +110,15 @@
 }
 
 .carousel-section-tips {
-  display: flex; /* För horisontell layout */
+  display: flex; 
   transition: transform 0.5s ease-in-out;
-  gap: 20px; /* Mellanrum mellan kort */
-}
+  gap: 20px; 
+} */
 
-/* Carousel Card */
+/* 
 
 .carousel-card {
-  flex: 0 0 calc(20% - 20px); /* Korten tar 20% av bredden minus gap */
+  flex: 0 0 calc(20% - 20px); 
   text-align: center;
   padding: 10px;
   background-color: #ffffff;
@@ -145,7 +145,7 @@
   margin: 10px 0 0;
 }
 
-/* Arrow Buttons */
+
 .carousel-section .carousel-section-arrow {
   display: flex;
   align-items: center;
@@ -178,7 +178,7 @@
 .carousel-section .carousel-section-arrow-right {
   position: absolute;
   right: -10px;
-}
+} */
 
 /* Explore Categories */
 /* .explore-categories {
