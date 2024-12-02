@@ -61,7 +61,7 @@ const Carousel = ({ cards }) => { // Tar emot "cards" som en prop, vilket är en
           </button>
 
           {/* Carousel container */}
-          <div className="overflow-hidden relative p-10 mb-[20%] m-[5%]">
+          <div className="overflow-hidden relative p-10 mb-[15%] m-[5%]">
             <div className="flex transition-transform duration-500 ease-in-out gap-5 justify-center">
               {/* Loopa igenom de synliga korten och rendera dem */}
               {getVisibleCards().map((card, index) => (
