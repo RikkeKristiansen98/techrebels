@@ -1,8 +1,6 @@
 /* Grundstilar */
 .home-container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 20px 20px 0px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -183,7 +181,7 @@
 }
 
 /* Explore Categories */
-.explore-categories {
+/* .explore-categories {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -247,10 +245,10 @@
   .explore-category-button
   .explore-category-name {
   font-weight: bold;
-}
+} */
 
 /* Categories Section */
-.categories-container {
+/* .categories-container {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -301,4 +299,4 @@
 
 .categories-container .categories .category-btn .link-text:hover {
   color: inherit;
-}
+} */

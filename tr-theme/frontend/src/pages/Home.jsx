@@ -33,14 +33,17 @@ const Home = () => {
             favorit-tips och skapa egna önskelistor. Det är enkelt, snabbt och
             helt gratis. Börja upptäcka nya idéer och få inspiration redan idag!"
         shapes={shapes}
-      />
+      />   
+      
+      {/* Explore Categories Section */}
+      <ExploreCategories />
+      
       {/* Carousel Section */}
       <div className=" flex items-center justify-center h-auto p-5 px-10">
          <Carousel cards={cards} />
       </div>
 
-      {/* Explore Categories Section */}
-      <ExploreCategories />
+   
     </div>
   );
 };
