@@ -6,7 +6,6 @@ import ExploreCategories from "../components/Home/ExploreCategories";
 import "../components/Home/Home.css";
 
 const Home = () => {
-
   // Sökvägar för tipsbilder
   const cards = [
     "https://techforalla.se/images/image1.jpg",
@@ -18,11 +17,6 @@ const Home = () => {
     "https://techforalla.se/images/image4.jpg",
   ];
 
-  const shapes = [
-    "https://techforalla.se/images/1.png",
-    "https://techforalla.se/images/2.png",
-  ];
-
   return (
     <div className="home-container">
       {/* Hero Section */}
@@ -32,18 +26,15 @@ const Home = () => {
             till inspirerande förebilder. Registrera dig, spara dina
             favorit-tips och skapa egna önskelistor. Det är enkelt, snabbt och
             helt gratis. Börja upptäcka nya idéer och få inspiration redan idag!"
-        shapes={shapes}
-      />   
-      
+      />
+
       {/* Explore Categories Section */}
       <ExploreCategories />
-      
+
       {/* Carousel Section */}
       <div className=" flex items-center justify-center h-auto p-5 px-10">
-         <Carousel cards={cards} />
+        <Carousel cards={cards} />
       </div>
-
-   
     </div>
   );
 };

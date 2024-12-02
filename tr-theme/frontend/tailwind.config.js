@@ -1,3 +1,5 @@
+import { light } from '@mui/material/styles/createPalette';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,8 +10,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        pinkTheme: "#ca8787",
-        darkGreen: "#475841",
+       lightBeigeTheme: "#FBE5C0",
+       orangeTheme: "#F88379",
+       lightBlueTheme: "#D0E6F0",
+       darkBlueTheme: "#4C5D70",
       },
     },
   },

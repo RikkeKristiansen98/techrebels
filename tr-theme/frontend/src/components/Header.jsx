@@ -1,52 +1,44 @@
 import { NavLink } from "react-router-dom";
-import "../styles/components-styles/header.css";
 import { useState } from "react";
 
-//om inloggningsfunktionalitet ska implementeras
-// import PersonIcon from "@mui/icons-material/Person";
-// import { Login } from "../pages/Login";
-// import { Register } from "../pages/Register";
-
 export const Header = () => {
-  const [showDropdown, setShowDropdown] = useState(false); // state för att hantera dropdownmenu
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
-    setShowDropdown(!showDropdown); // Växla värdet för att visa/gömma dropdown-menyn
+    setShowDropdown(!showDropdown);
   };
 
-  const logo = [
-    "https://techforalla.se/images/logo-1.png"
-  ];
+  const logo = "https://techforalla.se/images/robot-logo-4.png";
 
   return (
-    <header>
+    <header className="bg-[#F88379] p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50">
       <div className="logo">
         <NavLink to="/">
-          {" "}
-          <img src={logo} alt="Tech för alla logo" className="logo-image" />
+          <img
+            src={logo}
+            alt="Tech för alla logo"
+            className="max-w-[25%] scale-[1.4] min-w-[20%] pb-5 ml-5 transition-transform duration-300 ease-in-out hover:scale-110"
+          />
         </NavLink>
       </div>
       <nav>
-        <ul className="header-2">
-          <li>
-            <NavLink to="#">Tipsbanken</NavLink>
+        <ul className="flex gap-8 list-none">
+          <li className="text-lg">
+            <NavLink
+              to="#"
+              className="text-2xl header-2 relative transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:text-white after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-white hover:after:w-full after:transition-all after:duration-300"
+            >
+              Tipsbanken
+            </NavLink>
           </li>
-          
-          <li>
-            <NavLink to="/tipsaoss">Skicka in tips</NavLink>
+          <li className="text-lg">
+            <NavLink
+              to="/tipsaoss"
+              className="text-2xl header-2 relative transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:text-white after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-white hover:after:w-full after:transition-all after:duration-300"
+            >
+              Skicka in tips
+            </NavLink>
           </li>
-          {/* 
-          Om inloggningsfunktionalitet ska implementeras
-          
-          <li className="dropdown-container">
-            <PersonIcon onClick={toggleDropdown} className="person-icon" />
-            {showDropdown && (
-              <div className="dropdown-menu">
-                <NavLink to="/login">Logga in</NavLink>
-                <NavLink to="/register">Registrera nytt konto</NavLink>
-              </div>
-            )}
-          </li> */}
         </ul>
       </nav>
     </header>

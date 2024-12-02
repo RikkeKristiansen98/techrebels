@@ -20,8 +20,12 @@
   max-width: 500px;
 }
 
+.clip-curve {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+}
+
 /* Hero Section */
-.hero-section {
+/* .hero-section {
   position: relative;
   display: flex;
   min-height: 250px;
@@ -81,7 +85,7 @@
 
 .hero-section .hero-section-link .hero-link-text:hover {
   transform: translateX(10px);
-}
+} */
 
 /* Carousel Section */
 .carousel-section {

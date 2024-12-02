@@ -8,14 +8,14 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #ffff;
 
   /*color scheme   #dee5d4; */
 
-  --light-green: #e9ebe7;
+  --light-green: #b4c59f;
   --dark-green: #475841;
-  --pink-theme: #ca8787;
+  --pink-theme: #8288d0;
+
   --beige-theme: #fff8e9;
   --light: #ffffff;
   --dark: #111214;
@@ -31,7 +31,7 @@
 
 
 main {
-  background-color: var(--light-green);
+  background-color: var(--light);
 }
 
 html,body {
