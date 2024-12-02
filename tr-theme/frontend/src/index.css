@@ -21,7 +21,7 @@
   --dark: #111214;
 
   --font-theme: 
-  font-family: "League Spartan", sans-serif;
+  font-family: "Fugaz One", sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -51,18 +51,18 @@ h1 {
 
 .header-1 {
   color: var(--dark);
-  font-family: "League Spartan", sans-serif;
+  font-family: "Fugaz One", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
 .header-2 {
-  font-family: "League Spartan", sans-serif;
+  font-family: "Fugaz One", sans-serif;
   font-weight: 600;
   font-style: normal;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -73,4 +73,4 @@ h1 {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
