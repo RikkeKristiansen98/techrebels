@@ -8,7 +8,7 @@ export const Header = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const logo = "https://techforalla.se/images/robot-logo-4.png";
+  const logo = "https://techforalla.se/images/techforalla.png";
 
   return (
     <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50">
@@ -17,7 +17,7 @@ export const Header = () => {
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="max-w-[30%] min-w-[20%] ml-48 mt-10 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
+            className="max-w-[40%] min-w-[20%] ml-16 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
           />
         </NavLink>
       </div>
@@ -26,13 +26,13 @@ export const Header = () => {
           to="#"
           className="header-2 text-2xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
         >
-          Tipsbanken
+          TIPSBANKEN
         </NavLink>
         <NavLink
           to="/tipsaoss"
           className="header-2 text-2xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
         >
-          Skicka in tips
+          SKICKA IN TIPS
         </NavLink>
       </nav>
       {/* background wave */}
@@ -42,7 +42,7 @@ export const Header = () => {
       ></div> */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="80 10 1280 250"
+        viewBox="80 10 1280 230"
         className="footer-svg"
         style={{
           

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="newsletter">
-          <h3>Prenumerera på nyhetsbrev</h3>
+          <h3 className="header-2 text-xl">Prenumerera på nyhetsbrev</h3>
           <form className="newsletter-container">
             <input
               type="email"
