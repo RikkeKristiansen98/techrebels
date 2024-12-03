@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/pages-styles/tipsaoss.css"; // Importera CSS-filen om det finns specifik styling
 
 const TipsaOss = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +17,6 @@ const TipsaOss = () => {
       [fieldName]: "", // Rensar felmeddelanden för det aktuella fältet
     }));
   };
-  const formImage = [];
 
   const handleSubmit = (e) => {
     e.preventDefault();
