@@ -1,16 +1,12 @@
 import React from "react";
 import ExploreCategoryButton from "./ExploreCategoryButton";
-import book from "../../images/open-book-icon.png";
-import toys from "../../images/toy-box-icon.png";
-import media from "../../images/media-icon.png";
-import roleModel from "../../images/role-model-icon.png";
 
 const ExploreCategories = () => {
   const categories = [
-    { name: "Böcker", link: "/books", image: book },
-    { name: "Media", link: null, image: media },
-    { name: "Leksaker", link: "/toys", image: toys },
-    { name: "Förebilder", link: null, image: roleModel },
+    { name: "Böcker", link: "/books", image: "https://techforalla.se/images/open-book-icon.png"},
+    { name: "Media", link: null, image: "https://techforalla.se/images/media-icon.png" },
+    { name: "Leksaker", link: "/toys", image: "https://techforalla.se/images/toy-box-icon.png" },
+    { name: "Förebilder", link: null, image: "https://techforalla.se/images/role-model-icon.png" },
   ];
 
   return (
