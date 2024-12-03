@@ -10,10 +10,9 @@ export default {
   theme: {
     extend: {
       colors: {
-       lightBeigeTheme: "#F2F3AE",
-       orangeTheme: "#FF9B71",
-       lightBlueTheme: "#95B8D1",
-       darkBlueTheme: "#383F51",
+       orangeTheme: "#F1AB86",
+       greenTheme: "#A5C882",
+       blueTheme: "#16697A",
       },
     },
   },

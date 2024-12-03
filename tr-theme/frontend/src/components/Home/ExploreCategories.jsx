@@ -10,7 +10,7 @@ const ExploreCategories = () => {
   ];
 
   return (
-    <div className="explore-categories flex bg-lightBlueTheme h-64 relative my-20">
+    <div className="explore-categories flex bg-blueTheme h-64 relative my-20">
       {/* Text container*/}
       <div className="text-container h-full flex flex-col justify-center w-1/2 relative overflow-hidden">
         <div className="explore-categories-text text-white px-20 relative z-10">

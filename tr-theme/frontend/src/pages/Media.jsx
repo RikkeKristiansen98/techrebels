@@ -1,6 +1,4 @@
 import '../styles/pages-styles/media.css';
-import form1 from '../images/1.png'; 
-import form2 from '../images/2.png'; 
 import React, { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
@@ -17,8 +15,8 @@ export const Media = () => {
     <div className="media-container">
       <div className="media-hero">
         <div className="media-shape-wrapper">
-          <img src={form1} alt="Form 1" className="shape1" />
-          <img src={form2} alt="Form 2" className="shape2" />
+          {/* <img src={form1} alt="Form 1" className="shape1" />
+          <img src={form2} alt="Form 2" className="shape2" /> */}
         </div>
       </div>
       
