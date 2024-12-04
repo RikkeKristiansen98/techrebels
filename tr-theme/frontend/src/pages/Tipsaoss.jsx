@@ -47,7 +47,7 @@ const TipsaOss = () => {
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen">
     <div
-      className="relative z-10 rounded-lg w-full sm:w-[70%] md:w-[50%] lg:w-[30%] h-[50%] p-6"
+      className="relative z-10 rounded-lg w-full md:w-[50%] xl:h-[30%] xl:w-[30%] p-6"
       style={{ backgroundColor: "rgba(241, 171, 134, 0.8)" }}
     >
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center z-10 text-gray-800 mt-4">
@@ -170,7 +170,7 @@ const TipsaOss = () => {
       <svg
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-[-5%] left-[50%] w-[150%] md:w-[100%] h-[90%] transform -translate-x-1/2 scale-[1.2] object-cover opacity-90"
+        className="absolute top-[-3%] left-[50%] w-[150%] md:w-[100%] h-[90%] transform -translate-x-1/2 scale-[1.2] object-cover opacity-90"
       >
         <path
           fill="#16697A"
