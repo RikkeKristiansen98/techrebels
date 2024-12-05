@@ -17,7 +17,6 @@ const HomeService = {
     }
   },
 
-
   //HERO
   // Funktion för att hämta Hero-data baserat på ID
   getHeroById: async (heroId) => {
@@ -39,20 +38,27 @@ const HomeService = {
   // Funktion för att hämta homepage-data inklusive Hero-data
   getHomePageWithHero: async () => {
     try {
-      // Hämta homepage-data först
       const homepageData = await HomeService.getHomePage();
-
-      // Hämta Hero-data baserat på Hero-ID från homepage
-      const heroId = homepageData.acf.selected_hero;
+      console.log("Fetched Homepage Data:", homepageData);
+  
+      // Hantera selected_hero som objekt eller ID
+      const heroId = homepageData.acf.selected_hero?.ID || homepageData.acf.selected_hero;
+      if (!heroId) {
+        throw new Error("Hero ID is missing or undefined in ACF data.");
+      }
+      console.log("Hero ID:", heroId);
+  
       const heroData = await HomeService.getHeroById(heroId);
-
-      // Returnera Hero-data
+      console.log("Fetched Hero Data:", heroData);
+  
       return { hero: heroData };
     } catch (error) {
       console.error("Error fetching homepage with hero:", error);
       throw error;
     }
   },
+  
+  
 
   //BANNER
   // Funktion för att hämta Banner-data baserat på ID

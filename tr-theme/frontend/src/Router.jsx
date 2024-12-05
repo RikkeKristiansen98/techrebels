@@ -1,14 +1,14 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import Rolemodels from './Pages/Rolemodels';
 import Rolemodel from './pages/Rolemodel';
 import { Faq } from './pages/Faq';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import NotFound from './Pages/NotFound';
-import { Register } from './pages/Register'
-import { Login } from './pages/Login'
-import { Policy } from './pages/Policy'
-import { Books } from './pages/Books'
+import { Register } from './pages/Register';
+import { Login } from './pages/Login';
+import { Policy } from './pages/Policy';
+import { Books } from './pages/Books';
 import Toys from './pages/Toys';
 import TipsaOss from './pages/Tipsaoss';
 import Media from './pages/Media';
@@ -17,43 +17,44 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    errorElement: <NotFound/>,
+    errorElement: <NotFound />,
     children: [
       {
+        // Redirect från '/' till '/home'
         index: true,
-        element: <Home/>
+        element: <Navigate to="/home" replace />,
       },
       {
-        path: 'faq', 
-        element: <Faq />
+        path: 'home',
+        element: <Home />,
       },
       {
-        path: 'tipsaoss', 
-        element: <TipsaOss />
+        path: 'faq',
+        element: <Faq />,
+      },
+      {
+        path: 'tipsaoss',
+        element: <TipsaOss />,
       },
       {
         path: 'rolemodels',
-        element: <Rolemodels />
+        element: <Rolemodels />,
       },
       {
         path: 'register',
-        element: <Register />
+        element: <Register />,
       },
       {
         path: 'login',
-        element: <Login />
+        element: <Login />,
       },
       {
-      path: 'policy',
-      element: <Policy />
+        path: 'policy',
+        element: <Policy />,
       },
       {
         path: 'books',
-        element: <Books />
-      },
-      {
-        path: 'rolemodels',
-        element: <Rolemodels />
+        element: <Books />,
       },
       {
         path: 'rolemodel',
@@ -63,16 +64,14 @@ export const router = createBrowserRouter([
         path: 'rolemodel/:slug',
         element: <Rolemodel />,
       },
-      
       {
         path: 'toys',
-        element: <Toys />
+        element: <Toys />,
       },
       {
         path: 'media',
-        element: <Media />
-      }
-      
+        element: <Media />,
+      },
     ],
   },
 ]);
