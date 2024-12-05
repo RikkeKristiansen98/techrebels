@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HeroSection = ({ title, introText }) => {
-  const arrowRight = ["https://techforalla.se/images/right-arrow-white.png"];
+const HeroSection = ({ hero_title, hero_description, hero_link_title, hero_link_url }) => {
   return (
     <div className="hero-section py-60 relative flex flex-col md:flex-row items-stretch min-h-[250px] mb-10 px-[8%] overflow-visible">
       {/* Intro text */}
       <div className="hero-section-text flex-1 flex items-center justify-center text-center md:text-left">
         <div>
-          <h1 className="home-title text-5xl font-bold mb-5">{title}</h1>
-          <p className="intro-text text-lg text-gray-800">{introText}</p>
+          <h1 className="home-title text-5xl font-bold mb-5">{hero_title}</h1>
+          <p className="intro-text text-lg text-gray-800">{hero_description}</p>
         </div>
       </div>
 
@@ -44,10 +43,28 @@ const HeroSection = ({ title, introText }) => {
         </div>
         {/* Link text */}
         <div className="hero-link-text absolute inset-0 flex items-center justify-center text-center text-darkBlueTheme text-4xl z-20 transition-transform duration-300 hover:translate-x-2">
-          <Link className="header-2 flex items-center" to="#">
-            Gå till tipsbanken
+          <Link className="header-2 flex items-center" to={hero_link_url}>
+           {hero_link_title}
             {/* <img src={arrowRight} alt="högerpil" className="w-[30px] ml-2 color-darkBlueTheme" /> */}
-            <svg className="ml-2 mt-1" fill="#4C5D70" height="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"></path> </g></svg>
+            <svg
+              className="ml-2 mt-1"
+              fill="#FFFFFF"
+              height="25px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 330 330"
+            >
+              <g id="SVGRepo_bgCarrier"></g>
+              <g id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <path
+                  id="XMLID_222_"
+                  d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"
+                ></path>{" "}
+              </g>
+            </svg>
           </Link>
         </div>
       </div>
