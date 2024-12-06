@@ -19,12 +19,14 @@ const Home = () => {
   ];
 
   const [hero, setHero] = useState(null);
+  const [banner, setBanner] = useState(null);
 
   useEffect(() => {
     const fetchHomeData = async () => {
       try {
-        const { hero } = await HomeService.getHomePageWithHero();
-        setHero(hero); // Spara Hero-data i state
+        const { hero, banner } = await HomeService.getHomePageWithSections();
+        setHero(hero);
+        setBanner(banner);
       } catch (error) {
         console.error("Error fetching homepage data:", error);
       }
@@ -36,24 +38,57 @@ const Home = () => {
   if (!hero) {
     return <p>Laddar Hero-data...</p>;
   }
+  const banner_icons = [
+    {
+      title: banner.acf.banner_icon_title_one,
+      icon: banner.acf.banner_icon_image_url_one,
+      URL: banner.acf.banner_icon_url_one,
+    },
+    {
+      title: banner.acf.banner_icon_title_two,
+      icon: banner.acf.banner_icon_image_url_two,
+      URL: banner.acf.banner_icon_url_two,
+    },
+    {
+      title: banner.acf.banner_icon_title_three,
+      icon: banner.acf.banner_icon_image_url_three,
+      URL: banner.acf.banner_icon_url_three,
+    },
+    {
+      title: banner.acf.banner_icon_title_four,
+      icon: banner.acf.banner_icon_image_url_four,
+      URL: banner.acf.banner_icon_url_four,
+    },
+  ];
 
   return (
     <div className="home-container">
       {/* Hero Section */}
       {hero ? (
         <HeroSection
-          hero_title={hero.acf.hero_title || "Title could not be found"}
-          hero_description={hero.acf.hero_description || "Description could not be found"}
-          hero_link_url= {hero.acf.hero_url || "/"}
-          hero_link_title= {hero.acf.hero_link_title || "Title could not be found"}
-          
+          hero_header={hero.acf.hero_header || "Header could not be found"}
+          hero_description={
+            hero.acf.hero_description || "Description could not be found"
+          }
+          hero_link_url={hero.acf.hero_url || "/"}
+          hero_link_title={
+            hero.acf.hero_link_title || "Title could not be found"
+          }
         />
       ) : (
         <p>Laddar Hero-data...</p> // Visa en laddningsindikator
       )}
 
       {/* Explore Categories Section */}
-      <ExploreCategories />
+      {banner ? (
+        <ExploreCategories
+          banner_header={banner.acf.banner_header}
+          banner_tagline={banner.acf.banner_tagline}
+          banner_icons={banner_icons}
+        />
+      ) : (
+        <p>Laddar Banner-data...</p> // Visa en laddningsindikator
+      )}
 
       {/* Carousel Section */}
       <div className="flex items-center justify-center h-auto p-5 px-10">

@@ -1,9 +1,8 @@
-import { useParams } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import '../styles/pages-styles/rolemodel.css';
+import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import "../styles/pages-styles/rolemodel.css";
 
-
-const textImagePath = 'https://techforalla.se/images/textbackground.png';
+const textImagePath = "https://techforalla.se/images/textbackground.png";
 
 export const Rolemodel = () => {
   const { slug } = useParams(); // Get slug from URL
@@ -13,15 +12,15 @@ export const Rolemodel = () => {
   useEffect(() => {
     // Fetch specific role model based on slug
     fetch(`https://techforalla.se/wp-json/wp/v2/forebilder?slug=${slug}&_embed`)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.length > 0) {
           setRolemodel(data[0]); // Use first item in response
         }
         setLoading(false);
       })
-      .catch(error => {
-        console.error('Error fetching role model:', error);
+      .catch((error) => {
+        console.error("Error fetching role model:", error);
         setLoading(false);
       });
   }, [slug]);
@@ -39,12 +38,15 @@ export const Rolemodel = () => {
       <div className="rolemodel-header">
         <div className="rolemodel-text">
           <h1>{rolemodel.title.rendered}</h1>
-          <p>{rolemodel.acf?.short_description || 'Ingen kort beskrivning tillgänglig'}</p>
+          <p>
+            {rolemodel.acf?.short_description ||
+              "Ingen kort beskrivning tillgänglig"}
+          </p>
         </div>
         <div className="rolemodel-image-wrapper">
-          {rolemodel._embedded?.['wp:featuredmedia'] && (
+          {rolemodel._embedded?.["wp:featuredmedia"] && (
             <img
-              src={rolemodel._embedded['wp:featuredmedia'][0].source_url}
+              src={rolemodel._embedded["wp:featuredmedia"][0].source_url}
               alt={rolemodel.title.rendered}
               className="rolemodel-image"
             />
@@ -53,11 +55,21 @@ export const Rolemodel = () => {
       </div>
 
       <div className="rolemodel-main-text">
-        <div dangerouslySetInnerHTML={{ __html: rolemodel.acf?.main_text || rolemodel.content.rendered }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: rolemodel.acf?.main_text || rolemodel.content.rendered,
+          }}
+        />
       </div>
 
-      <div className="rolemodel-bubble-text" style={{ backgroundImage: `url(${textImagePath})` }}>
-        <p>{rolemodel.acf?.bubble_text || 'Här är en liten text som visas längst ner.'}</p>
+      <div
+        className="rolemodel-bubble-text"
+        style={{ backgroundImage: `url(${textImagePath})` }}
+      >
+        <p>
+          {rolemodel.acf?.bubble_text ||
+            "Här är en liten text som visas längst ner."}
+        </p>
       </div>
     </div>
   );

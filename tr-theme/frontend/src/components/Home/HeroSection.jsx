@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HeroSection = ({ hero_title, hero_description, hero_link_title, hero_link_url }) => {
+const HeroSection = ({ hero_header, hero_description, hero_link_title, hero_link_url }) => {
   return (
     <div className="hero-section py-60 relative flex flex-col md:flex-row items-stretch min-h-[250px] mb-10 px-[8%] overflow-visible">
       {/* Intro text */}
       <div className="hero-section-text flex-1 flex items-center justify-center text-center md:text-left">
         <div>
-          <h1 className="home-title text-5xl font-bold mb-5">{hero_title}</h1>
+          <h1 className="home-title text-5xl font-bold mb-5">{hero_header}</h1>
           <p className="intro-text text-lg text-gray-800">{hero_description}</p>
         </div>
       </div>

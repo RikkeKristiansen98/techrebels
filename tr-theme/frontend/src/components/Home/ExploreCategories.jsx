@@ -1,21 +1,14 @@
 import React from "react";
 import ExploreCategoryButton from "./ExploreCategoryButton";
 
-const ExploreCategories = () => {
-  const categories = [
-    { name: "Böcker", link: "/books", image: "https://techforalla.se/images/open-book-icon.png"},
-    { name: "Media", link: null, image: "https://techforalla.se/images/media-icon.png" },
-    { name: "Leksaker", link: "/toys", image: "https://techforalla.se/images/toy-box-icon.png" },
-    { name: "Förebilder", link: null, image: "https://techforalla.se/images/role-model-icon.png" },
-  ];
-
+const ExploreCategories = ({ banner_icons, banner_header, banner_tagline }) => {
   return (
     <div className="explore-categories flex bg-blueTheme h-64 relative my-20">
       {/* Text container*/}
       <div className="text-container h-full flex flex-col justify-center w-1/2 relative overflow-hidden">
         <div className="explore-categories-text text-white px-20 relative z-10">
-          <h3 className="text-4xl font-bold mb-2">Utforska olika kategorier</h3>
-          <p>Få inspiration från böcker, media, föreningar och mer!</p>
+          <h3 className="text-4xl font-bold mb-2">{banner_header}</h3>
+          <p>{banner_tagline}</p>
         </div>
 
         {/* Text container shape */}
@@ -23,10 +16,10 @@ const ExploreCategories = () => {
       </div>
 
       {/* Buttons */}
-      
+
       <div className="explore-categories-buttons flex-1 flex justify-around">
-        {categories.map((category, index) => (
-          <ExploreCategoryButton key={index} category={category} />
+        {banner_icons.map((icon, index) => (
+          <ExploreCategoryButton key={index} icon={icon} />
         ))}
       </div>
     </div>
