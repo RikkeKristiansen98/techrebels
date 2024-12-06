@@ -7,7 +7,7 @@ const ExploreCategoryButton = ({ category }) => {
       <img
         src={category.image}
         alt={category.name}
-        className="w-16 h-16 object-contain mb-4 transform transition-transform duration-200 hover:scale-105 cursor-pointer"
+        className="w-16 h-16 object-contain mb-4 transform transition-transform duration-200 hover:scale-105 cursor-pointer invert brightness-0"
       />
       {category.link ? (
         <Link to={category.link} className="explore-category-link text-lg font-semibold text-white">
