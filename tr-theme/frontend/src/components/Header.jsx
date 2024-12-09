@@ -17,7 +17,7 @@ export const Header = () => {
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="max-w-[40%] min-w-[20%] ml-16 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
+            className="max-w-[40%] min-w-[20%] ml-10 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
           />
         </NavLink>
       </div>
@@ -42,7 +42,7 @@ export const Header = () => {
       ></div> */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="80 10 1280 230"
+        viewBox="100 10 1280 250"
         className="footer-svg"
         style={{
           
