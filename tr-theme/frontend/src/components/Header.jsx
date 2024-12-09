@@ -8,7 +8,7 @@ export const Header = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const logo = "https://techforalla.se/images/techforalla.png";
+  const logo = "https://techforalla.se/images/techforalla-logo.png";
 
   return (
     <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50">
