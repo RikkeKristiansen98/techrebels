@@ -26,13 +26,13 @@ export const Header = () => {
           to="#"
           className="header-2 text-2xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
         >
-          TIPSBANKEN
+          Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
           className="header-2 text-2xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
         >
-          SKICKA IN TIPS
+          Skicka in tips
         </NavLink>
       </nav>
       {/* background wave */}

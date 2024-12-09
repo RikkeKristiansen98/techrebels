@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HeroSection = ({ hero_header, hero_description, hero_link_title, hero_link_url }) => {
+const HeroSection = ({
+  hero_header,
+  hero_description,
+  hero_link_title,
+  hero_link_url,
+}) => {
   return (
     <div className="hero-section py-60 relative flex flex-col md:flex-row items-stretch min-h-[250px] mb-10 px-[8%] overflow-visible">
       {/* Intro text */}
@@ -19,19 +24,6 @@ const HeroSection = ({ hero_header, hero_description, hero_link_title, hero_link
           <svg
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-[-10%] w-[110%] scale-[2] h-[120%] object-cover opacity-80 z-10"
-          >
-            <path
-              fill="#A5C882"
-              d="M20.9,-22.9C34.9,-23.6,59.3,-30.9,65.5,-27C71.7,-23.2,59.8,-8.2,49.9,1.7C40,11.6,32.2,16.4,27.3,25.7C22.4,35,20.4,48.9,13.1,56.4C5.8,64,-6.9,65.3,-15.2,59.4C-23.5,53.5,-27.6,40.4,-34.1,30.7C-40.6,21,-49.6,14.7,-57.4,4.2C-65.1,-6.3,-71.7,-21,-68.5,-32.6C-65.2,-44.2,-52.2,-52.6,-39.2,-52.2C-26.1,-51.8,-13.1,-42.7,-4.8,-35.3C3.5,-27.8,7,-22.1,20.9,-22.9Z"
-              transform="translate(100 100)"
-            />
-          </svg>
-
-          {/* Underlay shape */}
-          <svg
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
             className="absolute top-[-59%] w-[100%] h-[200%] scale-[1.1] object-cover opacity-90 z-0"
           >
             <path
@@ -40,11 +32,27 @@ const HeroSection = ({ hero_header, hero_description, hero_link_title, hero_link
               transform="translate(100 100)"
             />
           </svg>
+
+          {/* Underlay shape */}
+          <svg
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute top-[-10%] w-[105%] scale-[2] h-[120%] object-cover opacity-80 z-0"
+          >
+            <path
+              fill="#A5C882"
+              d="M20.9,-22.9C34.9,-23.6,59.3,-30.9,65.5,-27C71.7,-23.2,59.8,-8.2,49.9,1.7C40,11.6,32.2,16.4,27.3,25.7C22.4,35,20.4,48.9,13.1,56.4C5.8,64,-6.9,65.3,-15.2,59.4C-23.5,53.5,-27.6,40.4,-34.1,30.7C-40.6,21,-49.6,14.7,-57.4,4.2C-65.1,-6.3,-71.7,-21,-68.5,-32.6C-65.2,-44.2,-52.2,-52.6,-39.2,-52.2C-26.1,-51.8,-13.1,-42.7,-4.8,-35.3C3.5,-27.8,7,-22.1,20.9,-22.9Z"
+              transform="translate(100 100)"
+            />
+          </svg>
         </div>
         {/* Link text */}
-        <div className="hero-link-text absolute inset-0 flex items-center justify-center text-center text-darkBlueTheme text-4xl z-20 transition-transform duration-300 hover:translate-x-2">
-          <Link className="header-2 flex items-center" to={hero_link_url}>
-           {hero_link_title}
+        <div className="hero-link-text absolute inset-0 flex items-center justify-center text-center z-20 transition-transform duration-300 hover:translate-x-2">
+          <Link
+            className="header-2 flex items-center text-4xl"
+            to={hero_link_url}
+          >
+            {hero_link_title}
             {/* <img src={arrowRight} alt="högerpil" className="w-[30px] ml-2 color-darkBlueTheme" /> */}
             <svg
               className="ml-2 mt-1"
