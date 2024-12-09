@@ -1,12 +1,12 @@
-import React, { useState } from "react"; // Importerar React och useState-hooken för att hantera komponentens tillstånd
-import leftArrow from "../../images/left-arrow-black.png"; // Importerar bilden för vänsterpilen
-import rightArrow from "../../images/right-arrow-black.png"; // Importerar bilden för högerpilen
-import CarouselCard from "./CarouselCard"; // Importerar CarouselCard-komponenten som representerar varje bild i karusellen
+import React, { useState } from "react"; 
+import leftArrow from "../../images/left-arrow-black.png"; 
+import rightArrow from "../../images/right-arrow-black.png"; 
+import CarouselItem from "./CarouselItem"; 
 
-const Carousel = ({ cards }) => { // Tar emot "cards" som en prop, vilket är en lista med bilder eller kort att visa i karusellen
-  const [currentIndex, setCurrentIndex] = useState(1); // Skapar ett tillstånd (state) för att hålla reda på det aktuella kortet (index) i karusellen, börjar på index 1
+const Carousel = ({ carouselItems }) => { // Tar emot "cards" som en prop, vilket är en lista med bilder eller kort att visa i karusellen
+  const [currentIndex, setCurrentIndex] = useState(1); // 1 för att de kortet i mitten ska va störtst
   const itemsPerSlide = 3; // Sätt antal kort som ska visas samtidigt, här visas 3 kort per gång
-  const totalItems = cards.length; 
+  const totalItems = carouselItems.length; 
 
   // Funktion som anropas när användaren klickar på nästa (höger) pil
   const nextSlide = () => {
@@ -23,7 +23,7 @@ const Carousel = ({ cards }) => { // Tar emot "cards" som en prop, vilket är en
   };
 
   // Funktion som beräknar storleken på varje kort beroende på om det är i mitten eller inte
-  const getCardSize = (index) => {
+  const getCarouselItemSize = (index) => {
     const middleIndex = Math.floor(itemsPerSlide / 2); // Beräknar det index som motsvarar mitten av de synliga korten
     const relativeIndex = (index + totalItems) % totalItems; // Ser till att indexet inte går utanför arrayen genom att använda modulusoperatorn
     // Om kortet är det i mitten, ge det en större storlek, annars gör det mindre
@@ -35,13 +35,13 @@ const Carousel = ({ cards }) => { // Tar emot "cards" som en prop, vilket är en
   };
 
   // Funktion som beräknar och returnerar de kort som ska vara synliga baserat på currentIndex
-  const getVisibleCards = () => {
-    const visibleCards = []; // Skapar en tom array för att lagra de synliga korten
+  const getVisibleCarouselItems = () => {
+    const visibleCarouselItems = []; // Skapar en tom array för att lagra de synliga korten
     for (let i = 0; i < itemsPerSlide; i++) { // Loopa genom de kort som ska visas (antalet beror på itemsPerSlide)
       // Lägg till det aktuella kortet från cards-arrayen till visibleCards-listan baserat på currentIndex
-      visibleCards.push(cards[(currentIndex + i) % totalItems]);
+      visibleCarouselItems.push(carouselItems[(currentIndex + i) % totalItems]);
     }
-    return visibleCards; // Returnera de synliga korten
+    return visibleCarouselItems; // Returnera de synliga korten
   };
 
   return (
@@ -64,12 +64,12 @@ const Carousel = ({ cards }) => { // Tar emot "cards" som en prop, vilket är en
           <div className="overflow-hidden relative p-10 mb-[15%] m-[5%]">
             <div className="flex transition-transform duration-500 ease-in-out gap-5 justify-center">
               {/* Loopa igenom de synliga korten och rendera dem */}
-              {getVisibleCards().map((card, index) => (
+              {getVisibleCarouselItems().map((carouselItem, index) => (
                 <div
-                  className={`flex-shrink-0 transform transition-all duration-300 ${getCardSize(index)}`} // Använd getCardSize för att justera storleken på kortet
+                  className={`flex-shrink-0 transform transition-all duration-300 ${getCarouselItemSize(index)}`} // Använd getCardSize för att justera storleken på kortet
                   key={index} // Använd index som nyckel för varje kort
                 >
-                  <CarouselCard card={card} /> {/* Rendera CarouselCard för varje kort */}
+                  <CarouselItem carouselItem={carouselItem} /> {/* Rendera CarouselCard för varje kort */}
                 </div>
               ))}
             </div>

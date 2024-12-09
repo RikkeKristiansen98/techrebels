@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
   // Sökvägar för tipsbilder
-  const cards = [
+  const carouselItems = [
     "https://techforalla.se/images/image1.jpg",
     "https://techforalla.se/images/image2.jpg",
     "https://techforalla.se/images/image3.jpg",
@@ -89,7 +89,7 @@ const Home = () => {
         
       {/* Carousel Section */}
       <div className="flex items-center justify-center h-auto p-5 px-10">
-        <Carousel cards={cards} />
+        <Carousel carouselItems={carouselItems} />
       </div>
     </div>
     </>

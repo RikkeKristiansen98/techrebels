@@ -14,6 +14,13 @@ const HomeService = {
         ...data,
         hero: data.acf?.selected_hero || null,
         banner: data.acf?.selected_banner || null,
+        carouselItemOne: data.acf?.selected_carousel_item_one || null,
+        carouselItemTwo: data.acf?.selected_carousel_item_two || null,
+        carouselItemThree: data.acf?.selected_carousel_item_three || null,
+        carouselItemFour: data.acf?.selected_carousel_item_four || null,
+        carouselItemFive: data.acf?.selected_carousel_item_five || null,
+        carouselItemSix: data.acf?.selected_carousel_item_six || null,
+        carouselItemSeven: data.acf?.selected_carousel_item_seven || null,
       };
     } catch (error) {
       console.error("Error fetching homepage:", error);
@@ -30,9 +37,16 @@ const HomeService = {
       // Hämta hero och banner ID från ACF
       const heroId = homepageData.acf?.selected_hero?.ID || homepageData.acf?.selected_hero;
       const bannerId = homepageData.acf?.selected_banner?.ID || homepageData.acf?.selected_banner;
+      const carouselItemOneId = homepageData.acf?.selected_carousel_item_one?.ID || homepageData.acf?.selected_carousel_item_one;
+      const carouselItemTwoId = homepageData.acf?.selected_carousel_item_two?.ID || homepageData.acf?.selected_carousel_item_two;
+      const carouselItemThreeId = homepageData.acf?.selected_carousel_item_three?.ID || homepageData.acf?.selected_carousel_item_three;
+      const carouselItemFourId = homepageData.acf?.selected_carousel_item_four?.ID || homepageData.acf?.selected_carousel_item_four;
+      const carouselItemFiveId = homepageData.acf?.selected_carousel_item_five?.ID || homepageData.acf?.selected_carousel_item_five;
+      const carouselItemSixId = homepageData.acf?.selected_carousel_item_six?.ID || homepageData.acf?.selected_carousel_item_six;
+      const carouselItemSevenId = homepageData.acf?.selected_carousel_item_seven?.ID || homepageData.acf?.selected_carousel_item_seven;
   
-      if (!heroId || !bannerId) {
-        throw new Error("Hero ID or Banner ID is missing in ACF data.");
+      if (!heroId || !bannerId || !carouselItemOneId) {
+        throw new Error("Hero ID, Banner ID or Carousel ID:s is missing in ACF data.");
       }
   
       // Parallellhämtning för bättre prestanda
