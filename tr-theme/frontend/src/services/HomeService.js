@@ -9,7 +9,7 @@ const HomeService = {
         throw new Error(`Failed to fetch homepage: ${response.statusText}`);
       }
       const data = await response.json(); // Parse JSON
-      console.log("Fetched Homepage Data:", data); // Kontrollera om ACF finns här
+    
       return {
         ...data,
         hero: data.acf?.selected_hero || null, // Lägg till hero direkt
@@ -25,7 +25,7 @@ const HomeService = {
   getHomePageWithSections: async () => {
     try {
       const homepageData = await HomeService.getHomePage();
-      console.log("Fetched Homepage Data:", homepageData);
+      
 
       // Hantera selected_hero som objekt eller ID
       const heroId =
@@ -38,16 +38,10 @@ const HomeService = {
       if (!heroId) {
         throw new Error("Hero ID is missing or undefined in ACF data.");
       }
-      console.log("Hero ID:", heroId, "Banner ID:", bannerId);
 
       const heroData = await HomeService.getHeroById(heroId);
       const bannerData = await HomeService.getBannerById(bannerId);
-      console.log(
-        "Fetched Hero Data:",
-        heroData,
-        "Fetched Banner Data:",
-        bannerData
-      );
+    
 
       return { hero: heroData, banner: bannerData }; // Returnera Hero-data inklusive ACF-fält
     } catch (error) {
@@ -66,7 +60,7 @@ const HomeService = {
       }
       const data = await response.json();
 
-      console.log("Fetched Hero Data:", data); // Kontrollera att ACF-fält är inkluderade
+     
       return data; // Returnera Hero-data inklusive ACF-fält
     } catch (error) {
       console.error("Error fetching hero:", error);
@@ -83,7 +77,6 @@ const HomeService = {
         throw new Error(`Failed to fetch banner: ${response.statusText}`);
       }
       const data = await response.json();
-      console.log("Fetched Banner Data:", data); // Kontrollera att ACF-fält är inkluderade
       return data; // Returnera Banner-data inklusive ACF-fält
     } catch (error) {
       console.error("Error fetching banner:", error);

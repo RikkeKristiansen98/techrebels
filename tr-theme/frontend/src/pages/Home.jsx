@@ -31,7 +31,6 @@ const Home = () => {
         console.error("Error fetching homepage data:", error);
       }
     };
-
     fetchHomeData();
   }, []);
 
