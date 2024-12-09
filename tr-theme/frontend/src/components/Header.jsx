@@ -1,12 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 
 export const Header = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
 
   const logo = "https://techforalla.se/images/techforalla-logo.png";
 
@@ -35,11 +29,7 @@ export const Header = () => {
           Skicka in tips
         </NavLink>
       </nav>
-      {/* background wave */}
-      {/* <div
-        className="absolute top-0 right-0 h-full w-[54%] bg-orangeTheme 
-            rounded-tl-full "
-      ></div> */}
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="100 10 1280 250"
