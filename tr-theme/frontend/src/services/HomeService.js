@@ -8,47 +8,47 @@ const HomeService = {
       if (!response.ok) {
         throw new Error(`Failed to fetch homepage: ${response.statusText}`);
       }
-      const data = await response.json(); // Parse JSON
-    
+      const data = await response.json();
+      console.log("Homepage ACF data:", data.acf); // Logga ACF-fält
       return {
         ...data,
-        hero: data.acf?.selected_hero || null, // Lägg till hero direkt
-        banner: data.acf?.selected_banner || null, // Lägg till banner direkt
+        hero: data.acf?.selected_hero || null,
+        banner: data.acf?.selected_banner || null,
       };
     } catch (error) {
       console.error("Error fetching homepage:", error);
       throw error;
     }
   },
+  
 
   // Funktion för att hämta homepage-data inklusive Hero-data
   getHomePageWithSections: async () => {
     try {
       const homepageData = await HomeService.getHomePage();
-      
-
-      // Hantera selected_hero som objekt eller ID
-      const heroId =
-        homepageData.acf.selected_hero?.ID || homepageData.acf.selected_hero;
-
-      const bannerId =
-        homepageData.acf.selected_banner?.ID ||
-        homepageData.acf.selected_banner;
-
-      if (!heroId) {
-        throw new Error("Hero ID is missing or undefined in ACF data.");
+  
+      // Hämta hero och banner ID från ACF
+      const heroId = homepageData.acf?.selected_hero?.ID || homepageData.acf?.selected_hero;
+      const bannerId = homepageData.acf?.selected_banner?.ID || homepageData.acf?.selected_banner;
+  
+      if (!heroId || !bannerId) {
+        throw new Error("Hero ID or Banner ID is missing in ACF data.");
       }
-
-      const heroData = await HomeService.getHeroById(heroId);
-      const bannerData = await HomeService.getBannerById(bannerId);
-    
-
-      return { hero: heroData, banner: bannerData }; // Returnera Hero-data inklusive ACF-fält
+  
+      // Parallellhämtning för bättre prestanda
+      const [heroData, bannerData] = await Promise.all([
+        HomeService.getHeroById(heroId),
+        HomeService.getBannerById(bannerId),
+      ]);
+  
+      // Returnera formaterad data
+      return { hero: heroData, banner: bannerData };
     } catch (error) {
-      console.error("Error fetching homepage with hero:", error);
+      console.error("Error fetching homepage sections:", error);
       throw error;
     }
   },
+  
 
   //HERO
   // Funktion för att hämta Hero-data baserat på ID
@@ -59,7 +59,7 @@ const HomeService = {
         throw new Error(`Failed to fetch hero: ${response.statusText}`);
       }
       const data = await response.json();
-
+      console.log("fetched hero by id");
      
       return data; // Returnera Hero-data inklusive ACF-fält
     } catch (error) {
@@ -77,6 +77,7 @@ const HomeService = {
         throw new Error(`Failed to fetch banner: ${response.statusText}`);
       }
       const data = await response.json();
+      console.log("fetched banner by id");
       return data; // Returnera Banner-data inklusive ACF-fält
     } catch (error) {
       console.error("Error fetching banner:", error);

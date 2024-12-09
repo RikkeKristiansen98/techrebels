@@ -1,23 +1,18 @@
-import { Outlet } from "react-router-dom"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { Outlet } from "react-router-dom";
 
-
-
-export const Layout = () => {
-return (
+const Layout = () => {
+  return (
     <>
-    <header>
-        <Header/>
-        </header>
-        <main>
-            <Outlet/>
-        </main>
-        <footer>
-        <Footer/>
-        </footer>
-        </>
-)
-}
+      <Header />
+      <main>
+        <Outlet /> {/* Här visas den aktiva sidan, t.ex. Home */}
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default Layout;
