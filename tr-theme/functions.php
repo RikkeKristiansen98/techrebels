@@ -9,17 +9,17 @@ function load_react_app() {
 add_action('wp_enqueue_scripts', 'load_react_app');
 add_filter('acf/rest_api/key', '__return_true');
 
-function expose_acf_fields_in_rest() {
-    // Only do this for the 'hero' CPT
-    register_rest_field('hero', 'acf', array(
-        'get_callback' => function($object) {
-            return get_fields($object['id']); // Fetch all ACF fields for this hero CPT
-        },
-        'update_callback' => null,
-        'schema' => null,
-    ));
-}
-add_action('rest_api_init', 'expose_acf_fields_in_rest');
+// function expose_acf_fields_in_rest() {
+//     // Only do this for the 'hero' CPT
+//     register_rest_field('hero', 'acf', array(
+//         'get_callback' => function($object) {
+//             return get_fields($object['id']); // Fetch all ACF fields for this hero CPT
+//         },
+//         'update_callback' => null,
+//         'schema' => null,
+//     ));
+// }
+// add_action('rest_api_init', 'expose_acf_fields_in_rest');
 
 function expose_acf_fields_for_pages() {
     // Lägg till ACF-fält till REST API för alla sidor

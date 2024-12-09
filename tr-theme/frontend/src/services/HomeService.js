@@ -21,24 +21,6 @@ const HomeService = {
     }
   },
 
-  //HERO
-  // Funktion för att hämta Hero-data baserat på ID
-  getHeroById: async (heroId) => {
-    try {
-      const response = await fetch(`${BASE_URL}/hero/${heroId}`); // Ersätt {hero-id} med ID för hero ${heroId}
-      if (!response.ok) {
-        throw new Error(`Failed to fetch hero: ${response.statusText}`);
-      }
-      const data = await response.json();
-
-      console.log("Fetched Hero Data:", data); // Kontrollera att ACF-fält är inkluderade
-      return data; // Returnera Hero-data inklusive ACF-fält
-    } catch (error) {
-      console.error("Error fetching hero:", error);
-      throw error;
-    }
-  },
-
   // Funktion för att hämta homepage-data inklusive Hero-data
   getHomePageWithSections: async () => {
     try {
@@ -70,6 +52,24 @@ const HomeService = {
       return { hero: heroData, banner: bannerData }; // Returnera Hero-data inklusive ACF-fält
     } catch (error) {
       console.error("Error fetching homepage with hero:", error);
+      throw error;
+    }
+  },
+
+  //HERO
+  // Funktion för att hämta Hero-data baserat på ID
+  getHeroById: async (heroId) => {
+    try {
+      const response = await fetch(`${BASE_URL}/hero/${heroId}`); // Ersätt {hero-id} med ID för hero ${heroId}
+      if (!response.ok) {
+        throw new Error(`Failed to fetch hero: ${response.statusText}`);
+      }
+      const data = await response.json();
+
+      console.log("Fetched Hero Data:", data); // Kontrollera att ACF-fält är inkluderade
+      return data; // Returnera Hero-data inklusive ACF-fält
+    } catch (error) {
+      console.error("Error fetching hero:", error);
       throw error;
     }
   },
