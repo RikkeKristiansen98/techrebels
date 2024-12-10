@@ -8,7 +8,11 @@ const CarouselItem = ({ carouselItem }) => {
         alt="Carousel Item"
         className="w-full h-54 object-cover rounded-lg"
       />
+<h3>{carouselItem.rolemodel_header}</h3>
+      
     </div>
+    //test kod
+    
   );
 };
 

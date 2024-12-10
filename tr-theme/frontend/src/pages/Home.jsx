@@ -8,17 +8,17 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
   // Sökvägar för tipsbilder
-  const carouselItems = [
-    "https://techforalla.se/images/image1.jpg",
-    "https://techforalla.se/images/image2.jpg",
-    "https://techforalla.se/images/image3.jpg",
-    "https://techforalla.se/images/image4.jpg",
-    "https://techforalla.se/images/image2.jpg",
-    "https://techforalla.se/images/image3.jpg",
-    "https://techforalla.se/images/image4.jpg",
-  ];
+  // const carouselItems = [
+  //   "https://techforalla.se/images/image1.jpg",
+  //   "https://techforalla.se/images/image2.jpg",
+  //   "https://techforalla.se/images/image3.jpg",
+  //   "https://techforalla.se/images/image4.jpg",
+  //   "https://techforalla.se/images/image2.jpg",
+  //   "https://techforalla.se/images/image3.jpg",
+  //   "https://techforalla.se/images/image4.jpg",
+  // ];
 
-  const [data, setData] = useState({hero: null, banner: null});
+  const [data, setData] = useState({hero: null, banner: null, carouselItems: []});
 
   useEffect(() => {
     const fetchHomeData = async () => {
@@ -89,7 +89,8 @@ const Home = () => {
         
       {/* Carousel Section */}
       <div className="flex items-center justify-center h-auto p-5 px-10">
-        <Carousel carouselItems={carouselItems} />
+      <Carousel carouselItems={data.carouselItems} />
+
       </div>
     </div>
     </>

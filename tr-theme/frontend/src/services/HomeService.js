@@ -1,6 +1,28 @@
 const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 
+const carouselFieldNames = [
+  "selected_carousel_item_one",
+  "selected_carousel_item_two",
+  "selected_carousel_item_three",
+  "selected_carousel_item_four",
+  "selected_carousel_item_five",
+  "selected_carousel_item_six",
+  "selected_carousel_item_seven",
+];
+
 const HomeService = {
+  // Hjälpfunktion för att skapa en lista av carousel-items
+  createCarouselItems: (acfData) => {
+    const items = [];
+    for (let i = 1; i <= 7; i++) {
+      const item = acfData[`selected_carousel_item_${i}`];
+      if (item) {
+        items.push(item);
+      }
+    }
+    return items;
+  },
+
   // Funktion för att hämta homepage-data
   getHomePage: async () => {
     try {
@@ -9,59 +31,65 @@ const HomeService = {
         throw new Error(`Failed to fetch homepage: ${response.statusText}`);
       }
       const data = await response.json();
-      console.log("Homepage ACF data:", data.acf); // Logga ACF-fält
+      console.log("Homepage ACF data:", data.acf);
+
       return {
         ...data,
         hero: data.acf?.selected_hero || null,
         banner: data.acf?.selected_banner || null,
         carouselItemOne: data.acf?.selected_carousel_item_one || null,
-        carouselItemTwo: data.acf?.selected_carousel_item_two || null,
-        carouselItemThree: data.acf?.selected_carousel_item_three || null,
-        carouselItemFour: data.acf?.selected_carousel_item_four || null,
-        carouselItemFive: data.acf?.selected_carousel_item_five || null,
-        carouselItemSix: data.acf?.selected_carousel_item_six || null,
-        carouselItemSeven: data.acf?.selected_carousel_item_seven || null,
+        // carouselItems: HomeService.createCarouselItems(data.acf || {}), // Använd hjälpfunktionen här
       };
     } catch (error) {
       console.error("Error fetching homepage:", error);
       throw error;
     }
   },
-  
-
   // Funktion för att hämta homepage-data inklusive Hero-data
   getHomePageWithSections: async () => {
     try {
       const homepageData = await HomeService.getHomePage();
   
-      // Hämta hero och banner ID från ACF
-      const heroId = homepageData.acf?.selected_hero?.ID || homepageData.acf?.selected_hero;
-      const bannerId = homepageData.acf?.selected_banner?.ID || homepageData.acf?.selected_banner;
-      const carouselItemOneId = homepageData.acf?.selected_carousel_item_one?.ID || homepageData.acf?.selected_carousel_item_one;
-      const carouselItemTwoId = homepageData.acf?.selected_carousel_item_two?.ID || homepageData.acf?.selected_carousel_item_two;
-      const carouselItemThreeId = homepageData.acf?.selected_carousel_item_three?.ID || homepageData.acf?.selected_carousel_item_three;
-      const carouselItemFourId = homepageData.acf?.selected_carousel_item_four?.ID || homepageData.acf?.selected_carousel_item_four;
-      const carouselItemFiveId = homepageData.acf?.selected_carousel_item_five?.ID || homepageData.acf?.selected_carousel_item_five;
-      const carouselItemSixId = homepageData.acf?.selected_carousel_item_six?.ID || homepageData.acf?.selected_carousel_item_six;
-      const carouselItemSevenId = homepageData.acf?.selected_carousel_item_seven?.ID || homepageData.acf?.selected_carousel_item_seven;
+      const extractId = (field) => (field ? field.ID || field : null);
+      const extractType = (field) => field?.post_type || "default"; // Antag "default" om post_type saknas
   
-      if (!heroId || !bannerId || !carouselItemOneId) {
-        throw new Error("Hero ID, Banner ID or Carousel ID:s is missing in ACF data.");
+      // Hämta hero och banner ID
+      const heroId = extractId(homepageData.acf?.selected_hero);
+      const bannerId = extractId(homepageData.acf?.selected_banner);
+  
+      // Extrahera carousel-items med deras ID och typ
+      const carouselItems = carouselFieldNames
+        .map((fieldName) => {
+          const field = homepageData.acf?.[fieldName];
+          return field
+            ? { id: extractId(field), type: extractType(field) }
+            : null;
+        })
+        .filter((item) => item); // Filtrera bort null
+  
+      console.log("Extracted Carousel Items:", carouselItems);
+  
+      if (!heroId || !bannerId || carouselItems.length === 0) {
+        throw new Error("Hero ID, Banner ID, or Carousel Items are missing in ACF data.");
       }
   
-      // Parallellhämtning för bättre prestanda
-      const [heroData, bannerData] = await Promise.all([
+      const [heroData, bannerData, carouselItemsData] = await Promise.all([
         HomeService.getHeroById(heroId),
         HomeService.getBannerById(bannerId),
+        HomeService.getCarouselItemsById(carouselItems),
       ]);
   
-      // Returnera formaterad data
-      return { hero: heroData, banner: bannerData };
+      return {
+        hero: heroData,
+        banner: bannerData,
+        carouselItems: Array.isArray(carouselItemsData) ? carouselItemsData : [],
+      };
     } catch (error) {
       console.error("Error fetching homepage sections:", error);
       throw error;
     }
   },
+  
   
 
   //HERO
@@ -98,6 +126,35 @@ const HomeService = {
       throw error;
     }
   },
+
+  getCarouselItemsById: async (carouselItems) => {
+    try {
+      const items = await Promise.all(
+        carouselItems.map(({ id, type }) =>
+          fetch(`${BASE_URL}/${type}/${id}`)
+            .then((res) => {
+              if (!res.ok) {
+                throw new Error(`Failed to fetch ${type} item with ID: ${id}`);
+              }
+              return res.json();
+            })
+            .catch((error) => {
+              console.error(`Error fetching ${type} item ${id}:`, error);
+              return null; // Returnera null om hämtningen misslyckas
+            })
+        )
+      );
+  
+      // Filtrera bort eventuella null-värden
+      return items.filter((item) => item !== null);
+    } catch (error) {
+      console.error("Error fetching carousel items:", error);
+      throw error;
+    }
+  },
+  
+  
 };
 
 export default HomeService;
+
