@@ -7,6 +7,9 @@ import HomeService from "../services/HomeService";
 import { useEffect, useState } from "react";
 
 const Home = () => {
+
+  console.log("Rendering Home component");
+
   // Sökvägar för tipsbilder
   // const carouselItems = [
   //   "https://techforalla.se/images/image1.jpg",
@@ -24,17 +27,22 @@ const Home = () => {
     const fetchHomeData = async () => {
       try {
         const result = await HomeService.getHomePageWithSections();
-        console.log("Fetched homepage data:", result); // Logga resultatet
-        setData(result);
+        console.log("Fetched homepage data:", result);
+  
+        // Förhindra onödig rendering
+        if (JSON.stringify(result) !== JSON.stringify(data)) {
+          setData(result);
+        }
       } catch (error) {
         console.error("Error fetching homepage data:", error);
       }
-
-      
     };
+  
     fetchHomeData();
   }, []);
   
+  
+
 
   if (!data.hero || !data.banner) {
     return <p>Laddar Hero-data...</p>;

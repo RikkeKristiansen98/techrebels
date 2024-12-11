@@ -20,9 +20,8 @@ export const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        // Redirect från '/' till '/home'
-        index: true,
-        element: <Navigate to="/home" replace />,
+        index: true, // Detta laddar default-komponenten för roten "/"
+        element: <Home />,
       },
       {
         path: 'home',

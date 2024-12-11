@@ -22,6 +22,9 @@ const fetchWithCache = async (url) => {
   }
 };
 
+console.log("Cache status:", cache);
+
+
 const carouselFieldNames = [
   "selected_carousel_item_one",
   "selected_carousel_item_two",

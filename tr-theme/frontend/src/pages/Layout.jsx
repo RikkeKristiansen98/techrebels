@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
+  console.log("Rendering Layout component");
   return (
     <>
       <Header />
