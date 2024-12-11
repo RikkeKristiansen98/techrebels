@@ -29,6 +29,8 @@ const Home = () => {
       } catch (error) {
         console.error("Error fetching homepage data:", error);
       }
+
+      
     };
     fetchHomeData();
   }, []);
