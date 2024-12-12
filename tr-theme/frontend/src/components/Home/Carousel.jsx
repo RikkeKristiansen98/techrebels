@@ -35,7 +35,7 @@ const Carousel = ({ carouselItems }) => {
     }
     return visibleCarouselItems;
   };
-
+ 
   return (
     <div className="relative w-full"> {/* Container för hela karusellen */}
       <div className="relative z-10">
@@ -54,11 +54,12 @@ const Carousel = ({ carouselItems }) => {
 
           {/* Carousel container */}
           <div className="relative p-10 mb-[15%] m-[5%]">
-            <div className="flex transition-transform duration-200 ease-in-out gap-7 justify-center">
+            <div className="flex transition-all duration-700 ease-in-out gap-7 justify-center"
+            >
               {/* Loopa igenom de synliga korten och rendera dem */}
               {getVisibleCarouselItems().map((carouselItem, index) => (
                 <div
-                  className={`flex-shrink-0 transform transition-all duration-300 ${getCarouselItemSize(index)}`} // Justera storlek på kort
+                  className={`flex-shrink-0 transition-all duration-500 ${getCarouselItemSize(index)}`} // Justera storlek på kort
                   key={index} 
                 >
                   <CarouselItem carouselItem={carouselItem} imageCache={imageCache} /> {/* Rendera CarouselItem för varje kort */}

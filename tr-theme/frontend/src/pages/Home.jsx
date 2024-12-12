@@ -3,7 +3,6 @@ import HeroSection from "../components/Home/HeroSection";
 import Carousel from "../components/Home/Carousel";
 import ExploreCategories from "../components/Home/ExploreCategories";
 import Loading from "../components/Loading";
-import "../components/Home/Home.css";
 import HomeService from "../services/HomeService";
 
 const Home = () => {
@@ -59,7 +58,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="home-container">
+      <div className="min-h-screen flex flex-col mx-auto">
         {/* Hero Section */}
         <HeroSection
           hero_header={hero.hero_header || "Header could not be found"}

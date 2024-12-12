@@ -70,10 +70,10 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
           <img
             src={content.imageSrc}
             alt="Carousel Item"
-            className="w-full h-54 object-cover transform transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-54 object-cover transition-transform duration-700 group-hover:scale-105"
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
           {/* Header */}
           <h2 className="absolute inset-0 flex items-center justify-center text-black text-2xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {content.header}
