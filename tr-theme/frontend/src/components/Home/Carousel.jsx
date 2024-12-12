@@ -3,30 +3,29 @@ import leftArrow from "../../images/left-arrow-black.png";
 import rightArrow from "../../images/right-arrow-black.png"; 
 import CarouselItem from "./CarouselItem"; 
 
-const Carousel = ({ carouselItems }) => { // Tar emot "cards" som en prop, vilket är en lista med bilder eller kort att visa i karusellen
-  const [currentIndex, setCurrentIndex] = useState(1); // 1 för att de kortet i mitten ska va störtst
-  const itemsPerSlide = 3; // Sätt antal kort som ska visas samtidigt, här visas 3 kort per gång
+const Carousel = ({ carouselItems }) => { 
+  const [currentIndex, setCurrentIndex] = useState(1); 
+  const itemsPerSlide = 3;
   const totalItems = carouselItems.length; 
 
-  // Funktion som anropas när användaren klickar på nästa (höger) pil
+ 
   const nextSlide = () => {
-    // Uppdaterar "currentIndex" genom att gå vidare till nästa kort, och när vi når slutet så börjar vi om från början (cirkulär navigation)
+   
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
   };
 
-  // Funktion som anropas när användaren klickar på föregående (vänster) pil
   const prevSlide = () => {
-    // Uppdaterar "currentIndex" genom att gå bakåt till föregående kort, och när vi är på första kortet går vi till det sista kortet (cirkulär navigation)
+   
     setCurrentIndex((prevIndex) =>
       (prevIndex - 1 + totalItems) % totalItems
     );
   };
 
-  // Funktion som beräknar storleken på varje kort beroende på om det är i mitten eller inte
+
   const getCarouselItemSize = (index) => {
-    const middleIndex = Math.floor(itemsPerSlide / 2); // Beräknar det index som motsvarar mitten av de synliga korten
-    const relativeIndex = (index + totalItems) % totalItems; // Ser till att indexet inte går utanför arrayen genom att använda modulusoperatorn
-    // Om kortet är det i mitten, ge det en större storlek, annars gör det mindre
+    const middleIndex = Math.floor(itemsPerSlide / 2); 
+    const relativeIndex = (index + totalItems) % totalItems; 
+  
     if (relativeIndex === middleIndex) {
       return "w-[30%] scale-110"; // Större kort i mitten
     } else {
@@ -34,14 +33,14 @@ const Carousel = ({ carouselItems }) => { // Tar emot "cards" som en prop, vilke
     }
   };
 
-  // Funktion som beräknar och returnerar de kort som ska vara synliga baserat på currentIndex
+ 
   const getVisibleCarouselItems = () => {
-    const visibleCarouselItems = []; // Skapar en tom array för att lagra de synliga korten
-    for (let i = 0; i < itemsPerSlide; i++) { // Loopa genom de kort som ska visas (antalet beror på itemsPerSlide)
-      // Lägg till det aktuella kortet från cards-arrayen till visibleCards-listan baserat på currentIndex
+    const visibleCarouselItems = [];
+    for (let i = 0; i < itemsPerSlide; i++) {
+      
       visibleCarouselItems.push(carouselItems[(currentIndex + i) % totalItems]);
     }
-    return visibleCarouselItems; // Returnera de synliga korten
+    return visibleCarouselItems; 
   };
 
   return (
@@ -55,7 +54,7 @@ const Carousel = ({ carouselItems }) => { // Tar emot "cards" som en prop, vilke
           {/* Left Button */}
           <button
             className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-20 ml-[10%]"
-            onClick={prevSlide} // När användaren klickar på denna knapp, anropa prevSlide för att gå till föregående kort
+            onClick={prevSlide} 
           >
             <img src={leftArrow} alt="left arrow" className="w-6 h-6" />
           </button>
@@ -67,7 +66,7 @@ const Carousel = ({ carouselItems }) => { // Tar emot "cards" som en prop, vilke
               {getVisibleCarouselItems().map((carouselItem, index) => (
                 <div
                   className={`flex-shrink-0 transform transition-all duration-300 ${getCarouselItemSize(index)}`} // Använd getCardSize för att justera storleken på kortet
-                  key={index} // Använd index som nyckel för varje kort
+                  key={index} 
                 >
                   <CarouselItem carouselItem={carouselItem} /> {/* Rendera CarouselCard för varje kort */}
                 </div>
@@ -78,7 +77,7 @@ const Carousel = ({ carouselItems }) => { // Tar emot "cards" som en prop, vilke
           {/* Right Button */}
           <button
             className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-20 mr-[10%]"
-            onClick={nextSlide} // När användaren klickar på denna knapp, anropa nextSlide för att gå till nästa kort
+            onClick={nextSlide} 
           >
             <img src={rightArrow} alt="right arrow" className="w-6 h-6" />
           </button>
@@ -88,7 +87,7 @@ const Carousel = ({ carouselItems }) => { // Tar emot "cards" som en prop, vilke
   );
 };
 
-export default Carousel; // Exportera Carousel-komponenten för att använda den på andra ställen i applikationen
+export default Carousel; 
 
 
 
