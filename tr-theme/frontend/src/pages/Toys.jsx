@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/pages-styles/toys.css';
 import toys1 from '../images/toys.jpg';
 import toys2 from '../images/toyss.jpg';
 import toys3 from '../images/toysss.jpg';

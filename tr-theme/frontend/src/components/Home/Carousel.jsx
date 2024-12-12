@@ -1,31 +1,26 @@
-import React, { useState } from "react"; 
-import leftArrow from "../../images/left-arrow-black.png"; 
-import rightArrow from "../../images/right-arrow-black.png"; 
-import CarouselItem from "./CarouselItem"; 
+import React, { useState } from "react";
+import leftArrow from "../../images/left-arrow-black.png";
+import rightArrow from "../../images/right-arrow-black.png";
+import CarouselItem from "./CarouselItem";
 
-const Carousel = ({ carouselItems }) => { 
-  const [currentIndex, setCurrentIndex] = useState(1); 
+const Carousel = ({ carouselItems }) => {
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [imageCache, setImageCache] = useState({}); // Cache för bilder
   const itemsPerSlide = 3;
-  const totalItems = carouselItems.length; 
+  const totalItems = carouselItems.length;
 
- 
   const nextSlide = () => {
-   
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
   };
 
   const prevSlide = () => {
-   
-    setCurrentIndex((prevIndex) =>
-      (prevIndex - 1 + totalItems) % totalItems
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
   };
-
 
   const getCarouselItemSize = (index) => {
     const middleIndex = Math.floor(itemsPerSlide / 2); 
     const relativeIndex = (index + totalItems) % totalItems; 
-  
+
     if (relativeIndex === middleIndex) {
       return "w-[30%] scale-110"; // Större kort i mitten
     } else {
@@ -33,14 +28,12 @@ const Carousel = ({ carouselItems }) => {
     }
   };
 
- 
   const getVisibleCarouselItems = () => {
     const visibleCarouselItems = [];
     for (let i = 0; i < itemsPerSlide; i++) {
-      
       visibleCarouselItems.push(carouselItems[(currentIndex + i) % totalItems]);
     }
-    return visibleCarouselItems; 
+    return visibleCarouselItems;
   };
 
   return (
@@ -61,14 +54,14 @@ const Carousel = ({ carouselItems }) => {
 
           {/* Carousel container */}
           <div className="relative p-10 mb-[15%] m-[5%]">
-            <div className="flex transition-transform duration-500 ease-in-out gap-5 justify-center">
+            <div className="flex transition-transform duration-200 ease-in-out gap-7 justify-center">
               {/* Loopa igenom de synliga korten och rendera dem */}
               {getVisibleCarouselItems().map((carouselItem, index) => (
                 <div
-                  className={`flex-shrink-0 transform transition-all duration-300 ${getCarouselItemSize(index)}`} // Använd getCardSize för att justera storleken på kortet
+                  className={`flex-shrink-0 transform transition-all duration-300 ${getCarouselItemSize(index)}`} // Justera storlek på kort
                   key={index} 
                 >
-                  <CarouselItem carouselItem={carouselItem} /> {/* Rendera CarouselCard för varje kort */}
+                  <CarouselItem carouselItem={carouselItem} imageCache={imageCache} /> {/* Rendera CarouselItem för varje kort */}
                 </div>
               ))}
             </div>
@@ -87,7 +80,8 @@ const Carousel = ({ carouselItems }) => {
   );
 };
 
-export default Carousel; 
+export default Carousel;
+
 
 
 
