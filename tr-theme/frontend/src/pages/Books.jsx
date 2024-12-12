@@ -1,120 +1,94 @@
-import { useState } from 'react';
-import '../styles/pages-styles/books.css';
-
-import SearchIcon from '@mui/icons-material/Search';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import { useState } from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 export const Books = () => {
-    const [categoryOpen, setCategoryOpen] = useState(false);
-    const [ageOpen, setAgeOpen] = useState(false);
-    const [languageOpen, setLanguageOpen] = useState(false);
-    const [subjectOpen, setSubjectOpen] = useState(false);
+  const [categoryOpen, setCategoryOpen] = useState(false);
+  const [ageOpen, setAgeOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
+  const [subjectOpen, setSubjectOpen] = useState(false);
 
-     const Image1 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/1-DgN4-qfm.png`;
-    const Image2 = `${window.location.origin}/wp-content/themes/tr-theme/tr-theme/frontend/dist/assets/2-BPtoIZwi.png`;
-    return (
-        <div className='books-container'>
-            <h1 className='main-title'>Böcker</h1>
-            <div className="books-hero">
-                <div className="book-shape-wrapper">
-                    {/* Shape images */}
-                    <img src={Image1} alt="Shape 1" className="book-shape1 book-shape" />
-                    <img src={Image2} alt="Shape 2" className="book-shape2 book-shape" />
-                    
-                    <div className='search-bar'>
-                        <input type="text" placeholder='Sök...' className='search-input'/>
-                        <button className='search-button'>
-                            <SearchIcon />
-                        </button>
-                    </div>
-                </div>
+  // Dummy array for book items (useful for demonstration)
+  const books = new Array(9).fill({ title: "Title", imageUrl: "https://via.placeholder.com/150" });
+
+  return (
+    <div className="relative flex flex-col justify-center items-center min-h-screen m-[14%] mb-[6%]">
+      <div className="mb-[4%]">
+        <h1 className="relative text-2xl sm:text-3xl lg:text-6xl font-bold text-center z-10 text-gray-800 mb-[20%]">
+          Böcker
+        </h1>
+      </div>
+      <div className="flex gap-12 mb-10">
+        <aside className="w-1/6">
+          <h2 className="text-2xl mb-5 pb-2 border-b">Filter</h2>
+
+          {/* Age Filter */}
+          <div className={`mb-5 ${ageOpen ? "open" : ""}`}>
+            <h4
+              className="flex justify-between items-center text-lg font-bold cursor-pointer"
+              onClick={() => setAgeOpen(!ageOpen)}
+            >
+              Ålder
+              {ageOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            </h4>
+            <div className={`pl-5 ${ageOpen ? "block" : "hidden"}`}>
+              <input type="checkbox" /> 5-11
+              <input type="checkbox" /> 12-16
+              <input type="checkbox" /> 16-20
             </div>
-            
-            <div className="books-content">
-                <aside className="books-filter">
-                    <h2>Filter</h2>
+          </div>
 
-                    {/* Age Filter */}
-                    <div className={`age ${ageOpen ? 'open' : ''}`}>
-                        <h4 onClick={() => setAgeOpen(!ageOpen)}>
-                            Ålder
-                            {ageOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                        </h4>
-                        <div className="list">
-                            <input type="checkbox" /> Option 1
-                            <input type="checkbox" /> Option 2
-                            <input type="checkbox" /> Option 3
-                        </div>
-                    </div>
-
-                    {/* Language Filter */}
-                    <div className={`language ${languageOpen ? 'open' : ''}`}>
-                        <h4 onClick={() => setLanguageOpen(!languageOpen)}>
-                            Språk
-                            {languageOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                        </h4>
-                        <div className="list">
-                            <input type="checkbox" /> Option 1
-                            <input type="checkbox" /> Option 2
-                            <input type="checkbox" /> Option 3
-                        </div>
-                    </div>
-
-                    {/* Subject Filter */}
-                    <div className={`subject ${subjectOpen ? 'open' : ''}`}>
-                        <h4 onClick={() => setSubjectOpen(!subjectOpen)}>
-                            Ämne
-                            {subjectOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                        </h4>
-                        <div className="list">
-                            <input type="checkbox" /> Option 1
-                            <input type="checkbox" /> Option 2
-                            <input type="checkbox" /> Option 3
-                        </div>
-                    </div>
-                </aside>
-
-                <section className='books-grid-container'>
-                    {/* Placeholder book items */}
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div>
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div> 
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div>
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div>
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div> 
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div>
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div>
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div> 
-                    <div className="book-item">
-                        <img src="https://via.placeholder.com/150" alt="test photo" />
-                        <h3>Title</h3>
-                    </div>
-                </section>
+          {/* Language Filter */}
+          <div className={`mb-5 ${languageOpen ? "open" : ""}`}>
+            <h4
+              className="flex justify-between items-center text-lg font-bold cursor-pointer"
+              onClick={() => setLanguageOpen(!languageOpen)}
+            >
+              Språk
+              {languageOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            </h4>
+            <div className={`pl-5 ${languageOpen ? "block" : "hidden"}`}>
+              <input type="checkbox" /> Svenska
+              <input type="checkbox" /> Engelska
+              <input type="checkbox" /> Spanska
             </div>
-        </div>
-    );
+          </div>
+
+          {/* Subject Filter */}
+          <div className={`mb-5 ${subjectOpen ? "open" : ""}`}>
+            <h4
+              className="flex justify-between items-center text-lg font-bold cursor-pointer"
+              onClick={() => setSubjectOpen(!subjectOpen)}
+            >
+              Ämne
+              {subjectOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            </h4>
+            <div className={`pl-5 ${subjectOpen ? "block" : "hidden"}`}>
+              <input type="checkbox" /> Programmering
+              <input type="checkbox" /> Rymden
+              <input type="checkbox" /> Djur
+            </div>
+          </div>
+        </aside>
+
+        <section className="flex-grow grid grid-cols-3 gap-5">
+          {books.map((book, index) => (
+            <div
+              key={index}
+              className={`flex flex-col items-center p-4 rounded-lg ${
+                index % 2 === 0 ? "bg-greenTheme" : "bg-blueTheme"
+              }`}
+            >
+              <img
+                src={book.imageUrl}
+                alt="test photo"
+                className="w-60 h-60 rounded-lg"
+              />
+              <h3 className="mt-4 text-center text-lg">{book.title}</h3>
+            </div>
+          ))}
+        </section>
+      </div>
+    </div>
+  );
 };
