@@ -10,17 +10,6 @@ const Home = () => {
 
   console.log("Rendering Home component");
 
-  // Sökvägar för tipsbilder
-  // const carouselItems = [
-  //   "https://techforalla.se/images/image1.jpg",
-  //   "https://techforalla.se/images/image2.jpg",
-  //   "https://techforalla.se/images/image3.jpg",
-  //   "https://techforalla.se/images/image4.jpg",
-  //   "https://techforalla.se/images/image2.jpg",
-  //   "https://techforalla.se/images/image3.jpg",
-  //   "https://techforalla.se/images/image4.jpg",
-  // ];
-
   const [data, setData] = useState({hero: null, banner: null, carouselItems: []});
 
   useEffect(() => {
