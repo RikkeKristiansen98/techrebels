@@ -1,56 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroSection from "../components/Home/HeroSection";
 import Carousel from "../components/Home/Carousel";
 import ExploreCategories from "../components/Home/ExploreCategories";
+import Loading from "../components/Loading";
 import "../components/Home/Home.css";
 import HomeService from "../services/HomeService";
-import { useEffect, useState } from "react";
 
 const Home = () => {
-
-  console.log("Rendering Home component");
-
-  // Sökvägar för tipsbilder
-  // const carouselItems = [
-  //   "https://techforalla.se/images/image1.jpg",
-  //   "https://techforalla.se/images/image2.jpg",
-  //   "https://techforalla.se/images/image3.jpg",
-  //   "https://techforalla.se/images/image4.jpg",
-  //   "https://techforalla.se/images/image2.jpg",
-  //   "https://techforalla.se/images/image3.jpg",
-  //   "https://techforalla.se/images/image4.jpg",
-  // ];
-
-  const [data, setData] = useState({hero: null, banner: null, carouselItems: []});
+  const [data, setData] = useState({ hero: null, banner: null, carouselItems: [] });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchHomeData = async () => {
       try {
         const result = await HomeService.getHomePageWithSections();
         console.log("Fetched homepage data:", result);
-  
-        // Förhindra onödig rendering
-        if (JSON.stringify(result) !== JSON.stringify(data)) {
-          setData(result);
-        }
+
+        setData(result);
       } catch (error) {
         console.error("Error fetching homepage data:", error);
+      } finally {
+        setLoading(false); // Stop loading once data is fetched
       }
     };
-  
+
     fetchHomeData();
   }, []);
-  
-  
 
-
-  if (!data.hero || !data.banner) {
-    return <p>Laddar Hero-data...</p>;
+  if (loading) {
+    return <Loading />;
   }
 
   const hero = data.hero.acf;
   const banner = data.banner.acf;
-
 
   const banner_icons = [
     {
@@ -76,33 +58,28 @@ const Home = () => {
   ];
 
   return (
-    <> 
-    <div className="home-container">
-      {/* Hero Section */}
+    <>
+      <div className="home-container">
+        {/* Hero Section */}
         <HeroSection
           hero_header={hero.hero_header || "Header could not be found"}
-          hero_description={
-            hero.hero_description || "Description could not be found"
-          }
+          hero_description={hero.hero_description || "Description could not be found"}
           hero_link_url={hero.hero_url || "/"}
-          hero_link_title={
-            hero.hero_link_title || "Title could not be found"
-          }
+          hero_link_title={hero.hero_link_title || "Title could not be found"}
         />
 
-      {/* Explore Categories Section */}
+        {/* Explore Categories Section */}
         <ExploreCategories
           banner_header={banner.banner_header}
           banner_tagline={banner.banner_tagline}
           banner_icons={banner_icons}
         />
-        
-      {/* Carousel Section */}
-      <div className="flex items-center justify-center h-auto p-5 px-10">
-      <Carousel carouselItems={data.carouselItems} />
 
+        {/* Carousel Section */}
+        <div className="flex items-center justify-center h-auto p-5 px-10">
+          <Carousel carouselItems={data.carouselItems} />
+        </div>
       </div>
-    </div>
     </>
   );
 };
