@@ -12,6 +12,7 @@ import { Books } from './pages/Books';
 import Toys from './pages/Toys';
 import TipsaOss from './pages/Tipsaoss';
 import Media from './pages/Media';
+import CollectionItemPage from './pages/CollectionItemPage';
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: 'books',
         element: <Books />,
+      },
+      {
+        path: 'collection-item-page',
+        element: <CollectionItemPage />,
       },
       {
         path: 'rolemodel',
