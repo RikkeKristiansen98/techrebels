@@ -13,21 +13,16 @@ export const HomeProvider = ({ children }) => {
     isLoading: true,
     error: null,
   });
-  
-  const imageCache = {}; // Bildcache för att återanvända bilder
+ 
 
   useEffect(() => {
     const fetchHomeData = async () => {
       try {
         const result = await HomeService.getHomePageWithSections();
-
-        // Hämta bilder för carousel items
-        const carouselItemsWithImages = await HomeService.getCarouselImages(result.carouselItems, imageCache);
-
         setHomeData({
           hero: result.hero,
           banner: result.banner,
-          carouselItems: carouselItemsWithImages,
+          carouselItems: result.carouselItems,
           isLoading: false,
           error: null,
         });
@@ -52,3 +47,4 @@ export const HomeProvider = ({ children }) => {
     </HomeContext.Provider>
   );
 };
+

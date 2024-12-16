@@ -35,41 +35,6 @@ const carouselFieldNames = [
 ];
 
 const HomeService = {
-    // Funktion för att hämta en bild baserat på ID
-    getImageById: async (imageId, imageCache) => {
-      if (imageCache[imageId]) {
-        return imageCache[imageId];
-      }
-  
-      try {
-        const response = await fetch(`${BASE_URL}/media/${imageId}`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch image: ${response.statusText}`);
-        }
-        const data = await response.json();
-        const imageUrl = data.source_url;
-        imageCache[imageId] = imageUrl;  // Cache the image URL
-        return imageUrl;
-      } catch (error) {
-        console.error("Error fetching image by ID:", error);
-        return "";
-      }
-    },
-  
-    // Funktion för att hämta flera bilder
-    getCarouselImages: async (carouselItems, imageCache) => {
-      const itemsWithImages = await Promise.all(
-        carouselItems.map(async (item) => {
-          const imageId = item?.acf?.image;
-          if (imageId) {
-            const imageSrc = await HomeService.getImageById(imageId, imageCache);
-            return { ...item, imageSrc };
-          }
-          return item;
-        })
-      );
-      return itemsWithImages;
-    },
   // Hjälpfunktion för att skapa en lista av carousel-items
   createCarouselItems: (acfData) => {
     const items = [];
@@ -81,7 +46,6 @@ const HomeService = {
     }
     return items;
   },
-
   // Funktion för att hämta homepage-data
   getHomePage: async () => {
     const url = `${BASE_URL}/pages/98`;
