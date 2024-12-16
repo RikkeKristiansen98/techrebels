@@ -1,28 +1,30 @@
+import MainService, { fetchWithCache } from "./MainService";
+
 const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 
 // Cache för att lagra hämtad data
-const cache = new Map();
+// const cache = new Map();
 
-const fetchWithCache = async (url) => {
-  if (cache.has(url)) {
-    console.log("Returning cached data for:", url);
-    return cache.get(url);
-  }
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch: ${response.statusText}`);
-    }
-    const data = await response.json();
-    cache.set(url, data); // Lagra data i cachen
-    return data;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    throw error;
-  }
-};
+// const fetchWithCache = async (url) => {
+//   if (cache.has(url)) {
+//     console.log("Returning cached data for:", url);
+//     return cache.get(url);
+//   }
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error(`Failed to fetch: ${response.statusText}`);
+//     }
+//     const data = await response.json();
+//     cache.set(url, data);
+//     return data;
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//     throw error;
+//   }
+// };
 
-console.log("Cache status:", cache);
+// console.log("Cache status:", cache);
 
 const carouselFieldNames = [
   "selected_carousel_item_one",
@@ -36,25 +38,25 @@ const carouselFieldNames = [
 
 const HomeService = {
     // Funktion för att hämta en bild baserat på ID
-    getImageById: async (imageId, imageCache) => {
-      if (imageCache[imageId]) {
-        return imageCache[imageId];
-      }
+    // getImageById: async (imageId, imageCache) => {
+    //   if (imageCache[imageId]) {
+    //     return imageCache[imageId];
+    //   }
   
-      try {
-        const response = await fetch(`${BASE_URL}/media/${imageId}`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch image: ${response.statusText}`);
-        }
-        const data = await response.json();
-        const imageUrl = data.source_url;
-        imageCache[imageId] = imageUrl;  // Cache the image URL
-        return imageUrl;
-      } catch (error) {
-        console.error("Error fetching image by ID:", error);
-        return "";
-      }
-    },
+    //   try {
+    //     const response = await fetch(`${BASE_URL}/media/${imageId}`);
+    //     if (!response.ok) {
+    //       throw new Error(`Failed to fetch image: ${response.statusText}`);
+    //     }
+    //     const data = await response.json();
+    //     const imageUrl = data.source_url;
+    //     imageCache[imageId] = imageUrl;  // Cache the image URL
+    //     return imageUrl;
+    //   } catch (error) {
+    //     console.error("Error fetching image by ID:", error);
+    //     return "";
+    //   }
+    // },
   
     // Funktion för att hämta flera bilder
     getCarouselImages: async (carouselItems, imageCache) => {
@@ -62,7 +64,7 @@ const HomeService = {
         carouselItems.map(async (item) => {
           const imageId = item?.acf?.image;
           if (imageId) {
-            const imageSrc = await HomeService.getImageById(imageId, imageCache);
+            const imageSrc = await MainService.getImageById(imageId, imageCache);
             return { ...item, imageSrc };
           }
           return item;
@@ -70,6 +72,7 @@ const HomeService = {
       );
       return itemsWithImages;
     },
+    
   // Hjälpfunktion för att skapa en lista av carousel-items
   createCarouselItems: (acfData) => {
     const items = [];
