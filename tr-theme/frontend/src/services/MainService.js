@@ -1,12 +1,10 @@
 const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 
 const cache = new Map();
-
-
   // Cache för att lagra hämtad data
 export const fetchWithCache = async (url) => {
   if (cache.has(url)) {
-    console.log("Returning cached data for:", url);
+    // console.log("Returning cached data for:", url);
     return cache.get(url);
   }
   try {
@@ -27,9 +25,16 @@ console.log("Cache status:", cache);
 
 
 const MainService = {
-// Funktion för att hämta en bild baserat på ID
+  
+  // Funktion för att hämta bildens URL via dess ID.
+  // I WordPress sparas ofta bilder som "media" inlägg, och när vi hämtar data från en post (t.ex. via ACF) kan bilder refereras till via ett ID istället för en URL.
+  // Denna funktion tar emot bildens ID, gör en fetch-förfrågan till WordPress REST API för att hämta den faktiska URL:n till bilden (source_url).
+  // Bildens URL cachas i imageCache för att undvika onödiga upprepade anrop, vilket förbättrar prestandan.
+  // Om bilden redan finns i cache (imageCache[imageId]), returneras den direkt utan att behöva göra en ny fetch-förfrågan.
+  // Funktionen returnerar den hämtade bildens URL eller en tom sträng om något går fel under hämtningen.
 getImageById: async (imageId, imageCache) => {
     if (imageCache[imageId]) {
+      console.log("Returning cached image for ID:", imageId);
       return imageCache[imageId];
     }
 
@@ -46,10 +51,6 @@ getImageById: async (imageId, imageCache) => {
       console.error("Error fetching image by ID:", error);
       return "";
     }
-  },
-  getHomePage: async () => {
-    const url = `${BASE_URL}/pages/98`;
-    return await fetchWithCache(url);
   },
 };
 

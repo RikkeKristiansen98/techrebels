@@ -1,3 +1,4 @@
+// import MainService from "./MainService";
 const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 
 const CollectionService = {
