@@ -13,6 +13,7 @@ import Toys from "./pages/Toys";
 import TipsaOss from "./pages/Tipsaoss";
 import Media from "./pages/Media";
 import CollectionItemPage from "./pages/CollectionItemPage";
+import CollectionPage from "./pages/CollectionPage";
 
 export const router = createBrowserRouter([
   {
