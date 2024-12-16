@@ -1,22 +1,22 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
-import Rolemodels from './Pages/Rolemodels';
-import Rolemodel from './pages/Rolemodel';
-import { Faq } from './pages/Faq';
-import Layout from './pages/Layout';
-import Home from './pages/Home';
-import NotFound from './Pages/NotFound';
-import { Register } from './pages/Register';
-import { Login } from './pages/Login';
-import { Policy } from './pages/Policy';
-import { Books } from './pages/Books';
-import Toys from './pages/Toys';
-import TipsaOss from './pages/Tipsaoss';
-import Media from './pages/Media';
-import CollectionItemPage from './pages/CollectionItemPage';
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import Rolemodels from "./Pages/Rolemodels";
+import Rolemodel from "./pages/Rolemodel";
+import { Faq } from "./pages/Faq";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import NotFound from "./Pages/NotFound";
+import { Register } from "./pages/Register";
+import { Login } from "./pages/Login";
+import { Policy } from "./pages/Policy";
+import { Books } from "./pages/Books";
+import Toys from "./pages/Toys";
+import TipsaOss from "./pages/Tipsaoss";
+import Media from "./pages/Media";
+import CollectionItemPage from "./pages/CollectionItemPage";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     errorElement: <NotFound />,
     children: [
@@ -25,55 +25,59 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'home',
+        path: "home",
         element: <Home />,
       },
       {
-        path: 'faq',
+        path: "faq",
         element: <Faq />,
       },
       {
-        path: 'tipsaoss',
+        path: "tipsaoss",
         element: <TipsaOss />,
       },
       {
-        path: 'rolemodels',
+        path: "rolemodels",
         element: <Rolemodels />,
       },
       {
-        path: 'register',
+        path: "register",
         element: <Register />,
       },
       {
-        path: 'login',
+        path: "login",
         element: <Login />,
       },
       {
-        path: 'policy',
+        path: "policy",
         element: <Policy />,
       },
       {
-        path: 'books',
+        path: "books",
         element: <Books />,
       },
       {
-        path: 'collection-item-page',
+        path: "collection-item-page",
         element: <CollectionItemPage />,
       },
       {
-        path: 'rolemodel',
+        path: "collection-page",
+        element: <CollectionPage />,
+      },
+      {
+        path: "rolemodel",
         element: <Rolemodels />,
       },
       {
-        path: 'rolemodel/:slug',
+        path: "rolemodel/:slug",
         element: <Rolemodel />,
       },
       {
-        path: 'toys',
+        path: "toys",
         element: <Toys />,
       },
       {
-        path: 'media',
+        path: "media",
         element: <Media />,
       },
     ],
