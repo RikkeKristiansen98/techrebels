@@ -7,7 +7,7 @@ export const useCollection = () => useContext(CollectionContext);
 
 export const CollectionProvider = ({ children }) => {
   const [collectionData, setCollectionData] = useState({
-    collectionItems: [], // En lista med dina items
+    GridItems: [], // En lista med dina items
     isLoading: true,
     error: null,
   });
@@ -16,22 +16,24 @@ export const CollectionProvider = ({ children }) => {
     const fetchCollectionData = async () => {
       try {
         const result = await CollectionService.getCollection();
-        setCollectionData({ 
-          collectionItems: result, // Uppdaterar med hämtade items
+        setCollectionData({
+          GridItems: result, // Uppdaterar med hämtade items
           isLoading: false,
           error: null,
         });
       } catch (error) {
-        setCollectionData({ 
-          collectionItems: [], 
-          isLoading: false, 
-          error: error.message 
+        setCollectionData({
+          GridItems: [],
+          isLoading: false,
+          error: error.message,
         });
       }
     };
-
+  
     fetchCollectionData();
-  }, []);
+  }, [setCollectionData]);
+
+  console.log("CollectionProvider state:", collectionData);
 
   return (
     <CollectionContext.Provider value={collectionData}>

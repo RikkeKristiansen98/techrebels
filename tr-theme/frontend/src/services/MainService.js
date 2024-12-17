@@ -23,7 +23,6 @@ export const fetchWithCache = async (url) => {
 
 console.log("Cache status:", cache);
 
-
 const MainService = {
   
   // Funktion för att hämta bildens URL via dess ID.
@@ -51,6 +50,13 @@ getImageById: async (imageId, imageCache) => {
       console.error("Error fetching image by ID:", error);
       return "";
     }
+  },
+
+  findDynamicField: (acf, fieldType) => {
+    const fieldKey = Object.keys(acf || {}).find((key) =>
+      key.toLowerCase().includes(fieldType.toLowerCase())
+    );
+    return fieldKey ? acf[fieldKey] : null;
   },
 };
 

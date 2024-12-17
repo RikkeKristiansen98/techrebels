@@ -1,4 +1,3 @@
-// import MainService from "./MainService";
 const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 
 const CollectionService = {
@@ -9,12 +8,14 @@ const CollectionService = {
         throw new Error(`HTTP-fel! status: ${response.status}`);
       }
       const data = await response.json();
+      console.log("CollectionService", data); // Logga rådata från API
 
-      // Returnerar bara nödvändiga fält som en lista
       return data.map((item) => ({
-        id: item.acf?.id,
-        title: item.acf?.title,
-        imageUrl: item.acf?.image?.source_url || null,
+        id: item.id, // Huvud-id
+        title: item.acf?.collection_item_title || "No Title", // Titel
+        description: item.acf?.collection_item_description || "No description",
+        imageSrc: item.acf?.collection_item_image || null, // Bild-id
+        url: item.acf?.collection_item_url || "#", // Länk
       }));
     } catch (error) {
       console.error("Error fetching collection:", error);

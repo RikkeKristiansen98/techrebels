@@ -1,5 +1,4 @@
 import { fetchWithCache } from "./MainService";
-import MainService from "./MainService";
 
 const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 

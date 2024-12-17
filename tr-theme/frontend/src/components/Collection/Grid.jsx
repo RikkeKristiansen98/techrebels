@@ -1,28 +1,19 @@
+import React from "react";
 import { useCollection } from "../../contexts/CollectionContext";
+import GridItem from "./GridItem";
 
-export const Grid = () => {
-  const { collectionItems, isLoading, error } = useCollection();
+const Grid = () => {
+  const { GridItems, isLoading } = useCollection();
+
+  console.log("GridItems in Grid component:", GridItems);
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
 
   return (
     <section className="flex-grow grid grid-cols-3 gap-5">
-      {collectionItems.map((item, index) => (
-        <div
-          key={index}
-          className={`flex flex-col items-center p-4 rounded-lg ${
-            index % 2 === 0 ? "bg-greenTheme" : "bg-blueTheme"
-          }`}
-        >
-          <img
-            src={item.imageUrl}
-            alt={item.title}
-            className="w-60 h-60 rounded-lg"
-          />
-          <h3 className="mt-4 text-center text-lg">{item.title}</h3>
-        </div>
-      ))}
+     {GridItems.map((item, index) => (
+        <GridItem key={item.id || index} id={item.id} />
+      ))} 
     </section>
   );
 };

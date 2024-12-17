@@ -2,11 +2,7 @@ import Filter from "../components/Collection/Filter";
 import Grid from "../components/Collection/Grid";
 
 export const CollectionPage = () => {
-  // Dummy array for book items (useful for demonstration)
-  const books = new Array(9).fill({
-    title: "Title",
-    imageUrl: "https://via.placeholder.com/150",
-  });
+
 
   return (
     <>
@@ -43,7 +39,7 @@ export const CollectionPage = () => {
         </div>
         <div className="flex gap-12 mb-10">
           <Filter />
-          <Grid books={books} />
+          <Grid />
         </div>
       </div>
     </>

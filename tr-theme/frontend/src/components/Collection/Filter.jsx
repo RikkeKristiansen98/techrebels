@@ -11,7 +11,7 @@ export const Filter = () => {
 
   return (
     <>
-      <aside className="w-1/6">
+      <aside className="w-1/6 text-black">
         <h2 className="text-2xl mb-5 pb-2 border-b">Filter</h2>
 
         {/* Age Filter */}
