@@ -31,19 +31,30 @@ const MainService = {
   // Bildens URL cachas i imageCache för att undvika onödiga upprepade anrop, vilket förbättrar prestandan.
   // Om bilden redan finns i cache (imageCache[imageId]), returneras den direkt utan att behöva göra en ny fetch-förfrågan.
   // Funktionen returnerar den hämtade bildens URL eller en tom sträng om något går fel under hämtningen.
-getImageById: async (imageId, imageCache) => {
+  getImageById: async (imageId, imageCache) => {
     if (imageCache[imageId]) {
       console.log("Returning cached image for ID:", imageId);
       return imageCache[imageId];
     }
-
+  
     try {
       const response = await fetch(`${BASE_URL}/media/${imageId}`);
       if (!response.ok) {
         throw new Error(`Failed to fetch image: ${response.statusText}`);
       }
       const data = await response.json();
-      const imageUrl = data.source_url;
+  
+      // Logga hela svaret från API:t
+      console.log("Image data:", data);
+
+        // Kolla om det finns ACF-data i API-svaret
+    if (data.acf) {
+      console.log("ACF data:", data.acf);  // Logga ACF-datan
+    } else {
+      console.log("No ACF data in response");
+    }
+  
+      const imageUrl = data.source_url;  // Hämta den faktiska URL:en
       imageCache[imageId] = imageUrl;  // Cache the image URL
       return imageUrl;
     } catch (error) {
@@ -51,7 +62,7 @@ getImageById: async (imageId, imageCache) => {
       return "";
     }
   },
-
+  
   findDynamicField: (acf, fieldType) => {
     const fieldKey = Object.keys(acf || {}).find((key) =>
       key.toLowerCase().includes(fieldType.toLowerCase())

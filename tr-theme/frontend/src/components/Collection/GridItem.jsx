@@ -5,22 +5,35 @@ import MainService from "../../services/MainService";
 const GridItem = ({ id }) => {
   const { GridItems } = useCollection();
   const item = GridItems.find((gridItem) => gridItem.id === id);
+
   const [content, setContent] = useState({
     title: item?.title || "",
+    author: item?.author || "",
     imageSrc: item?.imageSrc || "",
     isLoaded: !!item?.imageSrc,
   });
 
-
   useEffect(() => {
     const fetchContent = async () => {
-      if (!content.isLoaded && item?.acf?.imageSrc) {
-        
-        const imageId = findDynamicField(item.acf, "image");
-      
+      if (content.isLoaded && item?.acf?.imageSrc) {
+        // Hämta imageId från ACF-fältet
+
+        const imageId = findDynamicField(item.acf, "image"); // Hitta bild-ID
+
+       
+
         if (imageId) {
           try {
-            const imageSrc = await MainService.getImageById(imageId);
+            
+            // Anropa MainService för att hämta bildens URL via ID
+            const imageSrc = await MainService.getImageById(
+              imageId,
+              imageCache
+            );
+
+            // Logga bildens URL för att kontrollera att vi får rätt URL
+            console.log("Fetched imageSrc:", imageSrc);
+            // Uppdatera state när bilden har hämtats
             setContent((prev) => ({
               ...prev,
               imageSrc,
@@ -38,7 +51,7 @@ const GridItem = ({ id }) => {
 
   if (!item) return null;
 
-  console.log("Found imageSrc:", item.imageSrc); 
+  // Logga vad som händer med content och bildens URL
   console.log("GridItem content:", content);
 
   return (
@@ -46,11 +59,12 @@ const GridItem = ({ id }) => {
       {content.isLoaded ? (
         <>
           <img
-            src={content.imageSrc}
+            src={content.imageSrc} // Bildens URL
             alt={content.title}
             className="w-60 h-60 rounded-lg"
           />
           <h3 className="mt-4 text-center text-lg">{content.title}</h3>
+          <h3 className="mt-4 text-center text-lg">{content.author}</h3>
         </>
       ) : (
         <div>Loading...</div>
