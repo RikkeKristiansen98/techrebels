@@ -1,19 +1,18 @@
-import React from "react";
-import { useCollection } from "../../contexts/CollectionContext";
+import React, { useState } from "react";
 import GridItem from "./GridItem";
 
-const Grid = () => {
-  const { GridItems, isLoading } = useCollection();
-
-  console.log("GridItems in Grid component:", GridItems);
-
-  if (isLoading) return <p>Loading...</p>;
+const Grid = ({ gridItems }) => {
+  const [imageCache, setImageCache] = useState({}); // Cache för bilder
 
   return (
     <section className="flex-grow grid grid-cols-3 gap-5">
-     {GridItems.map((item, index) => (
-        <GridItem key={item.id || index} id={item.id} />
-      ))} 
+      {gridItems.map((gridItem) => (
+        <GridItem
+          gridItem={gridItem} // Skickar hela objektet
+          key={gridItem.id} // Använd unika ID:n som key
+          imageCache={imageCache}
+        />
+      ))}
     </section>
   );
 };

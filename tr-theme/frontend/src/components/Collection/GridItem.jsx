@@ -1,73 +1,64 @@
 import React, { useState, useEffect } from "react";
-import { useCollection } from "../../contexts/CollectionContext";
 import MainService from "../../services/MainService";
 
-const GridItem = ({ id }) => {
-  const { GridItems } = useCollection();
-  const item = GridItems.find((gridItem) => gridItem.id === id);
-
+const GridItem = ({ gridItem, imageCache }) => {
   const [content, setContent] = useState({
-    title: item?.title || "",
-    author: item?.author || "",
-    imageSrc: item?.imageSrc || "",
-    isLoaded: !!item?.imageSrc,
+    title: gridItem.title || "No title found",
+    tagline: gridItem.tagline || "Unknown author",
+    description: gridItem.description || "No description",
+    imageId: gridItem.imageId || "",
+    isLoaded: false,
   });
 
   useEffect(() => {
-    const fetchContent = async () => {
-      if (content.isLoaded && item?.acf?.imageSrc) {
-        // Hämta imageId från ACF-fältet
-
-        const imageId = findDynamicField(item.acf, "image"); // Hitta bild-ID
-
-       
-
-        if (imageId) {
-          try {
-            
-            // Anropa MainService för att hämta bildens URL via ID
-            const imageSrc = await MainService.getImageById(
-              imageId,
-              imageCache
-            );
-
-            // Logga bildens URL för att kontrollera att vi får rätt URL
-            console.log("Fetched imageSrc:", imageSrc);
-            // Uppdatera state när bilden har hämtats
-            setContent((prev) => ({
-              ...prev,
-              imageSrc,
-              isLoaded: true,
-            }));
-          } catch (error) {
-            console.error("Error fetching image:", error);
-          }
+    const fetchImage = async () => {
+      if (!content.imageSrc && gridItem.imageSrc) {
+        try {
+          const imageSrc = await MainService.getImageById(
+            gridItem.imageSrc,
+            imageCache
+          );
+          setContent((prev) => ({
+            ...prev,
+            imageSrc,
+            isLoaded: true,
+          }));
+        } catch (error) {
+          console.error("Error fetching image:", error);
         }
       }
     };
 
-    fetchContent();
-  }, [item, content.isLoaded]);
-
-  if (!item) return null;
-
-  // Logga vad som händer med content och bildens URL
-  console.log("GridItem content:", content);
+    fetchImage();
+  }, [gridItem, imageCache]);
 
   return (
     <div className="flex flex-col items-center p-4 rounded-lg">
       {content.isLoaded ? (
         <>
-          <img
-            src={content.imageSrc} // Bildens URL
-            alt={content.title}
-            className="w-60 h-60 rounded-lg"
-          />
-          <h3 className="mt-4 text-center text-lg">{content.title}</h3>
-          <h3 className="mt-4 text-center text-lg">{content.author}</h3>
+          {content.imageSrc && (
+            <img
+              src={content.imageSrc}
+              alt={content.title}
+              className="w-60 h-60 rounded-lg"
+            />
+          )}
+          <h3 className="mt-4 text-center text-lg text-gray-700">
+            {content.title}
+          </h3>
+          <h3 className="mt-2 text-center text-md text-gray-700">
+            {content.tagline}
+          </h3>
+          {content.description && (
+            <h3 className="mt-2 text-center text-sm text-gray-600">
+              {content.description}
+            </h3>
+          )}
         </>
       ) : (
-        <div>Loading...</div>
+        <div className="w-full h-54 bg-gray-200 flex items-center justify-center">
+          Loading content...
+        </div>
       )}
     </div>
   );

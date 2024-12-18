@@ -14,7 +14,7 @@ const carouselFieldNames = [
 
 const HomeService = {
   // // Funktion för att hämta flera bilder
-  
+
   // getCarouselImages: async (carouselItems, imageCache) => {
   //   const itemsWithImages = await Promise.all(
   //     carouselItems.map(async (item) => {
@@ -30,7 +30,6 @@ const HomeService = {
 
   //   return itemsWithImages;
   // },
-
 
   // Hjälpfunktion för att skapa en lista av carousel-items
   createCarouselItems: (acfData) => {
@@ -70,8 +69,6 @@ const HomeService = {
             : null;
         })
         .filter((item) => item); // Filtrera bort null
-
-      console.log("Extracted Carousel Items:", carouselItems);
 
       if (!heroId || !bannerId || carouselItems.length === 0) {
         throw new Error(

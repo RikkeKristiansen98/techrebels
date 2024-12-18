@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainService from "../../services/MainService";
 
-
 const CarouselItem = ({ carouselItem, imageCache }) => {
   const [content, setContent] = useState({
     title: "",
@@ -9,20 +8,13 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
     isLoaded: false,
   });
 
-  // Dynamisk funktion för att hitta rätt fält från ACF
-  const findDynamicField = (acf, fieldType) => {
-    const fieldKey = Object.keys(acf || {}).find((key) =>
-      key.toLowerCase().includes(fieldType.toLowerCase())
-    );
-    return fieldKey ? acf[fieldKey] : null;
-  };
   // Hämta både title och bild och sätt in i state när båda är färdiga
   useEffect(() => {
     const fetchContent = async () => {
       const title =
-        findDynamicField(carouselItem.acf, "title") ||
+        MainService.findDynamicField(carouselItem.acf, "title") ||
         "Title could not be found";
-      const imageId = findDynamicField(carouselItem.acf, "image");
+      const imageId = MainService.findDynamicField(carouselItem.acf, "image");
 
       if (imageId) {
         try {
@@ -32,7 +24,7 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
           setContent({
             title,
             imageSrc,
-            isLoaded: true, // Sätt detta till true när både är laddade
+            isLoaded: true, 
           });
         } catch (error) {
           console.error("Error fetching content:", error);
@@ -42,6 +34,8 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
 
     fetchContent();
   }, [carouselItem, imageCache]);
+
+  console.log("CarouselItem content:", carouselItem, "content:", content);
 
   return (
     <div className="w-full h-54 bg-white shadow-lg rounded-lg flex flex-col items-center justify-center transition-transform duration-300 transform hover:scale-105 cursor-pointer relative overflow-hidden group">

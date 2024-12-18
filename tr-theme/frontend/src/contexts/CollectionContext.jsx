@@ -29,11 +29,9 @@ export const CollectionProvider = ({ children }) => {
         });
       }
     };
-  
+
     fetchCollectionData();
   }, [setCollectionData]);
-
-  console.log("CollectionProvider state:", collectionData);
 
   return (
     <CollectionContext.Provider value={collectionData}>

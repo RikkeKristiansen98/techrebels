@@ -1,7 +1,9 @@
 import Filter from "../components/Collection/Filter";
 import Grid from "../components/Collection/Grid";
+import { useCollection } from "../contexts/CollectionContext";
 
 export const CollectionPage = () => {
+  const { GridItems } = useCollection();
 
 
   return (
@@ -39,7 +41,7 @@ export const CollectionPage = () => {
         </div>
         <div className="flex gap-12 mb-10">
           <Filter />
-          <Grid />
+          <Grid gridItems={GridItems} />
         </div>
       </div>
     </>
