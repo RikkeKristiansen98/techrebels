@@ -1,41 +1,39 @@
 import { NavLink } from "react-router-dom";
 
 export const Header = () => {
-
   const logo = "https://techforalla.se/images/techforalla-logo.png";
 
   return (
-    <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50">
+    <header className="p-10 w-full xs:h-[80px] flex justify-between items-center">
       <div className="logo z-10">
         <NavLink to="/">
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="max-w-[40%] min-w-[20%] ml-10 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
+            className="max-w-[40%] min-w-[20%] ml-10 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer sm:max-w-[50%] xs:max-w-[25%] xl:max-w-[40%]"
           />
         </NavLink>
       </div>
-      <nav className="flex gap-8 z-10">
+      <nav className="flex gap-8 z-10 xs:gap-8 text-center">
         <NavLink
           to="#"
-          className="header-2 text-2xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
+          className="header-2 xxs:mt-[-28%] xxs:text-sm xs:text-lg sm:mt-[4%] sm:text-3xl md:mt-[15%] l:text-lg lg:text-xl xl:text-3xl xl:mt-[14%] 2xl:text-4xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className="header-2 text-2xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
+          className="header-2 xxs:mt-[-28%] xxs:text-sm xs:mb-[6%] xs:text-lg sm:mt-[4%] sm:text-3xl md:mt-[15%] l:text-lg lg:text-xl xl:text-2xl xl:mt-[14%] 2xl:text-4xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
         >
           Skicka in tips
         </NavLink>
       </nav>
 
       <svg
+      className="h-[20vh] xl:h-auto lg:h-auto"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="100 10 1280 250"
-        className="footer-svg"
         style={{
-          
           transform: "rotate(180deg) scaleX(-1)", // Vänder SVG:n upp och ner
           position: "absolute", // Gör att SVG:n kan placeras fritt
           left: 0, // Justerar den till vänster

@@ -13,6 +13,11 @@ export default {
         spin: "spin 1s linear infinite", // Default spin animation
         customSpin: "customSpin 1.5s ease-in-out infinite", // Custom animation
       },
+      screens: {
+        'xs': '640px', // Definiera xs som skärmar som är 0px eller större (eller valfritt breakpoint)
+        'xxs': '375px',
+        'l': '635px',
+      },
       keyframes: {
         customSpin: {
           "0%": { transform: "rotate(0deg)" },

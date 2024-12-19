@@ -13,24 +13,6 @@ const carouselFieldNames = [
 ];
 
 const HomeService = {
-  // // Funktion för att hämta flera bilder
-
-  // getCarouselImages: async (carouselItems, imageCache) => {
-  //   const itemsWithImages = await Promise.all(
-  //     carouselItems.map(async (item) => {
-  //       const imageId = item?.acf?.image;
-  //       if (imageId) {
-  //         const imageSrc = await MainService.getImageById(imageId, imageCache);
-  //         console.log("hej", imageSrc);
-  //         return { ...item, imageSrc };
-  //       }
-  //       return item;
-  //     })
-  //   );
-
-  //   return itemsWithImages;
-  // },
-
   // Hjälpfunktion för att skapa en lista av carousel-items
   createCarouselItems: (acfData) => {
     const items = [];

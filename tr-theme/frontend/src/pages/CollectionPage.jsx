@@ -3,8 +3,21 @@ import Grid from "../components/Collection/Grid";
 import { useCollection } from "../contexts/CollectionContext";
 
 export const CollectionPage = () => {
-  const { GridItems } = useCollection();
+  const {
+    allGridItems,
+    filteredGridItems,
+    filterCollection,
+    isLoading,
+    error,
+  } = useCollection();
 
+  const handleFilterChange = (filters) => {
+    filterCollection(filters); // Anropa filter-funktionen i context
+  };
+  
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
   return (
     <>
       <div className="relative flex flex-col justify-center items-center min-h-screen m-[14%] mb-[6%]">
@@ -39,8 +52,11 @@ export const CollectionPage = () => {
           </h1>
         </div>
         <div className="flex gap-12 mb-10">
-          <Filter />
-          <Grid gridItems={GridItems} />
+          <Filter onFilterChange={handleFilterChange} />
+          <Grid
+            allGridItems={allGridItems}
+            filteredGridItems={filteredGridItems}
+          />
         </div>
       </div>
     </>

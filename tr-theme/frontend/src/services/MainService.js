@@ -13,6 +13,7 @@ export const fetchWithCache = async (url) => {
       throw new Error(`Failed to fetch: ${response.statusText}`);
     }
     const data = await response.json();
+    
     cache.set(url, data);
     return data;
   } catch (error) {
