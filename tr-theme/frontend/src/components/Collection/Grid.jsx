@@ -7,7 +7,6 @@ const Grid = ({ gridItems }) => {
   //funktion finnas när det är fler än 4x4 objekt vid tor skärm men scroll
   //behållas vid liten skärm
 
-  
   const [imageCache, setImageCache] = useState({}); // Cache för bilder
 
   return (

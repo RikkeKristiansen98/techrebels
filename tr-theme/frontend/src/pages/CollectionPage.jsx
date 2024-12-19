@@ -5,7 +5,6 @@ import { useCollection } from "../contexts/CollectionContext";
 export const CollectionPage = () => {
   const { GridItems } = useCollection();
 
-
   return (
     <>
       <div className="relative flex flex-col justify-center items-center min-h-screen m-[14%] mb-[6%]">
