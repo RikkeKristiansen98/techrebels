@@ -1,6 +1,7 @@
 import Filter from "../components/Collection/Filter";
 import Grid from "../components/Collection/Grid";
 import { useCollection } from "../contexts/CollectionContext";
+import Loading from "../components/Loading";
 
 export const CollectionPage = () => {
   const {
@@ -15,8 +16,13 @@ export const CollectionPage = () => {
     filterCollection(filters); // Anropa filter-funktionen i context
   };
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
   return (
     <>
       <div className="relative flex flex-col justify-center items-center min-h-screen m-[20%] mb-[6%]">

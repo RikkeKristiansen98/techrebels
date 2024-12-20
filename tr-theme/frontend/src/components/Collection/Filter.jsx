@@ -15,6 +15,11 @@ export const Filter = ({ onFilterChange }) => {
     topics: "Ämnen",
   };
 
+  // Just nu hittas kategorierna samt deras barn men när man trycker på checkboxen 
+  // så sparas de inte i den filtrerade arrayen, se consol loggarna. 
+  // Att göra: När en checkbox bockas av så ska den kategorin läggas till i den filtrerade arrayen. Typ. 
+
+  
   useEffect(() => {
     if (categories.length > 0) {
       const groupedCategories = categories.reduce((acc, category) => {
