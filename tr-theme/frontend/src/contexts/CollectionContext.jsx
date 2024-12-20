@@ -40,26 +40,46 @@ export const CollectionProvider = ({ children }) => {
 
   const getCategories = async () => {
     try {
-      const categoriesWithChildren =
-        await CollectionService.fetchAllCategoriesWithChildren();
+      const categoriesWithChildren = await CollectionService.fetchAllCategoriesWithChildren();
+      console.log("Fetched categories:", categoriesWithChildren);
+      
       setCategories(categoriesWithChildren); // Uppdatera state med parent och children
     } catch (error) {
       console.error("Error fetching categories:", error);
     }
   };
+  
 
   // Implementera filterCollection
   const filterCollection = ({ categories: selectedCategories }) => {
+    console.log(
+      "Filtering with selected categories (slugs):",
+      selectedCategories
+    );
+
     if (!selectedCategories || selectedCategories.length === 0) {
-      setFilteredGridItems(allGridItems.GridItems); // Visa alla om inga filter är aktiva
+      console.log("No categories selected, showing all items.");
+      setFilteredGridItems(allGridItems.GridItems);
     } else {
+      // Slå upp ID:n för valda kategorier baserat på deras slug
+      const selectedCategoryIds = categories
+        .filter((cat) => selectedCategories.includes(cat.slug))
+        .map((cat) => cat.id);
+
+      console.log("Filtering with selected category IDs:", selectedCategoryIds);
+
+      // Filtrera objekt som har en kategori som matchar något av de valda ID:na
       const filtered = allGridItems.GridItems.filter((item) =>
-        selectedCategories.some(
-          (categorySlug) => item.categories?.includes(categorySlug) // Matcha mot valda kategorier
-        )
+        item.categories.some((catId) => selectedCategoryIds.includes(catId))
       );
+
+      console.log("Filtered items:", filtered);
       setFilteredGridItems(filtered);
     }
+    console.log("All Grid Items:", allGridItems.GridItems);
+    allGridItems.GridItems.forEach((item) => {
+      console.log(`Item ${item.id} categories:`, item.categories);
+    });
   };
 
   useEffect(() => {
