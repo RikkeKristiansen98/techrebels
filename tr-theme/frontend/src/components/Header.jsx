@@ -16,7 +16,7 @@ export const Header = () => {
       </div>
       <nav className="flex gap-8 z-10 xs:gap-8 text-center">
         <NavLink
-          to="#"
+          to="/collection-page"
           className="header-2 xxs:mt-[-28%] xxs:text-sm xs:text-lg sm:mt-[4%] sm:text-3xl md:mt-[15%] l:text-lg lg:text-xl xl:text-3xl xl:mt-[14%] 2xl:text-4xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
         >
           Tipsbanken
@@ -30,7 +30,7 @@ export const Header = () => {
       </nav>
 
       <svg
-      className="h-[20vh] xl:h-auto lg:h-auto"
+      className="h-[20vh] xl:h-[auto] lg:h-auto"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="100 10 1280 250"
         style={{

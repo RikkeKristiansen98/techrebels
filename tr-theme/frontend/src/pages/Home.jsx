@@ -47,7 +47,7 @@ const Home = () => {
         hero_description={
           hero.acf.hero_description || "Description could not be found"
         }
-        hero_link_url={hero.acf.hero_url || "/"}
+        hero_link_url={hero.acf.hero_url || "/collection"}
         hero_link_title={hero.acf.hero_link_title || "Title could not be found"}
       />
 

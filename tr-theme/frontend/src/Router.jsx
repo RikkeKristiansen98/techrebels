@@ -30,6 +30,14 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "tipsbanken",
+        element: <CollectionPage />,
+      },
+      {
+        path: "collection",  // Dynamisk ruta för collection
+        element: <CollectionPage />,
+      },
+      {
         path: "faq",
         element: <Faq />,
       },

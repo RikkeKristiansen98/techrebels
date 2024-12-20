@@ -14,19 +14,21 @@ export const CollectionPage = () => {
   const handleFilterChange = (filters) => {
     filterCollection(filters); // Anropa filter-funktionen i context
   };
-  
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
   return (
     <>
-      <div className="relative flex flex-col justify-center items-center min-h-screen m-[14%] mb-[6%]">
+      <div className="relative flex flex-col justify-center items-center min-h-screen m-[20%] mb-[6%]">
         <div className="mb-[12%] relative">
           {/* Underlay shape */}
           <svg
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-[-90%] w-[100%] h-[200%] scale-[2.3] object-cover opacity-90 z-0"
+            className="absolute top-[-90%] w-[100%] h-[200%] scale-[2.3] object-cover opacity-90 z-0 
+    xs:top-[-85%] xs:w-[95%] xs:h-[190%] xs:scale-[2] 
+    xxs:top-[-80%] xxs:w-[90%] xxs:h-[180%] xxs:scale-[1.8]
+    l:top-[-88%] l:w-[98%] l:h-[195%] l:scale-[2.1]"
           >
             <path
               fill="#16697A"
@@ -39,7 +41,10 @@ export const CollectionPage = () => {
           <svg
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-[-40%] w-[105%] h-[120%] scale-[4] right-2 object-cover opacity-80 z-0"
+            className="absolute top-[-40%] w-[105%] h-[120%] scale-[4] right-2 object-cover opacity-80 z-0 
+    xs:top-[-50%] xs:w-[105%] xs:h-[130%] xs:scale-[3.8] 
+    xxs:top-[-45%] xxs:w-[110%] xxs:h-[125%] xxs:scale-[3.5]
+    l:top-[-48%] l:w-[106%] l:h-[125%] l:scale-[3.7]"
           >
             <path
               fill="#A5C882"
@@ -47,6 +52,7 @@ export const CollectionPage = () => {
               transform="translate(100 100)  rotate(14)"
             />
           </svg>
+
           <h1 className="header-1 text-white relative text-2xl sm:text-3xl lg:text-6xl font-bold text-center z-10 mb-[20%]">
             Tipsbanken
           </h1>

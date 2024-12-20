@@ -8,7 +8,7 @@ const HeroSection = ({
   hero_link_url,
 }) => {
   return (
-    <div className="hero-section py-60 relative flex flex-col md:flex-row items-stretch min-h-[250px] mb-10 px-[8%] overflow-visible">
+    <div className="hero-section py-60 relative flex flex-col md:flex-row items-stretch min-h-[250px] mb-10 px-[8%] overflow-visile">
       {/* Intro text */}
       <div className="hero-section-text flex-1 flex items-center justify-center text-center md:text-left">
         <div>

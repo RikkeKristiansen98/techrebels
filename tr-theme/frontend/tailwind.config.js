@@ -14,7 +14,7 @@ export default {
         customSpin: "customSpin 1.5s ease-in-out infinite", // Custom animation
       },
       screens: {
-        'xs': '640px', // Definiera xs som skärmar som är 0px eller större (eller valfritt breakpoint)
+        'xs': '645px', // Definiera xs som skärmar som är 0px eller större (eller valfritt breakpoint)
         'xxs': '375px',
         'l': '635px',
       },
