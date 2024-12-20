@@ -33,4 +33,5 @@ function expose_acf_fields_for_pages() {
 }
 add_action('rest_api_init', 'expose_acf_fields_for_pages');
 
+
 ?>

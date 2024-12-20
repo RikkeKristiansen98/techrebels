@@ -28,7 +28,8 @@ const CollectionService = {
 
   async fetchAllCategoriesWithChildren() {
     try {
-      const response = await fetch(`${BASE_URL}/categories`);
+      const response = await fetch(`${BASE_URL}/categories?per_page=100`);
+      
       if (!response.ok) {
         throw new Error(`HTTP-fel! status: ${response.status}`);
       }
@@ -37,9 +38,9 @@ const CollectionService = {
   
       // Filtrera specifika parent-kategorier (ändra villkor baserat på din data)
       const parentCategories = allCategories.filter((category) =>
-        ["ages", "area", "topic"].includes(category.slug)
+        ["ages", "areas", "topics"].includes(category.slug)
       );
-  
+    
       // Lägg till respektive barn till varje parent
       const categoriesWithChildren = parentCategories.map((parent) => {
         const children = allCategories.filter(
@@ -58,6 +59,8 @@ const CollectionService = {
       throw error;
     }
   },
+  
 };
+
 
 export default CollectionService;

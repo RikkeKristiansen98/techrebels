@@ -11,10 +11,9 @@ export const Filter = ({ onFilterChange }) => {
 
   const DISPLAY_NAMES = {
     ages: "Åldersgrupper",
-    area: "Områden",
-    topic: "Ämnen",
+    areas: "Områden",
+    topics: "Ämnen",
   };
-  
 
   useEffect(() => {
     if (categories.length > 0) {
@@ -23,13 +22,13 @@ export const Filter = ({ onFilterChange }) => {
         if (category.link.includes("/ages")) {
           if (!acc["Ages"]) acc["Ages"] = [];
           acc["Ages"].push(category);
-        } else if (category.link.includes("/subject")) {
-          if (!acc["Subject"]) acc["Subject"] = [];
-          acc["Subject"].push(category);
-        } else if (category.link.includes("/collection-categories")) {
-          if (!acc["Collection Categories"]) acc["Collection Categories"] = [];
-          acc["Collection Categories"].push(category);
-        }
+        } else if (category.link.includes("/areas")) {
+          if (!acc["Areas"]) acc["Areas"] = [];
+          acc["Areas"].push(category);
+        } else if (category.link.includes("/topics")) {
+          if (!acc["Topics"]) acc["Topics"] = [];
+          acc["Topics"].push(category);
+        } 
         return acc;
       }, {});
 
@@ -45,8 +44,6 @@ export const Filter = ({ onFilterChange }) => {
     );
   };
   
-  
-
   const toggleParent = (parentName) => {
     setOpenParents((prev) => ({
       ...prev,
