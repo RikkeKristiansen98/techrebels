@@ -8,11 +8,11 @@ const HeroSection = ({
   hero_link_url,
 }) => {
   return (
-    <div className="hero-section py-60 relative flex flex-col md:flex-row items-stretch min-h-[250px] mb-10 px-[8%] overflow-visile">
+    <div className="hero-section py-60 mt-40 relative flex flex-col md:flex-row items-stretch min-h-[250px] mb-10 px-[8%] overflow-visile">
       {/* Intro text */}
       <div className="hero-section-text flex-1 flex items-center justify-center text-center md:text-left">
         <div>
-          <h1 className="home-title text-5xl font-bold mb-5">{hero_header}</h1>
+          <h1 className="home-title text-5xl font-bold mb-16">{hero_header}</h1>
           <p className="intro-text text-lg text-gray-800">{hero_description}</p>
         </div>
       </div>
@@ -20,11 +20,11 @@ const HeroSection = ({
       {/* Shape and link */}
       <div className="hero-section-link flex-1 relative flex items-center justify-center overflow-visible">
         <div className="hero-link-shapes w-full h-full relative">
-          {/* Overlay shape */}
+          {/* Underlay shape */}
           <svg
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-[-59%] w-[100%] h-[200%] scale-[1.1] object-cover opacity-90 z-0"
+            className="absolute top-[-59%] w-[100%] h-[200%] scale-[1.3] object-cover opacity-90 z-0"
           >
             <path
               fill="#16697A"
@@ -33,11 +33,11 @@ const HeroSection = ({
             />
           </svg>
 
-          {/* Underlay shape */}
+          {/* Overlay shape */}
           <svg
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-[-10%] w-[105%] scale-[2] h-[120%] object-cover opacity-80 z-0"
+            className="absolute top-[-10%] w-[105%] scale-[2.4] h-[120%] object-cover opacity-80 z-0"
           >
             <path
               fill="#A5C882"
