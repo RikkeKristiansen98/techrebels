@@ -25,7 +25,7 @@ const Grid = () => {
   const gridItems = filteredGridItems.length > 0 ? filteredGridItems : allGridItems;
 
   // Skär GridItems baserat på nuvarande sida
-  const paginatedItems = allGridItems.slice(
+  const paginatedItems = gridItems.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );

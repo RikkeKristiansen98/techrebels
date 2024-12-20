@@ -18,7 +18,6 @@ export const Filter = ({ onFilterChange }) => {
   useEffect(() => {
     if (categories.length > 0) {
       const groupedCategories = categories.reduce((acc, category) => {
-        // Avgör vilken huvudgrupp kategorin tillhör baserat på länken
         if (category.link.includes("/ages")) {
           if (!acc["Ages"]) acc["Ages"] = [];
           acc["Ages"].push(category);
@@ -28,7 +27,7 @@ export const Filter = ({ onFilterChange }) => {
         } else if (category.link.includes("/topics")) {
           if (!acc["Topics"]) acc["Topics"] = [];
           acc["Topics"].push(category);
-        } 
+        }
         return acc;
       }, {});
 
@@ -37,13 +36,22 @@ export const Filter = ({ onFilterChange }) => {
   }, [categories]);
 
   const handleCategoryChange = (categorySlug) => {
-    setSelectedCategories((prevCategories) =>
-      prevCategories.includes(categorySlug)
-        ? prevCategories.filter((slug) => slug !== categorySlug)
-        : [...prevCategories, categorySlug]
-    );
+    setSelectedCategories((prevCategories) => {
+      const updatedCategories = prevCategories.includes(categorySlug)
+        ? prevCategories.filter((slug) => slug !== categorySlug) // Ta bort kategorin om den redan är vald
+        : [...prevCategories, categorySlug]; // Lägg till kategorin om den inte är vald
+  
+      console.log("Updated selectedCategories:", updatedCategories); // Logga de uppdaterade valda kategorierna
+      return updatedCategories;
+    });
   };
   
+
+  // Uppdatera filtret när valda kategorier ändras
+  useEffect(() => {
+    onFilterChange({ categories: selectedCategories });
+  }, [selectedCategories]);
+
   const toggleParent = (parentName) => {
     setOpenParents((prev) => ({
       ...prev,
@@ -51,23 +59,31 @@ export const Filter = ({ onFilterChange }) => {
     }));
   };
 
-  useEffect(() => {
-    onFilterChange({ categories: selectedCategories });
-  }, [selectedCategories]);
-
   return (
-    <aside className="w-1/6 text-black">
-      <h2 className="text-2xl mb-5 pb-2 border-b">Filter</h2>
-      {categories.map((parentCategory) => (
-        <div key={parentCategory.id} className={`mb-5 ${openParents[parentCategory.name] ? "open" : ""}`}>
+  <aside className="w-1/6 text-black">
+    <h2 className="text-2xl mb-5 pb-2 border-b">Filter</h2>
+    {categories && categories.length > 0 ? (
+      categories.map((parentCategory) => (
+        <div
+          key={parentCategory.id}
+          className={`mb-5 ${openParents[parentCategory.name] ? "open" : ""}`}
+        >
           <h4
             className="flex justify-between items-center text-lg font-bold cursor-pointer"
             onClick={() => toggleParent(parentCategory.name)}
           >
             {DISPLAY_NAMES[parentCategory.slug] || parentCategory.name}
-            {openParents[parentCategory.name] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            {openParents[parentCategory.name] ? (
+              <ExpandLessIcon />
+            ) : (
+              <ExpandMoreIcon />
+            )}
           </h4>
-          <div className={`pl-5 ${openParents[parentCategory.name] ? "block" : "hidden"}`}>
+          <div
+            className={`pl-5 ${
+              openParents[parentCategory.name] ? "block" : "hidden"
+            }`}
+          >
             {parentCategory.children.map((childCategory) => (
               <label key={childCategory.id} className="block">
                 <input
@@ -80,9 +96,14 @@ export const Filter = ({ onFilterChange }) => {
             ))}
           </div>
         </div>
-      ))}
-    </aside>
-  );
+      ))
+    ) : (
+      // Fallback när categories är tom eller laddas
+      <p>Laddar kategorier...</p>
+    )}
+  </aside>
+);
+
 };
 
 export default Filter;

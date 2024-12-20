@@ -12,12 +12,13 @@ const CollectionService = {
 
       return data.map((item) => {
         return {
-          id: item.id, // Huvud-id
-          title: item.acf?.collection_item_title || "No Title", // Titel
-          tagline: item.acf?.collection_item_tagline || "No Title", // Titel
+          id: item.id, 
+          title: item.acf?.collection_item_title || "No Title", 
+          tagline: item.acf?.collection_item_tagline || "No Tagline", 
           description: item.acf?.collection_item_description || "No description",
-          imageSrc: item.acf?.collection_item_image || null, // Bild-id
-          url: item.acf?.collection_item_url || "#", // Länk
+          categories: item.categories || [], 
+          imageSrc: item.acf?.collection_item_image || null, 
+          url: item.acf?.collection_item_url || "#", 
         };
       });
     } catch (error) {
