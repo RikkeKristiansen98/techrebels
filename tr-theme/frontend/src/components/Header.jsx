@@ -4,7 +4,7 @@ export const Header = () => {
   const logo = "https://techforalla.se/images/techforalla-logo.png";
 
   return (
-    <header className="p-10 w-full xs:h-[80px] flex justify-between items-center">
+    <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50">
       <div className="logo z-10">
         <NavLink to="/">
           <img
@@ -30,7 +30,7 @@ export const Header = () => {
       </nav>
 
       <svg
-      className="h-[20vh] xl:h-[auto] lg:h-auto"
+        className="h-[20vh] xl:h-[auto] lg:h-auto"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="100 10 1280 250"
         style={{
