@@ -47,7 +47,7 @@ const TipsaOss = () => {
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen">
     <div
-      className="relative z-10 rounded-lg w-full md:w-[50%] xl:h-[30%] xl:w-[30%] p-6"
+      className="relative z-10 rounded-lg w-full md:w-[60%] xl:h-[30%] xl:w-[30%] p-6"
       style={{ backgroundColor: "rgba(241, 171, 134, 0.8)" }}
     >
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center z-10 text-gray-800 mt-4">
