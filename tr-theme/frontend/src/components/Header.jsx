@@ -10,7 +10,7 @@ export const Header = () => {
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="max-w-[40%] min-w-[20%] ml-10 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer sm:max-w-[50%] xs:max-w-[25%] xl:max-w-[40%]"
+            className="max-w-[40%] min-w-[20%] ml-10 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer xxs:max-w-[80%] sm:max-w-[50%] xs:max-w-[25%] xl:max-w-[40%]"
           />
         </NavLink>
       </div>

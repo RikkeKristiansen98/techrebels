@@ -15,7 +15,7 @@ export default {
       },
       screens: {
         'xs': '645px', // Definiera xs som skärmar som är 0px eller större (eller valfritt breakpoint)
-        'xxs': '375px',
+        'xxs': '360px',
         'l': '635px',
       },
       keyframes: {
