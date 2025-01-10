@@ -1,29 +1,58 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import menuIcon from "../images/menu.techforalla.png.png";
+import closeIcon from "../images/menu.close.png.png"
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false); // State för att hantera menyöppning
   const logo = "https://techforalla.se/images/techforalla-logo.png";
 
+  // Funktion för att toggla menyn
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50">
+    <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50 bg-white">
       <div className="logo z-10">
         <NavLink to="/">
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="max-w-[40%] min-w-[20%] ml-10 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer xxs:max-w-[80%] sm:max-w-[50%] xs:max-w-[25%] xl:max-w-[40%]"
+            className="max-w-[40%] min-w-[20%] ml-10 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer xxs:max-w-[80%] xxs:mb-[80%] xxs:ml-[-10%] sm:max-w-[50%] xs:max-w-[25%] xl:max-w-[40%]"
           />
         </NavLink>
       </div>
-      <nav className="flex gap-8 z-10 xs:gap-8 text-center">
+
+      {/* Hamburgerikon för små skärmar */}
+      <div className="md:hidden z-20">
+        <button onClick={toggleMenu} className="text-3xl text-white">
+          {/* Byt ut FaBars och FaTimes mot dina egna bilder */}
+          <img
+            src={isOpen ? closeIcon : menuIcon} // Visa antingen stängikonen eller hamburgermenyn
+            alt={isOpen ? "Stäng meny" : "Öppna meny"} // Alternativ text för tillgänglighet
+            className="w-8 h-8" // Justera storleken på ikonen
+          />
+        </button>
+      </div>
+
+      {/* Navigationslänkar */}
+      <nav
+        className={`${
+          isOpen ? "block" : "hidden"
+        } absolute md:relative top-0 left-0 w-full md:flex md:w-auto bg-[#16697A] md:bg-transparent z-10 flex-col md:flex-row items-center justify-center`}
+      >
         <NavLink
           to="/collection-page"
-          className="header-2 xxs:mt-[-28%] xxs:text-sm xs:text-lg sm:mt-[4%] sm:text-3xl md:mt-[15%] l:text-lg lg:text-xl xl:text-3xl xl:mt-[14%] 2xl:text-4xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
+          className="block py-4 px-8 text-white md:text-lg font-semibold transition-transform duration-300 ease-out hover:scale-110"
+          onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className="header-2 xxs:mt-[-28%] xxs:text-sm xs:mb-[6%] xs:text-lg sm:mt-[4%] sm:text-3xl md:mt-[15%] l:text-lg lg:text-xl xl:text-2xl xl:mt-[14%] 2xl:text-4xl font-semibold text-white transition-transform duration-300 ease-out hover:scale-110"
+          className="block py-4 px-8 text-white md:text-lg font-semibold transition-transform duration-300 ease-out hover:scale-110"
+          onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Skicka in tips
         </NavLink>
