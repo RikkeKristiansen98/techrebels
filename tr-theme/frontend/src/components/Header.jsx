@@ -14,7 +14,7 @@ export const Header = () => {
 
   return (
     <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50 bg-white">
-      <div className="logo z-10">
+       <div className="logo z-10">
         <NavLink to="/">
           <img
             src={logo}
@@ -27,11 +27,10 @@ export const Header = () => {
       {/* Hamburgerikon för små skärmar */}
       <div className="md:hidden z-20">
         <button onClick={toggleMenu} className="text-3xl text-white">
-          {/* Byt ut FaBars och FaTimes mot dina egna bilder */}
           <img
             src={isOpen ? closeIcon : menuIcon} // Visa antingen stängikonen eller hamburgermenyn
             alt={isOpen ? "Stäng meny" : "Öppna meny"} // Alternativ text för tillgänglighet
-            className="w-8 h-8" // Justera storleken på ikonen
+            className="w-8 h-8 mb-[90%] ml-[50%] invert" // Justera storleken på ikonen och invert för att göra den vit
           />
         </button>
       </div>
