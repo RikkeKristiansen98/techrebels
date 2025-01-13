@@ -14,9 +14,12 @@ export default {
         customSpin: "customSpin 1.5s ease-in-out infinite", // Custom animation
       },
       screens: {
-        'xs': '645px', // Definiera xs som skärmar som är 0px eller större (eller valfritt breakpoint)
-        'xxs': '360px',
-        'l': '635px',
+        'xxs': '360px',  // Extra små skärmar
+        'xs': '475px',   // Mindre än 'sm' brytpunkten
+        'sm': '640px',   // Standard brytpunkt för små skärmar
+        'md': '768px',   // Medium skärmar
+        'lg': '1024px',  // Stora skärmar
+        'xl': '1280px',  // Extra stora skärmar
       },
       keyframes: {
         customSpin: {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import menuIcon from "../images/menu.techforalla.png.png";
-import closeIcon from "../images/menu.close.png.png"
+import closeIcon from "../images/menu.close.png.png";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // State för att hantera menyöppning
@@ -14,13 +14,13 @@ export const Header = () => {
 
   return (
     <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50 bg-white">
-       <div className="logo z-10">
+      <div className="logo z-10">
         <NavLink to="/">
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="max-w-[40%] min-w-[20%] ml-10 mt-14 transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer xxs:max-w-[80%] xxs:mb-[80%] xxs:ml-[-10%] sm:max-w-[50%] xs:max-w-[25%] xl:max-w-[40%]"
-          />
+            className="xxs:w-[40%] xxs:ml-[-5%] xxs:mb-[10%] sm:w-[40%] md:w-[50%] md:ml-[2%] lg:w-[40%] xl:w-[40%] xl:mb-[-3%] h-auto ml-[5%] mt-[5%] transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
+            />
         </NavLink>
       </div>
 
@@ -43,14 +43,14 @@ export const Header = () => {
       >
         <NavLink
           to="/collection-page"
-          className="block py-4 px-8 text-white md:text-lg font-semibold transition-transform duration-300 ease-out hover:scale-110"
+          className="md:mb-[15%] xl:mb-[-10%] block py-4 px-8 text-white md:text-lg font-semibold transition-transform duration-300 ease-out hover:scale-110"
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className="block py-4 px-8 text-white md:text-lg font-semibold transition-transform duration-300 ease-out hover:scale-110"
+          className="md:mb-[15%] xl:mb-[-10%] block py-4 px-8 text-white md:text-lg font-semibold transition-transform duration-300 ease-out hover:scale-110"
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Skicka in tips
