@@ -51,7 +51,7 @@ const TipsaOss = () => {
 
   return (
     <div className="realtive flex flex-col justify-center items-center min-h-screen">
-      <div className="rounded-lg w-full xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] p-6">
+      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] p-6">
         <svg
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ const TipsaOss = () => {
         <svg
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-[1%] left-[8%] z-10 w-[30%] h-[60%] ml-[35%] xl:block xxs:hidden"
+          className="absolute top-[1%] left-[8%] z-10 w-[30%] h-[60%] ml-[35%] lg:hidden xl:block xxs:hidden"
         >
           <path
             fill="#16697A"
@@ -76,20 +76,20 @@ const TipsaOss = () => {
           />
         </svg>
 
-        <h1 className="relative text-2xl sm:text-3xl lg:text-4xl font-bold text-center z-10 text-black">
+        <h1 className="relative text-2xl sm:text-3xl lg:text-4xl font-bold text-center z-10 text-black xl:mb-[25%]">
           Vill du skicka in tips till oss?
         </h1>
 
         <div className="flex justify-center xl:mt-28 xxs:mt-12">
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-16 w-[90%] xxs:gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-16 xl:w-[90%] xxs:gap-4"
           >
             {/* Email Field */}
-            <div className="relative z-0 w-full mb-5 group flex items-center">
+            <div className="relative z-0 w-full mb-5 group flex items-center lg:w-[150%]">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] top-4 ml-[-15%] text-orangeTheme"
+                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] top-4 ml-[-10%] text-orangeTheme"
               />
               <input
                 type="email"
