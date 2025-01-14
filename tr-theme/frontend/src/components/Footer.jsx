@@ -21,7 +21,7 @@ const Footer = () => {
           </form>
         </div>
 
-        <div className="faq">
+        <div className="faq xxs:text-sm">
           <h3>Har du frågor?</h3>
           <p>
             I vår{" "}
@@ -30,7 +30,7 @@ const Footer = () => {
             </NavLink>{" "}
             hittar du svaren på de vanligaste frågorna.
           </p>
-          <p>&copy; Tech för alla</p>
+          <p className="xxs:m-[5%]">&copy; Tech för alla</p>
         </div>
       </div>
       <svg
