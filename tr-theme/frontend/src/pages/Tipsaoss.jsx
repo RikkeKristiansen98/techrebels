@@ -100,7 +100,7 @@ const TipsaOss = () => {
                   handleInputChange(setEmail, "email", e.target.value)
                 }
                 placeholder=" "
-                className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                className="block py-2.5 px-0 xl:w-[65%] text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
                 required
               />
               <label
@@ -251,3 +251,8 @@ const TipsaOss = () => {
 };
 
 export default TipsaOss;
+
+// exempel på text att ha i en ruta som poppar upp när användaren har skickat in tips
+
+// Tack för att du skickar in tips till oss. 
+// Håll utkik på hemsidan ifall just ditt tips dyker upp nånstans inom kort. 

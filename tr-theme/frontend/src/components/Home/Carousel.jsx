@@ -37,9 +37,9 @@ const Carousel = ({ carouselItems }) => {
   };
  
   return (
-    <div className="relative w-full"> {/* Container för hela karusellen */}
+    <div className="relative w-auto"> {/* Container för hela karusellen */}
       <div className="relative z-10">
-        <h2 className="header-2 text-3xl text-black text-center mb-6 mt-[10%]">
+        <h2 className="header-2 text-5xl text-gray-800 text-center mb-6 mt-[2%] border-b-2 w-[50%] pb-4 mx-auto border-gray-800">
           Tech för alla tipsar {/* Rubrik för karusellen */}
         </h2>
 
@@ -53,7 +53,7 @@ const Carousel = ({ carouselItems }) => {
           </button>
 
           {/* Carousel container */}
-          <div className="relative p-10 mb-[15%] m-[5%]">
+          <div className="relative p-10 mb-[10%] m-[5%]">
             <div className="flex transition-all duration-700 ease-in-out gap-7 justify-center"
             >
               {/* Loopa igenom de synliga korten och rendera dem */}
