@@ -12,6 +12,8 @@ export default {
       animation: {
         spin: "spin 1s linear infinite", // Default spin animation
         customSpin: "customSpin 1.5s ease-in-out infinite", // Custom animation
+        'slide-in-left': 'slideInLeft 1s ease-out forwards',
+        'slide-in-left-delay': 'slideInLeft 1.5s ease-out forwards',
       },
       screens: {
         'xxs': '360px',  // Extra små skärmar
@@ -27,11 +29,15 @@ export default {
           "50%": { transform: "rotate(180deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        slideInLeft: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
       },
       colors: {
-        orangeTheme: "#F1AB86",
+        orangeTheme: "#FCAA67",
         greenTheme: "#A5C882",
-        blueTheme: "#16697A",
+        blueTheme: "#05668D",
       },
     },
   },

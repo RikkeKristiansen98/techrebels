@@ -8,20 +8,23 @@ const HeroSection = ({
   hero_link_url,
 }) => {
   return (
+    <div className="relative mt-[5%]">
+      <img src="src/images/wave.png" alt="" className="absolute inset-0 w-full h-full object-cover z-0" />
     <div className="hero-section py-60 mt-40 relative flex flex-col md:flex-row items-stretch min-h-[250px] mb-10 px-[8%] overflow-visile">
       {/* Intro text */}
       <div className="hero-section-text flex-1 flex items-center justify-center text-center md:text-left">
-        <div>
-          <h1 className="home-title text-5xl font-bold mb-16">{hero_header}</h1>
-          <p className="intro-text text-lg text-gray-800">{hero_description}</p>
+        <div className="mt-16">
+          <h1 className="home-title text-5xl font-bold mb-8 mt-16 animate-slide-in-left">{hero_header}</h1>
+          <p className="intro-text text-lg text-gray-800 animate-slide-in-left mb-16">{hero_description}</p>
         </div>
       </div>
-
       {/* Shape and link */}
+
       <div className="hero-section-link flex-1 relative flex items-center justify-center overflow-visible">
         <div className="hero-link-shapes w-full h-full relative">
-          {/* Underlay shape */}
-          <svg
+          
+          
+          {/* <svg
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
             className="absolute top-[-59%] w-[100%] h-[200%] scale-[1.3] object-cover opacity-90 z-0"
@@ -33,7 +36,7 @@ const HeroSection = ({
             />
           </svg>
 
-          {/* Overlay shape */}
+         
           <svg
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +47,7 @@ const HeroSection = ({
               d="M20.9,-22.9C34.9,-23.6,59.3,-30.9,65.5,-27C71.7,-23.2,59.8,-8.2,49.9,1.7C40,11.6,32.2,16.4,27.3,25.7C22.4,35,20.4,48.9,13.1,56.4C5.8,64,-6.9,65.3,-15.2,59.4C-23.5,53.5,-27.6,40.4,-34.1,30.7C-40.6,21,-49.6,14.7,-57.4,4.2C-65.1,-6.3,-71.7,-21,-68.5,-32.6C-65.2,-44.2,-52.2,-52.6,-39.2,-52.2C-26.1,-51.8,-13.1,-42.7,-4.8,-35.3C3.5,-27.8,7,-22.1,20.9,-22.9Z"
               transform="translate(100 100)"
             />
-          </svg>
+          </svg> */}
         </div>
         {/* Link text */}
         <div className="hero-link-text absolute inset-0 flex items-center justify-center text-center z-20 transition-transform duration-300 hover:translate-x-2">
@@ -76,6 +79,7 @@ const HeroSection = ({
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -19,14 +19,14 @@ export const Header = () => {
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="xxs:w-[40%] xxs:ml-[-5%] xxs:mb-[10%] sm:w-[40%] md:w-[50%] md:ml-[2%] lg:w-[40%] xl:w-[40%] xl:mb-[-3%] h-auto ml-[5%] mt-[5%] transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
+            className="invert xxs:w-[40%] xxs:ml-[-5%] xxs:mb-[10%] sm:w-[40%] md:w-[50%] md:ml-[2%] lg:w-[40%] xl:w-[40%] xl:mb-[-3%] h-auto ml-[5%] mt-[5%] transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
             />
         </NavLink>
       </div>
 
       {/* Hamburgerikon för små skärmar */}
       <div className="md:hidden z-20">
-        <button onClick={toggleMenu} className="text-3xl text-white">
+        <button onClick={toggleMenu} className="text-3xl text-black">
           <img
             src={isOpen ? closeIcon : menuIcon} // Visa antingen stängikonen eller hamburgermenyn
             alt={isOpen ? "Stäng meny" : "Öppna meny"} // Alternativ text för tillgänglighet
@@ -43,26 +43,26 @@ export const Header = () => {
       >
         <NavLink
           to="/collection-page"
-          className="md:mb-[15%] xl:mb-[-10%] block py-4 px-8 text-white md:text-lg font-semibold transition-transform duration-300 ease-out hover:scale-110"
+          className="md:mb-[15%] xl:mb-[-10%] block py-4 px-8 text-black md:text-3xl font-semibold transition-transform duration-300 ease-out hover:scale-110"
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className="md:mb-[15%] xl:mb-[-10%] block py-4 px-8 text-white md:text-lg font-semibold transition-transform duration-300 ease-out hover:scale-110"
+          className="md:mb-[15%] xl:mb-[-10%] block py-4 px-8 text-black md:text-3xl font-semibold transition-transform duration-300 ease-out hover:scale-110"
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Skicka in tips
         </NavLink>
       </nav>
 
-      <svg
+      {/* <svg
         className="h-[20vh] xl:h-[auto] lg:h-auto"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="100 10 1280 250"
         style={{
-          transform: "rotate(180deg) scaleX(-1)", // Vänder SVG:n upp och ner
+          transform: "rotate(360deg) scaleX(-1)", // Vänder SVG:n upp och ner
           position: "absolute", // Gör att SVG:n kan placeras fritt
           left: 0, // Justerar den till vänster
           top: 0, // Börjar från toppen av containern
@@ -74,7 +74,7 @@ export const Header = () => {
           fill="#16697A"
           d="M0,150L48,140C96,130,192,80,288,70C384,60,480,90,576,130C672,170,768,220,864,215C960,210,1056,160,1152,135C1248,110,1344,120,1392,125L1440,130L1440,400L0,400Z"
         ></path>
-      </svg>
+      </svg> */}
     </header>
   );
 };
