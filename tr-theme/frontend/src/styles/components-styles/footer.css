@@ -96,7 +96,7 @@
 
 @media (max-width: 760px) {
   .footer-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
   }
@@ -104,12 +104,14 @@
   .footer-content .faq {
     margin-left: 0;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 20%;
   }
 
   .footer-content .newsletter {
     align-items: center;
+    margin-top: 10%;
   }
+
 }
 
 @media (max-width: 1400px) {
