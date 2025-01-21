@@ -30,7 +30,7 @@ export const Header = () => {
           <img
             src={isOpen ? closeIcon : menuIcon} // Visa antingen stängikonen eller hamburgermenyn
             alt={isOpen ? "Stäng meny" : "Öppna meny"} // Alternativ text för tillgänglighet
-            className="w-8 h-8 mb-[90%] ml-[50%] invert" // Justera storleken på ikonen och invert för att göra den vit
+            className="w-8 h-8 mb-[90%] ml-[50%]" // Justera storleken på ikonen och invert för att göra den vit
           />
         </button>
       </div>
