@@ -39,7 +39,9 @@ html,body {
   overflow-x: hidden;
 }
 
-
+p{
+  font-family: "League Spartan", sans-serif;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

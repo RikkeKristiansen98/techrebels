@@ -59,7 +59,7 @@ const Home = () => {
       />
 
       {/* Carousel Section */}
-      <div className="flex items-center justify-center h-auto p-5 px-10">
+      <div className="flex items-center justify-center h-auto">
         <Carousel carouselItems={carouselItems} />
       </div>
     </div>
