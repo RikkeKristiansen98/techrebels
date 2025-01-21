@@ -14,6 +14,7 @@ export default {
         customSpin: "customSpin 1.5s ease-in-out infinite", // Custom animation
         'slide-in-left': 'slideInLeft 1s ease-out forwards',
         'slide-in-left-delay': 'slideInLeft 1.5s ease-out forwards',
+        'slide-in-right': 'slideInRight 1.7s ease-out forwards',
       },
       screens: {
         'xxs': '360px',  // Extra små skärmar
@@ -32,6 +33,10 @@ export default {
         slideInLeft: {
           '0%': { transform: 'translateX(-100%)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInRight: {
+          '0%': { transform: 'translateX(100%)', opacity: 0 }, // Startar utanför till höger
+          '100%': { transform: 'translateX(0)', opacity: 1 },  // Slutar på sin ursprungliga position
         },
       },
       colors: {

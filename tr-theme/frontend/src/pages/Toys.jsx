@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import toys1 from '../images/toys.jpg';
 import toys2 from '../images/toyss.jpg';
 import toys3 from '../images/toysss.jpg';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -73,7 +72,7 @@ export const Toys = () => {
       {/* Image Grid */}
       <div className="toys-image-grid">
         <div className="toys-image-item">
-          <img src={toys1} alt="Toy 1" />
+          <img src={toys2} alt="Toy 1" />
           <p>Leksak 1</p>
         </div>
         <div className="toys-image-item">
@@ -100,7 +99,7 @@ export const Toys = () => {
 
             </div>
             </div>
-   )         
+   )      
 }
 
 export default Toys;
