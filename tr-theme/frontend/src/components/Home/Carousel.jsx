@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import leftArrow from "../../images/left-arrow-black.png";
 import rightArrow from "../../images/right-arrow-black.png";
 import CarouselItem from "./CarouselItem";
+import { NavLink } from "react-router-dom";
 
 const Carousel = ({ carouselItems }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [imageCache, setImageCache] = useState({}); // Cache för bilder
   const itemsPerSlide = 3;
   const totalItems = carouselItems.length;
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
@@ -24,6 +27,30 @@ const Carousel = ({ carouselItems }) => {
     }
     return visibleCarouselItems;
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="relative w-full mb-[20%] mt-[5%] flex justify-center items-center">
@@ -46,6 +73,7 @@ const Carousel = ({ carouselItems }) => {
             {/* Loopa igenom de synliga korten och rendera dem */}
             {getVisibleCarouselItems().map((carouselItem, index) => (
               <CarouselItem
+                key={carouselItem.id}
                 carouselItem={carouselItem}
                 imageCache={imageCache}
               />
@@ -76,7 +104,12 @@ const Carousel = ({ carouselItems }) => {
         </div>
 
         {/* Rubrik för karusellen (höger sida) */}
-        <div className="text-center w-[30%] animate-slide-in-right space-y-10">
+        <div
+          ref={sectionRef}
+          className={`text-center w-[30%] transition-all duration-700 ease-in-out ${
+            isVisible ? "animate-slide-in-right" : "" // Lägg till animation om sektionen är synlig
+          } space-y-10`}
+        >
           <h2 className="header-2 text-5xl text-gray-800 mb-6 mt-[2%] border-b-2 pb-4 mx-auto border-gray-800">
             Tech för alla tipsar
           </h2>
@@ -86,6 +119,16 @@ const Carousel = ({ carouselItems }) => {
             nisi illum reiciendis, magnam necessitatibus facere assumenda
             ducimus eos voluptatem id neque!
           </p>
+          <div className="pt-[5%]">
+            <NavLink
+              to="/collection-page"
+              className="group relative text-3xl font-semibold mx-auto border-gray-800 pb-2"
+            >
+              Gå till tipsbanken
+              {/* Strecket under med animation som slide:ar in när man hovrar över */}
+              <span className="absolute bottom-0 left-0 w-0 h-1 bg-gray-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>
@@ -93,4 +136,3 @@ const Carousel = ({ carouselItems }) => {
 };
 
 export default Carousel;
-
