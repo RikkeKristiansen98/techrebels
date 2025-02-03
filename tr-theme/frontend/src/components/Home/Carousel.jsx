@@ -14,8 +14,8 @@ const Carousel = ({ carouselItems }) => {
   // Funktion för att ändra antal bilder beroende på skärmstorlek
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 430) {
-        setItemsPerSlide(1); // Visa en bild vid skärmbredd <= 375px
+      if (window.innerWidth <= 500) {
+        setItemsPerSlide(1); // Visa en bild vid skärmbredd <= 500px
       } else {
         setItemsPerSlide(3); // Visa 3 bilder annars
       }
@@ -148,7 +148,7 @@ const Carousel = ({ carouselItems }) => {
           <div className="xl:pt-[5%] xxs:pb-[35%]">
             <NavLink
               to="/collection-page"
-              className="xl:text-3xl xxs:text-xl font-semibold text-white transition-transform duration-300 hover:scale-110"
+              className="xl:text-3xl xxs:text-xl font-semibold text-white"
             >
               Gå till tipsbanken
             </NavLink>

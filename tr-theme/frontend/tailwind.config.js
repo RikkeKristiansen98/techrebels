@@ -20,7 +20,7 @@ export default {
         'xxs': '360px',  // Extra små skärmar
         'xs': '475px',   // Mindre än 'sm' brytpunkten
         'sm': '640px',   // Standard brytpunkt för små skärmar
-        'md': '768px',   // Medium skärmar
+        'md': '770px',   // Medium skärmar
         'lg': '1024px',  // Stora skärmar
         'xl': '1280px',  // Extra stora skärmar
       },
