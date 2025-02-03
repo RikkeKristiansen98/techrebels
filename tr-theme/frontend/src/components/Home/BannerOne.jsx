@@ -1,5 +1,5 @@
 import React from "react";
-import ExploreCategoryButton from "./ExploreCategoryButton";
+import ExploreCategoryButton from "./BannerButton";
 
 const ExploreCategories = ({ banner_icons, banner_header, banner_tagline }) => {
   return (
