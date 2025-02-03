@@ -24,7 +24,7 @@ const HeroSection = ({
           <defs>
             <linearGradient id="gradient" x1="28%" y1="95%" x2="72%" y2="5%">
               <stop offset="5%" stopColor="#996ad9"></stop>
-              <stop offset="95%" stopColor="#84cdfa"></stop>
+              <stop offset="80%" stopColor="#84cdfa"></stop>
             </linearGradient>
           </defs>
           <path
