@@ -2,7 +2,7 @@ import React from "react";
 import { useHome } from "../contexts/HomeContext";
 import HeroSection from "../components/Home/HeroSection";
 import Carousel from "../components/Home/Carousel";
-import BannerOne from "../components/Home/BannerOne";
+import BannerTwo from "../components/Home/bannerTwo";
 import Loading from "../components/Loading";
 
 const Home = () => {
@@ -52,7 +52,7 @@ const Home = () => {
       />
 
       {/* Explore Categories Section */}
-      <BannerOne
+      <BannerTwo
         banner_header={banner.acf.banner_header}
         banner_tagline={banner.acf.banner_tagline}
         banner_icons={bannerIcons}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExploreCategoryButton = ({ icon }) => {
+const BannerButton = ({ icon }) => {
   return (
     <div className="explore-category-button flex flex-wrap justify-center sm:justify-center items-center sm:flex-row flex-col px-5 sm:px-0 space-y-4 sm:space-x-6">
       <div className="h-auto transform transition-transform duration-200 hover:scale-105 cursor-pointer">
@@ -21,4 +21,4 @@ const ExploreCategoryButton = ({ icon }) => {
   );
 };
 
-export default ExploreCategoryButton;
+export default BannerButton;
