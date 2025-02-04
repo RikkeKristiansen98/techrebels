@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import menuIcon from "../images/menu.techforalla.png.png";
 import closeIcon from "../images/menu.close.png.png";
@@ -6,15 +7,22 @@ import closeIcon from "../images/menu.close.png.png";
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // State för att hantera menyöppning
   const logo = "https://techforalla.se/images/techforalla-logo.png";
+  const location = useLocation(); // Hämta nuvarande sidans plats
+
+  const sideElement =
+    "http://techforalla.se/wp-content/uploads/2025/02/Tech-Rebels-sidelement-2.png";
 
   // Funktion för att toggla menyn
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Bestäm textfärgen baserat på plats
+  const textColor = location.pathname === "/faq" ? "text-white" : "text-black";
+
   return (
-    <header className="p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50 bg-white">
-      <div className="logo z-10">
+    <header className="relative p-10 w-full h-[110px] flex justify-between items-center sticky top-0 z-50 bg-white">
+      <div className="logo z-20">
         <NavLink to="/">
           <img
             src={logo}
@@ -35,31 +43,40 @@ export const Header = () => {
         </button>
       </div>
 
+      {/* Lägg till sideElement som en absolut positionerad bild bara på FAQ-sidan */}
+      {location.pathname === "/faq" && (
+        <img
+          src={sideElement}
+          alt="Side Element"
+          className="absolute top-0 right-[-14%] w-[60%] h-auto z-10" // Placera bilden i det övre högra hörnet
+        />
+      )}
+
       {/* Navigationslänkar */}
       <nav
         className={`${
           isOpen ? "block" : "hidden"
-        } absolute md:relative top-0 left-0 w-full md:flex md:w-auto bg-[#16697A] md:bg-transparent z-10 flex-col md:flex-row items-center md:items-start justify-center md:justify-start`}
+        } absolute md:relative top-0 left-0 w-full md:flex md:w-auto bg-[#16697A] md:bg-transparent z-20 flex-col md:flex-row items-center md:items-start justify-center md:justify-start`}
       >
         <NavLink
           to="/collection-page"
-          className="md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 text-black md:text-xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+          className={`md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 ${textColor} md:text-xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className="md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 text-black md:text-xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full"
+          className={`md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 ${textColor} md:text-xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 after:ease-in-out hover:after:w-full`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Skicka in tips
         </NavLink>
       </nav>
     </header>
-  
-      
   );
 };
 
 export default Header;
+
+
