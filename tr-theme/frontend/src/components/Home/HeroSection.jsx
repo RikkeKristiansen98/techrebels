@@ -41,7 +41,7 @@ const HeroSection = ({
         <h1 className="hero-title text-white text-5xl font-bold mt-[20%] animate-slide-in-left">
           {hero_header}
         </h1>
-        <p className="intro-text text-white text-lg text-gray-800 animate-slide-in-left mt-[5%]">
+        <p className="intro-text text-white text-lg animate-slide-in-left mt-[5%]">
           {hero_description}
         </p>
         {/* hero link */}
