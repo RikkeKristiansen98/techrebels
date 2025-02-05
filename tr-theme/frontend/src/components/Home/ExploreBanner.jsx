@@ -1,7 +1,7 @@
 import React from "react";
 import BannerButton from "./BannerButton";
 
-const BannerTwo = ({ banner_icons, banner_header, banner_tagline }) => {
+const ExploreBanner = ({ banner_icons, banner_header, banner_tagline }) => {
   return (
     <div className="explore-categories flex bg-pinkTheme h-96 relative my-20 flex-col sm:flex-row">
     {/* Text container */}
@@ -27,4 +27,4 @@ const BannerTwo = ({ banner_icons, banner_header, banner_tagline }) => {
   );
 };
 
-export default BannerTwo;
+export default ExploreBanner;
