@@ -21,17 +21,11 @@ const HeroSection = ({
           className="absolute top-0 left-0 w-full h-full scale-[1.5] object-cover z-0"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <defs>
-            <linearGradient id="gradient" x1="28%" y1="95%" x2="72%" y2="5%">
-              <stop offset="5%" stopColor="#996ad9"></stop>
-              <stop offset="80%" stopColor="#84cdfa"></stop>
-            </linearGradient>
-          </defs>
           <path
             d="M 0,700 L 0,262 C 71.35885167464113,203.96172248803828 142.71770334928226,145.92344497607655 248,153 C 353.28229665071774,160.07655502392345 492.48803827751203,232.26794258373207 609,306 C 725.511961722488,379.73205741626793 819.3301435406698,455.00478468899524 903,462 C 986.6698564593302,468.99521531100476 1060.1913875598086,407.7129186602871 1148,413 C 1235.8086124401914,418.2870813397129 1337.9043062200958,490.14354066985646 1440,562 L 1440,700 L 0,700 Z"
             stroke="none"
             strokeWidth="0"
-            fill="url(#gradient)"
+            fill="#996ad9"
             fillOpacity="1"
           ></path>
         </svg>
