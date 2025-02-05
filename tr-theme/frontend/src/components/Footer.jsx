@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="relative text-white bg-purpleTheme xxs:bg-purpleTheme sm:bg-transparent">
       <div className="relative z-20 text-center flex flex-col sm:flex-row justify-between items-center sm:ml-[4%] sm:mr-[4%] md:ml-[-4%] md:mr-[-4%]">
         <div className="flex flex-col justify-start items-center xl:gap-8 text-center xl:ml-[10%]">
-          <h3 className="xl:text-3xl font-semibold xxs:mt-[4%] xxs:mb-[4%]">Prenumerera på nyhetsbrev</h3>
+          <h3 className="xl:text-3xl font-semibold xxs:mt-[10%] xxs:mb-[6%]">Prenumerera på nyhetsbrev</h3>
           <form className="flex justify-center xl:mb-[20%] sm:mb-[6%] xxs:mb-[4%]">
             <input
               type="email"
@@ -23,7 +23,7 @@ const Footer = () => {
           </form>
         </div>
 
-        <div className="xl:mr-[10%]">
+        <div className="xl:mr-[10%] xxs:mb-[5%] xxs:mt-[5%]">
           <h3 className="xl:text-3xl xxs:text-l xl:mb-[2%]">Har du frågor?</h3>
           <p className="xl:text-2xl xxs:text-sm">
             I vår {" "}

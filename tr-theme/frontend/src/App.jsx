@@ -8,7 +8,7 @@ const App = () => {
   return (
     <HomeProvider>
       <CollectionProvider>
-        <RouterProvider router={router} />
+        <RouterProvider router={router}/>
       </CollectionProvider>
     </HomeProvider>
   );

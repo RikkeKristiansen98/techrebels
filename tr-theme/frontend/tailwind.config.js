@@ -10,11 +10,15 @@ export default {
   theme: {
     extend: {
       animation: {
-        spin: "spin 1s linear infinite", // Default spin animation
-        customSpin: "customSpin 1.5s ease-in-out infinite", // Custom animation
+        // Tidigare animationer
+        spin: "spin 1s linear infinite",
+        customSpin: "customSpin 1.5s ease-in-out infinite",
         'slide-in-left': 'slideInLeft 1s ease-out forwards',
         'slide-in-left-delay': 'slideInLeft 1.5s ease-out forwards',
         'slide-in-right': 'slideInRight 1.7s ease-out forwards',
+        'spin-slow': 'spin 4s linear infinite',
+        // Ny animation
+        'slide-in-right-rotate': 'slideInRightWithRotate 1s ease-out forwards',
       },
       screens: {
         'xxs': '360px',  // Extra små skärmar
@@ -25,6 +29,7 @@ export default {
         'xl': '1280px',  // Extra stora skärmar
       },
       keyframes: {
+        // Tidigare animeringar
         customSpin: {
           "0%": { transform: "rotate(0deg)" },
           "50%": { transform: "rotate(180deg)" },
@@ -35,8 +40,13 @@ export default {
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         slideInRight: {
-          '0%': { transform: 'translateX(100%)', opacity: 0 }, // Startar utanför till höger
-          '100%': { transform: 'translateX(0)', opacity: 1 },  // Slutar på sin ursprungliga position
+          '0%': { transform: 'translateX(100%)', opacity: 0 },  // Startar utanför till höger
+          '100%': { transform: 'translateX(0)', opacity: 1 },    // Slutar på sin plats
+        },
+        // Ny slide-in-right med rotation
+        slideInRightWithRotate: {
+          '0%': { transform: 'translateX(100%) rotate(0deg)'},  // Startar till höger, ingen rotation
+          '100%': { transform: 'translateX(0) rotate(12deg)'}, // Flyttar in, roterar ett helt varv
         },
       },
       colors: {
