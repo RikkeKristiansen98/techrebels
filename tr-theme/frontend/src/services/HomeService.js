@@ -40,7 +40,9 @@ const HomeService = {
 
       // Hämta hero och banner ID
       const heroId = extractId(homepageData.acf?.selected_hero);
+      const promoId = extractId(homepageData.acf?.selected_promo);
       const bannerId = extractId(homepageData.acf?.selected_banner);
+
 
       // Extrahera carousel-items med deras ID och typ
       const carouselItems = carouselFieldNames
@@ -52,20 +54,22 @@ const HomeService = {
         })
         .filter((item) => item); // Filtrera bort null
 
-      if (!heroId || !bannerId || carouselItems.length === 0) {
+      if (!heroId || !promoId || !bannerId || carouselItems.length === 0) {
         throw new Error(
           "Hero ID, Banner ID, or Carousel Items are missing in ACF data."
         );
       }
 
-      const [heroData, bannerData, carouselItemsData] = await Promise.all([
+      const [heroData, promoData, bannerData, carouselItemsData] = await Promise.all([
         HomeService.getHeroById(heroId),
+        HomeService.getPromoById(promoId),
         HomeService.getBannerById(bannerId),
         HomeService.getCarouselItemsById(carouselItems),
       ]);
 
       return {
         hero: heroData,
+        promo: promoData,
         banner: bannerData,
         carouselItems: Array.isArray(carouselItemsData)
           ? carouselItemsData
@@ -81,6 +85,12 @@ const HomeService = {
   getHeroById: async (heroId) => {
     const url = `${BASE_URL}/hero/${heroId}`;
 
+    return await fetchWithCache(url);
+  },
+
+  // Funktion för att hämta Banner-data baserat på ID
+  getPromoById: async (promoId) => {
+    const url = `${BASE_URL}/promo/${promoId}`;
     return await fetchWithCache(url);
   },
 
