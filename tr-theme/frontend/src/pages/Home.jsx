@@ -53,14 +53,14 @@ const Home = () => {
         hero_link_title={hero.acf.hero_link_title || "Title could not be found"}
       />
       {/* Promo section */}
-      <PromoSection 
+      {/* <PromoSection 
           promo_header={promo.acf.promo_header || "Header could not be found"}
           promo_description={
             promo.acf.promo_description || "Description could not be found"
           }
-          promo_link_url={promo.acf.promo_url || "/collection"}
+          promo_link_url={promo.acf.promo_link_url || "/collection"}
           promo_link_title={promo.acf.promo_link_title || "Title could not be found"}
-        />
+        /> */}
 
       {/* Explore Categories Banner */}
       <ExploreBanner

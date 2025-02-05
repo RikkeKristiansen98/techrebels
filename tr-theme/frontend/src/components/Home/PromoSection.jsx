@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const PromoSection = ({ }) => {
+const PromoSection = ({
+    promo_header,
+    promo_description,
+    promo_link_title,
+    promo_link_url,
+}) => {
     return (
         <div className="promo-section flex bg-purpleTheme h-96 relative flex-col sm:flex-row">
             {/* Text container */}
