@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { MdAdd, MdRemove } from "react-icons/md";
+import { MdAdd, MdRemove } from "react-icons/md";
 
 // Komponent för FAQ-sektion
 export function Faq() {
