@@ -10,7 +10,9 @@ const PromoSection = ({
     return (
         <div className="promo-section flex bg-purpleTheme h-96 relative flex-col sm:flex-row">
             {/* Text container */}
-            <div className="text-container h-full flex flex-col justify-center w-full sm:w-1/2 relative overflow-hidden mb-2 sm:mb-0">
+            <div className="text-container border h-full flex items-center justify-center w-full sm:w-1/2 relative overflow-hidden mb-2 sm:mb-0">
+                <h2 className="header-1 text-4xl">{promo_header}</h2>
+                <div className="link-description">{promo_description}</div>
                 <div className="link-text mt-[7%] flex items-center justify-center text-center z-20 group">
                     <Link
                         className="header-2 flex items-center text-4xl transition-transform duration-300 ease-in-out group-hover:translate-x-2"
@@ -33,11 +35,9 @@ const PromoSection = ({
                         </svg>
                     </Link>
                 </div>
-                <div className="link-description">datajtjej</div>
-
-
             </div>
-            {/* Buttons */}
+            {/*shape */}
+            <div className="absolute top-0 right-0 w-full h-16 bg-blueTheme sm:w-[200%] sm:h-[200%] sm:rounded-full xxs:hidden xs:hidden sm:block"></div>
         </div>
     );
 };
