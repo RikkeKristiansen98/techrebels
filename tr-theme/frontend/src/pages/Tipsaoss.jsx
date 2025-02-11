@@ -49,38 +49,22 @@ const TipsaOss = () => {
     setShowModal(true);
   };
 
+  const lampImage =
+    "http://techforalla.se/wp-content/uploads/2025/02/Tech-Rebels-sidelement-10.png";
+
   return (
     <div className="realtive flex flex-col justify-center items-center min-h-screen">
-      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] p-6">
-        <svg
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-[-5%] left-[-2%] z-0 w-[25%] h-[70%] ml-[35%] xl:block xxs:hidden"
-        >
-          <path
-            fill="#F1AB86"
-            d="M47.8,-22.3C59.7,-6.9,65.7,17.2,56.7,31.6C47.8,45.9,23.9,50.4,-0.8,50.8C-25.6,51.3,-51.2,47.8,-60.1,33.5C-69,19.3,-61.2,-5.8,-48.4,-21.7C-35.6,-37.5,-17.8,-44.2,0,-44.2C17.9,-44.2,35.8,-37.6,47.8,-22.3Z"
-            transform="translate(100 100)"
-          />
-        </svg>
-
-        <svg
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-[1%] left-[8%] z-10 w-[30%] h-[60%] ml-[35%] lg:hidden xl:block xxs:hidden"
-        >
-          <path
-            fill="#16697A"
-            d="M43,-28.6C47.8,-16.4,38.5,0.3,29,15.6C19.5,31,9.7,45,-2.4,46.4C-14.6,47.8,-29.1,36.5,-38.8,21.1C-48.5,5.6,-53.3,-13.9,-46,-27.6C-38.7,-41.3,-19.4,-49,-0.2,-48.9C19,-48.8,38.1,-40.9,43,-28.6Z"
-            transform="translate(100 100)"
-          />
-        </svg>
-
-        <h1 className="relative text-2xl sm:text-3xl lg:text-4xl font-bold text-center z-10 text-black xl:mb-[25%]">
+      <div>
+        <img src={lampImage} alt="" className="ml-[-150%] mb-[-5%] w-[70%]" />
+      </div>
+      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] mt-[-10%] ml-[5%]">
+        <h1 className="relative text-2xl sm:text-3xl lg:text-4xl font-bold text-center z-10 text-black xl:mb-[10%]">
           Vill du skicka in tips till oss?
         </h1>
-
-        <div className="flex justify-center xl:mt-28 xxs:mt-12">
+        <div
+          className="flex justify-center items-center w-full p-24 rounded-3xl"
+          style={{ backgroundColor: "rgba(211, 211, 211, 0.3)" }}
+        >
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-16 xl:w-[90%] xxs:gap-4"
@@ -238,7 +222,7 @@ const TipsaOss = () => {
             <div className="col-span-2 flex items-center justify-center mt-6">
               <button
                 type="submit"
-                className="z-10 text-white rounded-lg text-[18px] transform transition-transform duration-300 ease hover:scale-110 bg-blueTheme font-bold py-2 px-6"
+                className="z-10 text-white rounded-lg text-[18px] transform transition-transform duration-300 ease hover:scale-110 bg-orangeTheme font-bold py-2 px-6"
               >
                 Skicka tips
               </button>
@@ -254,5 +238,5 @@ export default TipsaOss;
 
 // exempel på text att ha i en ruta som poppar upp när användaren har skickat in tips
 
-// Tack för att du skickar in tips till oss. 
-// Håll utkik på hemsidan ifall just ditt tips dyker upp nånstans inom kort. 
+// Tack för att du skickar in tips till oss.
+// Håll utkik på hemsidan ifall just ditt tips dyker upp nånstans inom kort.
