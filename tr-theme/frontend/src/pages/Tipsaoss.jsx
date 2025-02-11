@@ -56,23 +56,23 @@ const TipsaOss = () => {
       <div>
         <img src={lampImage} alt="" className="ml-[-150%] mb-[-5%] w-[70%]" />
       </div>
-      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] mt-[-10%] ml-[5%]">
-        <h1 className="relative text-2xl sm:text-3xl lg:text-4xl font-bold text-center z-10 text-black xl:mb-[10%]">
+      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] xl:mt-[-10%] xxs:mt-[-35%] ml-[5%]">
+        <h1 className="relative text-2xl sm:text-3xl lg:text-4xl font-bold text-center z-10 text-black xl:mb-[10%] xxs:mb-[20%]">
           Vill du skicka in tips till oss?
         </h1>
         <div
-          className="flex justify-center items-center w-full p-24 rounded-3xl"
+          className="flex justify-center items-center w-full xl:p-24 xxs:p-8 xxs:mb-[20%] rounded-3xl"
           style={{ backgroundColor: "rgba(211, 211, 211, 0.3)" }}
         >
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-16 xl:w-[90%] xxs:gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-16 xl:w-[90%] xxs:gap-6"
           >
             {/* Email Field */}
             <div className="relative z-0 w-full mb-5 group flex items-center lg:w-[150%]">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] top-4 ml-[-10%] text-orangeTheme"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] top-4 ml-[-10%] text-orangeTheme"
               />
               <input
                 type="email"
@@ -88,7 +88,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_email"
-                className="peer-focus:font-medium absolute xl:text-xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 E-post:
               </label>
@@ -101,7 +101,7 @@ const TipsaOss = () => {
             <div className="relative z-10 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faList}
-                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] top-4 ml-[-15%] text-orangeTheme"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] top-4 ml-[-15%] text-orangeTheme"
               />
               <input
                 type="text"
@@ -117,7 +117,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_kategori"
-                className="peer-focus:font-medium absolute xl:text-xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Kategori:
               </label>
@@ -130,7 +130,7 @@ const TipsaOss = () => {
             <div className="relative z-0 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faHeading}
-                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] top-4 ml-[-15%] text-orangeTheme"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-5%] top-4 ml-[-15%] text-orangeTheme"
               />
               <input
                 type="text"
@@ -146,7 +146,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_titel"
-                className="peer-focus:font-medium absolute xl:text-xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Titel:
               </label>
@@ -159,7 +159,7 @@ const TipsaOss = () => {
             <div className="relative z-10 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faUser}
-                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] top-4 ml-[-15%] text-orangeTheme"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-5%] top-4 ml-[-15%] text-orangeTheme"
               />
               <input
                 type="text"
@@ -175,7 +175,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_alder"
-                className="peer-focus:font-medium absolute xl:text-xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Ålder:
               </label>
@@ -188,7 +188,7 @@ const TipsaOss = () => {
             <div className="col-span-2 relative z-0 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faCommentDots}
-                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] top-4 ml-[-7%] text-orangeTheme"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-2%] top-4 ml-[-7%] text-orangeTheme"
               />
               <textarea
                 name="floating_beskrivning"
@@ -207,7 +207,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_beskrivning"
-                className="peer-focus:font-medium absolute xl:text-xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm font-semibold text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Beskriv ditt tips här:
               </label>
@@ -221,7 +221,7 @@ const TipsaOss = () => {
             <div className="col-span-2 flex items-center justify-center mt-6">
               <button
                 type="submit"
-                className="z-10 text-white rounded-lg text-[18px] transform transition-transform duration-300 ease hover:scale-110 bg-orangeTheme font-bold py-2 px-6"
+                className="z-10 text-white rounded-lg xl:text-2xl xxs:text-lg transform transition-transform duration-300 ease hover:scale-110 bg-orangeTheme font-semibold py-2 px-6"
               >
                 Skicka tips
               </button>
