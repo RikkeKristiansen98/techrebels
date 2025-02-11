@@ -69,16 +69,17 @@ const HeroSection = ({
 */}
       {/* hero text */}
       <div className="hero-section-text
-                xxs:mt-[20%] xs:mt-[35%] sm:mt-[8%] 
+                xxs:mt-[20%] xs:mt-[35%] sm:mt-[8%]
                 px-[7%] relative flex-1 flex flex-col 
-                items-start md:text-left">
+                items-start md:text-left md:mt-[20%] xl:mt-[8%] xl:text-4xl">
   <h1 className="hero-title text-white font-bold animate-slide-in-left 
-                 xxs:text-2xl xs:text-2xl sm:text-4xl md:text-5xl 
+                 xxs:text-2xl xs:text-2xl sm:text-4xl md:text-3xl md:mt-[15%]
                  xxs:mt-[60%] xs:mt-[25%] sm:mt-[20%]">
     {hero_header}
   </h1>
   <p className="intro-text text-white animate-slide-in-left 
-                xxs:text-sm xs:text-base sm:text-lg md:text-xl 
+  md:text-xl
+                xxs:text-sm xs:text-base sm:text-lg
                 xxs:mt-[5%] xs:mt-[10%] sm:mt-[5%]">
     {hero_description}
   </p>
@@ -109,13 +110,13 @@ const HeroSection = ({
 
       {/* hero image */}
       <div className="hero-section-image flex-1 relative flex items-center justify-center overflow-visible
-                left-[20%] xs:absolute xs:top-[1%] xs:scale-[0.6] xs:w-full xs:h-auto
-                xxs:absolute xxs:top-[-10%] xxs:w-full xxs:h-auto">
+                xl:left-[23%] xs:absolute xs:top-[3%] xs:scale-[0.6] xs:w-full xs:h-auto
+                xxs:absolute xs:top-[-0%] xxs:left-[18%] xxs:w-full xxs:h-auto">
   <img
     src={heroImage}
     alt="Image of browser"
-    className="absolute z-10 left-[20%] top-[15%] scale-[0.5] object-cover 
-               xxs:top-[-5%] xxs:left-[-1%] xxs:scale-[0.6]" 
+    className="absolute z-1+ left-[20%] top-[15%] scale-[0.5] object-cover 
+               md:mt-[-9%] xxs:top-[-5%] xxs:left-[-1%] xxs:scale-[0.6]" 
   />
 </div>
 
