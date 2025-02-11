@@ -4,9 +4,13 @@ const cache = new Map();
 
 // Cache för att lagra hämtad data
 export const fetchWithCache = async (url) => {
-  if (cache.has(url)) {
-    return cache.get(url);
+  // Försök hämta från localStorage om den finns
+  const cachedData = localStorage.getItem(url);
+  if (cachedData) {
+    return JSON.parse(cachedData); // Återställ och returnera cachad data
   }
+  
+  // Hämta data om den inte finns i cachen
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -14,7 +18,9 @@ export const fetchWithCache = async (url) => {
     }
     const data = await response.json();
     
-    cache.set(url, data);
+    // Spara datan i localStorage för framtida användning
+    localStorage.setItem(url, JSON.stringify(data));
+    
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -43,6 +49,16 @@ const MainService = {
       return "";
     }
   },
+  getFaqData: async () => {
+    const url = `${BASE_URL}/faq-question?per_page=10`;
+    return await fetchWithCache(url);
+  }, 
+  findDynamicField: (acf, fieldType) => {
+    const fieldKey = Object.keys(acf || {}).find((key) => 
+      key.toLowerCase().includes(fieldType.toLowerCase())
+    );
+    return fieldKey ? af[fieldKey] : null;
+  },
 
   //Hittar ett fält i ett ACF-objekt 
   // beroende på fälttypen och nyckelord
@@ -54,5 +70,6 @@ const MainService = {
     return fieldKey ? acf[fieldKey] : null;
   },
 };
+
 
 export default MainService;

@@ -39,7 +39,6 @@ const TipsaOss = () => {
       return;
     }
 
-    console.log({ email, kategori, titel, alder, beskrivning });
     setEmail("");
     setKategori("");
     setTitel("");
