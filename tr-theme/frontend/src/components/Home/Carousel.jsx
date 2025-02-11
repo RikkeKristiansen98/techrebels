@@ -129,11 +129,11 @@ const Carousel = ({ carouselItems }) => {
       {/* Rubrik för karusellen (höger sida) */}
       <div
         ref={sectionRef}
-        className={`text-center xl:w-[30%] xxs:w-[70%] transition-all duration-700 ease-in-out ${
+        className={`text-center xl:w-[30%] xxs:w-[85%] transition-all duration-700 ease-in-out ${
           isVisible ? "animate-slide-in-right" : "" // Lägg till animation om sektionen är synlig
-        } space-y-10 bg-orangeTheme rounded-lg px-24 pt-[5%]`} // Här läggs bakgrundsfärg till endast textsektionen
+        } space-y-10 bg-orangeTheme rounded-lg xl:px-24 xxs:px-4 xl:pt-[5%]`} // Här läggs bakgrundsfärg till endast textsektionen
       >
-        <h2 className="header-2 xxs:text-2xl xl:text-5xl text-white xl:mt-[8%] border-b-2 pb-4 mx-auto border-white">
+        <h2 className="header-2 xxs:text-2xl xl:text-5xl text-white xl:mt-[2%] border-b-2 pb-4 mx-auto border-white">
           Tech för alla tipsar
         </h2>
         <p className="xl:text-3xl xxs:text-lg text-white">
@@ -142,7 +142,7 @@ const Carousel = ({ carouselItems }) => {
         spelutveckling och mycket mer. Oavsett om du är nybörjare eller redan har några erfarenheter, 
         så finns det alltid något nytt att upptäcka och lära sig!
         </p>
-        <div className="xl:pt-[5%] xxs:pb-[35%]">
+        <div className="xl:pt-[5%] xl:pb-[15%] xxs:pb-[10%]">
           <NavLink
             to="/collection-page"
             className="xl:text-4xl xxs:text-xl font-semibold text-white"
