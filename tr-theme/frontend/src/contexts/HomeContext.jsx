@@ -8,6 +8,7 @@ export const useHome = () => useContext(HomeContext);
 export const HomeProvider = ({ children }) => {
   const [homeData, setHomeData] = useState({
     hero: null,
+    promo: null, 
     banner: null,
     carouselItems: [],
     isLoading: true,
@@ -21,6 +22,7 @@ export const HomeProvider = ({ children }) => {
         const result = await HomeService.getHomePageWithSections();
         setHomeData({
           hero: result.hero,
+          promo: result.promo,
           banner: result.banner,
           carouselItems: result.carouselItems,
           isLoading: false,
@@ -30,6 +32,7 @@ export const HomeProvider = ({ children }) => {
         console.error("Error fetching home data:", error);
         setHomeData({
           hero: null,
+          promo: null,
           banner: null,
           carouselItems: [],
           isLoading: false,
