@@ -10,7 +10,7 @@ export const Header = () => {
   const location = useLocation(); // Hämta nuvarande sidans plats
 
   const sideElement =
-    "http://techforalla.se/wp-content/uploads/2025/02/Tech-Rebels-sidelement-9.png";
+    "http://techforalla.se/wp-content/uploads/2025/02/Tech-Rebels-sidelement-11.png";
 
   // Funktion för att toggla menyn
   const toggleMenu = () => {
@@ -44,7 +44,7 @@ export const Header = () => {
         <img
           src={sideElement}
           alt="Side Element"
-          className="absolute top-0 right-[-14%] w-[60%] h-auto z-10" // Placera bilden i det övre högra hörnet
+          className="absolute top-0 right-[-14%] xl:w-[45%] xxs:w-[70%] h-auto z-10" // Placera bilden i det övre högra hörnet
         />
       
 
