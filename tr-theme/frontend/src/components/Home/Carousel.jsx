@@ -131,7 +131,7 @@ const Carousel = ({ carouselItems }) => {
         ref={sectionRef}
         className={`text-center xl:w-[30%] xxs:w-[85%] transition-all duration-700 ease-in-out ${
           isVisible ? "animate-slide-in-right" : "" // Lägg till animation om sektionen är synlig
-        } space-y-10 bg-orangeTheme rounded-lg xl:px-24 xxs:px-4 xl:pt-[5%]`} // Här läggs bakgrundsfärg till endast textsektionen
+        } space-y-10 bg-pinkTheme rounded-lg xl:px-24 xxs:px-4 xl:pt-[5%]`} // Här läggs bakgrundsfärg till endast textsektionen
       >
         <h2 className="header-2 xxs:text-2xl xl:text-5xl text-white xl:mt-[2%] border-b-2 pb-4 mx-auto border-white">
           Tech för alla tipsar
