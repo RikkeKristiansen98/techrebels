@@ -8,45 +8,37 @@ const PromoSection = ({
     promo_link_url,
     promo_image_url
 }) => {
-    const promoImage = promo_image_url;
-    console.log("Image URL:", promo_image_url);
-
+    const defaultImage = "http://techforalla.se/wp-content/uploads/2025/02/datatjej.png";
 
     return (
-
-        <div className="promo-section flex h-96 bg-purpleTheme  relative flex-col sm:flex-row">
-
-            {/* Text container */}
-            <div className="text-container border h-full flex flex-col items-center justify-center w-full sm:w-1/2 relative overflow-hidden mb-2 sm:mb-0">
-                <h2 className="header-1 text-4xl">{promo_header}</h2>
-                <div className="link-description flex">{promo_description}</div>
+        <div className="promo-section flex flex-col sm:flex-row items-center bg-purpleTheme h-auto sm:h-96 p-6">
+            {/* Image container */}
+            <div className="image-container flex justify-center sm:justify-end">
+                <img
+                    src={promo_image_url || defaultImage}
+                    alt="Promo"
+                    className="max-w-full h-64 sm:h-80 object-cover drop-shadow-lg"
+                />
             </div>
-            {/* image link conatiner  */}
-            <img
-                src={promoImage}
-                alt="Image of browser"
-                className="absolute z-10 right-[15%] top-[15%] scale-[0.7] object-cover"
-            />
-            <Link
-                className="header-2 flex items-center text-4xl transition-transform duration-300 ease-in-out group-hover:translate-x-2"
-                to={promo_link_url}
-            >
-                {promo_link_title}
-                <svg
-                    className="ml-2 mt-1"
-                    fill="#FFFFFF"
-                    height="25px"
-                    version="1.1"
-                    id="Layer_1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 330 330"
+
+
+
+            {/* link container */}
+            {/* Text container */}
+            <div className="text-container h-full px-[8%] flex flex-col justify-center w-full sm:w-1/2 relative mb-2 sm:mb-0">
+                <h2 className="text-4xl font-bold">{promo_header}</h2>
+                <p className="text-lg">{promo_description}</p> <Link
+                    className="header-2 mt-4 sm:mt-0 sm:ml-4 flex items-center text-4xl transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                    to={promo_link_url}
                 >
-                    <path
-                        id="XMLID_222_"
-                        d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"
-                    ></path>
-                </svg>
-            </Link>
+                    {promo_link_title}
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
+                    </svg>
+                </Link>
+            </div>
+            {/* Link */}
+
         </div>
     );
 };

@@ -16,9 +16,8 @@ const ExploreBanner = ({ banner_icons, banner_header, banner_tagline }) => {
       </div>
 
 
-      {/* Buttons */}
-
-      <div className="explore-categories-buttons flex-1 flex justify-around xxs:bg-orangeTheme xs:bg-orangeTheme sm:bg-transparent">
+      {/* icons*/}
+      <div className="explore-categories-icons drop-shadow-lg flex-1 flex justify-around xxs:bg-orangeTheme xs:bg-orangeTheme sm:bg-transparent">
         {banner_icons.map((icon, index) => (
           <BannerButton key={index} icon={icon} />
         ))}
