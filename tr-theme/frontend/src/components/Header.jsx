@@ -6,7 +6,7 @@ import closeIcon from "../images/menu.close.png.png";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // State för att hantera menyöppning
-  const logo = "http://techforalla.se/wp-content/uploads/2025/02/techforalla-star.png";
+  const logo = "http://techforalla.se/wp-content/uploads/2025/02/techforalla-logooo-e1739365580571.png";
   const location = useLocation(); // Hämta nuvarande sidans plats
 
 
@@ -23,7 +23,7 @@ export const Header = () => {
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="h-auto max-w-[80px] transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
+            className="h-auto max-w-[300px] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
           />
         </NavLink>
       </div>
@@ -59,6 +59,13 @@ export const Header = () => {
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Skicka in tips
+        </NavLink>
+        <NavLink
+          to="/faq"
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          onClick={toggleMenu} // Stäng menyn när en länk klickas
+        >
+          FAQ
         </NavLink>
       </nav>
 

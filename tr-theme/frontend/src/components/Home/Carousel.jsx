@@ -11,6 +11,9 @@ const Carousel = ({ carouselItems }) => {
   const totalItems = carouselItems.length;
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
+  const carouselBorder = "http://techforalla.se/wp-content/uploads/2025/02/carousel-border-e1739376905245.png";
+  const textBorder ="http://techforalla.se/wp-content/uploads/2025/02/element-flowerss-e1739377698139.png"
   // Funktion för att ändra antal bilder beroende på skärmstorlek
   useEffect(() => {
     const handleResize = () => {
@@ -71,7 +74,13 @@ const Carousel = ({ carouselItems }) => {
   }, []);
 
   return (
-    <div className="relative w-full mb-[20%] mt-[5%] flex justify-center items-center">
+    <div className="relative w-full flex justify-center items-center bg-yellowTheme py-[8%] px-[3%]">
+        {/* border  */}
+        <img
+                src={carouselBorder}
+                alt="Tech för alla logo"
+                className="absolute top-0 right-0 z-0 w-full h-auto bg-pinkTheme"
+            />
     {/* Flex container för text och karusell bredvid varandra */}
     <div className="flex flex-col-reverse xl:flex-row items-center justify-center w-full space-x-0 xl:space-x-28 mt-[4%] mb-[1%]">
       {/* Karusellen (vänster sida) */}
@@ -118,7 +127,7 @@ const Carousel = ({ carouselItems }) => {
               key={index}
               className={`w-3 h-3 rounded-full ${
                 currentIndex === index
-                  ? "bg-gray-800" // Aktuell bild
+                  ? "bg-pinkTheme" // Aktuell bild
                   : "bg-gray-400"
               }`}
             />
@@ -131,12 +140,13 @@ const Carousel = ({ carouselItems }) => {
         ref={sectionRef}
         className={`text-center xl:w-[30%] xxs:w-[85%] transition-all duration-700 ease-in-out ${
           isVisible ? "animate-slide-in-right" : "" // Lägg till animation om sektionen är synlig
-        } space-y-10 bg-pinkTheme rounded-lg xl:px-24 xxs:px-4 xl:pt-[5%]`} // Här läggs bakgrundsfärg till endast textsektionen
+        } space-y-10 bg-pinkTheme xl:px-24 xxs:px-4 xl:pt-[5%] shadow-[5px_6px_3px_rgba(0,0,0,0.6)]`} // Här läggs bakgrundsfärg till endast textsektionen
       >
-        <h2 className="header-2 xxs:text-2xl xl:text-5xl text-white xl:mt-[2%] border-b-2 pb-4 mx-auto border-white">
+        <h2 className="header-2 xxs:text-2xl xl:text-5xl text-whiteTheme xl:mt-[2%]pb-4 mx-auto">
           Tech för alla tipsar
         </h2>
-        <p className="xl:text-3xl xxs:text-lg text-white">
+        <img src={textBorder} alt="" />
+        <p className="text-xl text-blackTheme">
         Här hittar du tips om allt från de senaste trenderna inom teknologi till enkla steg 
         för att komma igång med programmering, 
         spelutveckling och mycket mer. Oavsett om du är nybörjare eller redan har några erfarenheter, 
@@ -145,7 +155,7 @@ const Carousel = ({ carouselItems }) => {
         <div className="xl:pt-[5%] xl:pb-[15%] xxs:pb-[10%]">
           <NavLink
             to="/collection-page"
-            className="xl:text-4xl xxs:text-xl font-semibold text-white"
+            className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-2 py-2 flex items-center justify-center text-blackTheme text-xl font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
           >
             Gå till tipsbanken
           </NavLink>

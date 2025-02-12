@@ -3,21 +3,18 @@ import BannerButton from "./BannerButton";
 
 const ExploreBanner = ({ banner_icons, banner_header, banner_tagline }) => {
   return (
-    <div className="explore-categories flex bg-pinkTheme h-96 relative my-20 flex-col sm:flex-row">
+    <div className="explore-categories flex bg-pinkTheme py-[9%] px-[13%] relative h-auto flex-col items-center text-center lg:flex-row lg:items-start lg:justify-start">
       {/* Text container */}
-      <div className="text-container h-full flex flex-col justify-center w-full sm:w-1/2 relative overflow-hidden mb-2 sm:mb-0">
-        <div className="explore-categories-text text-white px-5 sm:px-20 relative z-10 sm:block">
-          <h3 className="text-4xl font-bold mb-2">{banner_header}</h3>
-          <p>{banner_tagline}</p>
+      <div className="text-container h-full flex flex-col flex-1 justify-center w-full mb-10 lg:mb-0 lg:w-1/2 lg:text-left">
+        <div className="explore-categories-text text-white px-5 lg:px-20 relative z-10">
+          <h3 className="text-5xl text-whiteTheme font-bold mb-12 drop-shadow-lg">
+            {banner_header}
+          </h3>
+          <p className="text-blackTheme text-xl">{banner_tagline}</p>
         </div>
-
-        {/* Text container shape */}
-        <div className="absolute top-0 right-0 w-full h-16 bg-purpleTheme sm:w-[200%] sm:h-[200%] sm:rounded-full xxs:hidden xs:hidden sm:block"></div>
       </div>
-
-
-      {/* icons*/}
-      <div className="explore-categories-icons drop-shadow-lg flex-1 flex justify-around xxs:bg-orangeTheme xs:bg-orangeTheme sm:bg-transparent">
+      {/* Icon container */}
+      <div className="icon-container flex-1 grid grid-cols-2 gap-12 w-full lg:w-auto lg:order-last lg:text-left">
         {banner_icons.map((icon, index) => (
           <BannerButton key={index} icon={icon} />
         ))}

@@ -8,52 +8,52 @@ const HeroSection = ({
   hero_link_url,
 }) => {
   const heroImage = "http://techforalla.se/wp-content/uploads/2025/02/robot-1-e1739352899259.png";
-  const heroHeader = "http://techforalla.se/wp-content/uploads/2025/02/techforallaheader-e1739352811594.png";
+  const heroHeader = "http://techforalla.se/wp-content/uploads/2025/02/techforalla-header-e1739365310603.png";
+  const heroElement = "http://techforalla.se/wp-content/uploads/2025/02/elementt-e1739367544311.png";
 
   return (
-    <div className="hero-section bg-pinkTheme relative py-[6%] px-[10%] flex flex-row min-h-[600px] overflow-visible">
+    <div className="hero-section bg-pinkTheme relative py-20 px-6 sm:px-10 lg:py-[9%] lg:px-[10%] flex flex-col-reverse lg:flex-row min-h-[600px]">
       {/* Left container */}
-      <div className="left flex-1 flex flex-col items-start justify-center ">
+      <div className="left flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
+        {/* Hero Header Image */}
         <img
           src={heroHeader}
-          alt="Image of browser"
-          className="z-10 scale-[0.8] object-cover"
+          alt="Hero header"
+          className="z-10 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] object-cover drop-shadow-lg mb-4 lg:mb-8"
         />
-        {/* Hero text */}
-        <div className="hero-section-text flex flex-col items-center">
-          {/* <h1 className="hero-title text-white font-bold animate-slide-in-left 
-                 xxs:text-2xl xs:text-2xl sm:text-4xl md:text-3xl">
-            {hero_header}
-          </h1> */}
-          <p className="text-center intro-text text-blackTheme animate-slide-in-left px-[5%]
-                md:text-xl
-                xxs:text-sm xs:text-base sm:text-lg
-                xxs:mt-[5%] xs:mt-[10%] sm:mt-[5%]">
-            {hero_description}
-          </p>
-        </div>
+        {/* Hero Description */}
+        <p className="text-blackTheme text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-0 leading-relaxed animate-slide-in-left">
+          {hero_description}
+        </p>
       </div>
 
       {/* Right container */}
-      <div className="right flex-1 flex flex-col items-center justify-center">
-        <div className="hero-section-image relative flex items-center justify-center overflow-visible">
+      <div className="right flex-1 flex flex-col items-center justify-center mb-10 lg:mb-0">
+        {/* Hero Image */}
+        <div className="hero-section-image relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
           <img
             src={heroImage}
-            alt="Image of browser"
-            className="scale-[0.7] object-cover"
+            alt="Hero illustration"
+            className="scale-75 sm:scale-90 lg:scale-100 object-cover drop-shadow-lg"
           />
         </div>
-        {/* Hero link */}
-        <div className="hero-link-text flex items-center justify-center text-center z-20 group">
+        {/* Button */}
+        <div className="button-text mt-12 flex items-center justify-center">
           <Link
-            className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-xl font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
+            className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-sm sm:text-base lg:text-lg font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
             to={hero_link_url}
           >
             {hero_link_title}
           </Link>
         </div>
-
       </div>
+
+      {/* Decorative Element */}
+      <img
+        src={heroElement}
+        alt="Decorative element"
+        className="absolute bottom-0 right-0 z-0 w-full h-auto"
+      />
     </div>
   );
 };

@@ -8,37 +8,44 @@ const PromoSection = ({
     promo_link_url,
     promo_image_url
 }) => {
-    const defaultImage = "http://techforalla.se/wp-content/uploads/2025/02/datatjej.png";
+    const defaultImage = "http://techforalla.se/wp-content/uploads/2025/02/flowerguy.png";
+    const heroElement = "http://techforalla.se/wp-content/uploads/2025/02/elementt-e1739367544311.png";
 
     return (
-        <div className="promo-section flex flex-col sm:flex-row items-center bg-purpleTheme h-auto sm:h-96 p-6">
+        <div className="relative promo-section flex flex-col items-center bg-orangeTheme h-auto lg:flex-row lg:items-start lg:justify-between py-10 md:py-[10%] lg:py-[7%] lg:pb-[10%]">
             {/* Image container */}
-            <div className="image-container flex justify-center sm:justify-end">
+            <div className="image-container flex-1 flex justify-center lg:justify-end mb-8 lg:mb-0">
                 <img
                     src={promo_image_url || defaultImage}
                     alt="Promo"
-                    className="max-w-full h-64 sm:h-80 object-cover drop-shadow-lg"
+                    className="w-60 md:w-64 lg:w-80 h-auto object-cover drop-shadow-lg"
                 />
             </div>
 
-
-
-            {/* link container */}
             {/* Text container */}
-            <div className="text-container h-full px-[8%] flex flex-col justify-center w-full sm:w-1/2 relative mb-2 sm:mb-0">
-                <h2 className="text-4xl font-bold">{promo_header}</h2>
-                <p className="text-lg">{promo_description}</p> <Link
-                    className="header-2 mt-4 sm:mt-0 sm:ml-4 flex items-center text-4xl transition-transform duration-300 ease-in-out group-hover:translate-x-2"
-                    to={promo_link_url}
-                >
-                    {promo_link_title}
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
-                    </svg>
-                </Link>
+            <div className="text-container flex-1 px-6 sm:px-[8%] lg:px-[10%] flex flex-col justify-center text-center lg:text-left mb-10 lg:mb-0">
+                <h2 className="text-5xl text-whiteTheme font-bold mb-12 drop-shadow-lg">
+                    {promo_header}
+                </h2>
+                <p className="mt-4 text-base sm:text-lg lg:text-xl text-blackTheme animate-slide-in-right">
+                    {promo_description}
+                </p>
+                <div className="mt-8 flex justify-end">
+                    <Link
+                        className="bg-whiteTheme border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-base sm:text-lg lg:text-xl font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
+                        to={promo_link_url}
+                    >
+                        {promo_link_title}
+                    </Link>
+                </div>
             </div>
-            {/* Link */}
 
+            {/* Border element */}
+            <img
+                src={heroElement}
+                alt="Hero Element"
+                className="absolute bottom-0 right-0 z-0 w-full h-auto transform scale-y-[-1]"
+            />
         </div>
     );
 };
