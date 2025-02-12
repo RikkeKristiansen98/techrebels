@@ -52,7 +52,7 @@ export function Faq() {
 
         <div className="flex flex-col md:flex-row items-start justify-between gap-[10%] mb-[30%] relative z-10">
           <div
-            className="faq-content md:w-1/2 w-full xxs:w-[120%] rounded-3xl p-28 xxs:p-12 xl:mb-[-10%] xl:mt-[-1%] xxs:mb-[15%] xxs:mt-[10%] xxs:ml-[-9%] xl:ml-[2%]"
+            className="faq-content md:w-1/2 w-full xxs:w-[120%] p-28 xxs:p-12 xl:mb-[-10%] xl:mt-[-1%] xxs:mb-[15%] xxs:mt-[10%] xxs:ml-[-9%] xl:ml-[2%] border-4 border-blackTheme shadow-[4px_6px_3px_rgba(0,0,0,0.6)]"
             style={{ backgroundColor: "rgba(211, 211, 211, 0.3)" }}
           >
             <h2 className="faq-title xl:text-5xl xxs:text-xl xl:mb-12 text-center">
@@ -91,7 +91,7 @@ export function Faq() {
             </div>
           </div>
 
-          <div className="faq-image md:w-1/2 w-full md:mt-0 md:ml-10 xl:mb-[-10%]">
+          <div className="faq-image md:w-1/2 w-full md:mt-0 md:ml-10 xl:mb-[-20%]">
             <img
               src={faqImage}
               alt="FAQ Image"

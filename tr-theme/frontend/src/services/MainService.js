@@ -49,8 +49,8 @@ const MainService = {
       return "";
     }
   },
-  getFaqData: async () => {
-    const url = `${BASE_URL}/faq-question?per_page=10`;
+  getFaqData: async (perPage = 10) => {
+    const url = `${BASE_URL}/faq-question?per_page${perPage}}`;
     return await fetchWithCache(url);
   }, 
   findDynamicField: (acf, fieldType) => {

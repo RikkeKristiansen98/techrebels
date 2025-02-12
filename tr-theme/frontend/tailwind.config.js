@@ -7,6 +7,7 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
     "./src/**/*.css", // Inkluderar din index.css i `src`
   ],
+
   theme: {
     extend: {
       animation: {
@@ -19,6 +20,7 @@ export default {
         'spin-slow': 'spin 4s linear infinite',
         // Ny animation
         'slide-in-right-rotate': 'slideInRightWithRotate 1s ease-out forwards',
+        vibrate: 'vibrate 0.2s linear infinite',
       },
       screens: {
         'xxs': '360px',  // Extra små skärmar
@@ -34,6 +36,13 @@ export default {
           "0%": { transform: "rotate(0deg)" },
           "50%": { transform: "rotate(180deg)" },
           "100%": { transform: "rotate(360deg)" },
+        },
+        vibrate: {
+          '0%': { transform: 'translateX(0)' },
+          '25%': { transform: 'translateX(-3px)' },
+          '50%': { transform: 'translateX(5px)' },
+          '75%': { transform: 'translateX(-3px)' },
+          '100%': { transform: 'translateX(0)' },
         },
         slideInLeft: {
           '0%': { transform: 'translateX(-100%)', opacity: '0' },

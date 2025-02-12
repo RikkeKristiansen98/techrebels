@@ -18,7 +18,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className="bg-orangeTheme xxs:border-t-2 xxs:border-r-2 xxs:border-b-2 xxs:border-l-2 xl:border-t-4 xl:border-r-4 xl:border-b-4 xl:border-l-2 border-blackTheme text-blackTheme xxs:text-sm xl:text-2xl font-semibold p-4 rounded-r-lg"
+              className="bg-orange-500 xxs:border-t-2 xxs:border-r-2 xxs:border-b-2 xxs:border-l-2 xl:border-t-4 xl:border-r-4 xl:border-b-4 xl:border-l-2 border-blackTheme text-blackTheme xxs:text-sm xl:text-2xl font-semibold p-4 rounded-r-lg"
             >
               Skicka
             </button>
