@@ -6,7 +6,7 @@ import closeIcon from "../images/menu.close.png.png";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // State för att hantera menyöppning
-  const logo = "https://techforalla.se/images/techforalla-logo.png";
+  const logo = "http://techforalla.se/wp-content/uploads/2025/02/techforalla-star.png";
   const location = useLocation(); // Hämta nuvarande sidans plats
 
 
@@ -17,16 +17,17 @@ export const Header = () => {
 
 
   return (
-    <header className="relative p-10 w-full h-[110px] flex justify-between items-center top-0 z-50 bg-white">
+    <header className="relative p-[2%] w-full h-[100px] flex justify-between items-center top-0 z-50 bg-blackTheme">
       <div className="logo z-20">
-        <NavLink to="/">
+        <NavLink to="/" className="flex items-center">
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="xxs:w-[40%] xxs:ml-[-5%] xxs:mb-[10%] sm:w-[40%] md:w-[50%] md:ml-[2%] lg:w-[40%] xl:w-[40%] xl:mb-[-3%] h-auto ml-[5%] mt-[5%] transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
+            className="h-auto max-w-[80px] transition-transform duration-300 ease-out hover:scale-[1.1] cursor-pointer"
           />
         </NavLink>
       </div>
+
 
       {/* Hamburgerikon för små skärmar */}
       <div className="md:hidden z-20">
@@ -38,29 +39,29 @@ export const Header = () => {
           />
         </button>
       </div>
-      
+
 
       {/* Navigationslänkar */}
       <nav
-        className={`${
-          isOpen ? "block" : "hidden"
-        } absolute md:relative top-0 left-0 w-full md:flex md:w-auto bg-purpleTheme md:bg-transparent z-20 flex-col md:flex-row items-center md:items-start justify-center md:justify-start`}
+        className={`${isOpen ? "block" : "hidden"
+          } absolute md:relative top-0 left-0 w-full md:flex md:w-auto bg-purpleTheme md:bg-transparent z-20 flex-col md:flex-row items-center justify-center`}
       >
         <NavLink
           to="/collection-page"
-          className={`md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 text-white md:text-xl xl:text-3xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-500 after:ease-in-out hover:after:w-full`}
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className={`md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 text-white md:text-xl xl:text-3xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-500 after:ease-in-out hover:after:w-full`}
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Skicka in tips
         </NavLink>
       </nav>
+
     </header>
   );
 };
