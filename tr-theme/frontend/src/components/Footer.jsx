@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative text-blackTheme bg-yellowTheme xxs:bg-yellowTheme sm:bg-transparent">
+    <footer className="relative text-blackTheme xxs:bg-yellowTheme sm:bg-pinkTheme xl:bg-pinkTheme">
       <div className="relative z-20 text-center flex flex-col sm:flex-row justify-between items-center sm:ml-[4%] sm:mr-[4%] md:ml-[-4%] md:mr-[-4%]">
         <div className="flex flex-col justify-start items-center xl:gap-8 text-center xl:ml-[10%]">
           <h3 className="xl:text-3xl font-semibold xxs:mt-[10%] xxs:mb-[6%]">Prenumerera på nyhetsbrev</h3>
@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="xl:mr-[10%] xxs:mb-[5%] xxs:mt-[5%]">
           <h3 className="xl:text-3xl xxs:text-l xl:mb-[2%]">Har du frågor?</h3>
           <p className="xl:text-2xl xxs:text-sm">
-            I vår {" "}
+            I vår{" "}
             <NavLink to="/faq" className="text-orangeTheme font-bold hover:text-blackTheme hover:underline">
               FAQ
             </NavLink>{" "}
@@ -40,7 +40,7 @@ const Footer = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 400"
-        className="absolute bottom-0 left-0 w-full max-w-full h-auto hidden xxs:block" // Hidden on xxs screens, visible on larger screens
+        className="absolute bottom-0 left-0 w-full h-auto" // För att täcka hela sidbredden
       >
         <path
           fill="#F0CD5F"
@@ -52,3 +52,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
