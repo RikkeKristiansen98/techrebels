@@ -31,7 +31,7 @@ const Grid = () => {
   );
 
   return (
-<div className="bg-whiteTheme border-[2px] border-black rounded-lg">
+<div className="bg-whiteTheme border-[2px] border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg">
 <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4">
         {paginatedItems.map((gridItem) => (
           <GridItem
@@ -46,8 +46,8 @@ const Grid = () => {
       <div className="flex justify-center mt-10 m-10 lg:flex xl:flex">
         <button
           onClick={handlePrevPage}
-          className={`mr-2 px-4 py-2 bg-gray-200 rounded ${
-            currentPage === 1 ? "cursor-not-allowed opacity-50" : ""
+          className={`mr-2 px-4 py-2 bg-gray-200 rounded shadow-[4px_4px_3px_rgba(0,0,0,0.6)]${
+            currentPage === 1 ? "cursor-not-allowed opacity-50 shadow-[4px_4px_3px_rgba(0,0,0,0.6)]" : ""
           }`}
           disabled={currentPage === 1}
         >
@@ -55,9 +55,9 @@ const Grid = () => {
         </button>
         <button
           onClick={handleNextPage}
-          className={`ml-2 px-4 py-2 bg-orangeTheme rounded ${
+          className={`ml-2 px-4 py-2 bg-orangeTheme rounded shadow-[4px_4px_3px_rgba(0,0,0,0.6)]${
             paginatedItems.length < itemsPerPage
-              ? "cursor-not-allowed opacity-50"
+              ? "cursor-not-allowed opacity-50 shadow-[4px_4px_3px_rgba(0,0,0,0.6)]"
               : ""
           }`}
           disabled={paginatedItems.length < itemsPerPage}
