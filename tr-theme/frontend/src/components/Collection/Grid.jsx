@@ -31,8 +31,8 @@ const Grid = () => {
   );
 
   return (
-    <div>
-      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4">
+<div className="bg-whiteTheme border-[2px] border-black rounded-lg">
+<section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4">
         {paginatedItems.map((gridItem) => (
           <GridItem
             key={gridItem.id}
@@ -43,7 +43,7 @@ const Grid = () => {
       </section>
 
       {/* Paginering visas bara på stora skärmar */}
-      <div className="flex justify-center mt-4 lg:flex xl:flex">
+      <div className="flex justify-center mt-10 m-10 lg:flex xl:flex">
         <button
           onClick={handlePrevPage}
           className={`mr-2 px-4 py-2 bg-gray-200 rounded ${
@@ -55,7 +55,7 @@ const Grid = () => {
         </button>
         <button
           onClick={handleNextPage}
-          className={`ml-2 px-4 py-2 bg-gray-200 rounded ${
+          className={`ml-2 px-4 py-2 bg-orangeTheme rounded ${
             paginatedItems.length < itemsPerPage
               ? "cursor-not-allowed opacity-50"
               : ""

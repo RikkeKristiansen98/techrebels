@@ -65,8 +65,8 @@ export const Filter = ({ onFilterChange }) => {
   };
 
   return (
-  <aside className="w-1/6 text-black">
-    <h2 className="text-2xl mb-5 pb-2 border-b">Filter</h2>
+  <aside className="w-1/6 text-black border-black ">
+    <h2 className="bg-yellowTheme font-bold text-3xl mb-5 pb-2 border-b border-black">Filter</h2>
     {categories && categories.length > 0 ? (
       categories.map((parentCategory) => (
         <div
@@ -74,7 +74,7 @@ export const Filter = ({ onFilterChange }) => {
           className={`mb-5 ${openParents[parentCategory.name] ? "open" : ""}`}
         >
           <h4
-            className="flex justify-between items-center text-lg font-bold cursor-pointer"
+            className="flex bg-yellowTheme border-b border-black justify-between items-center text-lg font-bold cursor-pointer"
             onClick={() => toggleParent(parentCategory.name)}
           >
             {DISPLAY_NAMES[parentCategory.slug] || parentCategory.name}
