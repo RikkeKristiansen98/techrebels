@@ -48,14 +48,14 @@ export const Header = () => {
       >
         <NavLink
           to="/collection-page"
-          className={`md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 text-white md:text-xl xl:text-3xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-500 after:ease-in-out hover:after:w-full`}
+          className={`md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 text-blackTheme md:text-xl xl:text-3xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[3px] after:w-0 after:bg-blackTheme after:transition-all after:duration-500 after:ease-in-out hover:after:w-full`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className={`md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 text-white md:text-xl xl:text-3xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-500 after:ease-in-out hover:after:w-full`}
+          className={`md:mb-[15%] xl:mb-[-10%] block py-4 pl-8 text-blackTheme md:text-xl xl:text-3xl font-semibold relative after:absolute after:left-0 after:bottom-[-2px] after:h-[3px] after:w-0 after:bg-blackTheme after:transition-all after:duration-500 after:ease-in-out hover:after:w-full`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Skicka in tips
