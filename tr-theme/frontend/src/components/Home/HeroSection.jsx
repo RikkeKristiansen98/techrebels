@@ -98,14 +98,18 @@ const HeroSection = ({
       </div>
 
       {/* hero image */}
-      <div className="hero-section-image flex-1 relative flex items-center justify-center overflow-visible">
-        <img
-          src={heroImage}
-          alt="Image of browser"
-          className="absolute z-10 right-[15%] top-[15%] scale-[0.7] object-cover"
-        />
-      </div>
-    </div>
+      <div className="hero-section-image flex-1 relative flex items-center justify-center overflow-visible
+                xl:left-[23%] xs:absolute xs:top-[3%] xs:scale-[0.6] xs:w-full xs:h-auto
+                xxs:absolute xs:top-[-0%] xxs:left-[18%] xxs:w-full xxs:h-auto">
+  <img
+    src={heroImage}
+    alt="Image of browser"
+    className="absolute z-1+ left-[20%] top-[15%] scale-[0.5] object-cover 
+               md:mt-[-9%] xxs:top-[-5%] xxs:left-[-1%] xxs:scale-[0.6]" 
+  />
+</div>
+
+    </div> 
   );
 };
 
