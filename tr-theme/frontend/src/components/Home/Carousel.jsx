@@ -129,14 +129,13 @@ const Carousel = ({ carouselItems }) => {
       {/* Rubrik för karusellen (höger sida) */}
       <div
         ref={sectionRef}
-        className={`text-center xl:w-[30%] xxs:w-[85%] transition-all duration-700 ease-in-out ${
-          isVisible ? "animate-slide-in-right" : "" // Lägg till animation om sektionen är synlig
-        } space-y-10 bg-pinkTheme rounded-lg xl:px-24 xxs:px-4 xl:pt-[5%]`} // Här läggs bakgrundsfärg till endast textsektionen
+        className={`text-center xl:w-[30%] xxs:w-[85%] transition-all duration-700 ease-in-out border-4 border-blackTheme shadow-[2px_4px_3px_rgba(0,0,0,0.6)]
+        space-y-10 bg-pinkTheme xl:px-24 xxs:px-4 xl:pt-[5%]`} // Här läggs bakgrundsfärg till endast textsektionen
       >
-        <h2 className="header-2 xxs:text-2xl xl:text-5xl text-white xl:mt-[2%] border-b-2 pb-4 mx-auto border-white">
+        <h2 className="font-semibold xxs:text-2xl xl:text-5xl text-blackTheme xl:mt-[2%] border-b-4 pb-4 mx-auto border-blackTheme">
           Tech för alla tipsar
         </h2>
-        <p className="xl:text-3xl xxs:text-lg text-white">
+        <p className="xl:text-3xl xxs:text-lg text-blackTheme">
         Här hittar du tips om allt från de senaste trenderna inom teknologi till enkla steg 
         för att komma igång med programmering, 
         spelutveckling och mycket mer. Oavsett om du är nybörjare eller redan har några erfarenheter, 
@@ -145,7 +144,7 @@ const Carousel = ({ carouselItems }) => {
         <div className="xl:pt-[5%] xl:pb-[15%] xxs:pb-[10%]">
           <NavLink
             to="/collection-page"
-            className="xl:text-4xl xxs:text-xl font-semibold text-white"
+            className="bg-orange-500 border-blackTheme w-[28%] border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-xl font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
           >
             Gå till tipsbanken
           </NavLink>
