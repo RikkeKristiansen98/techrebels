@@ -50,11 +50,11 @@ export default {
         },
       },
       colors: {
-        orangeTheme: "#F2A45B",
-        greenTheme: "#A5C882",
-        blueTheme: "#84CDFA",
-        purpleTheme: "#996AD9",
-        pinkTheme: "#F095C1"
+        orangeTheme: "#EF8532",
+        yellowTheme: "#F0CD5F",
+        whiteTheme: "#FAF3EB",
+        blackTheme: "#251A09",
+        pinkTheme: "#E49AE0"
       },
     },
   },
