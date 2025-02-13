@@ -46,6 +46,13 @@ export const Header = () => {
         className={`${isOpen ? "block" : "hidden"
           } absolute md:relative top-0 left-0 w-full md:flex md:w-auto bg-purpleTheme md:bg-transparent z-20 flex-col md:flex-row items-center justify-center`}
       >
+         <NavLink
+          to="/home"
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          onClick={toggleMenu} // Stäng menyn när en länk klickas
+        >
+          Hem
+        </NavLink>
         <NavLink
           to="/collection-page"
           className={`block py-4 px-8 text-whiteTheme header-2 md:text-xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
