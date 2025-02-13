@@ -39,7 +39,7 @@ export function Faq() {
       {" "}
       {/* Här applicerar vi bakgrundsfärgen över hela sidan */}
       <div className="faq-container relative p-5 ml-[10%] mr-[10%]">
-      <h1 className="faq-title xl:text-6xl xxs:text-xl xl:mb-[10%] xl:mt-[10%] text-center font-semibold text-blackTheme">
+      <h1 className="faq-title xl:text-5xl xxs:text-xl xl:mb-[10%] xl:mt-[10%] text-center font-semibold text-blackTheme">
           <TypingEffect
             text="Här hittar du svar på de vanligaste frågorna!" // Här använder vi TypingEffect och skickar in den text du vill visa
             speed={100} // Justera hastigheten på skrivningen
@@ -53,7 +53,7 @@ export function Faq() {
           <div
             className="faq-content md:w-1/2 w-full xxs:w-[120%] p-28 xxs:p-12 xl:mb-[-10%] xl:mt-[-1%] xxs:mb-[15%] xxs:mt-[10%] xxs:ml-[-9%] xl:ml-[2%] border-4 border-blackTheme shadow-[4px_6px_3px_rgba(0,0,0,0.6)] bg-pinkTheme"
           >
-            <h2 className="faq-title xl:text-5xl xxs:text-xl xl:mb-12 text-center">
+            <h2 className="faq-title xl:text-4xl xxs:text-xl xl:mb-12 text-center">
               Frequently Asked Questions
             </h2>
             <div className="faq-list">
