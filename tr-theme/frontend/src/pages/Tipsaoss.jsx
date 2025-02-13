@@ -53,16 +53,16 @@ const TipsaOss = () => {
     "http://techforalla.se/wp-content/uploads/2025/02/Tech-Rebels-sidelement-13.png";
 
   return (
-    <div className="realtive flex flex-col justify-center items-center min-h-screen bg-pinkTheme">
+    <div className="realtive flex flex-col justify-center items-center min-h-screen bg-yellowTheme">
       <div>
         <img
           src={lampImage}
           alt=""
-          className="ml-[-190%] mb-[-60%] w-full rotate-12 hover:animate-vibrate"
+          className="ml-[-170%] xl:mt-[15%] xl:mb-[-50%] w-full rotate-12 hover:animate-vibrate"
         />
       </div>
-      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] xl:mt-[-10%] xxs:mt-[-35%] ml-[5%]">
-        <h1 className="faq-title xl:text-6xl xxs:text-3xl xl:mb-[10%] xl:mt-[10%] xxs:mb-[15%] text-center font-semibold text-blackTheme">
+      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] xl:mt-[-15%] xxs:mt-[-130%] ml-[5%]">
+        <h1 className="xl:text-5xl xxs:text-3xl xl:mb-[10%] xl:mt-[10%] xxs:mb-[15%] text-center font-semibold text-blackTheme">
           <TypingEffect
             text="Vill du skicka in tips till oss?" // Här använder vi TypingEffect och skickar in den text du vill visa
             speed={100} // Justera hastigheten på skrivningen
@@ -71,7 +71,7 @@ const TipsaOss = () => {
             typingDelay={500} // Fördröjning innan texten börjar skrivas
           />
         </h1>
-        <div className="flex justify-center items-center w-full xl:p-24 xxs:p-8 xxs:mb-[20%] bg-yellowTheme border-4 border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
+        <div className="flex justify-center items-center w-full xl:p-24 xxs:p-8 xxs:mb-[20%] bg-pinkTheme border-4 border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-16 xl:w-[90%] xxs:gap-6"
@@ -80,7 +80,7 @@ const TipsaOss = () => {
             <div className="relative z-0 w-full mb-5 group flex items-center lg:w-[150%]">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] top-4 ml-[-10%] text-orange-500"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] top-4 ml-[-15%] text-orange-500"
               />
               <input
                 type="email"
@@ -109,7 +109,7 @@ const TipsaOss = () => {
             <div className="relative z-10 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faList}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] top-4 ml-[-15%] text-orange-500"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] top-4 ml-[-20%] text-orange-500"
               />
               <input
                 type="text"
@@ -138,7 +138,7 @@ const TipsaOss = () => {
             <div className="relative z-0 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faHeading}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-5%] top-4 ml-[-15%] text-orange-500"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-5%] top-4 ml-[-20%] text-orange-500"
               />
               <input
                 type="text"
@@ -167,7 +167,7 @@ const TipsaOss = () => {
             <div className="relative z-10 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faUser}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-5%] top-4 ml-[-15%] text-orange-500"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-5%] top-4 ml-[-20%] text-orange-500"
               />
               <input
                 type="text"
@@ -196,7 +196,7 @@ const TipsaOss = () => {
             <div className="col-span-2 relative z-0 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faCommentDots}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-2%] top-4 ml-[-7%] text-orange-500"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-2%] top-4 ml-[-10%] text-orange-500"
               />
               <textarea
                 name="floating_beskrivning"

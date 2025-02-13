@@ -36,7 +36,7 @@ export function Faq() {
   }, []);
 
   return (
-    <div className="bg-pinkTheme min-h-screen">
+    <div className="bg-yellowTheme min-h-screen">
       {" "}
       {/* Här applicerar vi bakgrundsfärgen över hela sidan */}
       <div className="faq-container relative p-5 ml-[10%] mr-[10%]">
@@ -52,8 +52,7 @@ export function Faq() {
 
         <div className="flex flex-col md:flex-row items-start justify-between gap-[10%] mb-[30%] relative z-10">
           <div
-            className="faq-content md:w-1/2 w-full xxs:w-[120%] p-28 xxs:p-12 xl:mb-[-10%] xl:mt-[-1%] xxs:mb-[15%] xxs:mt-[10%] xxs:ml-[-9%] xl:ml-[2%] border-4 border-blackTheme shadow-[4px_6px_3px_rgba(0,0,0,0.6)]"
-            style={{ backgroundColor: "rgba(211, 211, 211, 0.3)" }}
+            className="faq-content md:w-1/2 w-full xxs:w-[120%] p-28 xxs:p-12 xl:mb-[-10%] xl:mt-[-1%] xxs:mb-[15%] xxs:mt-[10%] xxs:ml-[-9%] xl:ml-[2%] border-4 border-blackTheme shadow-[4px_6px_3px_rgba(0,0,0,0.6)] bg-pinkTheme"
           >
             <h2 className="faq-title xl:text-5xl xxs:text-xl xl:mb-12 text-center">
               Frequently Asked Questions

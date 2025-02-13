@@ -138,11 +138,9 @@ const Carousel = ({ carouselItems }) => {
       {/* Rubrik för karusellen (höger sida) */}
       <div
         ref={sectionRef}
-        className={`text-center xl:w-[30%] xxs:w-[85%] transition-all duration-700 ease-in-out ${
-          isVisible ? "animate-slide-in-right" : "" // Lägg till animation om sektionen är synlig
-        } space-y-10 bg-pinkTheme xl:px-24 xxs:px-4 xl:pt-[5%] shadow-[5px_6px_3px_rgba(0,0,0,0.6)]`} // Här läggs bakgrundsfärg till endast textsektionen
+        className={`text-center xl:w-[30%] xxs:w-[85%] space-y-10 bg-pinkTheme border-4 border-blackTheme xl:px-24 xxs:px-4 xl:pt-[5%] shadow-[5px_6px_3px_rgba(0,0,0,0.6)]`} // Här läggs bakgrundsfärg till endast textsektionen
       >
-        <h2 className="header-2 xxs:text-2xl xl:text-5xl text-whiteTheme xl:mt-[2%]pb-4 mx-auto">
+        <h2 className="header-2 xxs:text-2xl xl:text-5xl text-blackTheme xl:mt-[2%] mx-auto">
           Tech för alla tipsar
         </h2>
         <img src={textBorder} alt="" />
