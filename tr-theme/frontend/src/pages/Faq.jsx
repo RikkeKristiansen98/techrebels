@@ -26,7 +26,6 @@ export function Faq() {
     MainService.getFaqData()
       .then((data) => {
         setFaq(data); // Sätt FAQ-datan
-        console.log(data);
         setIsLoading(false); // Sätt status till "ej laddning"
       })
       .catch((error) => {
