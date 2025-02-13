@@ -9,7 +9,7 @@ const BannerButton = ({ icon }) => {
           <img
             src={icon.icon}
             alt={icon.title}
-            className="scale-[2] w-16 h-16 object-contain mb-8 xxs:w-10 xxs:h-10 xs:w-12 xs:h-12 sm:w-12 sm:h-12"
+            className="scale-[3] w-16 h-16 object-contain mb-14 xxs:w-10 xxs:h-10 xs:w-12 xs:h-12 sm:w-12 sm:h-12"
           />
           {/* Title */}
           <p className="text-2xl font-semibold text-blackTheme xxs:text-xs xs:text-sm sm:text-lg">
