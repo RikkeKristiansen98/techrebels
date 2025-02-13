@@ -2,25 +2,26 @@ const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 
 const cache = new Map();
 
-// Cache för att lagra hämtad data
 export const fetchWithCache = async (url) => {
-  // Försök hämta från localStorage om den finns
+  // Radera den gamla cachen från localStorage
+  localStorage.removeItem(url);
+  
+  // Hämta data på nytt
   const cachedData = localStorage.getItem(url);
   if (cachedData) {
-    return JSON.parse(cachedData); // Återställ och returnera cachad data
+    return JSON.parse(cachedData);
   }
-  
-  // Hämta data om den inte finns i cachen
+
   try {
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.statusText}`);
     }
     const data = await response.json();
-    
+
     // Spara datan i localStorage för framtida användning
     localStorage.setItem(url, JSON.stringify(data));
-    
+
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -50,7 +51,8 @@ const MainService = {
     }
   },
   getFaqData: async (perPage = 10) => {
-    const url = `${BASE_URL}/faq-question?per_page${perPage}}`;
+    const url = `${BASE_URL}/faq-question?per_page=${perPage}&timestamp=${new Date().getTime()}`;
+
     return await fetchWithCache(url);
   }, 
   findDynamicField: (acf, fieldType) => {
