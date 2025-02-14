@@ -65,49 +65,54 @@ export const Filter = ({ onFilterChange }) => {
   };
 
   return (
-  <aside className="w-1/6 text-blackTheme border-blackTheme ">
-    <h2 className="bg-yellowTheme font-bold text-3xl mb-5 pb-2 border-b border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)] ">Filter</h2>
-    {categories && categories.length > 0 ? (
-      categories.map((parentCategory) => (
-        <div
-          key={parentCategory.id}
-          className={`mb-5 ${openParents[parentCategory.name] ? "open" : ""}`}
-        >
-          <h4
-            className="flex bg-yellowTheme border-b border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)] justify-between items-center text-lg font-bold cursor-pointer"
-            onClick={() => toggleParent(parentCategory.name)}
-          >
-            {DISPLAY_NAMES[parentCategory.slug] || parentCategory.name}
-            {openParents[parentCategory.name] ? (
-              <ExpandLessIcon />
-            ) : (
-              <ExpandMoreIcon />
-            )}
-          </h4>
+    <aside className="w-1/6 text-blackTheme border-blackTheme ">
+      <h2 className="bg-yellowTheme font-bold text-3xl mb-5 pb-2 border-b border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)] ">Filter</h2>
+      {categories && categories.length > 0 ? (
+        categories.map((parentCategory) => (
           <div
-            className={`pl-5 ${
-              openParents[parentCategory.name] ? "block" : "hidden"
-            }`}
+            key={parentCategory.id}
+            className={`mb-5 ${openParents[parentCategory.name] ? "open" : ""}`}
           >
-            {parentCategory.children.map((childCategory) => (
-              <label key={childCategory.id} className="block">
-                <input
-                  type="checkbox"
-                  onChange={() => handleCategoryChange(childCategory.slug)}
-                  checked={selectedCategories.includes(childCategory.slug)}
-                />{" "}
-                {childCategory.name}
-              </label>
-            ))}
+            <h4
+              className="flex bg-yellowTheme border-b border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)] justify-between items-center text-lg font-bold cursor-pointer"
+              onClick={() => toggleParent(parentCategory.name)}
+            >
+              {DISPLAY_NAMES[parentCategory.slug] || parentCategory.name}
+              {openParents[parentCategory.name] ? (
+                <ExpandLessIcon />
+              ) : (
+                <ExpandMoreIcon />
+              )}
+            </h4>
+            <div
+              className={`pl-5 ${
+                openParents[parentCategory.name] ? "block" : "hidden"
+              }`}
+            >
+              {parentCategory.children && parentCategory.children.length > 0 ? (
+                parentCategory.children.map((childCategory) => (
+                  <label key={childCategory.id} className="block">
+                    <input
+                      type="checkbox"
+                      onChange={() => handleCategoryChange(childCategory.slug)}
+                      checked={selectedCategories.includes(childCategory.slug)}
+                    />{" "}
+                    {childCategory.name}
+                  </label>
+                ))
+              ) : (
+                <p>Inga underkategorier tillgängliga</p>
+              )}
+            </div>
           </div>
-        </div>
-      ))
-    ) : (
-      // Fallback när categories är tom eller laddas
-      <p>Laddar kategorier...</p>
-    )}
-  </aside>
-);
+        ))
+      ) : (
+        // Fallback när categories är tom eller laddas
+        <p>Laddar kategorier...</p>
+      )}
+    </aside>
+  );
+  
 
 };
 

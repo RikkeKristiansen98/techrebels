@@ -53,7 +53,11 @@ const CollectionService = {
         };
       });
   
-      console.log("Categories with children:", categoriesWithChildren);
+      
+      console.log("All categories:", allCategories); // Kontrollera att alla kategorier är korrekta
+console.log("Filtered parent categories:", parentCategories); // Kontrollera att vi hittar föräldrakategorierna
+console.log("Categories with children:", categoriesWithChildren); // Kontrollera att vi länkat barnen till rätt föräldrar
+
       return categoriesWithChildren;
     } catch (error) {
       console.error("Error fetching categories with children:", error);

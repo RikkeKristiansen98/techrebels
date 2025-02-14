@@ -62,11 +62,30 @@ export const CollectionProvider = ({ children }) => {
       setFilteredGridItems(allGridItems.GridItems);
     } else {
       // Slå upp ID:n för valda kategorier baserat på deras slug
-      const selectedCategoryIds = categories
-        .filter((cat) => selectedCategories.includes(cat.slug))
-        .map((cat) => cat.id);
+      const selectedCategoryIds = [];
 
-      console.log("Filtering with selected category IDs:", selectedCategoryIds);
+      // Hitta rätt ID:n för både parent- och underkategorier
+      categories.forEach((parent) => {
+        if (selectedCategories.includes(parent.slug)) {
+          selectedCategoryIds.push(parent.id);
+
+          // Inkludera alla barnkategorier
+          parent.children.forEach((child) => {
+            if (selectedCategories.includes(child.slug)) {
+              selectedCategoryIds.push(child.id);
+            }
+          });
+        } else {
+          // Om enbart ett barns slug är valt, lägg till dess ID
+          parent.children.forEach((child) => {
+            if (selectedCategories.includes(child.slug)) {
+              selectedCategoryIds.push(child.id);
+            }
+          });
+        }
+      });
+
+      console.log("Selected category IDs:", selectedCategoryIds);
 
       // Filtrera objekt som har en kategori som matchar något av de valda ID:na
       const filtered = allGridItems.GridItems.filter((item) =>
@@ -76,11 +95,8 @@ export const CollectionProvider = ({ children }) => {
       console.log("Filtered items:", filtered);
       setFilteredGridItems(filtered);
     }
-    console.log("All Grid Items:", allGridItems.GridItems);
-    allGridItems.GridItems.forEach((item) => {
-      console.log(`Item ${item.id} categories:`, item.categories);
-    });
   };
+
 
   useEffect(() => {
     getCollection(page);
