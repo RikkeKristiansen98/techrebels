@@ -31,7 +31,7 @@ const Grid = () => {
   );
 
   return (
-<div className="bg-whiteTheme border-[2px] border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg">
+<div className="bg-whiteTheme border-4 border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
 <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4">
         {paginatedItems.map((gridItem) => (
           <GridItem

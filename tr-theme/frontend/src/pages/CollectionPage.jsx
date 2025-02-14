@@ -2,6 +2,7 @@ import Filter from "../components/Collection/Filter";
 import Grid from "../components/Collection/Grid";
 import { useCollection } from "../contexts/CollectionContext";
 import Loading from "../components/Loading";
+import TypingEffect from "react-typing-effect";
 
 export const CollectionPage = () => {
   const {
@@ -11,7 +12,8 @@ export const CollectionPage = () => {
     isLoading,
     error,
   } = useCollection();
-
+  const flowerImage =
+    "http://techforalla.se/wp-content/uploads/2025/02/flowerguy.png";
   const handleFilterChange = (filters) => {
     filterCollection(filters); // Anropa filter-funktionen i context
   };
@@ -25,11 +27,11 @@ export const CollectionPage = () => {
   }
   return (
     <>
-      <div className="bg-[#E49AE0] min-h-screen w-full flex flex-col justify-center items-center">
-        <div className="relative flex flex-col justify-center items-center min-h-screen m-[15%] mb-[6%]">
+      <div className="bg-yellowTheme min-h-screen w-full flex flex-col justify-center items-center">
+        <div className="relative flex flex-col justify-center items-center min-h-screen m-[8%] mb-[6%]">
           <div className="mb-[12%] relative">
             {/* Underlay shape */}
-            <svg
+            {/* <svg
   viewBox="0 0 200 200"
   xmlns="http://www.w3.org/2000/svg"
   className="absolute top-[-90%] w-[100%] h-[200%] scale-[2.3] object-cover opacity-90 z-0"
@@ -55,11 +57,21 @@ export const CollectionPage = () => {
     d="M20.9,-22.9C34.9,-23.6,59.3,-30.9,65.5,-27C71.7,-23.2,59.8,-8.2,49.9,1.7C40,11.6,32.2,16.4,27.3,25.7C22.4,35,20.4,48.9,13.1,56.4C5.8,64,-6.9,65.3,-15.2,59.4C-23.5,53.5,-27.6,40.4,-34.1,30.7C-40.6,21,-49.6,14.7,-57.4,4.2C-65.1,-6.3,-71.7,-21,-68.5,-32.6C-65.2,-44.2,-52.2,-52.6,-39.2,-52.2C-26.1,-51.8,-13.1,-42.7,-4.8,-35.3C3.5,-27.8,7,-22.1,20.9,-22.9Z"
     transform="translate(100 100) rotate(14)"
   />
-</svg>
+</svg> */}
+            <img
+              src={flowerImage}
+              alt=""
+              className="ml-[90%] xl:mt-[-5%] xl:mb-[-17%] w-[50%]"
+            />
 
-  
-            <h1 className="header-1 text-blackTheme relative text-2xl sm:text-3xl lg:text-6xl font-bold text-center z-10 mb-[20%]">
-              Tipsbanken
+            <h1 className="xl:text-5xl xxs:text-3xl xl:mb-[-5%] xl:mt-[10%] xxs:mb-[15%] text-center font-bold text-blackTheme">
+              <TypingEffect
+                text="Tipsbanken" // Här använder vi TypingEffect och skickar in den text du vill visa
+                speed={100} // Justera hastigheten på skrivningen
+                eraseSpeed={50} // Justera hastigheten för att radera texten (om du vill ha det)
+                eraseDelay={2000} // Fördröjning innan texten raderas (om du vill ha det)
+                typingDelay={500} // Fördröjning innan texten börjar skrivas
+              />
             </h1>
           </div>
           <div className="flex gap-12 mb-10">
@@ -73,6 +85,5 @@ export const CollectionPage = () => {
       </div>
     </>
   );
-  
 };
 export default CollectionPage;
