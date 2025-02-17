@@ -31,9 +31,9 @@ const Grid = () => {
   return (
     <div className="bg-whiteTheme border-4 border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:min-w-[1000px] xl:grid-cols-4 p-4">
-        {gridItems.map((gridItem) => (
+        {gridItems.map((gridItem, index) => (
           <GridItem
-            key={gridItem.id}
+          key={`${gridItem.id}-${index}`}
             gridItem={gridItem}
             imageCache={imageCache}
           />

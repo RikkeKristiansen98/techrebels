@@ -19,16 +19,13 @@ export const CollectionProvider = ({ children }) => {
 
   const getCollection = async (page = 1) => {
     try {
-      const result = await CollectionService.fetchCollection(
-        page,
-        itemsPerPage
-      );
-      setAllGridItems((prevData) => ({
-        GridItems: [...prevData.GridItems, ...result], // Lägg till nya böcker i listan
+      const result = await CollectionService.fetchCollection(page, itemsPerPage);
+      setAllGridItems({
+        GridItems: result, // Replace with the new items (do not append)
         isLoading: false,
         error: null,
-      }));
-      setFilteredGridItems(result);
+      });
+      setFilteredGridItems(result); // Update the filtered items too
     } catch (error) {
       setAllGridItems({
         GridItems: [],
@@ -37,7 +34,7 @@ export const CollectionProvider = ({ children }) => {
       });
     }
   };
-
+  
   const getCategories = async () => {
     try {
       const categoriesWithChildren = await CollectionService.fetchAllCategoriesWithChildren();
