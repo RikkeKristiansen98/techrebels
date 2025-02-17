@@ -106,12 +106,19 @@ export const CollectionProvider = ({ children }) => {
   const loadNextPage = () => {
     setPage((prevPage) => prevPage + 1); // Ladda nästa sida
   };
+  
+  const loadPrevPage = () => {
+    if (page > 1) {
+      setPage((prevPage) => prevPage -1);
+    }
+  };
 
   return (
     <CollectionContext.Provider
       value={{
         ...allGridItems,
         loadNextPage,
+        loadPrevPage,
         allGridItems: allGridItems.GridItems,
         filteredGridItems,
         isLoading: allGridItems.isLoading,
