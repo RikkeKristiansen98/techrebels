@@ -3,6 +3,9 @@ import Grid from "../components/Collection/Grid";
 import { useCollection } from "../contexts/CollectionContext";
 import Loading from "../components/Loading";
 import TypingEffect from "react-typing-effect";
+import { useState } from "react";
+
+
 
 export const CollectionPage = () => {
   const {
@@ -14,10 +17,30 @@ export const CollectionPage = () => {
   } = useCollection();
   const flowerImage =
     "http://techforalla.se/wp-content/uploads/2025/02/flowerguy.png";
-  const handleFilterChange = (filters) => {
-    filterCollection(filters); // Anropa filter-funktionen i context
-  };
-
+    const [title, setTitle] = useState("Tipsbanken"); 
+  
+    const handleFilterChange = (filters) => {
+      filterCollection(filters);
+  
+      // Om inga kategorier är valda, eller om fler än en är vald, visa "Tipsbanken"
+      if (filters.categories.length === 0 || filters.categories.length > 1) {
+        setTitle("Tipsbanken");
+        return;
+      }
+  
+      const selectedCategory = filters.categories[0];
+  
+      if (selectedCategory === "media") {
+        setTitle("Media");
+      } else if (selectedCategory === "bocker" || selectedCategory === "books") {
+        setTitle("Böcker");
+      } else if (selectedCategory === "toys") {
+        setTitle("Leksaker");
+      } else {
+        setTitle("Tipsbanken");
+      }
+    };
+    
   if (isLoading) {
     return <Loading />;
   }
@@ -66,7 +89,7 @@ export const CollectionPage = () => {
 
             <h1 className="xl:text-5xl xxs:text-3xl xl:mb-[-5%] xl:mt-[10%] xxs:mb-[15%] text-center font-bold text-blackTheme">
               <TypingEffect
-                text="Tipsbanken" // Här använder vi TypingEffect och skickar in den text du vill visa
+                text={title} 
                 speed={100} // Justera hastigheten på skrivningen
                 eraseSpeed={50} // Justera hastigheten för att radera texten (om du vill ha det)
                 eraseDelay={2000} // Fördröjning innan texten raderas (om du vill ha det)
