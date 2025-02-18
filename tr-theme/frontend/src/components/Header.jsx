@@ -30,12 +30,12 @@ export const Header = () => {
 
 
       {/* Hamburgerikon för små skärmar */}
-      <div className="md:hidden z-20">
+      <div className="md:hidden z-50">
         <button onClick={toggleMenu} className="text-3xl text-white">
           <img
             src={isOpen ? closeIcon : menuIcon} // Visa antingen stängikonen eller hamburgermenyn
             alt={isOpen ? "Stäng meny" : "Öppna meny"} // Alternativ text för tillgänglighet
-            className="w-16 h-8 mb-[90%] ml-[50%] invert" // Justera storleken på ikonen och invert för att göra den vit
+            className="w-8 h-8 mb-[90%] ml-[5%] invert" // Justera storleken på ikonen och invert för att göra den vit
           />
         </button>
       </div>
@@ -44,7 +44,7 @@ export const Header = () => {
       {/* Navigationslänkar */}
       <nav
         className={`${isOpen ? "block" : "hidden"
-          } absolute md:relative top-0 left-0 w-full md:flex md:w-auto bg-purpleTheme md:bg-transparent z-20 flex-col md:flex-row items-center justify-center`}
+          } bg-blackTheme absolute md:relative top-0 left-0 w-full md:flex md:w-auto bg-purpleTheme md:bg-transparent z-20 flex-col md:flex-row items-center justify-center`}
       >
          <NavLink
           to="/home"
