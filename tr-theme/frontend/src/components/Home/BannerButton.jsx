@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BannerButton = ({ icon }) => {
   return (
     <div className="explore-category-button flex flex-wrap justify-center sm:justify-center items-center sm:flex-row flex-col px-5 sm:px-0 space-y-4 sm:space-x-6">
       <div className="h-auto transform transition-transform duration-200 hover:scale-105 cursor-pointer">
-        <a href={icon.URL} className="explore-category-link justify-center items-center flex flex-col">
+        <Link
+          to={icon.URL} // Dynamisk kategori baserat på titeln
+          className="explore-category-link justify-center items-center flex flex-col"
+        >
           {/* Icon Image */}
           <img
             src={icon.icon}
@@ -15,7 +19,7 @@ const BannerButton = ({ icon }) => {
           <p className="text-2xl font-semibold text-blackTheme xxs:text-xs xs:text-sm sm:text-lg">
             {icon.title}
           </p>
-        </a>
+        </Link>
       </div>
     </div>
   );

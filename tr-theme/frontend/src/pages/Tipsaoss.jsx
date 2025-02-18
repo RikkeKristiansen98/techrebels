@@ -58,7 +58,7 @@ const TipsaOss = () => {
         <img
           src={lampImage}
           alt=""
-          className="ml-[-170%] xl:mt-[15%] xl:mb-[-50%] w-full rotate-12"
+          className="ml-[-160%] xl:mt-[15%] xl:mb-[-50%] w-full rotate-12"
         />
       </div>
       <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] xl:mt-[-15%] xxs:mt-[-130%] ml-[5%]">
