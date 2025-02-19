@@ -12,7 +12,7 @@ const PromoSection = ({
     const heroElement = "http://techforalla.se/wp-content/uploads/2025/02/elementt-e1739367544311.png";
 
     return (
-        <div className="relative promo-section flex flex-col items-center bg-orangeTheme h-auto lg:flex-row lg:items-start lg:justify-between py-10 md:py-[10%] lg:py-[7%] lg:pb-[10%]">
+        <div className="relative promo-section py-[5%] px-[10%] flex flex-col items-center bg-orangeTheme h-auto lg:flex-row lg:items-start lg:justify-between py-10 md:py-[10%] lg:py-[7%] lg:pb-[10%]">
             {/* Image container */}
             <div className="image-container flex-1 flex justify-center lg:justify-end mb-8 lg:mb-0">
                 <img
