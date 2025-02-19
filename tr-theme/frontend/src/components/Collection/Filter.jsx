@@ -65,7 +65,7 @@ export const Filter = ({ onFilterChange }) => {
   };
 
   return (
-    <aside className="w-1/6 text-blackTheme border-blackTheme">
+    <aside className="xl:w-1/6 xxs:w-[50%] text-blackTheme border-blackTheme">
       <h2 className="bg-pinkTheme text-center font-bold text-xl mb-5 p-4 border-4 border-blackTheme">Filtrera efter dina önskemål</h2>
       {categories && categories.length > 0 ? (
         categories.map((parentCategory) => (

@@ -14,7 +14,7 @@ const ExploreBanner = ({ banner_icons, banner_header, banner_tagline }) => {
         </div>
       </div>
       {/* Icon container */}
-      <div className=" icon-container flex-1 grid grid-cols-5 gap-14 w-full lg:w-auto lg:order-last lg:text-left md:py-14 xxs:py-12">
+      <div className=" icon-container flex-1 grid grid-cols-5 gap-14 xxs:gap-20 xxs:grid-cols-3 w-full lg:w-auto lg:order-last lg:text-left md:py-14 xxs:py-12">
         {banner_icons.map((icon, index) => (
           <BannerButton key={index} icon={icon} />
         ))}
