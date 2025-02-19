@@ -3,7 +3,7 @@ import BannerButton from "./BannerButton";
 
 const ExploreBanner = ({ banner_icons, banner_header, banner_tagline }) => {
   return (
-    <div className="explore-categories flex bg-pinkTheme py-[9%] px-[13%] relative h-auto flex-col items-center text-center lg:flex-row lg:items-start lg:justify-start">
+    <div className="explore-categories flex bg-pinkTheme py-[10%] px-[10%] relative h-auto flex-col items-center text-center lg:flex-row lg:items-start lg:justify-start">
       {/* Text container */}
       <div className="text-container h-full flex flex-col flex-1 justify-center w-full mb-10 lg:mb-0 lg:w-1/2 lg:text-left">
         <div className="explore-categories-text text-white px-5 lg:px-20 relative z-10">
