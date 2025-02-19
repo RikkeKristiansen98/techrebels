@@ -42,13 +42,20 @@ const TipsaOss = () => {
 
     try {
       const response = await fetch(
-        "https://techforalla.se/wp-json/wp/v2/send-email/",
+        "https://techforalla.se/wp-json/my-api/v1/send-email/",
         {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, kategori, titel, alder, beskrivning }),
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email,
+                kategori,
+                titel,
+                alder,
+                beskrivning,
+            }),
         }
-      );
+    );
+    
 
       const data = await response.json();
       if (response.ok) {

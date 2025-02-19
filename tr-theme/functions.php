@@ -9,6 +9,14 @@ function load_react_app() {
 add_action('wp_enqueue_scripts', 'load_react_app');
 add_filter('acf/rest_api/key', '__return_true');
 
+add_action('rest_api_init', function () {
+    register_rest_route('my-api/v1', '/send-email/', [
+        'methods' => 'POST',
+        'callback' => 'send_email_callback',
+        'permission_callback' => '__return_true',
+    ]);
+});
+
 function send_email_callback(WP_REST_Request $request) {
     $data = $request->get_json_params();
 
@@ -19,25 +27,19 @@ function send_email_callback(WP_REST_Request $request) {
     $alder = sanitize_text_field($data['alder']);
     $beskrivning = sanitize_textarea_field($data['beskrivning']);
 
-    // Säkerhetskontroll
     if (empty($email) || empty($kategori) || empty($titel) || empty($alder) || empty($beskrivning)) {
         return new WP_REST_Response(['message' => 'Alla fält måste fyllas i'], 400);
     }
 
-    // Mottagarens e-post
-    $to = "hello@genzconsulting.se"; 
+    $to = "hello@genzconsulting.se";
     $subject = "Nytt tips inskickat: " . $titel;
     $headers = array('Content-Type: text/html; charset=UTF-8', 'From: ' . $email);
+    $message = "<h2>Nytt tips inskickat</h2>
+                <p><strong>Kategori:</strong> {$kategori}</p>
+                <p><strong>Titel:</strong> {$titel}</p>
+                <p><strong>Ålder:</strong> {$alder}</p>
+                <p><strong>Beskrivning:</strong> {$beskrivning}</p>";
 
-    // Meddelandets innehåll
-    $message = "<h2>Nytt tips inskickat</h2>";
-    $message .= "<p><strong>E-post:</strong> {$email}</p>";
-    $message .= "<p><strong>Kategori:</strong> {$kategori}</p>";
-    $message .= "<p><strong>Titel:</strong> {$titel}</p>";
-    $message .= "<p><strong>Ålder:</strong> {$alder}</p>";
-    $message .= "<p><strong>Beskrivning:</strong> {$beskrivning}</p>";
-
-    // Skicka e-post
     $sent = wp_mail($to, $subject, $message, $headers);
 
     if ($sent) {
@@ -47,16 +49,6 @@ function send_email_callback(WP_REST_Request $request) {
     }
 }
 
-function expose_acf_fields_for_pages() {
-    // Lägg till ACF-fält till REST API för alla sidor
-    register_rest_field('page', 'acf', array(
-        'get_callback' => function($object) {
-            return get_fields($object['id']); // Hämta alla ACF-fält för denna sida
-        },
-        'update_callback' => null,
-        'schema' => null,
-    ));
-}
 add_action('rest_api_init', 'expose_acf_fields_for_pages');
 
 
