@@ -39,6 +39,11 @@ const Home = () => {
       icon: banner.acf.banner_icon_image_url_four,
       URL: banner.acf.banner_icon_url_four,
     },
+    {
+      title: banner.acf.banner_icon_title_five,
+      icon: banner.acf.banner_icon_image_url_five,
+      URL: banner.acf.banner_icon_url_five,
+    },
   ];
 
   return (

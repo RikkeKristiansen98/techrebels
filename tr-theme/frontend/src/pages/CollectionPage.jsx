@@ -30,11 +30,12 @@ export const CollectionPage = () => {
       setTitle("Böcker");
     } else if (selectedCategory === "leksaker") {
       setTitle("Leksaker");
-    } else {
-      setTitle("Tipsbanken");
-    }
+    } else if (selectedCategory === "verktyg-organistationer") {
+      setTitle("Verktyg och Organisationer");
+    }  else {
+    setTitle("Tipsbanken");
   };
-
+  }
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const categoryFromURL = params.get("category"); // Hämta kategori från URL-parametrarna
