@@ -17,6 +17,15 @@ add_action('rest_api_init', function () {
     ]);
 });
 
+// Registrera en ny REST API-slutpunkt
+add_action('rest_api_init', function () {
+    register_rest_route('my-api/v1', '/send-email/', [
+        'methods' => 'POST',
+        'callback' => 'send_email_callback',
+        'permission_callback' => '__return_true', // Säkerställ att alla kan använda den här slutpunkten
+    ]);
+});
+
 function send_email_callback(WP_REST_Request $request) {
     $data = $request->get_json_params();
 
