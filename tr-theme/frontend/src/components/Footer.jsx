@@ -6,7 +6,7 @@ const Footer = () => {
   const borderElement = "http://techforalla.se/wp-content/uploads/2025/02/bottom-border-e1739376496434.png"
   return (
     <footer className="relative text-whiteTheme xxs:bg-blackTheme sm:bg-blackTheme xl:bg-blackTheme py-[7%] ">
-      <div className="relative z-20 text-center flex flex-col sm:flex-row justify-between items-center sm:ml-[4%] sm:mr-[4%] md:ml-[-4%] md:mr-[-4%]">
+      <div className="relative z-20 text-center flex flex-col sm:flex-row justify-between items-center sm:ml-[4%] sm:mr-[4%] md:ml-[5%] md:mr-[5%]">
         <div className="flex flex-col justify-start items-center xl:gap-8 text-center xl:ml-[10%]">
           <h3 className="xl:text-2xl font-semibold xxs:mt-[10%] xxs:mb-[2%]">Prenumerera på nyhetsbrev</h3>
           <form className="flex justify-center xl:mb-[20%] sm:mb-[6%] xxs:mb-[4%]">

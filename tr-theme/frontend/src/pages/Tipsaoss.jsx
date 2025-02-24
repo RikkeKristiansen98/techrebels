@@ -58,11 +58,12 @@ const TipsaOss = () => {
         <img
           src={lampImage}
           alt=""
-          className="ml-[-160%] xl:mt-[15%] xl:mb-[-50%] w-full rotate-12"
+          className="ml-[-160%] mt-[15%] xl:mb-[-50%] w-full rotate-12"
         />
       </div>
       <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] xl:mt-[-15%] xxs:mt-[-130%] ml-[5%]">
         <h1 className="xl:text-5xl xxs:text-3xl xl:mb-[10%] xl:mt-[10%] xxs:mb-[15%] text-center font-semibold text-blackTheme">
+        <div className="relative overflow-hidden" style={{ height: "4.5rem" }}>
           <TypingEffect
             text="Vill du skicka in tips till oss?" // Här använder vi TypingEffect och skickar in den text du vill visa
             speed={100} // Justera hastigheten på skrivningen
@@ -70,6 +71,7 @@ const TipsaOss = () => {
             eraseDelay={2000} // Fördröjning innan texten raderas (om du vill ha det)
             typingDelay={500} // Fördröjning innan texten börjar skrivas
           />
+          </div>
         </h1>
         <div className="flex justify-center items-center w-full xl:p-24 xxs:p-8 xxs:mb-[20%] bg-pinkTheme border-4 border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
           <form
