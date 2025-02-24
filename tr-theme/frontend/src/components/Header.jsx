@@ -17,13 +17,13 @@ export const Header = () => {
 
 
   return (
-    <header className="relative p-[2%] w-full h-[100px] flex justify-between items-center top-0 z-50 bg-blackTheme">
+    <header className="relative p-[3%] w-full h-[100px] flex justify-between items-center top-0 z-50 bg-blackTheme">
       <div className="logo z-20">
         <NavLink to="/" className="flex items-center">
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="h-auto xl:w-[300px] xxs:w-[60%] md:w-[40%] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
+            className="h-auto xl:max-w-[30%] xxs:w-[60%] md:w-[40%] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
           />
         </NavLink>
       </div>
@@ -35,7 +35,7 @@ export const Header = () => {
           <img
             src={isOpen ? closeIcon : menuIcon} // Visa antingen stängikonen eller hamburgermenyn
             alt={isOpen ? "Stäng meny" : "Öppna meny"} // Alternativ text för tillgänglighet
-            className="xxs:h-8 xxs:mb-[70%] xxs:ml-[-15%] invert w-44 md:h-12 md:ml-[%] md:mt-[50%]" // Justera storleken på ikonen och invert för att göra den vit
+            className="xxs:h-8 xxs:mb-[70%] xxs:ml-[-15%] invert w-44 md:h-14 md:ml-[%] md:mt-[50%]" // Justera storleken på ikonen och invert för att göra den vit
           />
         </button>
       </div>
