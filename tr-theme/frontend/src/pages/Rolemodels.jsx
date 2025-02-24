@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-import "../styles/pages-styles/rolemodels.css";
 import React, { useEffect, useState } from "react";
+import TypingEffect from "react-typing-effect";
 
 export const Rolemodels = () => {
   const [rolemodels, setRolemodels] = useState([]);
-  const [categories, setCategories] = useState([]); // Lagra endast Areas-kategorier
+  const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const rolemodelsElement =
+    "http://techforalla.se/wp-content/uploads/2025/02/rolemodels-e1740402607339.png";
 
   useEffect(() => {
     // Hämta förebilder
@@ -25,20 +28,14 @@ export const Rolemodels = () => {
     fetch("https://techforalla.se/wp-json/wp/v2/categories?per_page=100")
       .then((response) => response.json())
       .then((data) => {
-        // Hitta ID för "Areas"
         const areasCategory = data.find((category) => category.name === "Areas");
-
         if (!areasCategory) {
           console.error("Hittade inte 'Areas'-kategorin!");
           return;
         }
-
-        // Filtrera så att vi bara får underkategorier till "Areas"
         const filteredCategories = data.filter(
           (category) => category.parent === areasCategory.id
         );
-
-        console.log("Hämtade kategorier från Areas:", filteredCategories);
         setCategories(filteredCategories);
       })
       .catch((error) => {
@@ -53,62 +50,93 @@ export const Rolemodels = () => {
   // Filtrera rollmodeller baserat på vald kategori
   const filteredRolemodels = selectedCategory
     ? rolemodels.filter((rolemodel) =>
-        rolemodel.categories && rolemodel.categories.includes(parseInt(selectedCategory))
+        rolemodel.categories &&
+        rolemodel.categories.includes(parseInt(selectedCategory))
       )
     : rolemodels;
 
+  // Kombinerar "Alla" med de hämtade kategorierna i en gemensam array
+  const allButtons = [{ id: null, name: "Alla" }, ...categories];
+
   return (
-    <div className="rolemodels-container">
-      <h1 className="rolemodels-title">Förebilder</h1>
+<div className="flex flex-col items-center justify-start min-h-screen bg-yellowTheme py-1 pb-20">
+  {/* Wrapper för rubrik + bild i flex-row */}
+  <div className="flex flex-row items-center justify-center gap-4 mt-8">
+    <div className="min-w-[250px] flex justify-center">
+      <h1 className="xl:text-5xl xxs:text-3xl xs:text-5xl font-semibold text-blackTheme text-center">
+        <TypingEffect
+          text="Förebilder"
+          speed={100}
+          eraseSpeed={50}
+          eraseDelay={2000}
+          typingDelay={500}
+        />
+      </h1>
+    </div>
 
-      <div className="hero">
-        {/* Kategoriknappar */}
-        <div className="category-rolemodels-section">
-          <div className="category-rolemodels-grid">
-            <button className="c-btn" onClick={() => setSelectedCategory(null)}>
-              Alla
-            </button>
+    <img
+      src={rolemodelsElement}
+      alt="Decorative element"
+      className="w-[20%] h-auto object-contain rotate-1 animate-slide-in-right-rotate"
+    />
+  </div>
 
-            {categories.length > 0 ? (
-              categories.map((category) => (
-                <button
-                  key={category.id}
-                  className="c-btn"
-                  onClick={() => handleCategoryChange(category.id)}
-                >
-                  {category.name}
-                </button>
-              ))
-            ) : (
-              <p>Laddar kategorier...</p>
-            )}
+
+      {/* Rendera knappsektionen bara när kategoridata är laddad */}
+      {categories.length > 0 ? (
+        <div className="mb-10 mt-6">
+          <div className="flex flex-wrap justify-center gap-4">
+            {allButtons.map((category) => (
+              <button
+                key={category.id ?? "alla"}
+                onClick={() => handleCategoryChange(category.id)}
+                className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-sm sm:text-base lg:text-lg font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90 mb-5 xxs:m-1"
+              >
+                {category.name}
+              </button>
+            ))}
           </div>
         </div>
+      ) : (
+        <p className="text-blackTheme mt-4">Laddar kategorier...</p>
+      )}
 
-        {loading && <p>Laddar förebilder...</p>}
+      {loading && <p className="text-lg text-blackTheme mt-4">Laddar förebilder...</p>}
 
-        {/* Grid-sektion för bilder av förebilderna */}
-        <div className="grid-container">
-          {filteredRolemodels.length > 0 ? (
-            filteredRolemodels.map((rolemodel) => (
-              <div className="grid-item" key={rolemodel.id}>
-                {rolemodel._embedded?.["wp:featuredmedia"]?.[0]?.source_url ? (
-                  <img
-                    src={rolemodel._embedded["wp:featuredmedia"][0].source_url}
-                    alt={rolemodel.title.rendered}
-                  />
-                ) : (
-                  <div className="fallback-placeholder">Ingen bild tillgänglig</div>
-                )}
-                <Link to={`/rolemodel/${rolemodel.slug}`}>
-                  {rolemodel.title.rendered}
-                </Link>
-              </div>
-            ))
-          ) : (
-            !loading && <p>Inga förebilder hittades.</p>
-          )}
-        </div>
+      {/* Grid-sektion för bilder av förebilderna */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4">
+        {filteredRolemodels.length > 0 ? (
+          filteredRolemodels.map((rolemodel) => (
+            <div
+              key={rolemodel.id}
+              className="flex flex-col items-center bg-whiteTheme p-4 border-4 border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]"
+            >
+              {rolemodel._embedded?.["wp:featuredmedia"]?.[0]?.source_url ? (
+                <img
+                  src={rolemodel._embedded["wp:featuredmedia"][0].source_url}
+                  alt={rolemodel.title.rendered}
+                  className="w-full h-48 object-cover mb-4"
+                />
+              ) : (
+                <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                  Ingen bild tillgänglig
+                </div>
+              )}
+              <Link
+                to={`/rolemodel/${rolemodel.slug}`}
+                className="text-xl font-semibold text-blackTheme hover:text-[#E49AE0] transition-colors"
+              >
+                {rolemodel.title.rendered}
+              </Link>
+            </div>
+          ))
+        ) : (
+          !loading && (
+            <p className="text-lg text-blackTheme">
+              Inga förebilder hittades.
+            </p>
+          )
+        )}
       </div>
     </div>
   );
