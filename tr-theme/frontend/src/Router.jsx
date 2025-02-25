@@ -1,17 +1,12 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Rolemodels from "./Pages/Rolemodels";
-import Rolemodel from "./pages/Rolemodel";
+import RolemodelsPage from "./Pages/RolemodelsPage";
+import RolemodelPage from "./pages/RolemodelPage";
 import { Faq } from "./pages/Faq";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import NotFound from "./Pages/NotFound";
-import { Register } from "./pages/Register";
-import { Login } from "./pages/Login";
-import { Policy } from "./pages/Policy";
 import { Books } from "./pages/Books";
-import Toys from "./pages/Toys";
 import TipsaOss from "./pages/Tipsaoss";
-import Media from "./pages/Media";
 import CollectionItemPage from "./pages/CollectionItemPage";
 import CollectionPage from "./pages/CollectionPage";
 
@@ -47,7 +42,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "rolemodels",
-        element: <Rolemodels />,
+        element: <RolemodelsPage />,
       },
       {
         path: "register",
@@ -75,11 +70,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "rolemodel",
-        element: <Rolemodels />,
+        element: <RolemodelsPage />,
       },
       {
         path: "rolemodel/:slug",
-        element: <Rolemodel />,
+        element: <RolemodelPage />,
       },
       {
         path: "toys",
