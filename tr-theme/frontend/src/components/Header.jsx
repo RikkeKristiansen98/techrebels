@@ -44,7 +44,7 @@ export const Header = () => {
       {/* Navigationslänkar */}
       <nav
         className={`${isOpen ? "block" : "hidden"
-          } bg-blackTheme absolute xl:relative top-0 left-0 w-full xl:flex xl:w-auto bg-purpleTheme xl:bg-transparent z-20 flex-col xl:flex-row items-center justify-center`}
+          } bg-blackTheme absolute xl:relative top-0 xl:left-40  xxs:left-0 md:left-0 w-full xl:flex bg-purpleTheme xl:bg-transparent z-20 flex-col xl:flex-row items-center justify-center`}
       >
          <NavLink
           to="/home"
