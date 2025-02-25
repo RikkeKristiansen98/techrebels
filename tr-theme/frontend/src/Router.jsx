@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Rolemodels from "./Pages/Rolemodels";
-import Rolemodel from "./pages/Rolemodel";
+import RolemodelsPage from "./Pages/RolemodelsPage";
+import RolemodelPage from "./pages/RolemodelPage";
 import { Faq } from "./pages/Faq";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "rolemodels",
-        element: <Rolemodels />,
+        element: <RolemodelsPage />,
       },
       {
         path: "register",
@@ -75,11 +75,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "rolemodel",
-        element: <Rolemodels />,
+        element: <RolemodelsPage />,
       },
       {
         path: "rolemodel/:slug",
-        element: <Rolemodel />,
+        element: <RolemodelPage />,
       },
       {
         path: "toys",
