@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import MainService from "../../services/MainService";
 
 const GridItem = ({ gridItem, imageCache }) => {
@@ -7,6 +8,7 @@ const GridItem = ({ gridItem, imageCache }) => {
     tagline: gridItem.tagline || "No tagline",
     description: gridItem.description || "No description",
     imageSrc: gridItem.imageSrc || "",  // Se till att imageSrc är korrekt här
+    slug: gridItem.slug || "",
     isLoaded: false,
   });
 
@@ -55,7 +57,7 @@ const GridItem = ({ gridItem, imageCache }) => {
               <span>No image available</span>
             </div>
           )}
-          
+        
           {/* Overlay för tagline och description */}
           <div className="absolute inset-0 bg-white bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 cursor-pointer">
             <h3 className="header-1 text-center text-lg font-semibold text-gray-800">
@@ -67,6 +69,13 @@ const GridItem = ({ gridItem, imageCache }) => {
             <p className="header-3 text-center text-sm text-gray-500 mt-2">
               {content.description}
             </p>
+            <Link
+            to={`/collection/${content.slug}`}
+            className="text-xl font-semibold text-blackTheme hover:text-[#E49AE0] transition-colors"
+          >
+            {content.title}
+          </Link>
+
           </div>
         </>
       ) : (

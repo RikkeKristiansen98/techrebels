@@ -1,11 +1,10 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import RolemodelsPage from "./Pages/RolemodelsPage";
 import RolemodelPage from "./pages/RolemodelPage";
 import { Faq } from "./pages/Faq";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import NotFound from "./Pages/NotFound";
-import { Books } from "./pages/Books";
 import TipsaOss from "./pages/Tipsaoss";
 import CollectionItemPage from "./pages/CollectionItemPage";
 import CollectionPage from "./pages/CollectionPage";
@@ -45,25 +44,10 @@ export const router = createBrowserRouter([
         element: <RolemodelsPage />,
       },
       {
-        path: "register",
-        element: <Register />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "policy",
-        element: <Policy />,
-      },
-      {
-        path: "books",
-        element: <Books />,
-      },
-      {
-        path: "collection-item-page",
+        path: "collection/:slug", // Dynamisk slug
         element: <CollectionItemPage />,
       },
+      
       {
         path: "collection-page",
         element: <CollectionPage />,
@@ -75,15 +59,7 @@ export const router = createBrowserRouter([
       {
         path: "rolemodel/:slug",
         element: <RolemodelPage />,
-      },
-      {
-        path: "toys",
-        element: <Toys />,
-      },
-      {
-        path: "media",
-        element: <Media />,
-      },
+      }
     ],
   },
 ]);

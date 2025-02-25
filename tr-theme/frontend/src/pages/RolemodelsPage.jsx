@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import TypingEffect from "react-typing-effect";
 
-export const Rolemodels = () => {
+export const RolemodelsPage = () => {
   const [rolemodels, setRolemodels] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -142,4 +142,4 @@ export const Rolemodels = () => {
   );
 };
 
-export default Rolemodels;
+export default RolemodelsPage;

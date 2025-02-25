@@ -4,7 +4,7 @@ import "../styles/pages-styles/rolemodel.css";
 
 const textImagePath = "https://techforalla.se/images/textbackground.png";
 
-export const Rolemodel = () => {
+export const RolemodelPage = () => {
   const { slug } = useParams(); // Get slug from URL
   const [rolemodel, setRolemodel] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -75,4 +75,4 @@ export const Rolemodel = () => {
   );
 };
 
-export default Rolemodel;
+export default RolemodelPage;

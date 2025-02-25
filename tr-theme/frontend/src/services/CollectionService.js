@@ -4,7 +4,7 @@ const CollectionService = {
   async fetchCollection(page = 1, perPage = 16) {
     try {
       const response = await fetch(`${BASE_URL}/collection?page=${page}&per_page=${perPage}`);
-      
+
       if (!response.ok) {
         // Logga felet och svar från servern
         console.error(`HTTP-fel! status: ${response.status}`, await response.text());
@@ -20,6 +20,7 @@ const CollectionService = {
         categories: item.categories || [],
         imageSrc: item.acf?.collection_item_image || null,
         url: item.acf?.collection_item_url || "#",
+        slug: item.slug,
       }));
     } catch (error) {
       console.error("Error fetching collection:", error);
@@ -30,18 +31,18 @@ const CollectionService = {
   async fetchAllCategoriesWithChildren() {
     try {
       const response = await fetch(`${BASE_URL}/categories?per_page=100`);
-      
+
       if (!response.ok) {
         throw new Error(`HTTP-fel! status: ${response.status}`);
       }
-  
+
       const allCategories = await response.json();
-  
+
       // Filtrera specifika parent-kategorier (ändra villkor baserat på din data)
       const parentCategories = allCategories.filter((category) =>
         ["ages", "areas", "topics"].includes(category.slug)
       );
-    
+
       // Lägg till respektive barn till varje parent
       const categoriesWithChildren = parentCategories.map((parent) => {
         const children = allCategories.filter(
@@ -52,11 +53,11 @@ const CollectionService = {
           children,
         };
       });
-  
-      
-      console.log("All categories:", allCategories); // Kontrollera att alla kategorier är korrekta
-console.log("Filtered parent categories:", parentCategories); // Kontrollera att vi hittar föräldrakategorierna
-console.log("Categories with children:", categoriesWithChildren); // Kontrollera att vi länkat barnen till rätt föräldrar
+
+
+      // console.log("All categories:", allCategories); // Kontrollera att alla kategorier är korrekta
+      // console.log("Filtered parent categories:", parentCategories); // Kontrollera att vi hittar föräldrakategorierna
+      // console.log("Categories with children:", categoriesWithChildren); // Kontrollera att vi länkat barnen till rätt föräldrar
 
       return categoriesWithChildren;
     } catch (error) {
@@ -64,7 +65,7 @@ console.log("Categories with children:", categoriesWithChildren); // Kontrollera
       throw error;
     }
   },
-  
+
 };
 
 

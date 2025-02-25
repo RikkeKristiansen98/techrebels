@@ -38,7 +38,7 @@ export const CollectionProvider = ({ children }) => {
   const getCategories = async () => {
     try {
       const categoriesWithChildren = await CollectionService.fetchAllCategoriesWithChildren();
-      console.log("Fetched categories:", categoriesWithChildren);
+      // console.log("Fetched categories:", categoriesWithChildren);
       
       setCategories(categoriesWithChildren); // Uppdatera state med parent och children
     } catch (error) {

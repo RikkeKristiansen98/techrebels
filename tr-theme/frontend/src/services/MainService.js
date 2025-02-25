@@ -32,7 +32,6 @@ export const fetchWithCache = async (url) => {
 const MainService = {
   getImageById: async (imageId, imageCache) => {
     if (imageCache[imageId]) {
-      console.log("Returning cached image for ID:", imageId);
       return imageCache[imageId];
     }
 
