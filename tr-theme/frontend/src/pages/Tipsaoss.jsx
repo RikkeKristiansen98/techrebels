@@ -54,13 +54,13 @@ const TipsaOss = () => {
 
   return (
     <div className="realtive flex flex-col justify-center items-center min-h-screen bg-yellowTheme">
-      <div className="flex justify-end items-end">
+      <div className="w-full flex justify-start items-start ml-[20%] xl:mt-[10%]">
         <img src={lampImage} 
         alt="lampa" 
-        className="max-w-full h-auto" />
+        className="max-w-full h-auto xxs:hidden md:hidden xl:block lg:block" />
       </div>
-      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] xl:mt-[-15%] xxs:mt-[-130%] ml-[5%]">
-        <h1 className="xl:text-5xl xxs:text-3xl xl:mb-[10%] xl:mt-[10%] xxs:mb-[15%] text-center font-semibold text-blackTheme">
+      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] xl:mt-[-35%] xxs:mt-[10%] ml-[5%]">
+        <h1 className="xl:text-5xl xxs:text-2xl xl:mb-[10%]  xxs:mb-[5%] text-center font-semibold text-blackTheme">
           <div
             className="relative overflow-hidden"
             style={{ height: "4.5rem" }}
@@ -74,13 +74,13 @@ const TipsaOss = () => {
             />
           </div>
         </h1>
-        <div className="flex justify-center items-center w-full xl:p-24 xxs:p-8 xxs:mb-[20%] bg-pinkTheme border-4 border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
+        <div className="flex justify-center items-center w-full xl:p-24 xxs:ml-[-2%] xxs:p-12 xxs:pr-[-2%] xxs:mb-[20%] bg-pinkTheme xl:border-4 xxs:border-[3px] border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-16 xl:w-[90%] xxs:gap-6"
           >
             {/* Email Field */}
-            <div className="relative z-0 w-full mb-5 group flex items-center lg:w-[150%]">
+            <div className="relative z-0 w-full xl:w-[150%] mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faEnvelope}
                 className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] top-4 ml-[-15%] text-orange-500"
@@ -94,7 +94,7 @@ const TipsaOss = () => {
                   handleInputChange(setEmail, "email", e.target.value)
                 }
                 placeholder=" "
-                className="block py-2.5 px-0 xl:w-[65%] text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                className="block xl:py-4 xxs:py-2.5 px-0 xl:w-[65%] xxs:w-[100%] text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
                 required
               />
               <label
@@ -112,7 +112,7 @@ const TipsaOss = () => {
             <div className="relative z-10 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faList}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] top-4 ml-[-20%] text-orange-500"
+                className="absolute xl:text-3xl xl:left-[-2%] xxs:left-[-10%] top-4 ml-[-20%] text-orange-500"
               />
               <input
                 type="text"
@@ -123,7 +123,7 @@ const TipsaOss = () => {
                   handleInputChange(setKategori, "kategori", e.target.value)
                 }
                 placeholder=" "
-                className="block py-2.5 px-0 w-full text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                className="block xl:py-4 xxs:py-2.5 px-0 w-full text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
                 required
               />
               <label
@@ -152,7 +152,7 @@ const TipsaOss = () => {
                   handleInputChange(setTitel, "titel", e.target.value)
                 }
                 placeholder=" "
-                className="block py-2.5 px-0 w-full text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                className="block xl:py-4 xxs:py-2.5 px-0 w-full text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
                 required
               />
               <label
@@ -181,7 +181,7 @@ const TipsaOss = () => {
                   handleInputChange(setAlder, "alder", e.target.value)
                 }
                 placeholder=" "
-                className="block py-2.5 px-0 w-full text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                className="block xl:py-4 xxs:py-2.5 px-0 w-full text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
                 required
               />
               <label
@@ -213,7 +213,7 @@ const TipsaOss = () => {
                   )
                 }
                 placeholder=" "
-                className="block py-2.5 px-0 w-full text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                className="block xl:py-4 xxs:py-2.5 px-0 w-full text-lg text-blackTheme bg-transparent border-0 border-b-2 border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-gray-600 peer"
                 required
               />
               <label
@@ -232,7 +232,7 @@ const TipsaOss = () => {
             <div className="col-span-2 flex items-center justify-center mt-6">
               <button
                 type="submit"
-                className="z-10 text-blackTheme rounded-lg xl:text-2xl xxs:text-lg transform transition-transform duration-300 ease hover:scale-110 bg-orange-500 font-semibold py-2 px-6 border-4 border-blackTheme"
+                className="z-10 text-blackTheme rounded-lg xl:text-2xl xxs:text-lg transform transition-transform duration-300 ease hover:scale-110 bg-orange-500 font-semibold py-2 px-6 xl:border-4 xxs:border-[3px] border-blackTheme"
               >
                 Skicka tips
               </button>
