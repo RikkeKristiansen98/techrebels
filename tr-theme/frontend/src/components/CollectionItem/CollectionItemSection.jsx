@@ -18,7 +18,7 @@ export const CollectionItemSection = () => {
                 className="absolute top-0 right-0 z-0 w-full h-auto"
             />
 
-            {/* Book Cover */}
+            {/* Bimage */}
             <div className="relative flex items-center justify-center w-full lg:w-1/2">
                 <img
                     src= {item.imageSrc}
