@@ -83,7 +83,7 @@ const TipsaOss = () => {
             <div className="relative z-0 w-full xl:w-[150%] mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] md:left-[1%] top-4 ml-[-15%] text-orange-500"
+                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] md:left-[1%] top-4 ml-[-15%] text-"
               />
               <input
                 type="email"
@@ -99,7 +99,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_email"
-                className="peer-focus:font-medium absolute xl:text-3xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 E-post:
               </label>
@@ -230,7 +230,7 @@ const TipsaOss = () => {
             </div>
 
             <div className="col-span-2 flex items-center justify-center mt-6">
-              <button
+              <button onClick={handleSubmit}
                 type="submit"
                 className="z-10 text-blackTheme rounded-lg xl:text-2xl xxs:text-lg transform transition-transform duration-300 ease hover:scale-110 bg-orange-500 font-semibold py-2 px-6 xl:border-4 xxs:border-[3px] border-blackTheme"
               >
