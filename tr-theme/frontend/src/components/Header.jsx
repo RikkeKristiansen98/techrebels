@@ -23,7 +23,7 @@ export const Header = () => {
           <img
             src={logo}
             alt="Tech för alla logo"
-            className="h-auto xl:max-w-[30%] xxs:w-[60%] md:w-[40%] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
+            className="h-auto xl:max-w-[30%] xxs:w-[60%] md:w-[40%] ml-6 2xl:ml-28 transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
           />
         </NavLink>
       </div>
@@ -35,7 +35,7 @@ export const Header = () => {
           <img
             src={isOpen ? closeIcon : menuIcon} // Visa antingen stängikonen eller hamburgermenyn
             alt={isOpen ? "Stäng meny" : "Öppna meny"} // Alternativ text för tillgänglighet
-            className="xxs:h-8 xxs:mb-[70%] xxs:ml-[-15%] invert w-44 md:h-14 md:ml-[%] md:mt-[50%]" // Justera storleken på ikonen och invert för att göra den vit
+            className="xxs:h-6 xxs:ml-[-15%] invert w-44 md:h-14 md:ml-[%]" // Justera storleken på ikonen och invert för att göra den vit
           />
         </button>
       </div>
@@ -44,32 +44,32 @@ export const Header = () => {
       {/* Navigationslänkar */}
       <nav
         className={`${isOpen ? "block" : "hidden"
-          } bg-blackTheme absolute xl:relative top-0 xl:left-40  xxs:left-0 md:left-0 w-full xl:flex bg-purpleTheme xl:bg-transparent z-20 flex-col xl:flex-row items-center justify-center`}
+          } bg-blackTheme absolute xl:relative top-0 xl:left-22 2xl:left-37 xxs:left-0 md:left-0 w-full xl:flex bg-purpleTheme xl:bg-transparent z-20 flex-col xl:flex-row items-center justify-center`}
       >
-         <NavLink
+        <NavLink
           to="/home"
-          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          className={`block py-4 xxs:px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Hem
         </NavLink>
         <NavLink
           to="/collection-page"
-          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          className={`block py-4 xxs:px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Skicka in tips
         </NavLink>
         <NavLink
           to="/faq"
-          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl xl:text-3xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           FAQ

@@ -49,20 +49,16 @@ const TipsaOss = () => {
     setShowModal(true);
   };
 
-  const lampImage =
-    "http://techforalla.se/wp-content/uploads/2025/02/Tech-Rebels-sidelement-13.png";
+  const sideImage =
+    "http://techforalla.se/wp-content/uploads/2025/02/element-flowerss-e1739377698139.png";
 
   return (
-    <div className="realtive flex flex-col justify-center items-center min-h-screen bg-yellowTheme">
-      <div className="w-full flex justify-start items-start ml-[20%] xl:mt-[10%]">
-        <img src={lampImage} 
-        alt="lampa" 
-        className="max-w-full h-auto xxs:hidden md:hidden xl:block lg:block" />
-      </div>
-      <div className="xxs:w-[85%] md:w-[60%] xl:h-[30%] xl:w-[30%] xl:mt-[-35%] xxs:mt-[10%] md:mt-[-10%] ml-[5%]">
-        <h1 className="xl:text-5xl xxs:text-2xl md:text-3xl xl:mb-[10%] xxs:mb-[5%] text-center font-semibold text-blackTheme">
+    <div className="relative flex flex-col justify-center items-center min-h-screen bg-yellowTheme">
+      <div className="flex flex-col justify-center items-center xxs:w-[85%] xxs:mb-[20%] xxs:mt-[10%] md:w-[60%] md:mt-[1%] xl:mt-[10%] xl:h-[30%] xl:w-[50%]  ">
+
+        <h1 className="xl:text-4xl xxs:text-2xl md:text-3xl xl:mb-[10%] xxs:mb-[5%] text-center font-semibold text-blackTheme">
           <div
-            className="relative overflow-hidden"
+            className="relative"
             style={{ height: "4.5rem" }}
           >
             <TypingEffect
@@ -74,17 +70,44 @@ const TipsaOss = () => {
             />
           </div>
         </h1>
-        <div className="flex justify-center items-center w-full xl:p-24 xxs:ml-[-2%] xxs:p-12 xxs:pr-[-2%] xxs:mb-[20%] md:ml-[-13%] md:w-[120%] bg-pinkTheme xl:border-4 xxs:border-[3px] border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
+        <div className="relative flex justify-center items-center w-full xxs:p-10 xxs:py-16 2xl:py-28 bg-pinkTheme xl:border-4 xxs:border-[3px] border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
+          
+          {/* blommor */}
+          <div className="absolute top-0 right-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">
+            <img src={sideImage}
+              alt="blommor"
+              className="max-w-full h-auto" />
+          </div>
+
+          <div className="absolute top-0 left-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">
+            <img src={sideImage}
+              alt="blommor"
+              className="max-w-full h-auto" />
+          </div>
+          <div className="absolute bottom-0 right-0 md:w-[50%] xl:overflow-hidden">
+            <img src={sideImage}
+              alt="blommor"
+              className="max-w-full h-auto" />
+          </div>
+
+          <div className="absolute bottom-0 left-0 md:w-[50%] xl:overflow-hidden">
+            <img src={sideImage}
+              alt="blommor"
+              className="max-w-full h-auto" />
+          </div>
+
+
+
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-16 xl:w-[90%] xxs:gap-6"
-          >
+            className="ml-12 grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-14 xl:w-[90%] 2xl:ml-28 xxs:gap-6">
             {/* Email Field */}
-            <div className="relative z-0 w-full xl:w-[150%] mb-5 group flex items-center">
+            <div className="relative z-0 w-full xl:w-[124%] group flex items-center">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-10%] md:left-[1%] top-4 ml-[-15%] text-"
+                className="absolute xl:text-2xl xl:left-[-2%] xxs:left-[-10%] md:left-[4%] top-4 ml-[-15%] text-blackTheme"
               />
+
               <input
                 type="email"
                 name="floating_email"
@@ -109,10 +132,10 @@ const TipsaOss = () => {
             </div>
 
             {/* Kategori Field */}
-            <div className="relative z-10 w-full mb-5 group flex items-center">
+            <div className="relative z-10 w-full group flex items-center">
               <FontAwesomeIcon
                 icon={faList}
-                className="absolute xl:text-3xl xl:left-[-2%] xxs:left-[-10%] md:left-[4%] top-4 ml-[-20%] text-orange-500"
+                className="absolute xl:text-2xl xl:left-[-2%] xxs:left-[-10%] md:left-[4%] top-4 ml-[-20%] text-blackTheme"
               />
               <input
                 type="text"
@@ -128,7 +151,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_kategori"
-                className="peer-focus:font-medium absolute xl:text-3xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Kategori:
               </label>
@@ -141,7 +164,7 @@ const TipsaOss = () => {
             <div className="relative z-0 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faHeading}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-5%] md:left-[6%] top-4 ml-[-20%] text-orange-500"
+                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] md:left-[6%] top-4 ml-[-20%] text-blackTheme"
               />
               <input
                 type="text"
@@ -157,7 +180,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_titel"
-                className="peer-focus:font-medium absolute xl:text-3xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Titel:
               </label>
@@ -170,7 +193,7 @@ const TipsaOss = () => {
             <div className="relative z-10 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faUser}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-5%] md:left-[4%] top-4 ml-[-20%] text-orange-500"
+                className="absolute xl:text-2xl xl:left-0 xxs:left-[-5%] md:left-[4%] top-4 ml-[-20%] text-blackTheme"
               />
               <input
                 type="text"
@@ -186,7 +209,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_alder"
-                className="peer-focus:font-medium absolute xl:text-3xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Ålder:
               </label>
@@ -199,7 +222,7 @@ const TipsaOss = () => {
             <div className="col-span-2 relative z-0 w-full mb-5 group flex items-center">
               <FontAwesomeIcon
                 icon={faCommentDots}
-                className="absolute xl:text-3xl xl:left-0 xxs:left-[-2%] md:left-[3%] top-4 ml-[-10%] text-orange-500"
+                className="absolute xl:text-2xl xl:left-0 xxs:left-[-2%] md:left-[3%] top-4 ml-[-10%] text-blackTheme"
               />
               <textarea
                 name="floating_beskrivning"
@@ -218,7 +241,7 @@ const TipsaOss = () => {
               />
               <label
                 htmlFor="floating_beskrivning"
-                className="peer-focus:font-medium absolute xl:text-3xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Beskriv ditt tips här:
               </label>
@@ -229,15 +252,16 @@ const TipsaOss = () => {
               )}
             </div>
 
-            <div className="col-span-2 flex items-center justify-center mt-6">
+            <div className="col-span-2 flex items-center justify-center mt-6 mr-12">
               <button onClick={handleSubmit}
                 type="submit"
-                className="z-10 text-blackTheme rounded-lg xl:text-2xl xxs:text-lg transform transition-transform duration-300 ease hover:scale-110 bg-orange-500 font-semibold py-2 px-6 xl:border-4 xxs:border-[3px] border-blackTheme"
+                className="z-10 text-blackTheme rounded-lg xl:text-2xl xxs:text-l transform transition-transform duration-300 ease hover:scale-110 bg-orange-500 font-semibold py-2 px-6 xl:border-4 xxs:border-[3px] border-blackTheme"
               >
                 Skicka tips
               </button>
             </div>
           </form>
+
         </div>
       </div>
     </div>
