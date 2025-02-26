@@ -62,10 +62,10 @@ export const CollectionPage = () => {
           <img
               src={flowerImage}
               alt=""
-              className="ml-[90%] xl:mt-[-5%] xl:mb-[-17%] w-[50%]"
-            />
+              className="w-[20%] h-auto object-contain rotate-1 animate-slide-in-right-rotate ml-auto sm:w-[25%] xxs:w-[25%] xs:w-[20%]"
+              />
           </div>
-          <h1 className="xl:text-5xl xxs:text-3xl xl:mb-[-5%] xl:mt-[10%] xxs:mb-[15%] text-center font-bold text-blackTheme">
+          <h1 className="xl:text-5xl xs:text-5xl xxs:text-3xl xl:mb-[-5%] xl:mt-[10%] xxs:mb-[15%] text-center font-bold text-blackTheme">
             <TypingEffect
               text={title}
               speed={100}
@@ -75,10 +75,19 @@ export const CollectionPage = () => {
             />
           </h1>
         </div>
-        <div className="flex gap-12 mb-10">
-          <Filter onFilterChange={handleFilterChange} />
-          <Grid allGridItems={allGridItems} filteredGridItems={filteredGridItems} />
-        </div>
+       <div className="flex gap-12 mb-10 w-full 
+                xxs:flex-col xxs:gap-6 
+                sm:flex-row">
+
+  <div className="w-auto sm:w-1/4 xxs:w-full">
+    <Filter onFilterChange={handleFilterChange} />
+  </div>
+
+  <div className="w-auto sm:w-3/4 xxs:w-full">
+    <Grid allGridItems={allGridItems} filteredGridItems={filteredGridItems} />
+  </div>
+</div>
+
       </div>
     </div>
   );
