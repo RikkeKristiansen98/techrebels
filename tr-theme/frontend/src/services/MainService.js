@@ -53,12 +53,6 @@ const MainService = {
 
     return await fetchWithCache(url);
   }, 
-  findDynamicField: (acf, fieldType) => {
-    const fieldKey = Object.keys(acf || {}).find((key) => 
-      key.toLowerCase().includes(fieldType.toLowerCase())
-    );
-    return fieldKey ? af[fieldKey] : null;
-  },
 
   //Hittar ett fält i ett ACF-objekt 
   // beroende på fälttypen och nyckelord
