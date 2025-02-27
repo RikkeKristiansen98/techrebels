@@ -55,12 +55,8 @@ const TipsaOss = () => {
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen bg-yellowTheme">
       <div className="flex flex-col justify-center items-center xxs:w-[85%] xxs:mb-[20%] xxs:mt-[10%] md:w-[60%] md:mt-[1%] xl:mt-[10%] xl:h-[30%] xl:w-[50%]  ">
-
         <h1 className="xl:text-4xl xxs:text-2xl md:text-3xl xl:mb-[10%] xxs:mb-[5%] text-center font-semibold text-blackTheme">
-          <div
-            className="relative"
-            style={{ height: "4.5rem" }}
-          >
+          <div className="relative" style={{ height: "4.5rem" }}>
             <TypingEffect
               text="Vill du skicka in tips till oss?" // Här använder vi TypingEffect och skickar in den text du vill visa
               speed={100} // Justera hastigheten på skrivningen
@@ -71,36 +67,31 @@ const TipsaOss = () => {
           </div>
         </h1>
         <div className="relative flex justify-center items-center w-full xxs:p-10 xxs:py-16 2xl:py-28 bg-pinkTheme xl:border-4 xxs:border-[3px] border-blackTheme shadow-[4px_4px_3px_rgba(0,0,0,0.6)]">
-          
           {/* blommor */}
           <div className="absolute top-0 right-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">
-            <img src={sideImage}
-              alt="blommor"
-              className="max-w-full h-auto" />
+            <img src={sideImage} alt="blommor" className="max-w-full h-auto" />
           </div>
 
           <div className="absolute top-0 left-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">
-            <img src={sideImage}
-              alt="blommor"
-              className="max-w-full h-auto" />
+            <img src={sideImage} alt="blommor" className="max-w-full h-auto" />
           </div>
           <div className="absolute bottom-0 right-0 md:w-[50%] xl:overflow-hidden">
-            <img src={sideImage}
-              alt="blommor"
-              className="max-w-full h-auto" />
+            <img src={sideImage} alt="blommor" className="max-w-full h-auto" />
           </div>
 
           <div className="absolute bottom-0 left-0 md:w-[50%] xl:overflow-hidden">
-            <img src={sideImage}
+            <img
+              src={sideImage}
+              loading="lazy"
               alt="blommor"
-              className="max-w-full h-auto" />
+              className="max-w-full h-auto"
+            />
           </div>
-
-
 
           <form
             onSubmit={handleSubmit}
-            className="ml-12 grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-14 xl:w-[90%] 2xl:ml-28 xxs:gap-6">
+            className="ml-12 grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-14 xl:w-[90%] 2xl:ml-28 xxs:gap-6"
+          >
             {/* Email Field */}
             <div className="relative z-0 w-full xl:w-[124%] group flex items-center">
               <FontAwesomeIcon
@@ -253,7 +244,8 @@ const TipsaOss = () => {
             </div>
 
             <div className="col-span-2 flex items-center justify-center mt-6 mr-12">
-              <button onClick={handleSubmit}
+              <button
+                onClick={handleSubmit}
                 type="submit"
                 className="z-10 text-blackTheme rounded-lg xl:text-2xl xxs:text-l transform transition-transform duration-300 ease hover:scale-110 bg-orange-500 font-semibold py-2 px-6 xl:border-4 xxs:border-[3px] border-blackTheme"
               >
@@ -261,7 +253,6 @@ const TipsaOss = () => {
               </button>
             </div>
           </form>
-
         </div>
       </div>
     </div>
