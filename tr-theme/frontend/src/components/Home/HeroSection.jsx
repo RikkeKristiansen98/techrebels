@@ -19,6 +19,7 @@ const HeroSection = ({
         <img
           src={heroHeader}
           alt="Hero header"
+          loading="lazy"
           className="z-10 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] object-cover drop-shadow-lg mb-4 lg:mb-8"
         />
         {/* Hero Description */}
@@ -33,6 +34,7 @@ const HeroSection = ({
         <div className="hero-section-image relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
           <img
             src={heroImage}
+            loading="lazy"
             alt="Hero illustration"
             className="scale-75 sm:scale-90 lg:scale-100 object-cover drop-shadow-lg"
           />
