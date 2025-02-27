@@ -38,7 +38,7 @@ export function Faq() {
       {" "}
       {/* Här applicerar vi bakgrundsfärgen över hela sidan */}
       <div className="relative p-5 ml-[10%] mr-[10%]">
-        <h1 className="xl:text-5xl md:text-4xl xxs:text-2xl xl:mb-[5%] xl:mt-[10%] xxs:mt-[10%] xxs:mb-[-7%] text-center font-semibold text-blackTheme">
+        <h1 className="xl:text-3xl md:text-4xl xxs:text-2xl xl:mb-[5%] xl:mt-[10%] xxs:mt-[10%] xxs:mb-[-7%] text-center font-semibold text-blackTheme">
           <div className="relative overflow-hidden" style={{ height: "7.5rem" }}>
             <TypingEffect
               text="Här hittar du svar på de vanligaste frågorna!"
@@ -52,7 +52,7 @@ export function Faq() {
 
         <div className="flex flex-col items-start justify-between gap-[10%] mb-[30%] relative z-10">
           <div className="xl:w-[50%] xxs:w-[120%] p-28 xxs:p-12 md:mb-[-25%] xl:mb-[-10%] xl:mt-[-1%] xxs:mb-[15%] xxs:mt-[10%] xxs:ml-[-9%] xl:ml-[2%] border-4 border-blackTheme shadow-[4px_6px_3px_rgba(0,0,0,0.6)] bg-pinkTheme">
-            <h2 className="xl:text-4xl md:text-3xl xxs:text-lg xl:mb-12 text-center">
+            <h2 className="xl:text-2xl md:text-3xl xxs:text-lg xl:mb-12 text-center font-semibold">
               Frequently Asked Questions
             </h2>
             <div className="">
@@ -65,11 +65,11 @@ export function Faq() {
                     key={index}
                   >
                     <div
-                      className="flex justify-between items-center xl:text-3xl xxs:text-l md:text-xl font-semibold pr-2"
+                      className="flex justify-between items-center font-semibold xl:text-xl xxs:text-l md:text-xl pr-2"
                       onClick={() => toggleQuestion(index)}
                     >
                       {faqItem.acf.faq_question}
-                      <span className="mt-6 xl:text-4xl xxs:text-2xl">
+                      <span className="mt-6 xl:text-3xl xxs:text-2xl">
                         {activeIndexes.includes(index) ? (
                           <MdRemove />
                         ) : (
@@ -78,7 +78,7 @@ export function Faq() {
                       </span>
                     </div>
                     {activeIndexes.includes(index) && (
-                      <div className="mt-5 xl:text-2xl xxs:text-sm md:text-lg text-black">
+                      <div className="mt-5 xl:text-lg xxs:text-sm md:text-lg text-black">
                         {faqItem.acf.faq_answer}
                       </div>
                     )}

@@ -24,7 +24,7 @@ export const Header = () => {
             src={logo}
             loading="lazy"
             alt="Tech för alla logo"
-            className="h-auto xl:max-w-[30%] xxs:w-[60%] md:w-[40%] ml-6 2xl:ml-28 transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
+            className="h-auto xl:max-w-[30%] xxs:w-[60%] md:w-[40%] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
           />
         </NavLink>
       </div>
@@ -37,7 +37,7 @@ export const Header = () => {
             src={isOpen ? closeIcon : menuIcon} // Visa antingen stängikonen eller hamburgermenyn
             alt={isOpen ? "Stäng meny" : "Öppna meny"} // Alternativ text för tillgänglighet
             loading="lazy"
-            className="xxs:h-6 xxs:ml-[-15%] invert w-44 md:h-14 md:ml-[%]" // Justera storleken på ikonen och invert för att göra den vit
+            className="xxs:h-6 xxs:ml-[-15%] invert w-44 md:h-14" // Justera storleken på ikonen och invert för att göra den vit
           />
         </button>
       </div>
