@@ -55,7 +55,7 @@ const TipsaOss = () => {
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen bg-yellowTheme">
       <div className="flex flex-col justify-center items-center xxs:w-[85%] xxs:mb-[20%] xxs:mt-[10%] md:w-[60%] md:mt-[1%] xl:mt-[10%] xl:h-[30%] xl:w-[50%]  ">
-        <h1 className="xl:text-4xl xxs:text-2xl md:text-3xl xl:mb-[10%] xxs:mb-[5%] text-center font-semibold text-blackTheme">
+        <h1 className="xl:text-4xl xxs:text-3xl xxs:mb-[7px] xxs:mt-[8px] md:text-3xl xl:mb-[30px] xl:mt-[-30px] text-center font-bold text-blackTheme">
           <div className="relative" style={{ height: "4.5rem" }}>
             <TypingEffect
               text="Vill du skicka in tips till oss?" // Här använder vi TypingEffect och skickar in den text du vill visa

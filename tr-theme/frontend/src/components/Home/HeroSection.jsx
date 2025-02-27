@@ -20,10 +20,10 @@ const HeroSection = ({
           src={heroHeader}
           alt="Hero header"
           loading="lazy"
-          className="z-10 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] object-cover drop-shadow-lg mb-4 lg:mb-8"
+          className="z-10 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] object-cover drop-shadow-lg mb-4 lg:mb-8 animate-slide-in-left"
         />
         {/* Hero Description */}
-        <p className="text-blackTheme text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-0 leading-relaxed animate-slide-in-left">
+        <p className="text-blackTheme text-sm px-4 sm:text-base md:text-lg lg:text-xl sm:px-0 md:py-5 leading-relaxed animate-slide-in-left-delay delay-1500">
           {hero_description}
         </p>
       </div>
@@ -40,7 +40,7 @@ const HeroSection = ({
           />
         </div>
         {/* Button */}
-        <div className="button-text mt-12 flex items-center justify-center">
+        <div className="button-text xxs:mt-2 md:mt-10 flex items-center justify-center">
           <Link
             className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-sm sm:text-base lg:text-lg font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
             to={hero_link_url}

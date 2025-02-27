@@ -38,7 +38,7 @@ export function Faq() {
       {" "}
       {/* Här applicerar vi bakgrundsfärgen över hela sidan */}
       <div className="relative p-5 ml-[10%] mr-[10%]">
-        <h1 className="xl:text-5xl md:text-4xl xxs:text-2xl xl:mb-[5%] xl:mt-[10%] xxs:mt-[10%] xxs:mb-[-7%] text-center font-semibold text-blackTheme">
+        <h1 className="xl:text-4xl xxs:text-3xl xxs:mt-[27px] md:mb-[1px] xl:mb-[20px] xl:mt-[104px]  text-center font-bold text-blackTheme">
           <div className="relative overflow-hidden" style={{ height: "7.5rem" }}>
             <TypingEffect
               text="Här hittar du svar på de vanligaste frågorna!"

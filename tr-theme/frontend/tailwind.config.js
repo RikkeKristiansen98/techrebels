@@ -16,6 +16,7 @@ export default {
         customSpin: "customSpin 1.5s ease-in-out infinite",
         'slide-in-left': 'slideInLeft 1s ease-out forwards',
         'slide-in-left-delay': 'slideInLeft 1.5s ease-out forwards',
+        'delay-1500': '1.5s',
         'slide-in-right': 'slideInRight 1.7s ease-out forwards',
         'spin-slow': 'spin 4s linear infinite',
         // Ny animation

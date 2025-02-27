@@ -25,13 +25,13 @@ const PromoSection = ({
 
             {/* Text container */}
             <div className="text-container flex-1 px-6 sm:px-[8%] lg:px-[10%] flex flex-col justify-center text-center lg:text-left mb-10 lg:mb-0">
-                <h2 className="text-5xl text-whiteTheme font-bold mb-12 drop-shadow-lg">
+                <h2 className="text-5xl text-whiteTheme font-bold mb-10 drop-shadow-lg">
                     {promo_header}
                 </h2>
-                <p className="mt-4 text-base sm:text-lg lg:text-xl text-blackTheme animate-slide-in-right">
+                <p className="text-base sm:text-lg lg:text-xl text-blackTheme">
                     {promo_description}
                 </p>
-                <div className="mt-8 flex justify-end">
+                <div className="mt-8 flex justify-end md:justify-center">
                     <Link
                         className="bg-whiteTheme border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-base sm:text-lg lg:text-xl font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
                         to={promo_link_url}
