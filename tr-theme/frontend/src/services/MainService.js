@@ -16,6 +16,7 @@ export const fetchWithCache = async (url) => {
       throw new Error(`Failed to fetch: ${response.statusText}`);
     }
     const data = await response.json();
+    console.log("", data);
 
     // Spara datan i localStorage för framtida användning
     localStorage.setItem(url, JSON.stringify(data));
