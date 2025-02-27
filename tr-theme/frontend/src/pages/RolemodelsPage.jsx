@@ -76,6 +76,7 @@ export const RolemodelsPage = () => {
 
     <img
       src={rolemodelsElement}
+      loading="lazy"
       alt="Decorative element"
       className="w-[20%] h-auto object-contain rotate-1 animate-slide-in-right-rotate"
     />

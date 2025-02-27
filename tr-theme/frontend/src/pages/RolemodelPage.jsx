@@ -48,6 +48,7 @@ export const RolemodelPage = () => {
             <img
               src={rolemodel._embedded["wp:featuredmedia"][0].source_url}
               alt={rolemodel.title.rendered}
+              loading="lazy"
               className="rolemodel-image"
             />
           )}

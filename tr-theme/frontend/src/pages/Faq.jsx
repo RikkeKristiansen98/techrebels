@@ -91,6 +91,7 @@ export function Faq() {
           <div className="w-full xl:mb-[-10%] xxs:hidden xl:block">
             <img
               src={faqImage}
+              loading="lazy"
               alt="FAQ Image"
               className="w-[20%] h-auto object-contain rotate-12 ml-[70%] mt-[-25%] animate-slide-in-right-rotate"
             />

@@ -17,6 +17,7 @@ const PromoSection = ({
             <div className="image-container flex-1 flex justify-center lg:justify-end mb-8 lg:mb-0">
                 <img
                     src={promo_image_url || defaultImage}
+                    loading="lazy"
                     alt="Promo"
                     className="w-60 md:w-64 lg:w-80 h-auto object-cover drop-shadow-lg"
                 />

@@ -7,7 +7,13 @@ import Loading from "../components/Loading";
 import TypingEffect from "react-typing-effect";
 
 export const CollectionPage = () => {
-  const { allGridItems, filteredGridItems, filterCollection, isLoading, error } = useCollection();
+  const {
+    allGridItems,
+    filteredGridItems,
+    filterCollection,
+    isLoading,
+    error,
+  } = useCollection();
   const location = useLocation(); // Använd useLocation för att få åtkomst till URL-parametrar
   const [title, setTitle] = useState("Tipsbanken");
 
@@ -32,10 +38,10 @@ export const CollectionPage = () => {
       setTitle("Leksaker");
     } else if (selectedCategory === "verktyg-organistationer") {
       setTitle("Verktyg och Organisationer");
-    }  else {
-    setTitle("Tipsbanken");
+    } else {
+      setTitle("Tipsbanken");
+    }
   };
-  }
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const categoryFromURL = params.get("category"); // Hämta kategori från URL-parametrarna
@@ -59,11 +65,12 @@ export const CollectionPage = () => {
       <div className="relative flex flex-col justify-center items-center min-h-screen m-[8%] mb-[6%]">
         <div className="mb-[12%] relative">
           <div>
-          <img
+            <img
               src={flowerImage}
+              loading="lazy"
               alt=""
               className="w-[20%] h-auto object-contain rotate-1 animate-slide-in-right-rotate ml-auto sm:w-[25%] xxs:w-[25%] xs:w-[20%]"
-              />
+            />
           </div>
           <h1 className="xl:text-5xl xs:text-5xl xxs:text-3xl xl:mb-[-5%] xl:mt-[10%] xxs:mb-[15%] text-center font-bold text-blackTheme">
             <TypingEffect
@@ -75,23 +82,25 @@ export const CollectionPage = () => {
             />
           </h1>
         </div>
-       <div className="flex gap-12 mb-10 w-full 
+        <div
+          className="flex gap-12 mb-10 w-full 
                 xxs:flex-col xxs:gap-6 
-                sm:flex-row">
+                sm:flex-row"
+        >
+          <div className="w-auto sm:w-1/4 xxs:w-full">
+            <Filter onFilterChange={handleFilterChange} />
+          </div>
 
-  <div className="w-auto sm:w-1/4 xxs:w-full">
-    <Filter onFilterChange={handleFilterChange} />
-  </div>
-
-  <div className="w-auto sm:w-3/4 xxs:w-full">
-    <Grid allGridItems={allGridItems} filteredGridItems={filteredGridItems} />
-  </div>
-</div>
-
+          <div className="w-auto sm:w-3/4 xxs:w-full">
+            <Grid
+              allGridItems={allGridItems}
+              filteredGridItems={filteredGridItems}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default CollectionPage;
-
