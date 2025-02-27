@@ -45,6 +45,7 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
           {/* Bild */}
           <img
             src={content.imageSrc}
+            loading="lazy"
             alt="Carousel Item"
             className="w-full h-54 object-cover transition-transform duration-700 group-hover:scale-105"
           />

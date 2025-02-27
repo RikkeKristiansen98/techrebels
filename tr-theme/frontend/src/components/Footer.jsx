@@ -41,21 +41,10 @@ const Footer = () => {
       {/* border  */}
       <img
         src={borderElement}
+        loading="lazy"
         alt="Tech för alla logo"
         className="absolute top-0 right-0 z-0 w-full h-auto bg-yellowTheme"
       />
-
-      {/* SVG for larger screens */}
-      {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 400"
-        className="absolute bottom-0 left-0 w-full h-auto" // För att täcka hela sidbredden
-      >
-        <path
-          fill="#251A09"
-          d="M0,150L48,140C96,130,192,80,288,70C384,60,480,90,576,130C672,170,768,220,864,215C960,210,1056,160,1152,135C1248,110,1344,120,1392,125L1440,130L1440,400L0,400Z"
-        ></path>
-      </svg> */}
     </footer>
   );
 };

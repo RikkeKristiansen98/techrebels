@@ -51,6 +51,7 @@ const HeroSection = ({
       {/* Decorative Element */}
       <img
         src={heroElement}
+        loading="lazy"
         alt="Decorative element"
         className="absolute bottom-0 right-0 z-0 w-full h-auto"
       />

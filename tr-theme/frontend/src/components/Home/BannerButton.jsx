@@ -13,6 +13,7 @@ const BannerButton = ({ icon }) => {
           <img
             src={icon.icon}
             alt={icon.title}
+            loading="lazy"
             className="scale-[2.6] w-16 h-16 object-contain mb-16 xxs:w-10 xxs:h-10 xs:w-12 xs:h-12 sm:w-12 sm:h-12"
           />
           {/* Title */}

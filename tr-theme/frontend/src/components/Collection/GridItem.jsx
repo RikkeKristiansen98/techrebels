@@ -53,6 +53,7 @@ const GridItem = ({ gridItem, imageCache }) => {
           {content.imageSrc ? (
             <img
               src={content.imageSrc}
+              loading="lazy"
               alt={content.title}
               className="w-80 h-70 rounded-lg transform transition-transform duration-300 group-hover:scale-110"
             />

@@ -15,6 +15,7 @@ export const CollectionItemSection = () => {
             {/* Border element top */}
             <img
                 src={borderElement}
+                loading="lazy"
                 alt="Hero Element"
                 className="absolute top-0 right-0 z-0 w-full h-auto"
             />

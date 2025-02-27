@@ -3,19 +3,11 @@ const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 const cache = new Map();
 
 export const fetchWithCache = async (url) => {
-  const cacheDuration = 5 * 60 * 1000; // 5 minuter i millisekunder
-  const now = new Date().getTime();
-
-  // Kolla först om datan finns i cache-minnet
-  if (cache.has(url)) {
-    return cache.get(url);
-  }
-
-  // Kolla om datan finns i localStorage och är färsk
-  const cachedItem = JSON.parse(localStorage.getItem(url));
-  if (cachedItem && now - cachedItem.timestamp < cacheDuration) {
-    cache.set(url, cachedItem.data); // Uppdatera cache-minnet
-    return cachedItem.data;
+  
+  // Hämta data på nytt
+  const cachedData = localStorage.getItem(url);
+  if (cachedData) {
+    return JSON.parse(cachedData);
   }
 
   // Hämta data om det inte finns i cache/localStorage
