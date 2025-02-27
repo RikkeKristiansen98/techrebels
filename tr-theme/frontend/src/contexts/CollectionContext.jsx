@@ -20,12 +20,25 @@ export const CollectionProvider = ({ children }) => {
   const getCollection = async (page = 1) => {
     try {
       const result = await CollectionService.fetchCollection(page, itemsPerPage);
+      
+      // Här flyttar vi mappningen av objekt till Context
+      const mappedResult = result.map((item) => ({
+        id: item.id,
+        title: item.acf?.collection_item_title || "No Title",
+        tagline: item.acf?.collection_item_tagline || "No Tagline",
+        description: item.acf?.collection_item_description || "No description",
+        categories: item.categories || [],
+        imageSrc: item.acf?.collection_item_image || null,
+        url: item.acf?.collection_item_url || "#",
+        slug: item.slug,
+      }));
+
       setAllGridItems({
-        GridItems: result, // Replace with the new items (do not append)
+        GridItems: mappedResult, // Replace with the new items (do not append)
         isLoading: false,
         error: null,
       });
-      setFilteredGridItems(result); // Update the filtered items too
+      setFilteredGridItems(mappedResult); // Update the filtered items too
     } catch (error) {
       setAllGridItems({
         GridItems: [],
@@ -37,43 +50,43 @@ export const CollectionProvider = ({ children }) => {
   
   const getCategories = async () => {
     try {
-      const categoriesWithChildren = await CollectionService.fetchAllCategoriesWithChildren();
-      // console.log("Fetched categories:", categoriesWithChildren);
-      
+      const allCategories = await CollectionService.fetchAllCategoriesWithChildren();
+
+      // Flytta även logiken för att mappa parent- och child-kategorier hit
+      const parentCategories = allCategories.filter((category) =>
+        ["ages", "areas", "topics"].includes(category.slug)
+      );
+
+      const categoriesWithChildren = parentCategories.map((parent) => {
+        const children = allCategories.filter((category) => category.parent === parent.id);
+        return {
+          ...parent,
+          children,
+        };
+      });
+
       setCategories(categoriesWithChildren); // Uppdatera state med parent och children
     } catch (error) {
       console.error("Error fetching categories:", error);
     }
   };
-  
 
   // Implementera filterCollection
   const filterCollection = ({ categories: selectedCategories }) => {
-    console.log(
-      "Filtering with selected categories (slugs):",
-      selectedCategories
-    );
-
     if (!selectedCategories || selectedCategories.length === 0) {
-      console.log("No categories selected, showing all items.");
       setFilteredGridItems(allGridItems.GridItems);
     } else {
-      // Slå upp ID:n för valda kategorier baserat på deras slug
       const selectedCategoryIds = [];
 
-      // Hitta rätt ID:n för både parent- och underkategorier
       categories.forEach((parent) => {
         if (selectedCategories.includes(parent.slug)) {
           selectedCategoryIds.push(parent.id);
-
-          // Inkludera alla barnkategorier
           parent.children.forEach((child) => {
             if (selectedCategories.includes(child.slug)) {
               selectedCategoryIds.push(child.id);
             }
           });
         } else {
-          // Om enbart ett barns slug är valt, lägg till dess ID
           parent.children.forEach((child) => {
             if (selectedCategories.includes(child.slug)) {
               selectedCategoryIds.push(child.id);
@@ -82,18 +95,13 @@ export const CollectionProvider = ({ children }) => {
         }
       });
 
-      console.log("Selected category IDs:", selectedCategoryIds);
-
-      // Filtrera objekt som har en kategori som matchar något av de valda ID:na
       const filtered = allGridItems.GridItems.filter((item) =>
         item.categories.some((catId) => selectedCategoryIds.includes(catId))
       );
 
-      console.log("Filtered items:", filtered);
       setFilteredGridItems(filtered);
     }
   };
-
 
   useEffect(() => {
     getCollection(page);
