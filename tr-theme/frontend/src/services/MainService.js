@@ -3,8 +3,6 @@ const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 const cache = new Map();
 
 export const fetchWithCache = async (url) => {
-  // Radera den gamla cachen från localStorage
-  localStorage.removeItem(url);
   
   // Hämta data på nytt
   const cachedData = localStorage.getItem(url);
