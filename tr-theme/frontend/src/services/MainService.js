@@ -3,24 +3,31 @@ const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 const cache = new Map();
 
 export const fetchWithCache = async (url) => {
-  // Radera den gamla cachen från localStorage
-  localStorage.removeItem(url);
-  
-  // Hämta data på nytt
-  const cachedData = localStorage.getItem(url);
-  if (cachedData) {
-    return JSON.parse(cachedData);
+  const cacheDuration = 5 * 60 * 1000; // 5 minuter i millisekunder
+  const now = new Date().getTime();
+
+  // Kolla först om datan finns i cache-minnet
+  if (cache.has(url)) {
+    return cache.get(url);
   }
 
+  // Kolla om datan finns i localStorage och är färsk
+  const cachedItem = JSON.parse(localStorage.getItem(url));
+  if (cachedItem && now - cachedItem.timestamp < cacheDuration) {
+    cache.set(url, cachedItem.data); // Uppdatera cache-minnet
+    return cachedItem.data;
+  }
+
+  // Hämta data om det inte finns i cache/localStorage
   try {
     const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch: ${response.statusText}`);
-    }
-    const data = await response.json();
+    if (!response.ok) throw new Error(`Failed to fetch: ${response.statusText}`);
 
-    // Spara datan i localStorage för framtida användning
-    localStorage.setItem(url, JSON.stringify(data));
+    const data = await response.json();
+    cache.set(url, data); // Spara i minnet
+
+    // Spara i localStorage med timestamp
+    localStorage.setItem(url, JSON.stringify({ data, timestamp: now }));
 
     return data;
   } catch (error) {
@@ -28,6 +35,7 @@ export const fetchWithCache = async (url) => {
     throw error;
   }
 };
+
 
 const MainService = {
   getImageById: async (imageId, imageCache) => {
