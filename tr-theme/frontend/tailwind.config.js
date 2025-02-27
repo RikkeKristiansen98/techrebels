@@ -31,32 +31,6 @@ export default {
         'xl': '1280px',  // Extra stora skärmar
       },
       keyframes: {
-        // Tidigare animeringar
-        customSpin: {
-          "0%": { transform: "rotate(0deg)" },
-          "50%": { transform: "rotate(180deg)" },
-          "100%": { transform: "rotate(360deg)" },
-        },
-        vibrate: {
-          '0%': { transform: 'translateX(0)' },
-          '25%': { transform: 'translateX(-3px)' },
-          '50%': { transform: 'translateX(5px)' },
-          '75%': { transform: 'translateX(-3px)' },
-          '100%': { transform: 'translateX(0)' },
-        },
-        slideInLeft: {
-          '0%': { transform: 'translateX(-100%)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
-        },
-        slideInRight: {
-          '0%': { transform: 'translateX(100%)', opacity: 0 },  // Startar utanför till höger
-          '100%': { transform: 'translateX(0)', opacity: 1 },    // Slutar på sin plats
-        },
-        // Ny slide-in-right med rotation
-        slideInRightWithRotate: {
-          '0%': { transform: 'translateX(100%) rotate(0deg)'},  // Startar till höger, ingen rotation
-          '100%': { transform: 'translateX(0) rotate(12deg)'}, // Flyttar in, roterar ett helt varv
-        },
       },
       colors: {
         orangeTheme: "#EF8532",
