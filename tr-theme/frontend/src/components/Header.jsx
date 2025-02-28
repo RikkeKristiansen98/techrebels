@@ -67,7 +67,7 @@ export const Header = () => {
           className={`block py-4 xxs:px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
-          Skicka in tips
+          Tipsa oss
         </NavLink>
         <NavLink
           to="/faq"

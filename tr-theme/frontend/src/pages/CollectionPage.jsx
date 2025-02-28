@@ -34,12 +34,10 @@ export const CollectionPage = () => {
       setTitle("Media");
     } else if (selectedCategory === "bocker" || selectedCategory === "books") {
       setTitle("Böcker");
-    } else if (selectedCategory === "leksaker") {
+    } else if (selectedCategory === "toy") {
       setTitle("Leksaker");
     } else if (selectedCategory === "verktyg-organistationer") {
       setTitle("Verktyg och Organisationer");
-    } else {
-      setTitle("Tipsbanken");
     }
   };
   useEffect(() => {
@@ -50,7 +48,11 @@ export const CollectionPage = () => {
       // Om en kategori finns i URL-parametrarna, applicera filtret direkt
       handleFilterChange({ categories: [categoryFromURL] });
     }
+    else {
+      setTitle("Tipsbanken");
+    }
   }, [location.search]); // Kör om URL-parametern ändras
+
 
   if (isLoading) {
     return <Loading />;
