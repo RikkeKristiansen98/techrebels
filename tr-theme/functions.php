@@ -35,36 +35,5 @@ function expose_acf_fields_for_pages()
 add_action('rest_api_init', 'expose_acf_fields_for_pages');
 
 
-add_action('rest_api_init', function () {
-    register_rest_route('my-api/v1', '/send-email/', array(
-        'methods' => 'POST',
-        'callback' => 'send_email_callback',
-        'permission_callback' => '__return_true',
-    ));
-});
-
-function send_email_callback(WP_REST_Request $request) {
-    $data = $request->get_json_params();
-
-    if (empty($data)) {
-        return new WP_REST_Response(['message' => 'Inga data mottagna.'], 400);
-    }
-
-    $to = 'hello@genzconsulting.com'; // Replace with your email
-    $subject = 'Nytt formulärmeddelande';
-    $message = "E-post: " . sanitize_email($data['email']) . "\n";
-    $message .= "Kategori: " . sanitize_text_field($data['kategori']) . "\n";
-    $message .= "Titel: " . sanitize_text_field($data['titel']) . "\n";
-    $message .= "Ålder: " . sanitize_text_field($data['alder']) . "\n";
-    $message .= "Beskrivning: " . sanitize_textarea_field($data['beskrivning']) . "\n";
-
-    $headers = array('Content-Type: text/plain; charset=UTF-8');
-
-    if (wp_mail($to, $subject, $message, $headers)) {
-        return new WP_REST_Response(['message' => 'E-post skickad!'], 200);
-    } else {
-        return new WP_REST_Response(['message' => 'E-post kunde inte skickas.'], 500);
-    }
-}
 
 ?>

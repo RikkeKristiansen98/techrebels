@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TypingEffect from "react-typing-effect";
 import ContactForm from "../components/ContactForm";
-import Cf7FormWrapper from "../cf7-form-wrapper";
 
 const TipsaOss = () => {
   const sideImage =
@@ -48,9 +47,7 @@ const TipsaOss = () => {
           </div>
 
           {/* Contact Form */}
-          <Cf7FormWrapper siteUrl="http://techforalla.se" formId="da628b2">
             <ContactForm handler={handleSubmit} />
-          </Cf7FormWrapper>
 
           {/* Blommor */}
           <div className="absolute top-0 left-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">
