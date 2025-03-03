@@ -32,8 +32,8 @@ const ContactForm = () => {
         e.preventDefault();
 
         const username = "wp_user";
-        const password = "14uY xXFY ZGDF Q52K 8rhu ydY4";
-        
+        const password = "BhVF Jr3M UyLw wMH8 nbub Xr6Q";
+
 
         const response = await FormService.sendContactForm(formId, formData, username, password);
 
@@ -49,9 +49,9 @@ const ContactForm = () => {
 
 
     return (
-        <form 
-        _wpcf7_unit_tag= {formId}
-        onSubmit={handleFormSubmit}
+        <form
+            id="wpcf7-f522-o1"
+            onSubmit={handleFormSubmit}
             className="ml-12 grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-14 xl:w-[90%] 2xl:ml-28 xxs:gap-6"
         >
 
@@ -86,11 +86,12 @@ const ContactForm = () => {
             <div className="relative z-10 w-full group flex items-center">
                 <FontAwesomeIcon icon={faList} className="absolute left-2 top-4 text-blackTheme" />
                 <select
+                    type="select"
                     value={formData.category}
                     onChange={(e) => handleFieldChange("category", e)}
                     className="input-field"
                     required
-                    >
+                >
                     <option value="" disabled>Välj kategori</option>
                     {categoriesOptions.map((category) => (
                         <option key={category} value={category}>{category}</option>
@@ -134,7 +135,12 @@ const ContactForm = () => {
             {/* Ålder Field */}
             <div className="relative z-10 w-full mb-5 group flex items-center">
                 <FontAwesomeIcon icon={faUser} className="absolute left-2 top-4 text-blackTheme" />
-                <select value={formData.ages} onChange={(e) => handleFieldChange("ages", e)} className="input-field" required>
+                <select
+                    type="select"
+                    value={formData.ages}
+                    onChange={(e) => handleFieldChange("ages", e)}
+                    className="input-field"
+                    required>
                     <option value="" disabled>Välj åldersgrupp</option>
                     {agesOptions.map((age) => (
                         <option key={age} value={age}>{age}</option>

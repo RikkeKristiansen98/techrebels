@@ -12,7 +12,7 @@ const FormService = {
             const authString = `${username}:${password}`;
             const authEncoded = btoa(authString); // Base64-encode användarnamn och lösenord
 
-            const response = await fetch(`https://techforalla.se/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback`, {
+            const response = await fetch(`https://www.techforalla.se/wp-json/contact-form-7/v1/contact-forms/${formId}/`, {
                 method: "POST",
                 body: formDataObject, // Skickar som FormData istället för JSON
                 headers: {
