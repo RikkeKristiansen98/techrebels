@@ -6,24 +6,6 @@ const TipsaOss = () => {
   const sideImage =
     "http://techforalla.se/wp-content/uploads/2025/02/element-flowerss-e1739377698139.png";
 
-  // Handler-funktion för formuläret
-  const handleSubmit = async (e, formState) => {
-    e.preventDefault(); // Stoppar sidomladdning
-
-    try {
-      const response = await fetch("http://techforalla.se/api/send-message", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
-      });
-
-      if (!response.ok) throw new Error("Något gick fel!");
-
-      alert("Meddelandet har skickats!");
-    } catch (error) {
-      alert(error.message);
-    }
-  };
 
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen bg-yellowTheme">
@@ -47,7 +29,7 @@ const TipsaOss = () => {
           </div>
 
           {/* Contact Form */}
-            <ContactForm handler={handleSubmit} />
+            <ContactForm />
 
           {/* Blommor */}
           <div className="absolute top-0 left-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">
