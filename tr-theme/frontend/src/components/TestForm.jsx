@@ -11,8 +11,13 @@ const TestForm = () => {
 
     const formData = new FormData(formElement);
 
-    // 🟢 Lägg till __wpcf7_unit_tag
-    formData.append("__wpcf7_unit_tag", "wpcf7-f527-o1"); // Anpassa om nödvändigt
+    formData.append("_wpcf7_unit_tag", `wpcf7-f527-o1`);
+    
+    // Annan metadata till formuläret wpcf7
+    // formData.append("_wpcf7", "527"); // Form ID
+    // formData.append("_wpcf7_locale", "en_US"); // Språk
+    // formData.append("_wpcf7_container_post", "0"); // För säkerhet
+
 
     try {
       const response = await fetch(action, {
