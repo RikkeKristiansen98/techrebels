@@ -8,8 +8,11 @@ const TestForm = () => {
 
     const formElement = event.target;
     const { action } = formElement;
-    
-    const formData = new FormData(formElement); 
+
+    const formData = new FormData(formElement);
+
+    // 🟢 Lägg till __wpcf7_unit_tag
+    formData.append("__wpcf7_unit_tag", "wpcf7-f527-o1"); // Anpassa om nödvändigt
 
     try {
       const response = await fetch(action, {
@@ -38,7 +41,7 @@ const TestForm = () => {
       <form
         action="https://www.techforalla.se/wp-json/contact-form-7/v1/contact-forms/527/feedback"
         method="post"
-        encType="multipart/form-data" // 🟢 Viktigt att lägga till detta
+        encType="multipart/form-data"
         onSubmit={formSubmissionHandler}
       >
         <label htmlFor="your-name">Your Name</label>
