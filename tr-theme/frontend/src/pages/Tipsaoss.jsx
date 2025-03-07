@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TypingEffect from "react-typing-effect";
 import ContactForm from "../components/ContactForm";
+import TestForm from "../components/TestForm";
 
 const TipsaOss = () => {
   const sideImage =
@@ -28,8 +29,13 @@ const TipsaOss = () => {
             <img src={sideImage} alt="blommor" loading="lazy" className="max-w-full h-auto" />
           </div>
 
-          {/* Contact Form */}
-            <ContactForm />
+          {/* Test Form */}
+          <div className="relative z-10">
+            <TestForm />
+          </div>
+
+          {/* Contact Form  <ContactForm />*/}
+
 
           {/* Blommor */}
           <div className="absolute top-0 left-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">
