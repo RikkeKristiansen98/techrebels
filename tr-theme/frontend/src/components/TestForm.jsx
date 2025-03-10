@@ -13,10 +13,10 @@ const TestForm = () => {
 
     // 🟢 Lägg till dolda Contact Form 7-fält
     const formId = "527";
-    formData.append("_wpcf7", 527);
+    formData.append("_wpcf7", formId);
     formData.append("_wpcf7_version", "5.6");
     formData.append("_wpcf7_locale", "en_US");
-    formData.append("_wpcf7_unit_tag", `wpcf7-f527-o1`);
+    formData.append("_wpcf7_unit_tag", `wpcf7-f${formId}-o1`);
     formData.append("_wpcf7_container_post", "0");
 
 

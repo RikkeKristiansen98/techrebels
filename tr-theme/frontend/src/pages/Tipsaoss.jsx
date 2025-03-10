@@ -30,12 +30,12 @@ const TipsaOss = () => {
           </div>
 
           {/* Test Form */}
-          <div className="relative z-10">
+          {/* <div className="relative z-10">
             <TestForm />
-          </div>
+          </div> */}
 
           {/* Contact Form  */}
-          {/* <ContactForm /> */}
+          <ContactForm />
 
           {/* Blommor */}
           <div className="absolute top-0 left-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">

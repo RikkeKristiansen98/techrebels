@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import FormService from "../services/FormService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faEnvelope,
-    faList,
     faHeading,
-    faUser,
     faCommentDots,
 } from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = () => {
+
     const formSubmissionHandler = async (event) => {
         event.preventDefault();
 
@@ -18,12 +16,13 @@ const ContactForm = () => {
 
         const formData = new FormData(formElement);
 
-        formData.append("_wpcf7_unit_tag", `wpcf7-f522-o1`);
-
-        // Annan metadata till formuläret wpcf7
-        // formData.append("_wpcf7", "527"); // Form ID
-        // formData.append("_wpcf7_locale", "en_US"); // Språk
-        // formData.append("_wpcf7_container_post", "0"); // För säkerhet
+        // Lägg till dolda Contact Form 7-fält
+        const formId = "522";
+        formData.append("_wpcf7", formId);
+        formData.append("_wpcf7_version", "5.6");
+        formData.append("_wpcf7_locale", "en_US");
+        formData.append("_wpcf7_unit_tag", `wpcf7-f${formId}-o1`);
+        formData.append("_wpcf7_container_post", "0");
 
 
         try {
@@ -31,7 +30,6 @@ const ContactForm = () => {
                 method: "POST",
                 body: formData,
                 headers: {
-                    // "Authorization": `Basic ${encodedCredentials}`,
                     "Accept": "application/json",
                 },
             });
@@ -48,10 +46,6 @@ const ContactForm = () => {
         }
     };
 
-    const categoriesOptions = ["Medicin", "programmering", "STEM", "Vetenskap", "Teknik", "Rymden", "Biologi", "Kemi", "Matematik", "Spel"];
-    const agesOptions = ["6-9 år", "10-13 år", "14-18 år", "18+"];
-
-
     return (
         <form
             action="https://www.techforalla.se/wp-json/contact-form-7/v1/contact-forms/522/feedback"
@@ -60,7 +54,6 @@ const ContactForm = () => {
             onSubmit={formSubmissionHandler}
             className="ml-12 grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-14 xl:w-[90%] 2xl:ml-28 xxs:gap-6"
         >
-
             {/* Name Field */}
             <div className="relative z-10 w-full xl:w-[124%] group flex items-center">
                 <FontAwesomeIcon
@@ -79,8 +72,6 @@ const ContactForm = () => {
                     required
                 />
             </div>
-
-
             {/* Email Field */}
             <div className="relative z-10 w-full xl:w-[124%] group flex items-center">
                 <FontAwesomeIcon
@@ -99,30 +90,6 @@ const ContactForm = () => {
                     required
                 />
             </div>
-
-            {/* Kategori Field */}
-            {/* <div className="relative z-10 w-full group flex items-center">
-                <FontAwesomeIcon icon={faList} className="absolute left-2 top-4 text-blackTheme" />
-                <label
-                    htmlFor="your-categories"
-                    className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                    Kategori:
-                </label>
-                <select
-                    type="select"
-                    name="your-categories"
-                    id="your-categories"
-                    className="input-field"
-                    required
-                >
-                    <option value="" disabled>Välj kategori</option>
-                    {categoriesOptions.map((category) => (
-                        <option key={category} value={category}>{category}</option>
-                    ))}
-                </select>
-            </div> */}
-
             {/* subject Field */}
             <div className="relative z-10 w-full mb-5 group flex items-center">
                 <FontAwesomeIcon
@@ -141,30 +108,6 @@ const ContactForm = () => {
                     required
                 />
             </div>
-
-            {/* Ålder Field */}
-            {/* <div className="relative z-10 w-full mb-5 group flex items-center">
-                <FontAwesomeIcon icon={faUser} className="absolute left-2 top-4 text-blackTheme" />
-                <select
-                    type="select"
-                    name="your-ages"
-                    id="your-ages"
-                    className="input-field"
-                    required>
-                    <option value="" disabled>Välj åldersgrupp</option>
-                    {agesOptions.map((age) => (
-                        <option key={age} value={age}>{age}</option>
-                    ))}
-                </select>
-                <label
-                    htmlFor="your-ages"
-                    className="peer-focus:font-medium absolute xl:text-2xl xxs:text-sm md:text-lg font-semibold text-blackTheme duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                    Ålder:
-                </label>
-
-            </div> */}
-
             {/* Messageg Field */}
             <div className="col-span-2 relative z-10 w-full mb-5 group flex items-center">
                 <FontAwesomeIcon
@@ -184,7 +127,6 @@ const ContactForm = () => {
                     required
                 />
             </div>
-
             <div className="col-span-2 flex items-center justify-center mt-6 mr-12 2xl:mr-40">
                 <button
                     type="submit"
