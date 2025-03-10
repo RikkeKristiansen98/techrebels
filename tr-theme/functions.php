@@ -34,6 +34,17 @@ function expose_acf_fields_for_pages()
 }
 add_action('rest_api_init', 'expose_acf_fields_for_pages');
 
+function expose_acf_fields_for_forebilder()
+{
+    register_rest_field('forebilder', 'acf', array(
+        'get_callback' => function ($object) {
+            return get_fields($object['id']); // Hämta alla ACF-fält
+        },
+        'update_callback' => null,
+        'schema' => null,
+    ));
+}
+add_action('rest_api_init', 'expose_acf_fields_for_forebilder');
 
 
 ?>
