@@ -11,7 +11,7 @@ export const CollectionItemSection = () => {
     }
 
     return (
-        <div className="bg-pinkTheme relative flex flex-col justify-center items-center h-auto w-full xxs:pt-24 xxs:px-3 md:pt-36 lg:flex-row lg:items-start lg:justify-between py-10 md:py-[10%] lg:py-[9%] lg:px-[12%]">
+        <div className="bg-pinkTheme relative flex flex-col justify-center items-center h-auto w-full py-[8%] xxs:px-3 lg:flex-row lg:items-start lg:justify-between xxl:px-32">
             {/* Border element top */}
             <img
                 src={borderElement}
@@ -20,31 +20,30 @@ export const CollectionItemSection = () => {
                 className="absolute top-0 right-0 z-0 w-full h-auto"
             />
           
-
-            {/* image */}
-            <div className="relative flex items-center justify-center w-full lg:w-1/2">
+            {/* book img & background img */}
+            <div className="relative flex items-center justify-center w-full xxs:mt-16">
                 <img
                     src={item.imageSrc}
                     alt="Book Cover"
-                    className="lg:w-[550px] xxs:w-[250px] object-cover relative z-20 overflow-visible"
+                    className="xxs:w-[245px] md:w-[270px] lg:w-[350px] xxl:w-[230px] object-cover relative z-20 overflow-visible"
                 />
                     <img
                 src={backgroundElement}
                 alt="background Element"
-                className="absolute z-10 w-full h-auto lg:w-[800px] xxs:w-[400px] object-cover"
+                className="absolute z-10 w-full h-auto xxs:w-[400px] lg:w-[500px] object-cover"
             />
             </div>
 
             {/* Text container */}
-            <div className="relative w-full h-auto flex flex-col justify-center py-16 lg:w-1/2 lg:px-5">
+            <div className="relative w-full h-auto flex flex-col justify-center py-16 lg:px-10">
                 {/* Title and Author */}
-                <div className="flex flex-col justify-center pr-5 mb-6 xxs:items-center lg:items-start lg:mb-0">
-                    <h1 className="text-4xl xxs:text-center xxs:mt-4 md:mt-8 md:text-5xl lg:text-start  text-whiteTheme font-bold mb-5 drop-shadow-lg">{item.title}</h1>
+                <div className="flex flex-col justify-center xxs:items-center lg:items-start lg:mb-0">
+                    <h1 className="text-3xl xxs:text-center xxs:mt-4 md:mt-8 md:text-4xl lg:text-start text-whiteTheme font-bold mb-5 drop-shadow-lg">{item.title}</h1>
                     <p className="text-xl md:text-3xl text-whiteTheme">{item.tagline}</p>
                 </div>
 
                 {/* Description Section with dashed border */}
-                <div className="w-full xxs:mt-12 p-6 border-dashed border-4 border-whiteTheme">
+                <div className="w-full xxs:mt-5 p-6 border-dashed border-4 border-whiteTheme">
                     <p className="text-whiteTheme leading-relaxed">
                         {item.description} </p>
                 </div>
