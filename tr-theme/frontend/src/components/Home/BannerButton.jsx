@@ -14,10 +14,10 @@ const BannerButton = ({ icon }) => {
             src={icon.icon}
             alt={icon.title}
             loading="lazy"
-            className="scale-[2.6] w-16 h-16 object-contain mb-16 xxs:w-10 xxs:h-10 xs:w-12 xs:h-12 sm:w-12 sm:h-12"
+            className="scale-[2.6] w-16 h-16 object-contain mb-14 xxs:w-10 xxs:h-10 xs:w-12 xs:h-12 sm:w-12 sm:h-12"
           />
           {/* Title */}
-          <p className="xl:text-xl font-semibold text-center text-blackTheme xxs:text-xs xs:text-sm sm:text-lg">
+          <p className="xl:text-l font-semibold text-center text-blackTheme xxs:text-xs xs:text-sm sm:text-lg">
             {icon.title}
           </p>
         </Link>

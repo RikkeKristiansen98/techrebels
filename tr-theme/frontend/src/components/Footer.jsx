@@ -12,13 +12,13 @@ const Footer = () => {
           <form className="flex justify-center xl:mb-[20%] sm:mb-[6%] xxs:mb-[4%]">
             <input
               type="email"
-              className="w-full p-4 xl:pr-[100px] bg-white xl:text-2xl xxs:text-sm xl:border-t-4 xxs:border-t-2 xxs:border-l-2 xxs:border-b-2 xl:border-l-4 xl:border-r-2 xl:border-b-4 border-blackTheme outline-none rounded-l-lg"
+              className="w-full p-4 xl:pr-[100px] bg-white xl:text-xl xxs:text-sm xl:border-t-4 xxs:border-t-2 xxs:border-l-2 xxs:border-b-2 xl:border-l-4 xl:border-r-2 xl:border-b-4 border-blackTheme outline-none rounded-l-lg"
               id="textInput"
               placeholder="Email..."
             />
             <button
               type="submit"
-              className="bg-orange-500 xxs:border-t-2 xxs:border-r-2 xxs:border-b-2 xxs:border-l-2 xl:border-t-4 xl:border-r-4 xl:border-b-4 xl:border-l-2 border-blackTheme text-blackTheme xxs:text-sm xl:text-2xl font-semibold p-4 rounded-r-lg"
+              className="bg-orange-500 xxs:border-t-2 xxs:border-r-2 xxs:border-b-2 xxs:border-l-2 xl:border-t-4 xl:border-r-4 xl:border-b-4 xl:border-l-2 border-blackTheme text-blackTheme xxs:text-sm xl:text-xl font-semibold p-4 rounded-r-lg"
             >
               Skicka
             </button>
@@ -26,15 +26,15 @@ const Footer = () => {
         </div>
 
         <div className="xl:mr-[10%] xxs:mb-[5%] xxs:mt-[5%]">
-          <h3 className="xl:text-3xl xxs:text-l xl:mb-[2%]">Har du frågor?</h3>
-          <p className="xl:text-2xl xxs:text-sm">
+          <h3 className="xl:text-2xl xxs:text-l xl:mb-[2%]">Har du frågor?</h3>
+          <p className="xl:text-xl xxs:text-sm">
             I vår{" "}
             <NavLink to="/faq" className="text-orangeTheme font-bold hover:text-pinkTheme hover:underline">
               FAQ
             </NavLink>{" "}
             hittar du svaren på de vanligaste frågorna.
           </p>
-          <p className="mt-5 xl:text-2xl xxs:text-sm">&copy; Tech för alla</p>
+          <p className="mt-5 xl:text-xl xxs:text-sm">&copy; Tech för alla</p>
         </div>
       </div>
 

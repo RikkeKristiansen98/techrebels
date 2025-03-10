@@ -84,11 +84,11 @@ const Carousel = ({ carouselItems }) => {
       {/* Flex container för text och karusell bredvid varandra */}
       <div className="flex flex-col-reverse xl:flex-row items-center justify-center w-full space-x-0 xl:space-x-28 mt-[4%] mb-[1%]">
         {/* Karusellen (vänster sida) */}
-        <div className="flex flex-col items-center justify-center relative xl:w-[50%] xs:mt-[5%] xxs:w-[60%] mr-[5%] xl:mb-[-10%]">
-          <div className="relative flex transition-all duration-700 ease-in-out gap-7 justify-center">
+        <div className="flex flex-col items-center justify-center relative xl:w-[40%] xs:mt-[5%] xxs:w-[60%] mr-[5%] xl:mb-[-10%]">
+          <div className="relative flex transition-all duration-700 ease-in-out gap-8 justify-center">
             {/* Left Button */}
             <button
-              className="absolute xl:left-[-5%] xxs:left-[-25%] top-1/2 transform -translate-y-1/2 z-20"
+              className="absolute xl:left-[-7%] xxs:left-[-25%] top-1/2 transform -translate-y-1/2 z-20"
               onClick={prevSlide}
             >
               <img
@@ -109,7 +109,7 @@ const Carousel = ({ carouselItems }) => {
 
             {/* Right Button */}
             <button
-              className="absolute xl:right-[-5%] xxs:right-[-25%] top-1/2 transform -translate-y-1/2 z-20"
+              className="absolute xl:right-[-7%] xxs:right-[-25%] top-1/2 transform -translate-y-1/2 z-20"
               onClick={nextSlide}
             >
               <img
@@ -137,23 +137,23 @@ const Carousel = ({ carouselItems }) => {
         {/* Rubrik för karusellen (höger sida) */}
         <div
           ref={sectionRef}
-          className={`text-center xl:w-[30%] xxs:w-[85%] space-y-10 bg-pinkTheme border-4 border-blackTheme sm: py-5 md:py-10 xl:px-20 xxs:px-4 xl:pt-[5%] shadow-[5px_6px_3px_rgba(0,0,0,0.6)]`} // Här läggs bakgrundsfärg till endast textsektionen
+          className={`text-center xl:w-[30%] xxs:w-[85%] space-y-4 bg-pinkTheme border-4 border-blackTheme sm:py-5 md:py-10 xl:px-30 xxs:px-6 xxs:pt-[5%] xl:pt-[2%] shadow-[2px_3px_4px_rgba(0,0,0,0.6)]`} // Här läggs bakgrundsfärg till endast textsektionen
         >
-          <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl text-whiteTheme font-bold mb-12 drop-shadow-lg">
+          <h2 className="xxs:text-xl md:text-3xl xl:text-3xl text-whiteTheme font-bold mb-12 drop-shadow-lg">
             Tech för alla tipsar
           </h2>
 
           <img src={textBorder} alt="" />
-          <p className="text-xl text-blackTheme">
+          <p className="xl:text-lg xxs:text-lg text-blackTheme">
             Här hittar du tips om allt från de senaste trenderna inom teknologi till enkla steg
             för att komma igång med programmering,
             spelutveckling och mycket mer. Oavsett om du är nybörjare eller redan har några erfarenheter,
             så finns det alltid något nytt att upptäcka och lära sig!
           </p>
-          <div className="flex justify-center xl:pt-[5%] xl:pb-[15%] xxs:pb-[10%]">
+          <div className="flex justify-center xl:pt-[5%] xl:pb-[5%] xxs:pb-[10%]">
             <NavLink
               to="/collection-page"
-              className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-2 py-2 flex items-center justify-center text-blackTheme text-xl font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
+              className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-2 py-2 flex items-center justify-center text-blackTheme xl:text-xl md:text-xl xxs:text-sm font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
             >
               Gå till tipsbanken
             </NavLink>
