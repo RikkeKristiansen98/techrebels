@@ -19,21 +19,21 @@ const PromoSection = ({
                     src={promo_image_url || defaultImage}
                     loading="lazy"
                     alt="Promo"
-                    className="w-60 md:w-64 lg:w-80 h-auto object-cover drop-shadow-lg"
+                    className="w-60 md:w-64 lg:w-70 h-auto object-cover drop-shadow-lg"
                 />
             </div>
 
             {/* Text container */}
             <div className="text-container flex-1 px-6 sm:px-[8%] lg:px-[10%] flex flex-col justify-center text-center lg:text-left mb-10 lg:mb-0">
-                <h2 className="text-5xl text-whiteTheme font-bold mb-10 drop-shadow-lg">
+                <h2 className="xl:text-3xl md:text-4xl text-whiteTheme font-bold mb-10 drop-shadow-lg">
                     {promo_header}
                 </h2>
-                <p className="text-base sm:text-lg lg:text-xl text-blackTheme">
+                <p className="text-base sm:text-lg lg:text-base md:text-xl text-blackTheme">
                     {promo_description}
                 </p>
                 <div className="mt-8 flex justify-end md:justify-center">
                     <Link
-                        className="bg-whiteTheme border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-base sm:text-lg lg:text-xl font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
+                        className="bg-whiteTheme border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-base sm:text-lg lg:text-lg font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
                         to={promo_link_url}
                     >
                         {promo_link_title}

@@ -20,10 +20,10 @@ const HeroSection = ({
           src={heroHeader}
           alt="Hero header"
           loading="lazy"
-          className="z-10 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] object-cover drop-shadow-lg mb-4 lg:mb-8 animate-slide-in-left"
+          className="z-10 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[300px] object-cover drop-shadow-lg mb-4 lg:mb-8 animate-slide-in-left"
         />
         {/* Hero Description */}
-        <p className="text-blackTheme text-sm px-4 sm:text-base md:text-lg lg:text-xl sm:px-0 md:py-5 leading-relaxed animate-slide-in-left-delay delay-1500">
+        <p className="text-blackTheme text-sm px-4 sm:text-base md:text-xl xl:text-base sm:px-0 md:py-5 leading-relaxed animate-slide-in-left-delay delay-1500">
           {hero_description}
         </p>
       </div>
@@ -31,7 +31,7 @@ const HeroSection = ({
       {/* Right container */}
       <div className="right flex-1 flex flex-col items-center justify-center mb-10 lg:mb-0">
         {/* Hero Image */}
-        <div className="hero-section-image relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
+        <div className="hero-section-image relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[300px]">
           <img
             src={heroImage}
             loading="lazy"
@@ -42,7 +42,7 @@ const HeroSection = ({
         {/* Button */}
         <div className="button-text xxs:mt-2 md:mt-10 flex items-center justify-center">
           <Link
-            className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-sm sm:text-base lg:text-lg font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
+            className="bg-orange-500 border-blackTheme border-2 shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg px-4 py-2 flex items-center text-blackTheme text-sm sm:text-base lg:text-l font-bold transition-transform duration-200 ease-in-out hover:scale-95 active:scale-90"
             to={hero_link_url}
           >
             {hero_link_title}
