@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="relative text-whiteTheme xxs:bg-blackTheme sm:bg-blackTheme xl:bg-blackTheme py-[3%]">
       <div className="relative z-20 text-center flex flex-col sm:flex-row justify-between items-center sm:ml-[4%] sm:mr-[4%] md:ml-[5%] md:mr-[5%]">
 
-        {/* Navigationslänkar - nu staplade vertikalt */}
+        {/* Navigationslänkar*/}
         <nav className="flex flex-col items-center text-center xl:ml-[10%]">
           <NavLink
             to="/home"
