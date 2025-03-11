@@ -35,7 +35,6 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
     fetchContent();
   }, [carouselItem, imageCache]);
 
-  console.log("CarouselItem content:", carouselItem, "content:", content);
 
   return (
     <div className="w-full xxs:mt-8 h-54 bg-white shadow-lg rounded-lg flex flex-col items-center justify-center transition-transform duration-300 transform hover:scale-105 cursor-pointer relative overflow-hidden group">

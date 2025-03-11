@@ -28,7 +28,7 @@ const ContactForm = () => {
         // Lägg till dolda Contact Form 7-fält för att integrera med WordPress Contact Form 7-plugin.
         const formId = "522"; // Unikt ID för det specifika formuläret i WordPress
         formData.append("_wpcf7", formId); // Fält som specificerar formulärets ID
-        formData.append("_wpcf7_version", "5.6"); // Version av Contact Form 7-pluginet
+        formData.append("_wpcf7_version", "6.0.5"); // Version av Contact Form 7-pluginet
         formData.append("_wpcf7_locale", "en_US"); // Språkinställningar för pluginet
         formData.append("_wpcf7_unit_tag", `wpcf7-f${formId}-o1`); // HTML-identifierare för formulärkomponenten
         formData.append("_wpcf7_container_post", "0"); // Specifierar att detta formulär inte är kopplat till en specifik post.

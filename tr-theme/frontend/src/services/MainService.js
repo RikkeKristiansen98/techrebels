@@ -34,26 +34,34 @@ const MainService = {
   // Hämtar en bild via dess ID och använder en lokal cache för att lagra bild-URL:er
   getImageById: async (imageId, imageCache) => {
     if (imageCache[imageId]) {
-      return imageCache[imageId]; // Om bilden redan finns i cachen, returnera den direkt
+      return imageCache[imageId]; // Returnera från cache om redan hämtad
     }
-
+  
     try {
-      // Om bilden inte finns i cachen, hämta den från API:t
-      const response = await fetch(`${BASE_URL}/media/${imageId}`);
+      const username = "wp_user"; // Sätt ditt användarnamn här
+      const password = "BhVF Jr3M UyLw wMH8 nbub Xr6Q"; // Sätt ditt lösenord här
+  
+      const response = await fetch(`${BASE_URL}/media/${imageId}`, {
+        headers: {
+          "Authorization": "Basic " + btoa(`${username}:${password}`), // Lägg till Basic Auth-headern
+        },
+      });
+  
       if (!response.ok) {
-        throw new Error(`Failed to fetch image: ${response.statusText}`); 
+        throw new Error(`Failed to fetch image: ${response.statusText}`);
       }
+  
       const data = await response.json();
       const imageUrl = data.source_url;
-      
-      // Spara den hämtade bildens URL i cachen
+  
       imageCache[imageId] = imageUrl;
-      return imageUrl; 
+      return imageUrl;
     } catch (error) {
-      console.error("Error fetching image by ID:", error); 
-      return ""; 
+      console.error("Error fetching image by ID:", error);
+      return ""; // Returnera tom sträng om det uppstår ett fel
     }
   },
+  
 
   // Hämtar FAQ-data med en angiven mängd objekt per sida och cachar förfrågningar
   getFaqData: async (perPage = 10) => {

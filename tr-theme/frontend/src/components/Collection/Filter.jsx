@@ -45,8 +45,6 @@ export const Filter = ({ onFilterChange }) => {
       const updatedCategories = prevCategories.includes(categorySlug)
         ? prevCategories.filter((slug) => slug !== categorySlug) // Ta bort kategorin om den redan är vald
         : [...prevCategories, categorySlug]; // Lägg till kategorin om den inte är vald
-  
-      console.log("Updated selectedCategories:", updatedCategories); // Logga de uppdaterade valda kategorierna
       return updatedCategories;
     });
   };
