@@ -10,6 +10,7 @@ import Loading from "../components/Loading";
 const Home = () => {
   const { hero, promo, banner, carouselItems, isLoading, error } = useHome();
 
+
   if (isLoading) {
     return <Loading />;
   }

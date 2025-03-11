@@ -20,7 +20,6 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
         try {
           // Försök att hämta bilden från cache om den finns där
           const imageSrc = await MainService.getImageById(imageId, imageCache);
-
           setContent({
             title,
             imageSrc,

@@ -1,14 +1,13 @@
-const BASE_URL = "https://techforalla.se/wp-json/wp/v2"; // Bas-URL för API-förfrågningar
+const BASE_URL = "https://techforalla.se/wp-json/wp/v2";
 
-const cache = new Map(); // Skapa en cache för att lagra data temporärt i minnet
+const cache = new Map(); 
 
 // Funktion som hämtar data med cachekontroll
 export const fetchWithCache = async (url) => {
   
-  // Kontrollera om data redan finns lagrat i localStorage
   const cachedData = localStorage.getItem(url);
   if (cachedData) {
-    return JSON.parse(cachedData); // Om datan finns, returnera den från localStorage
+    return JSON.parse(cachedData);
   }
 
   try {
@@ -29,24 +28,15 @@ export const fetchWithCache = async (url) => {
   }
 };
 
-// MainService som innehåller flera API-anrop och hjälpfunktioner
+
 const MainService = {
-  // Hämtar en bild via dess ID och använder en lokal cache för att lagra bild-URL:er
   getImageById: async (imageId, imageCache) => {
     if (imageCache[imageId]) {
-      return imageCache[imageId]; // Returnera från cache om redan hämtad
+      return imageCache[imageId];
     }
   
     try {
-      const username = "wp_user"; // Sätt ditt användarnamn här
-      const password = "BhVF Jr3M UyLw wMH8 nbub Xr6Q"; // Sätt ditt lösenord här
-  
-      const response = await fetch(`${BASE_URL}/media/${imageId}`, {
-        headers: {
-          "Authorization": "Basic " + btoa(`${username}:${password}`), // Lägg till Basic Auth-headern
-        },
-      });
-  
+      const response = await fetch(`${BASE_URL}/media/${imageId}`);
       if (!response.ok) {
         throw new Error(`Failed to fetch image: ${response.statusText}`);
       }
@@ -58,27 +48,22 @@ const MainService = {
       return imageUrl;
     } catch (error) {
       console.error("Error fetching image by ID:", error);
-      return ""; // Returnera tom sträng om det uppstår ett fel
+      return "";
     }
   },
   
 
   // Hämtar FAQ-data med en angiven mängd objekt per sida och cachar förfrågningar
   getFaqData: async (perPage = 10) => {
-    // Genererar URL för FAQ-data, med ett tidsstämpelfält för att förhindra cache-problem
     const url = `${BASE_URL}/faq-question?per_page=${perPage}&timestamp=${new Date().getTime()}`;
-
-    // Använder fetchWithCache för att hantera hämtningen och cachen
     return await fetchWithCache(url);
   },
 
   // Hittar ett fält i ett ACF-objekt baserat på en specifik fälttyp
   findDynamicField: (acf, fieldType) => {
-    // Sök efter nyckeln i ACF-objektet som innehåller den angivna fälttypen (case insensitive)
     const fieldKey = Object.keys(acf || {}).find((key) =>
       key.toLowerCase().includes(fieldType.toLowerCase())
-    );
-    // Returnerar fältvärdet om nyckeln hittas, annars null
+    )
     return fieldKey ? acf[fieldKey] : null;
   },
 };

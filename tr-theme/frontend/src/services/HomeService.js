@@ -9,14 +9,13 @@ const carouselFieldNames = [
   "selected_carousel_item_four",
   "selected_carousel_item_five",
   "selected_carousel_item_six",
-  "selected_carousel_item_seven",
 ]; // Namn på carousel-fälten i ACF som används för att dynamiskt bygga en lista av carousel-items.
 
 const HomeService = {
   // Hjälpfunktion för att skapa en lista av carousel-items från ACF-data.
   createCarouselItems: (acfData) => {
     const items = [];
-    for (let i = 1; i <= 7; i++) { // Loopa över 7 möjliga carousel-items.
+    for (let i = 1; i <= 6; i++) { // Loopa över 7 möjliga carousel-items.
       const item = acfData[`selected_carousel_item_${i}`]; // Hämta varje item från ACF-data.
       if (item) { // Om item finns, lägg till det i listan.
         items.push(item);
@@ -56,6 +55,9 @@ const HomeService = {
             : null;
         })
         .filter((item) => item); 
+        if (!carouselItems || carouselItems.length === 0) {
+          console.error("No carousel items found.");
+        }
 
       if (!heroId || !promoId || !bannerId || carouselItems.length === 0) {
         throw new Error(
@@ -109,13 +111,15 @@ const HomeService = {
   getCarouselItemsById: async (carouselItems) => {
     const items = await Promise.all(
       
-      carouselItems.map(({ id, type }) => {
+      carouselItems.map(async ({ id, type }) => {
         const url = `${BASE_URL}/${type}/${id}`;
     
-        return fetchWithCache(url).catch((error) => {
+        try {
+          return await fetchWithCache(url);
+        } catch (error) {
           console.error(`Error fetching ${type} item ${id}:`, error);
-          return null; 
-        });
+          return null;
+        }
       })
     );
 
