@@ -2,30 +2,41 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  const borderElement = "http://techforalla.se/wp-content/uploads/2025/02/bottom-border-e1739376496434.png";
 
-  const borderElement = "http://techforalla.se/wp-content/uploads/2025/02/bottom-border-e1739376496434.png"
   return (
-    <footer className="relative text-whiteTheme xxs:bg-blackTheme sm:bg-blackTheme xl:bg-blackTheme py-[7%] ">
+    <footer className="relative text-whiteTheme xxs:bg-blackTheme sm:bg-blackTheme xl:bg-blackTheme py-[3%]">
       <div className="relative z-20 text-center flex flex-col sm:flex-row justify-between items-center sm:ml-[4%] sm:mr-[4%] md:ml-[5%] md:mr-[5%]">
-        <div className="flex flex-col justify-start items-center xl:gap-8 text-center xl:ml-[10%]">
-          <h3 className="xl:text-2xl font-semibold xxs:mt-[10%] xxs:mb-[2%]">Prenumerera på nyhetsbrev</h3>
-          <form className="flex justify-center xl:mb-[20%] sm:mb-[6%] xxs:mb-[4%]">
-            <input
-              type="email"
-              className="w-full p-4 xl:pr-[100px] bg-white xl:text-xl xxs:text-sm xl:border-t-4 xxs:border-t-2 xxs:border-l-2 xxs:border-b-2 xl:border-l-4 xl:border-r-2 xl:border-b-4 border-blackTheme outline-none rounded-l-lg"
-              id="textInput"
-              placeholder="Email..."
-            />
-            <button
-              type="submit"
-              className="bg-orange-500 xxs:border-t-2 xxs:border-r-2 xxs:border-b-2 xxs:border-l-2 xl:border-t-4 xl:border-r-4 xl:border-b-4 xl:border-l-2 border-blackTheme text-blackTheme xxs:text-sm xl:text-xl font-semibold p-4 rounded-r-lg"
-            >
-              Skicka
-            </button>
-          </form>
-        </div>
 
-        <div className="xl:mr-[10%] xxs:mb-[5%] xxs:mt-[5%]">
+        {/* Navigationslänkar - nu staplade vertikalt */}
+        <nav className="flex flex-col items-center text-center xl:ml-[10%]">
+          <NavLink
+            to="/home"
+            className="block py-2 text-whiteTheme font-semibold transition-transform duration-300 ease-out hover:-translate-y-1 hover:text-orangeTheme"
+          >
+            Hem
+          </NavLink>
+          <NavLink
+            to="/collection-page"
+            className="block py-2 text-whiteTheme font-semibold transition-transform duration-300 ease-out hover:-translate-y-1 hover:text-orangeTheme"
+          >
+            Tipsbanken
+          </NavLink>
+          <NavLink
+            to="/tipsaoss"
+            className="block py-2 text-whiteTheme font-semibold transition-transform duration-300 ease-out hover:-translate-y-1 hover:text-orangeTheme"
+          >
+            Tipsa oss
+          </NavLink>
+          <NavLink
+            to="/rolemodels"
+            className="block py-2 text-whiteTheme font-semibold transition-transform duration-300 ease-out hover:-translate-y-1 hover:text-orangeTheme"
+          >
+            Förebilder
+          </NavLink>
+        </nav>
+
+        <div className="xl:mr-[10%] xxs:mb-[5%] xxs:mt-[5%] text-center">
           <h3 className="xl:text-2xl xxs:text-l xl:mb-[2%]">Har du frågor?</h3>
           <p className="xl:text-xl xxs:text-sm">
             I vår{" "}
@@ -38,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* border  */}
+      {/* border */}
       <img
         src={borderElement}
         loading="lazy"
@@ -50,4 +61,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
