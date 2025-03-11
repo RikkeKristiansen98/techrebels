@@ -63,11 +63,18 @@ export const Header = () => {
           Tipsbanken
         </NavLink>
         <NavLink
-          to="/tipsaoss"
-          className={`block py-4 xxs:px-8 text-whiteTheme header-2 md:text-2xl xl:text-xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+  to="/tipsaoss"
+  className="block py-4 px-8 text-whiteTheme header-2 md:text-2xl xl:text-xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1 whitespace-nowrap"
+  onClick={toggleMenu}
+>
+  Tipsa oss
+</NavLink>
+        <NavLink
+          to="/rolemodels"
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl xl:text-xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
-          Tipsa oss
+          Förebilder
         </NavLink>
         <NavLink
           to="/faq"
