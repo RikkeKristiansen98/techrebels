@@ -24,7 +24,7 @@ export const Header = () => {
             src={logo}
             loading="lazy"
             alt="Tech för alla logo"
-            className="h-auto xl:max-w-[30%] xxs:w-[60%] md:w-[40%] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
+            className="h-auto xl:max-w-[25%] xxs:w-[60%] md:w-[40%] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
           />
         </NavLink>
       </div>
@@ -50,28 +50,28 @@ export const Header = () => {
       >
         <NavLink
           to="/home"
-          className={`block py-4 xxs:px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          className={`block py-4 xxs:px-8 text-whiteTheme header-2 md:text-2xl xl:text-xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Hem
         </NavLink>
         <NavLink
           to="/collection-page"
-          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl xl:text-xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsbanken
         </NavLink>
         <NavLink
           to="/tipsaoss"
-          className={`block py-4 xxs:px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          className={`block py-4 xxs:px-8 text-whiteTheme header-2 md:text-2xl xl:text-xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           Tipsa oss
         </NavLink>
         <NavLink
           to="/faq"
-          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
+          className={`block py-4 px-8 text-whiteTheme header-2 md:text-2xl xl:text-xl font-semibold transition-transform duration-300 ease-out hover:-translate-y-1`}
           onClick={toggleMenu} // Stäng menyn när en länk klickas
         >
           FAQ
