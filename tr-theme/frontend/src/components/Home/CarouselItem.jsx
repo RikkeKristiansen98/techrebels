@@ -36,7 +36,7 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
 
 
   return (
-    <div className="w-full xxs:mt-8 h-54 bg-white shadow-lg rounded-lg flex flex-col items-center justify-center transition-transform duration-300 transform hover:scale-105 cursor-pointer relative overflow-hidden group">
+    <div className="w-full xxs:mt-8 h-54 flex flex-col items-center justify-center transition-transform duration-300 transform hover:scale-105 cursor-pointer relative overflow-hidden group">
       {/* Visa en laddningsindikator tills båda är inladdade */}
       {content.isLoaded ? (
         <>
@@ -45,12 +45,12 @@ const CarouselItem = ({ carouselItem, imageCache }) => {
             src={content.imageSrc}
             loading="lazy"
             alt="Carousel Item"
-            className="w-full h-54 object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-54 object-cover  transition-transform duration-700 group-hover:scale-105"
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
           {/* Header */}
-          <h2 className="absolute inset-0 flex items-center justify-center text-black text-2xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <h2 className="absolute inset-0 flex items-center text-center justify-center text-black text-2xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {content.title}
           </h2>
         </>
