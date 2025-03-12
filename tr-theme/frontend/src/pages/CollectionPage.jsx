@@ -34,7 +34,7 @@ export const CollectionPage = () => {
       setTitle("Media");
     } else if (selectedCategory === "bocker" || selectedCategory === "books") {
       setTitle("Böcker");
-    } else if (selectedCategory === "toy") {
+    } else if (selectedCategory === "leksaker") {
       setTitle("Leksaker");
     } else if (selectedCategory === "verktyg-organistationer") {
       setTitle("Verktyg och Organisationer");
