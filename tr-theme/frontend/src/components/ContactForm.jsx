@@ -10,19 +10,18 @@ import {
 // WordPress Contact Form 7 REST API när användaren klickar på "Skicka tips".
 
 const ContactForm = () => {
+    const username = "wp_user";
+    const password = "BhVF Jr3M UyLw wMH8 nbub Xr6Q";
+    const encodedCredentials = btoa(`${username}:${password}`);
 
     // Denna funktion hanterar formulärinlämningen när användaren trycker på "Skicka tips".
     const formSubmissionHandler = async (event) => {
-        // Förhindrar att formuläret skickas på vanligt sätt (genom att ladda om sidan).
         event.preventDefault();
 
-        // Hämtar hela formulärelementet.
         const formElement = event.target;
 
-        // Hämtar formulärets action-attribut som innehåller den URL där datan ska skickas.
         const { action } = formElement;
 
-        // Skapar ett nytt FormData-objekt som tar hand om alla formulärdata som skickas med POST.
         const formData = new FormData(formElement);
 
         // Lägg till dolda Contact Form 7-fält för att integrera med WordPress Contact Form 7-plugin.
@@ -34,23 +33,22 @@ const ContactForm = () => {
         formData.append("_wpcf7_container_post", "0"); // Specifierar att detta formulär inte är kopplat till en specifik post.
 
         try {
-            // Använder fetch API för att skicka POST-förfrågan med formulärets data till servern (action-URL)
+           
             const response = await fetch(action, {
-                method: "POST", // POST-metoden används för att skicka data
-                body: formData, // Inkluderar all formulärdata som skickas till servern
+                method: "POST", 
+                body: formData, 
                 headers: {
-                    "Accept": "application/json", // Begär att svaret ska vara i JSON-format
+                    "Authorization": `Basic ${encodedCredentials}`,
+                    "Accept": "application/json", 
                 },
             });
 
-            // Försöker konvertera svaret från servern till JSON
+           
             const jsonResponse = await response.json();
 
-            // Om mail inte skickas framgångsrikt, skrivs ett felmeddelande ut
             if (jsonResponse.status !== "mail_sent") {
                 console.error("Validation error:", jsonResponse);
             } else {
-                // Om allt går bra och mejlet skickas, loggas ett lyckat meddelande
                 console.log("Form submitted successfully:", jsonResponse);
             }
         } catch (error) {
@@ -60,10 +58,10 @@ const ContactForm = () => {
 
     return (
         <form
-            action="https://www.techforalla.se/wp-json/contact-form-7/v1/contact-forms/522/feedback" // URL dit formulärdatan skickas
-            method="post" // Formuläret använder POST-metoden för att skicka data
-            encType="multipart/form-data" // Anger att formuläret kan hantera filuppladdningar (t.ex. bilagor)
-            onSubmit={formSubmissionHandler} // Använder vår formSubmissionHandler för att hantera när formuläret skickas
+            action="https://www.techforalla.se/wp-json/contact-form-7/v1/contact-forms/522/feedback"
+            method="post" 
+            encType="multipart/form-data" 
+            onSubmit={formSubmissionHandler} 
             className="ml-12 grid grid-cols-1 sm:grid-cols-2 xxs:grid-cols-2 xl:gap-14 xl:w-[90%] 2xl:ml-28 xxs:gap-6"
         >
             {/* Name Field */}
