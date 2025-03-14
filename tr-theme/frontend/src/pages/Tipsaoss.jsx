@@ -35,7 +35,7 @@ const TipsaOss = () => {
           </div> */}
 
           {/* Contact Form  */}
-          <ContactForm />
+          {/* <ContactForm /> */}
 
           {/* Blommor */}
           <div className="absolute top-0 left-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">
