@@ -35,6 +35,9 @@ const Footer = () => {
             Förebilder
           </NavLink>
         </nav>
+        <div className="xl:w-[30%] p-6 border-dashed border-4 border-whiteTheme md:m-[5%] xxs:w-[59%] xxs:p-4 xxs:mt-[5%]">
+          <h2 className="font-semibold">Vi som utvecklat denna sida heter Märta, Mikah och Rikke. Syftet är att främja ett intresse kring IT hos tjejer och icke-binära.</h2>
+        </div>
 
         <div className="xl:mr-[10%] xxs:mb-[5%] xxs:mt-[5%] text-center">
           <h3 className="xl:text-2xl xxs:text-l xl:mb-[2%]">Har du frågor?</h3>

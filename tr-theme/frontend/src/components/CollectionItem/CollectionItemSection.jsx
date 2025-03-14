@@ -26,11 +26,13 @@ export const CollectionItemSection = () => {
                 <img
                     src={item.imageSrc}
                     alt="Book Cover"
+                    loading="lazy"
                     className="lg:w-[550px] xxs:w-[250px] object-cover relative z-20 overflow-visible"
                 />
                     <img
                 src={backgroundElement}
                 alt="background Element"
+                loading="lazy"
                 className="absolute z-10 w-full h-auto lg:w-[800px] xxs:w-[400px] object-cover"
             />
             </div>
@@ -54,6 +56,7 @@ export const CollectionItemSection = () => {
             <img
                 src={borderElement}
                 alt="Hero Element"
+                loading="lazy"
                 className="absolute bottom-0 right-0 z-0 w-full h-auto transform scale-y-[-1]"
             />
         </div>
