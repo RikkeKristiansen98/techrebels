@@ -85,7 +85,7 @@ export const CollectionPage = () => {
             <Filter onFilterChange={handleFilterChange} />
           </div>
 
-          <div className="w-auto sm:w-3/4 xxs:w-full">
+          <div className="w-auto sm:w-3/4 xxs:w-full xl:min-w-[1050px]">
             <Grid
               allGridItems={allGridItems}
               filteredGridItems={filteredGridItems}

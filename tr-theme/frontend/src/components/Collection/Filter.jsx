@@ -63,7 +63,7 @@ export const Filter = ({ onFilterChange }) => {
   };
 
   return (
-    <aside className="xl:w-1/6 xxs:w-[90%] xl:w-[90%] sm:w-[90%] text-blackTheme border-blackTheme">
+    <aside className="xl:w-1/6 xxs:w-[90%] xl:w-[100%] sm:w-[90%] text-blackTheme border-blackTheme">
       <h2 className="bg-pinkTheme text-center font-bold text-xl mb-5 p-3 border-4 border-blackTheme">Sortera efter</h2>
       {categories && categories.length > 0 ? (
         categories.map((parentCategory) => (
