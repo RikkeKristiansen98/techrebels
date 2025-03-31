@@ -64,16 +64,8 @@ export const CollectionPage = () => {
 
   return (
     <div className="bg-yellowTheme min-h-screen w-full flex flex-col justify-center items-center">
-      <div className="relative flex flex-col justify-center items-center min-h-screen m-[8%] mb-[6%]">
+      <div className="relative flex flex-col justify-center items-center min-h-screen m-[5%] mb-[6%]">
         <div className="mb-[12%] relative">
-          {/* <div>
-            <img
-              src={flowerImage}
-              loading="lazy"
-              alt=""
-              className="w-[20%] h-auto object-contain rotate-1 animate-slide-in-right-rotate ml-auto sm:w-[25%] xxs:w-[25%] xs:w-[20%]"
-            />
-          </div> */}
           <h1 className="xl:text-4xl xxs:text-3xl xxs:mb-[12px] xxs:mt-[10px] md:text-3xl xl:mb-[1px] xl:mt-[1px] text-center font-bold text-blackTheme">
             <TypingEffect
               text={title}
@@ -93,7 +85,7 @@ export const CollectionPage = () => {
             <Filter onFilterChange={handleFilterChange} />
           </div>
 
-          <div className="w-auto sm:w-3/4 xxs:w-full">
+          <div className="w-auto sm:w-3/4 xxs:w-full xl:min-w-[1050px]">
             <Grid
               allGridItems={allGridItems}
               filteredGridItems={filteredGridItems}

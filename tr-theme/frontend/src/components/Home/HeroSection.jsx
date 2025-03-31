@@ -12,7 +12,7 @@ const HeroSection = ({
   const heroElement = "http://techforalla.se/wp-content/uploads/2025/02/elementt-e1739367544311.png";
 
   return (
-    <div className="hero-section bg-pinkTheme relative py-20 px-6 sm:px-10 lg:py-[9%] lg:px-[10%] flex flex-col-reverse lg:flex-row min-h-[600px]">
+    <div className="hero-section bg-pinkTheme relative py-20 xxs:py-5 px-6 sm:px-10 lg:py-[9%] lg:px-[10%] flex flex-col-reverse lg:flex-row min-h-[600px]">
       {/* Left container */}
       <div className="left flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
         {/* Hero Header Image */}
@@ -20,7 +20,7 @@ const HeroSection = ({
           src={heroHeader}
           alt="Hero header"
           loading="lazy"
-          className="z-10 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[300px] object-cover drop-shadow-lg mb-4 lg:mb-8 animate-slide-in-left"
+          className="z-10 w-full max-w-[400px] sm:max-w-[400px] lg:max-w-[500px] object-cover drop-shadow-lg mb-4 lg:mb-4 animate-slide-in-left"
         />
         {/* Hero Description */}
         <p className="text-blackTheme text-sm px-4 sm:text-base md:text-xl xl:text-base sm:px-0 md:py-5 leading-relaxed animate-slide-in-left-delay delay-1500">
@@ -31,7 +31,7 @@ const HeroSection = ({
       {/* Right container */}
       <div className="right flex-1 flex flex-col items-center justify-center mb-10 lg:mb-0">
         {/* Hero Image */}
-        <div className="hero-section-image relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[300px]">
+        <div className="hero-section-image relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[350px]">
           <img
             src={heroImage}
             loading="lazy"

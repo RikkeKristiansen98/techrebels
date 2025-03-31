@@ -24,7 +24,7 @@ export const Header = () => {
             src={logo}
             loading="lazy"
             alt="Tech för alla logo"
-            className="h-auto xl:max-w-[25%] xxs:w-[60%] md:w-[40%] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
+            className="h-auto xl:max-w-[30%] xxs:w-[60%] md:w-[40%] transition-transform duration-300 ease-out hover:scale-[1.05] cursor-pointer"
           />
         </NavLink>
       </div>

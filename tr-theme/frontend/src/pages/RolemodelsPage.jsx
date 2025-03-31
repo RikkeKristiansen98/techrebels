@@ -62,9 +62,9 @@ export const RolemodelsPage = () => {
 <div className="flex flex-col items-center justify-start min-h-screen bg-yellowTheme py-1 pb-20">
   {/* Wrapper för rubrik + bild i flex-row */}
   <div className="flex flex-row items-center justify-center gap-4 mt-8">
-    <div className="min-w-[250px] flex justify-center">
-      <h1 className="xl:text-5xl xxs:text-3xl xs:text-5xl font-semibold text-blackTheme text-center">
-        <TypingEffect
+    <div className="min-w-[250px] flex justify-center xl:mb-20">
+    <h1 className="xl:text-4xl xxs:text-3xl xxs:mb-[12px] xxs:mt-[10px] md:text-3xl xl:mb-[1px] xl:mt-[66px] text-center font-bold text-blackTheme ">
+    <TypingEffect
           text="Förebilder"
           speed={100}
           eraseSpeed={50}
@@ -74,12 +74,12 @@ export const RolemodelsPage = () => {
       </h1>
     </div>
 
-    <img
+    {/* <img
       src={rolemodelsElement}
       loading="lazy"
       alt="Decorative element"
       className="w-[20%] h-auto object-contain rotate-1 animate-slide-in-right-rotate"
-    />
+    /> */}
   </div>
 
 
