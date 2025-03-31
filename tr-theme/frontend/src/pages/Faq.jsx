@@ -38,7 +38,7 @@ export function Faq() {
       {" "}
       {/* Här applicerar vi bakgrundsfärgen över hela sidan */}
       <div className="relative p-5 ml-[10%] mr-[10%]">
-        <h1 className="xl:text-4xl xxs:text-3xl xxs:mt-[27px] md:mb-[1px] xl:mb-[20px] xl:mt-[104px]  text-center font-bold text-blackTheme">
+        <h1 className="xl:text-4xl xxs:text-3xl xxs:mt-[27px] md:mb-[1px] xl:mb-[20px] xl:mt-[104px] text-center font-bold text-blackTheme">
           <div className="relative overflow-hidden" style={{ height: "7.5rem" }}>
             <TypingEffect
               text="Här hittar du svar på de vanligaste frågorna!"
@@ -50,8 +50,8 @@ export function Faq() {
           </div>
         </h1>
 
-        <div className="flex flex-col items-start justify-between gap-[10%] mb-[30%] relative z-10">
-          <div className="xl:w-[50%] xxs:w-[120%] p-28 xxs:p-12 md:mb-[-25%] xl:mb-[-10%] xl:mt-[-1%] xxs:mb-[15%] xxs:mt-[10%] xxs:ml-[-9%] xl:ml-[2%] border-4 border-blackTheme shadow-[4px_6px_3px_rgba(0,0,0,0.6)] bg-pinkTheme">
+        <div className="flex flex-col items-center justify-between gap-[10%] mb-[30%] relative z-10">
+          <div className="xl:w-[70%] xxs:w-[120%] p-28 xxs:p-12 md:mb-[-25%] xl:mb-[-10%] xl:mt-[-1%] xxs:mb-[15%] xxs:mt-[10%] xxs:ml-[-9%] xl:ml-[2%] border-4 border-blackTheme shadow-[4px_6px_3px_rgba(0,0,0,0.6)] bg-pinkTheme">
             <h2 className="xl:text-2xl md:text-3xl xxs:text-lg xl:mb-12 text-center font-semibold">
               Frequently Asked Questions
             </h2>
@@ -86,15 +86,6 @@ export function Faq() {
                 ))
               )}
             </div>
-          </div>
-
-          <div className="w-full xl:mb-[-10%] xxs:hidden xl:block">
-            <img
-              src={faqImage}
-              loading="lazy"
-              alt="FAQ Image"
-              className="w-[20%] h-auto object-contain rotate-12 ml-[70%] mt-[-25%] animate-slide-in-right-rotate"
-            />
           </div>
         </div>
       </div>
