@@ -28,15 +28,21 @@ const TipsaOss = () => {
           </div>
         </h1>
 
-        <div className="relative flex justify-center items-center w-full xxs:p-10 xxs:py-16 2xl:py-28 bg-pinkTheme xl:border-4 xxs:border-[3px] border-dashed border-blackTheme">
-          <h3 className="">
+        <div className="relative flex justify-center items-center w-full xxs:p-10 xxs:py-16 2xl:py-22 bg-pinkTheme xl:border-4 xxs:border-[3px] border-dashed border-blackTheme">
+          <h3 className="text-2xl flex items-center">
             <FontAwesomeIcon
               icon={faEnvelope}
-              className="text-blackTheme mr-[5%]"
+              className="text-blackTheme mr-4 text-2xl"
             />
-            E-post: hello@genzconsulting.se
+            <span className="mr-2">E-post:</span>
+            <a
+              href="mailto:hello@genzconsulting.se"
+              className="underline hover:text-gray-700 transition-colors"
+            >
+              hello@genzconsulting.se
+            </a>
           </h3>
-          <p classnmae=" ">Om du är nyfiken</p>
+          <p classnmae=" "></p>
 
           {/* Blommor */}
           {/* <div className="absolute top-0 right-0 md:w-[50%] md:h-[100%] xl:overflow-hidden">

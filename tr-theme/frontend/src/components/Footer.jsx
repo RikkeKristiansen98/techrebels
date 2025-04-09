@@ -26,7 +26,7 @@ const Footer = () => {
             to="/tipsaoss"
             className="block py-2 text-whiteTheme font-semibold transition-transform duration-300 ease-out hover:-translate-y-1 hover:text-orangeTheme"
           >
-            Tipsa oss
+            Kontakt
           </NavLink>
           <NavLink
             to="/rolemodels"
