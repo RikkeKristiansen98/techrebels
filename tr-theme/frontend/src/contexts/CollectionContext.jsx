@@ -1,37 +1,36 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import CollectionService from "../services/CollectionService";
 
-// Skapa ett Context för att dela data om kollektionen i applikationen
+
 const CollectionContext = createContext();
 
-// En custom hook för att enkelt komma åt CollectionContext
+
 export const useCollection = () => useContext(CollectionContext);
 
-// CollectionProvider tillhandahåller kollektionsdatan till barnkomponenter
+
 export const CollectionProvider = ({ children }) => {
-  // State för att hantera alla grid-items, laddningsstatus och eventuella fel
+
   const [allGridItems, setAllGridItems] = useState({
-    GridItems: [], // Håller all data om objekt i kollektionen
+    GridItems: [], 
     isLoading: true, 
     error: null, 
   });
 
-  // Håller reda på vilken sida som hämtas
   const [page, setPage] = useState(1);
   
-  // Antalet objekt som hämtas per sida
+
   const itemsPerPage = 16;
 
-  // State för att hantera filtrerade grid-items
+  
   const [filteredGridItems, setFilteredGridItems] = useState([]);
 
-  // State för att lagra kategorierna
+ 
   const [categories, setCategories] = useState([]);
 
   // Funktion för att hämta kollektionen baserat på den aktuella sidan
   const getCollection = async (page = 1) => {
     try {
-      // Anropa API för att hämta kollektionsdata
+ 
       const result = await CollectionService.fetchCollection(page, itemsPerPage);
       
       // Mappa API-resultatet till ett mer användarvänligt format
@@ -46,17 +45,17 @@ export const CollectionProvider = ({ children }) => {
         slug: item.slug,
       }));
 
-      // Uppdatera state med de hämtade och mappade objekten
+     
       setAllGridItems({
         GridItems: mappedResult,
         isLoading: false,
         error: null,
       });
 
-      // Uppdatera även det filtrerade grid-items med samma data initialt
+   
       setFilteredGridItems(mappedResult);
     } catch (error) {
-      // Om ett fel uppstår, uppdatera state med felmeddelande
+      
       setAllGridItems({
         GridItems: [],
         isLoading: false,
@@ -68,10 +67,9 @@ export const CollectionProvider = ({ children }) => {
   // Funktion för att hämta alla kategorier inklusive deras barnkategorier
   const getCategories = async () => {
     try {
-      // Anropa API för att hämta alla kategorier
+   
       const allCategories = await CollectionService.fetchAllCategoriesWithChildren();
 
-      // Filtrera för att få föräldrakategorier av intresse
       const parentCategories = allCategories.filter((category) =>
         ["ages", "areas", "topics"].includes(category.slug)
       );
@@ -85,7 +83,7 @@ export const CollectionProvider = ({ children }) => {
         };
       });
 
-      // Uppdatera state med föräldrar och barnkategorier
+   
       setCategories(categoriesWithChildren);
     } catch (error) {
       console.error("Error fetching categories:", error);
@@ -122,7 +120,7 @@ export const CollectionProvider = ({ children }) => {
         item.categories.some((catId) => selectedCategoryIds.includes(catId))
       );
 
-      // Uppdatera det filtrerade grid-items
+    
       setFilteredGridItems(filtered);
     }
   };
