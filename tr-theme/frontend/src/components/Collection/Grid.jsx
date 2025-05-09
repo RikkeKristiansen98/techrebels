@@ -59,7 +59,7 @@ const Grid = () => {
       </section>
 
       {/* Paginering */}
-      <div className="flex justify-center mt-10 m-10 xxs:flex-col xxs:items-center xxs:gap-1">
+      <div className="flex justify-center mt-10 m-10 xxs:items-center xxs:gap-1">
         <button
           onClick={handlePrevPage}
           className={`shadow-[4px_4px_3px_rgba(0,0,0,0.6)] rounded-lg mr-2 px-4 py-2 bg-gray-200 ${

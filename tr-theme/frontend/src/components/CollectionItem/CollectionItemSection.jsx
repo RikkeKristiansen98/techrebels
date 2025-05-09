@@ -11,12 +11,12 @@ export const CollectionItemSection = () => {
     }
 
     return (
-        <div className="bg-pinkTheme relative flex flex-col justify-center items-center h-auto w-full xxs:pt-24 xxs:px-3 md:pt-36 lg:flex-row lg:items-start lg:justify-between py-10 md:py-[10%] lg:py-[9%] lg:px-[12%]">
+        <div className="bg-pinkTheme relative flex flex-col justify-center items-center h-auto w-full xxs:pt-28 xxs:px-3 md:pt-36 lg:flex-row lg:items-start lg:justify-between py-10 md:py-[10%] lg:py-[14%] lg:px-[9%]">
             {/* Border element top */}
             <img
                 src={borderElement}
                 loading="lazy"
-                alt="Hero Element"
+                alt="border Element"
                 className="absolute top-0 right-0 z-0 w-full h-auto"
             />
           
@@ -27,7 +27,7 @@ export const CollectionItemSection = () => {
                     src={item.imageSrc}
                     alt="Book Cover"
                     loading="lazy"
-                    className="lg:w-[550px] xxs:w-[250px] object-cover relative z-20 overflow-visible"
+                    className="lg:w-[270px] xxs:w-[250px] xl:w-[460px] object-cover relative z-20 overflow-visible"
                 />
                     <img
                 src={backgroundElement}
