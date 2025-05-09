@@ -33,7 +33,25 @@ const HomeService = {
       const homepageData = await HomeService.getHomePage();
 
       const extractId = (field) => (field ? field.ID || field : null);
-      const extractType = (field) => field?.post_type || "default";
+      const extractType = (field) => {
+        if (!field) return null;
+
+        // Om det är ett ID (en siffra), returnera null så vi kan gissa senare
+        if (typeof field === 'number') {
+          console.log(`Field is just an ID (${field}) - type will be guessed later.`);
+          return null;
+        }
+
+        // Om det är ett post object med post_type, returnera den
+        if (field.post_type) {
+          console.log(`Detected post_type: ${field.post_type}`);
+          return field.post_type;
+        }
+
+        console.warn('Could not determine type for carousel item', field);
+        return null;
+      };
+
 
       const heroId = extractId(homepageData.acf?.selected_hero);
       const promoId = extractId(homepageData.acf?.selected_promo);
@@ -42,33 +60,39 @@ const HomeService = {
       const carouselItems = carouselFieldNames
         .map((fieldName) => {
           const field = homepageData.acf?.[fieldName];
-          if (!field) return null;
-
           const id = extractId(field);
-          let type = extractType(field);
-          // Mappa "attachment" till "media" direkt här:
-          if (type === "attachment") type = "media";
+          const type = extractType(field);  // Denna kan vara null om vi inte vet typen
 
-          return { id, type };
+          if (!id) {
+            console.warn(
+              `Skipped carousel item because id is missing for field ${fieldName}`,
+              field
+            );
+            return null;
+          }
+
+          return { id, type };  // type kan vara null här, vilket vi hanterar senare
         })
-        .filter((item) => item);
-        
+        .filter((item) => item !== null);
+
+
       if (!carouselItems || carouselItems.length === 0) {
-        console.error("No carousel items found.");
+        console.warn("No valid carousel items found in ACF data.");
       }
 
-      if (!heroId || !promoId || !bannerId || carouselItems.length === 0) {
+      if (!heroId || !promoId || !bannerId) {
         throw new Error(
-          "Hero ID, Banner ID, or Carousel Items are missing in ACF data."
+          "Hero ID, Promo ID, or Banner ID is missing in ACF data."
         );
       }
 
-      const [heroData, promoData, bannerData, carouselItemsData] = await Promise.all([
-        HomeService.getHeroById(heroId),
-        HomeService.getPromoById(promoId),
-        HomeService.getBannerById(bannerId),
-        HomeService.getCarouselItemsById(carouselItems),
-      ]);
+      const [heroData, promoData, bannerData, carouselItemsData] =
+        await Promise.all([
+          HomeService.getHeroById(heroId),
+          HomeService.getPromoById(promoId),
+          HomeService.getBannerById(bannerId),
+          HomeService.getCarouselItemsById(carouselItems),
+        ]);
 
       return {
         hero: heroData,
@@ -100,19 +124,33 @@ const HomeService = {
   },
 
   getCarouselItemsById: async (carouselItems) => {
-    const items = await Promise.all(
-      carouselItems.map(async ({ id, type }) => {
+    const tryFetchItem = async (id, explicitType = null) => {
+      const typesToTry = explicitType ? [explicitType] : ["collection", "forebilder", "rolemodels"];
+
+      for (const type of typesToTry) {
         const url = `${BASE_URL}/${type}/${id}`;
         try {
-          return await fetchWithCache(url);
+          const data = await fetchWithCache(url);
+          console.log(`Successfully fetched item ID ${id} as ${type}`);
+          return data;
         } catch (error) {
-          console.error(`Error fetching ${type} item ${id}:`, error);
-          return null;
+          console.warn(`Failed to fetch ${type} item ${id}, trying next type...`);
         }
+      }
+
+      console.error(`Item with ID ${id} could not be fetched as any known type.`);
+      return null;
+    };
+
+    const items = await Promise.all(
+      carouselItems.map(async ({ id, type }) => {
+        return await tryFetchItem(id, type);
       })
     );
+
     return items.filter((item) => item !== null);
   },
+
 };
 
 export default HomeService;
